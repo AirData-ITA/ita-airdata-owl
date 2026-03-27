@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python3:*)",
+      "Bash(source ../airdata-venv/bin/activate)",
+      "Bash(bash build_docs.sh:*)"
+    ]
+  }
+}

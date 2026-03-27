@@ -1,0 +1,4419 @@
+{
+  "_comment" : "Created with OWL2VOWL (version 0.3.5), http://vowl.visualdataweb.org",
+  "header" : {
+    "languages" : [ "pt", "en", "undefined" ],
+    "baseIris" : [ "http://www.w3.org/1999/02/22-rdf-syntax-ns", "http://www.w3.org/2002/07/owl", "http://www.w3.org/2000/01/rdf-schema", "http://airdata.org/ontology", "http://www.w3.org/2001/XMLSchema" ],
+    "iri" : "http://airdata.org/ontology#",
+    "version" : "0.0.2",
+    "labels" : {
+      "pt" : "Ontologia AirData - Operacoes Aereas",
+      "en" : "AirData Ontology - Air Operations"
+    },
+    "other" : {
+      "versionInfo" : [ {
+        "identifier" : "versionInfo",
+        "language" : "undefined",
+        "value" : "0.0.2",
+        "type" : "label"
+      } ]
+    }
+  },
+  "namespace" : [ ],
+  "class" : [ {
+    "id" : "0",
+    "type" : "owl:Thing"
+  }, {
+    "id" : "1",
+    "type" : "rdfs:Literal"
+  }, {
+    "id" : "2",
+    "type" : "rdfs:Literal"
+  }, {
+    "id" : "6",
+    "type" : "rdfs:Literal"
+  }, {
+    "id" : "7",
+    "type" : "rdfs:Literal"
+  }, {
+    "id" : "8",
+    "type" : "rdfs:Literal"
+  }, {
+    "id" : "9",
+    "type" : "rdfs:Literal"
+  }, {
+    "id" : "10",
+    "type" : "rdfs:Literal"
+  }, {
+    "id" : "25",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "26",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "27",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "28",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "32",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "33",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "34",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "35",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "39",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "40",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "41",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "55",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "78",
+    "type" : "owl:Class"
+  }, {
+    "id" : "82",
+    "type" : "owl:Class"
+  }, {
+    "id" : "12",
+    "type" : "owl:Class"
+  }, {
+    "id" : "91",
+    "type" : "owl:Class"
+  }, {
+    "id" : "79",
+    "type" : "owl:Class"
+  }, {
+    "id" : "116",
+    "type" : "owl:Class"
+  }, {
+    "id" : "4",
+    "type" : "owl:Class"
+  }, {
+    "id" : "114",
+    "type" : "owl:Class"
+  }, {
+    "id" : "145",
+    "type" : "owl:Class"
+  }, {
+    "id" : "160",
+    "type" : "owl:Class"
+  }, {
+    "id" : "167",
+    "type" : "owl:Class"
+  }, {
+    "id" : "170",
+    "type" : "owl:Class"
+  }, {
+    "id" : "171",
+    "type" : "owl:Class"
+  }, {
+    "id" : "57",
+    "type" : "owl:Class"
+  }, {
+    "id" : "173",
+    "type" : "owl:Class"
+  }, {
+    "id" : "174",
+    "type" : "owl:Class"
+  }, {
+    "id" : "69",
+    "type" : "owl:Class"
+  }, {
+    "id" : "123",
+    "type" : "owl:Class"
+  }, {
+    "id" : "104",
+    "type" : "owl:Class"
+  }, {
+    "id" : "126",
+    "type" : "rdfs:Literal"
+  }, {
+    "id" : "181",
+    "type" : "rdfs:Literal"
+  }, {
+    "id" : "182",
+    "type" : "rdfs:Literal"
+  }, {
+    "id" : "61",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "183",
+    "type" : "owl:Class"
+  }, {
+    "id" : "73",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "190",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "191",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "192",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "131",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "163",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "194",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "97",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "195",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "196",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "24",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "198",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "199",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "200",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "202",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "203",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "204",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "205",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "81",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "206",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "207",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "210",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "48",
+    "type" : "owl:Class"
+  }, {
+    "id" : "213",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "138",
+    "type" : "owl:Class"
+  }, {
+    "id" : "30",
+    "type" : "owl:Class"
+  }, {
+    "id" : "219",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "220",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "221",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "60",
+    "type" : "owl:Class"
+  }, {
+    "id" : "222",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "223",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "224",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "225",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "226",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "227",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "228",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "230",
+    "type" : "owl:Class"
+  }, {
+    "id" : "231",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "46",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "187",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "236",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "237",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "238",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "239",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "63",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "159",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "240",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "241",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "242",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "243",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "152",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "113",
+    "type" : "owl:Class"
+  }, {
+    "id" : "128",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "209",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "5",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "251",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "214",
+    "type" : "owl:Class"
+  }, {
+    "id" : "218",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "75",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "253",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "254",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "95",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "255",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "37",
+    "type" : "owl:Class"
+  }, {
+    "id" : "262",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "264",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "265",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "266",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "267",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "268",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "124",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "86",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "154",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "271",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "233",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "273",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "274",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "275",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "38",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "276",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "172",
+    "type" : "owl:Class"
+  }, {
+    "id" : "270",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "250",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "277",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "66",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "257",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "280",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "70",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "281",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "58",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "291",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "292",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "284",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "51",
+    "type" : "owl:Class"
+  }, {
+    "id" : "287",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "118",
+    "type" : "owl:Class"
+  }, {
+    "id" : "165",
+    "type" : "owl:Class"
+  }, {
+    "id" : "308",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "189",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "310",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "141",
+    "type" : "owl:Class"
+  }, {
+    "id" : "108",
+    "type" : "owl:Class"
+  }, {
+    "id" : "13",
+    "type" : "owl:Class"
+  }, {
+    "id" : "162",
+    "type" : "owl:Class"
+  }, {
+    "id" : "120",
+    "type" : "owl:Class"
+  }, {
+    "id" : "65",
+    "type" : "owl:Class"
+  }, {
+    "id" : "324",
+    "type" : "owl:Class"
+  }, {
+    "id" : "89",
+    "type" : "owl:Class"
+  }, {
+    "id" : "72",
+    "type" : "owl:Class"
+  }, {
+    "id" : "212",
+    "type" : "owl:Class"
+  }, {
+    "id" : "101",
+    "type" : "owl:Class"
+  }, {
+    "id" : "316",
+    "type" : "owl:Class"
+  }, {
+    "id" : "83",
+    "type" : "owl:Class"
+  }, {
+    "id" : "110",
+    "type" : "owl:Class"
+  }, {
+    "id" : "169",
+    "type" : "owl:Class"
+  }, {
+    "id" : "98",
+    "type" : "owl:Class"
+  }, {
+    "id" : "103",
+    "type" : "owl:Class"
+  }, {
+    "id" : "106",
+    "type" : "owl:Class"
+  }, {
+    "id" : "134",
+    "type" : "owl:Class"
+  }, {
+    "id" : "31",
+    "type" : "owl:Class"
+  }, {
+    "id" : "52",
+    "type" : "owl:Class"
+  }, {
+    "id" : "43",
+    "type" : "owl:Class"
+  }, {
+    "id" : "129",
+    "type" : "owl:Class"
+  }, {
+    "id" : "235",
+    "type" : "owl:Class"
+  }, {
+    "id" : "136",
+    "type" : "owl:Class"
+  }, {
+    "id" : "279",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "77",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "143",
+    "type" : "owl:Class"
+  }, {
+    "id" : "44",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "289",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "185",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "340",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "49",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "216",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "305",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "149",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "100",
+    "type" : "owl:Class"
+  } ],
+  "classAttribute" : [ {
+    "iri" : "http://www.w3.org/2002/07/owl#Thing",
+    "baseIri" : "http://owl2vowl.de",
+    "id" : "0",
+    "label" : {
+      "undefined" : "Thing"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
+    "id" : "1",
+    "label" : {
+      "IRI-based" : "Literal",
+      "undefined" : "Literal"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
+    "id" : "2",
+    "label" : {
+      "IRI-based" : "Literal",
+      "undefined" : "Literal"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
+    "id" : "6",
+    "label" : {
+      "IRI-based" : "Literal",
+      "undefined" : "Literal"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
+    "id" : "7",
+    "label" : {
+      "IRI-based" : "Literal",
+      "undefined" : "Literal"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
+    "id" : "8",
+    "label" : {
+      "IRI-based" : "Literal",
+      "undefined" : "Literal"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
+    "id" : "9",
+    "label" : {
+      "IRI-based" : "Literal",
+      "undefined" : "Literal"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
+    "id" : "10",
+    "label" : {
+      "IRI-based" : "Literal",
+      "undefined" : "Literal"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#dateTime",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "25",
+    "label" : {
+      "IRI-based" : "dateTime"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#dateTime",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "26",
+    "label" : {
+      "IRI-based" : "dateTime"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "27",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "28",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#decimal",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "32",
+    "label" : {
+      "IRI-based" : "decimal"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#decimal",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "33",
+    "label" : {
+      "IRI-based" : "decimal"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "34",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "35",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "39",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "40",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "41",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "55",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://airdata.org/ontology#Taxiway",
+    "baseIri" : "http://airdata.org/ontology",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Taxiway"
+    },
+    "id" : "78",
+    "superClasses" : [ "79" ]
+  }, {
+    "iri" : "http://airdata.org/ontology#EstimatedOffBlockTime",
+    "baseIri" : "http://airdata.org/ontology",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "EstimatedOffBlockTime"
+    },
+    "id" : "82",
+    "superClasses" : [ "83" ]
+  }, {
+    "iri" : "http://airdata.org/ontology#ArrivalOperation",
+    "baseIri" : "http://airdata.org/ontology",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "ArrivalOperation"
+    },
+    "id" : "12",
+    "superClasses" : [ "31" ]
+  }, {
+    "iri" : "http://airdata.org/ontology#HoldTime",
+    "baseIri" : "http://airdata.org/ontology",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "HoldTime"
+    },
+    "id" : "91",
+    "superClasses" : [ "83" ]
+  }, {
+    "iri" : "http://airdata.org/ontology#Aerodrome",
+    "baseIri" : "http://airdata.org/ontology",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Aerodrome"
+    },
+    "subClasses" : [ "65", "78", "98" ],
+    "id" : "79"
+  }, {
+    "iri" : "http://airdata.org/ontology#DeparturePerformanceKPI",
+    "baseIri" : "http://airdata.org/ontology",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "DeparturePerformanceKPI",
+      "undefined" : "DeparturePerformanceKPI"
+    },
+    "subClasses" : [ "129" ],
+    "comment" : {
+      "undefined" : "Agrupa os indicadores relacionados às operações de partida do voo."
+    },
+    "id" : "116",
+    "superClasses" : [ "101" ]
+  }, {
+    "iri" : "http://airdata.org/ontology#WeatherCondition",
+    "baseIri" : "http://airdata.org/ontology",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "WeatherCondition",
+      "undefined" : "WeatherCondition"
+    },
+    "subClasses" : [ "134", "136", "138" ],
+    "id" : "4"
+  }, {
+    "iri" : "http://airdata.org/ontology#TemporalEvent",
+    "baseIri" : "http://airdata.org/ontology",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "TemporalEvent",
+      "undefined" : "TemporalEvent"
+    },
+    "subClasses" : [ "83", "113" ],
+    "id" : "114"
+  }, {
+    "iri" : "http://airdata.org/ontology#TopOfDescentEfficiencyKPI",
+    "baseIri" : "http://airdata.org/ontology",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "TopOfDescentEfficiencyKPI",
+      "undefined" : "TopOfDescentEfficiencyKPI"
+    },
+    "id" : "145",
+    "superClasses" : [ "120" ]
+  }, {
+    "instances" : 0,
+    "union" : [ "31", "37" ],
+    "attributes" : [ "anonymous", "union" ],
+    "id" : "160"
+  }, {
+    "iri" : "http://airdata.org/ontology#PlannedTrajectory",
+    "baseIri" : "http://airdata.org/ontology",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "PlannedTrajectory"
+    },
+    "id" : "167",
+    "superClasses" : [ "141" ]
+  }, {
+    "instances" : 0,
+    "union" : [ "169", "60" ],
+    "attributes" : [ "anonymous", "union" ],
+    "id" : "170"
+  }, {
+    "instances" : 0,
+    "union" : [ "48", "79", "172" ],
+    "attributes" : [ "anonymous", "union" ],
+    "id" : "171"
+  }, {
+    "instances" : 0,
+    "union" : [ "4", "30" ],
+    "attributes" : [ "anonymous", "union" ],
+    "id" : "57"
+  }, {
+    "instances" : 0,
+    "union" : [ "79", "172" ],
+    "attributes" : [ "anonymous", "union" ],
+    "id" : "173"
+  }, {
+    "instances" : 0,
+    "union" : [ "79", "172" ],
+    "attributes" : [ "anonymous", "union" ],
+    "id" : "174"
+  }, {
+    "instances" : 0,
+    "union" : [ "167", "37" ],
+    "attributes" : [ "anonymous", "union" ],
+    "id" : "69"
+  }, {
+    "instances" : 0,
+    "union" : [ "79", "172" ],
+    "attributes" : [ "anonymous", "union" ],
+    "id" : "123"
+  }, {
+    "iri" : "http://airdata.org/ontology#EnRoutePerformanceKPI",
+    "baseIri" : "http://airdata.org/ontology",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "EnRoutePerformanceKPI",
+      "undefined" : "EnRoutePerformanceKPI"
+    },
+    "subClasses" : [ "103", "106" ],
+    "id" : "104",
+    "superClasses" : [ "101" ]
+  }, {
+    "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
+    "id" : "126",
+    "label" : {
+      "IRI-based" : "Literal",
+      "undefined" : "Literal"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
+    "id" : "181",
+    "label" : {
+      "IRI-based" : "Literal",
+      "undefined" : "Literal"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
+    "id" : "182",
+    "label" : {
+      "IRI-based" : "Literal",
+      "undefined" : "Literal"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#dateTime",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "61",
+    "label" : {
+      "IRI-based" : "dateTime"
+    }
+  }, {
+    "iri" : "http://airdata.org/ontology#GateArrivalOnTimeKPI",
+    "baseIri" : "http://airdata.org/ontology",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "GateArrivalOnTimeKPI",
+      "undefined" : "GateArrivalOnTimeKPI"
+    },
+    "id" : "183",
+    "superClasses" : [ "100" ]
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#dateTime",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "73",
+    "label" : {
+      "IRI-based" : "dateTime"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "190",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "191",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "192",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#dateTime",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "131",
+    "label" : {
+      "IRI-based" : "dateTime"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#dateTime",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "163",
+    "label" : {
+      "IRI-based" : "dateTime"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "194",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#int",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "97",
+    "label" : {
+      "IRI-based" : "int"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "195",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "196",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "24",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#dateTime",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "198",
+    "label" : {
+      "IRI-based" : "dateTime"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "199",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "200",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#dateTime",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "202",
+    "label" : {
+      "IRI-based" : "dateTime"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "203",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#dateTime",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "204",
+    "label" : {
+      "IRI-based" : "dateTime"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#dateTime",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "205",
+    "label" : {
+      "IRI-based" : "dateTime"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "81",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "206",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#decimal",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "207",
+    "label" : {
+      "IRI-based" : "decimal"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#decimal",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "210",
+    "label" : {
+      "IRI-based" : "decimal"
+    }
+  }, {
+    "iri" : "http://airdata.org/ontology#Aircraft",
+    "baseIri" : "http://airdata.org/ontology",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Aircraft"
+    },
+    "id" : "48"
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#int",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "213",
+    "label" : {
+      "IRI-based" : "int"
+    }
+  }, {
+    "iri" : "http://airdata.org/ontology#AirspaceCondition",
+    "baseIri" : "http://airdata.org/ontology",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "AirspaceCondition"
+    },
+    "id" : "138",
+    "superClasses" : [ "4" ]
+  }, {
+    "iri" : "http://airdata.org/ontology#Airspace",
+    "baseIri" : "http://airdata.org/ontology",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Airspace"
+    },
+    "subClasses" : [ "214", "43" ],
+    "id" : "30"
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#int",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "219",
+    "label" : {
+      "IRI-based" : "int"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#dateTime",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "220",
+    "label" : {
+      "IRI-based" : "dateTime"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#decimal",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "221",
+    "label" : {
+      "IRI-based" : "decimal"
+    }
+  }, {
+    "iri" : "http://airdata.org/ontology#TrajectoryPoint",
+    "baseIri" : "http://airdata.org/ontology",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "TrajectoryPoint"
+    },
+    "id" : "60",
+    "superClasses" : [ "141" ]
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "222",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "223",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#decimal",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "224",
+    "label" : {
+      "IRI-based" : "decimal"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "225",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#dateTime",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "226",
+    "label" : {
+      "IRI-based" : "dateTime"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "227",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "228",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://airdata.org/ontology#ActualLandingTime",
+    "baseIri" : "http://airdata.org/ontology",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "ActualLandingTime"
+    },
+    "id" : "230",
+    "superClasses" : [ "113" ]
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#dateTime",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "231",
+    "label" : {
+      "IRI-based" : "dateTime"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#dateTime",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "46",
+    "label" : {
+      "IRI-based" : "dateTime"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#decimal",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "187",
+    "label" : {
+      "IRI-based" : "decimal"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "236",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#dateTime",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "237",
+    "label" : {
+      "IRI-based" : "dateTime"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#dateTime",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "238",
+    "label" : {
+      "IRI-based" : "dateTime"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "239",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "63",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "159",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#decimal",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "240",
+    "label" : {
+      "IRI-based" : "decimal"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#boolean",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "241",
+    "label" : {
+      "IRI-based" : "boolean"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#decimal",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "242",
+    "label" : {
+      "IRI-based" : "decimal"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#int",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "243",
+    "label" : {
+      "IRI-based" : "int"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "152",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://airdata.org/ontology#ArrivalEvent",
+    "baseIri" : "http://airdata.org/ontology",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "ArrivalEvent"
+    },
+    "subClasses" : [ "162", "13", "230" ],
+    "id" : "113",
+    "superClasses" : [ "114" ]
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "128",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#dateTime",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "209",
+    "label" : {
+      "IRI-based" : "dateTime"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#decimal",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "5",
+    "label" : {
+      "IRI-based" : "decimal"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#decimal",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "251",
+    "label" : {
+      "IRI-based" : "decimal"
+    }
+  }, {
+    "iri" : "http://airdata.org/ontology#FixPoint",
+    "baseIri" : "http://airdata.org/ontology",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "FixPoint"
+    },
+    "id" : "214",
+    "superClasses" : [ "30" ]
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "218",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#dateTime",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "75",
+    "label" : {
+      "IRI-based" : "dateTime"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "253",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#decimal",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "254",
+    "label" : {
+      "IRI-based" : "decimal"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#decimal",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "95",
+    "label" : {
+      "IRI-based" : "decimal"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#decimal",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "255",
+    "label" : {
+      "IRI-based" : "decimal"
+    }
+  }, {
+    "iri" : "http://airdata.org/ontology#Flight",
+    "baseIri" : "http://airdata.org/ontology",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Flight"
+    },
+    "id" : "37"
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#dateTime",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "262",
+    "label" : {
+      "IRI-based" : "dateTime"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#int",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "264",
+    "label" : {
+      "IRI-based" : "int"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#dateTime",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "265",
+    "label" : {
+      "IRI-based" : "dateTime"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#dateTime",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "266",
+    "label" : {
+      "IRI-based" : "dateTime"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#decimal",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "267",
+    "label" : {
+      "IRI-based" : "decimal"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "268",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "124",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#dateTime",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "86",
+    "label" : {
+      "IRI-based" : "dateTime"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "154",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#decimal",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "271",
+    "label" : {
+      "IRI-based" : "decimal"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "233",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "273",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#dateTime",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "274",
+    "label" : {
+      "IRI-based" : "dateTime"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "275",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#integer",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "38",
+    "label" : {
+      "IRI-based" : "integer"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "276",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://airdata.org/ontology#AircraftOperator",
+    "baseIri" : "http://airdata.org/ontology",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "AircraftOperator"
+    },
+    "id" : "172"
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#dateTime",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "270",
+    "label" : {
+      "IRI-based" : "dateTime"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "250",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "277",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "66",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "257",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "280",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "70",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "281",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "58",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "291",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#integer",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "292",
+    "label" : {
+      "IRI-based" : "integer"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#dateTime",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "284",
+    "label" : {
+      "IRI-based" : "dateTime"
+    }
+  }, {
+    "iri" : "http://airdata.org/ontology#DepartureOperation",
+    "baseIri" : "http://airdata.org/ontology",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "DepartureOperation"
+    },
+    "id" : "51",
+    "superClasses" : [ "31" ]
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "287",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://airdata.org/ontology#FuelEfficiencyKPI",
+    "baseIri" : "http://airdata.org/ontology",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "FuelEfficiencyKPI",
+      "undefined" : "FuelEfficiencyKPI"
+    },
+    "subClasses" : [ "165" ],
+    "id" : "118",
+    "superClasses" : [ "101" ]
+  }, {
+    "iri" : "http://airdata.org/ontology#ATMFuelBurnKPI",
+    "baseIri" : "http://airdata.org/ontology",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "ATMFuelBurnKPI",
+      "undefined" : "ATMFuelBurnKPI"
+    },
+    "id" : "165",
+    "superClasses" : [ "118" ]
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#dateTime",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "308",
+    "label" : {
+      "IRI-based" : "dateTime"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#dateTime",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "189",
+    "label" : {
+      "IRI-based" : "dateTime"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "310",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://airdata.org/ontology#Trajectory",
+    "baseIri" : "http://airdata.org/ontology",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Trajectory"
+    },
+    "subClasses" : [ "167", "169", "60" ],
+    "id" : "141"
+  }, {
+    "iri" : "http://airdata.org/ontology#ActualTakeoffTime",
+    "baseIri" : "http://airdata.org/ontology",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "ActualTakeoffTime"
+    },
+    "id" : "108",
+    "superClasses" : [ "83" ]
+  }, {
+    "iri" : "http://airdata.org/ontology#EstimatedArrivalTime",
+    "baseIri" : "http://airdata.org/ontology",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "EstimatedArrivalTime"
+    },
+    "id" : "13",
+    "superClasses" : [ "113" ]
+  }, {
+    "iri" : "http://airdata.org/ontology#ActualGateArrivalTime",
+    "baseIri" : "http://airdata.org/ontology",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "ActualGateArrivalTime"
+    },
+    "id" : "162",
+    "superClasses" : [ "113" ]
+  }, {
+    "iri" : "http://airdata.org/ontology#VerticalEfficiencyKPI",
+    "baseIri" : "http://airdata.org/ontology",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "VerticalEfficiencyKPI",
+      "undefined" : "VerticalEfficiencyKPI"
+    },
+    "subClasses" : [ "143", "145" ],
+    "id" : "120",
+    "superClasses" : [ "101" ]
+  }, {
+    "iri" : "http://airdata.org/ontology#Runway",
+    "baseIri" : "http://airdata.org/ontology",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Runway"
+    },
+    "id" : "65",
+    "superClasses" : [ "79" ]
+  }, {
+    "iri" : "http://airdata.org/ontology#TaxilnEfficiencyKPI",
+    "baseIri" : "http://airdata.org/ontology",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "TaxilnEfficiencyKPI",
+      "undefined" : "TaxilnEfficiencyKPI"
+    },
+    "id" : "324",
+    "superClasses" : [ "100" ]
+  }, {
+    "iri" : "http://airdata.org/ontology#ActualDepartureTime",
+    "baseIri" : "http://airdata.org/ontology",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "ActualDepartureTime"
+    },
+    "id" : "89",
+    "superClasses" : [ "83" ]
+  }, {
+    "iri" : "http://airdata.org/ontology#EstimatedRunwayTime",
+    "baseIri" : "http://airdata.org/ontology",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "EstimatedRunwayTime"
+    },
+    "id" : "72",
+    "superClasses" : [ "83" ]
+  }, {
+    "iri" : "http://airdata.org/ontology#DataSource",
+    "baseIri" : "http://airdata.org/ontology",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "DataSource",
+      "undefined" : "DataSource"
+    },
+    "id" : "212"
+  }, {
+    "iri" : "http://airdata.org/ontology#Performance",
+    "baseIri" : "http://airdata.org/ontology",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Performance",
+      "undefined" : "Performance"
+    },
+    "subClasses" : [ "116", "118", "120", "104", "100" ],
+    "comment" : {
+      "undefined" : "Representa os indicadores-chave de desempenho (KPIs) definidos pela ICAO..."
+    },
+    "id" : "101"
+  }, {
+    "iri" : "http://airdata.org/ontology#ExpectedPushbackTime",
+    "baseIri" : "http://airdata.org/ontology",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "ExpectedPushbackTime"
+    },
+    "id" : "316",
+    "superClasses" : [ "83" ]
+  }, {
+    "iri" : "http://airdata.org/ontology#DepartureEvent",
+    "baseIri" : "http://airdata.org/ontology",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "DepartureEvent"
+    },
+    "subClasses" : [ "108", "110", "82", "52", "91", "89", "72", "235", "316" ],
+    "id" : "83",
+    "superClasses" : [ "114" ]
+  }, {
+    "iri" : "http://airdata.org/ontology#ActualTaxiStartTime",
+    "baseIri" : "http://airdata.org/ontology",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "ActualTaxiStartTime"
+    },
+    "id" : "110",
+    "superClasses" : [ "83" ]
+  }, {
+    "iri" : "http://airdata.org/ontology#ActualTrajectory",
+    "baseIri" : "http://airdata.org/ontology",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "ActualTrajectory"
+    },
+    "id" : "169",
+    "superClasses" : [ "141" ]
+  }, {
+    "iri" : "http://airdata.org/ontology#Gate",
+    "baseIri" : "http://airdata.org/ontology",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Gate"
+    },
+    "id" : "98",
+    "superClasses" : [ "79" ]
+  }, {
+    "iri" : "http://airdata.org/ontology#TerminalAirspaceEfficiencyKPI",
+    "baseIri" : "http://airdata.org/ontology",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "TerminalAirspaceEfficiencyKPI",
+      "undefined" : "TerminalAirspaceEfficiencyKPI"
+    },
+    "id" : "103",
+    "superClasses" : [ "104" ]
+  }, {
+    "iri" : "http://airdata.org/ontology#RouteDistanceEfficiencyKPI",
+    "baseIri" : "http://airdata.org/ontology",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "RouteDistanceEfficiencyKPI",
+      "undefined" : "RouteDistanceEfficiencyKPI"
+    },
+    "id" : "106",
+    "superClasses" : [ "104" ]
+  }, {
+    "iri" : "http://airdata.org/ontology#RunwayCondition",
+    "baseIri" : "http://airdata.org/ontology",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "RunwayCondition"
+    },
+    "id" : "134",
+    "superClasses" : [ "4" ]
+  }, {
+    "iri" : "http://airdata.org/ontology#Operation",
+    "baseIri" : "http://airdata.org/ontology",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Operation",
+      "undefined" : "Operation"
+    },
+    "subClasses" : [ "12", "51" ],
+    "id" : "31"
+  }, {
+    "iri" : "http://airdata.org/ontology#ActualPushbackTime",
+    "baseIri" : "http://airdata.org/ontology",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "ActualPushbackTime"
+    },
+    "id" : "52",
+    "superClasses" : [ "83" ]
+  }, {
+    "iri" : "http://airdata.org/ontology#Procedure",
+    "baseIri" : "http://airdata.org/ontology",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Procedure"
+    },
+    "id" : "43",
+    "superClasses" : [ "30" ]
+  }, {
+    "iri" : "http://airdata.org/ontology#GateDepartureOnTimeKPI",
+    "baseIri" : "http://airdata.org/ontology",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "GateDepartureOnTimeKPI",
+      "undefined" : "GateDepartureOnTimeKPI"
+    },
+    "id" : "129",
+    "superClasses" : [ "116" ]
+  }, {
+    "iri" : "http://airdata.org/ontology#EstimatedTaxiStartTime",
+    "baseIri" : "http://airdata.org/ontology",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "EstimatedTaxiStartTime"
+    },
+    "id" : "235",
+    "superClasses" : [ "83" ]
+  }, {
+    "iri" : "http://airdata.org/ontology#AerodromeCondition",
+    "baseIri" : "http://airdata.org/ontology",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "AerodromeCondition"
+    },
+    "id" : "136",
+    "superClasses" : [ "4" ]
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "279",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#integer",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "77",
+    "label" : {
+      "IRI-based" : "integer"
+    }
+  }, {
+    "iri" : "http://airdata.org/ontology#TopOfClimbEfficiencyKPI",
+    "baseIri" : "http://airdata.org/ontology",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "TopOfClimbEfficiencyKPI",
+      "undefined" : "TopOfClimbEfficiencyKPI"
+    },
+    "id" : "143",
+    "superClasses" : [ "120" ]
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "44",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#dateTime",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "289",
+    "label" : {
+      "IRI-based" : "dateTime"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "185",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "340",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "49",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#dateTime",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "216",
+    "label" : {
+      "IRI-based" : "dateTime"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "305",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "149",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://airdata.org/ontology#ArrivalPerformanceKPI",
+    "baseIri" : "http://airdata.org/ontology",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "ArrivalPerformanceKPI",
+      "undefined" : "ArrivalPerformanceKPI"
+    },
+    "subClasses" : [ "183", "324" ],
+    "id" : "100",
+    "superClasses" : [ "101" ]
+  } ],
+  "property" : [ {
+    "id" : "3",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "11",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "15",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "16",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "23",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "29",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "36",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "42",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "45",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "47",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "50",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "54",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "56",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "59",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "62",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "64",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "67",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "68",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "71",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "74",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "17",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "76",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "80",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "84",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "85",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "87",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "88",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "90",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "92",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "93",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "94",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "96",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "99",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "102",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "105",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "107",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "109",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "111",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "112",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "115",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "117",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "119",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "121",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "122",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "125",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "127",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "130",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "132",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "133",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "135",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "137",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "139",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "140",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "142",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "144",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "146",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "147",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "148",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "150",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "151",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "153",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "155",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "156",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "157",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "158",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "161",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "164",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "166",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "168",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "18",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "177",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "178",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "179",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "180",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "184",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "186",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "188",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "193",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "197",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "201",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "208",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "211",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "215",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "217",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "229",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "232",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "175",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "234",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "244",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "245",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "246",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "19",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "249",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "252",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "256",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "258",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "259",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "260",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "261",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "247",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "263",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "269",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "272",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "278",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "282",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "283",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "285",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "286",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "288",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "290",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "293",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "294",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "295",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "296",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "297",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "298",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "299",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "300",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "301",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "302",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "303",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "304",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "306",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "307",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "309",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "311",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "312",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "313",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "314",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "315",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "317",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "318",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "319",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "320",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "321",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "322",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "323",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "20",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "326",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "176",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "327",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "328",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "22",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "21",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "333",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "334",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "335",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "336",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "337",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "338",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "339",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "341",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "342",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "343",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "344",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "345",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "329",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "346",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "347",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "325",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "348",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "349",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "350",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "351",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "352",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "353",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "354",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "355",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "356",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "357",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "358",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "14",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "359",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "331",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "360",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "361",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "362",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "363",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "364",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "365",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "366",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "367",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "53",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "370",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "371",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "372",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "373",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "374",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "368",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "375",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "376",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "248",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "377",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "378",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "332",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "379",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "369",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "380",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "330",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "381",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "382",
+    "type" : "owl:datatypeProperty"
+  } ],
+  "propertyAttribute" : [ {
+    "iri" : "http://airdata.org/ontology#minTemperature",
+    "baseIri" : "http://airdata.org/ontology",
+    "range" : "5",
+    "label" : {
+      "IRI-based" : "minTemperature"
+    },
+    "domain" : "4",
+    "attributes" : [ "datatype" ],
+    "id" : "3"
+  }, {
+    "iri" : "http://airdata.org/ontology#ArrivalOperation-EstimatedArrivalTime",
+    "baseIri" : "http://airdata.org/ontology",
+    "range" : "13",
+    "label" : {
+      "IRI-based" : "ArrivalOperation-EstimatedArrivalTime"
+    },
+    "superproperty" : [ "14" ],
+    "domain" : "12",
+    "attributes" : [ "object" ],
+    "id" : "11"
+  }, {
+    "iri" : "http://airdata.org/ontology#descriptive",
+    "baseIri" : "http://airdata.org/ontology",
+    "range" : "1",
+    "label" : {
+      "IRI-based" : "descriptive"
+    },
+    "domain" : "0",
+    "attributes" : [ "datatype" ],
+    "id" : "15"
+  }, {
+    "iri" : "http://www.w3.org/2002/07/owl#topObjectProperty",
+    "baseIri" : "http://www.w3.org/2002/07/owl",
+    "range" : "0",
+    "label" : {
+      "IRI-based" : "topObjectProperty"
+    },
+    "domain" : "0",
+    "subproperty" : [ "17", "18", "19", "20", "21", "22" ],
+    "attributes" : [ "external", "object" ],
+    "id" : "16"
+  }, {
+    "iri" : "http://airdata.org/ontology#changeVisibility",
+    "baseIri" : "http://airdata.org/ontology",
+    "range" : "24",
+    "label" : {
+      "IRI-based" : "changeVisibility"
+    },
+    "domain" : "4",
+    "attributes" : [ "datatype" ],
+    "id" : "23"
+  }, {
+    "iri" : "http://airdata.org/ontology#Airspace-Operation",
+    "baseIri" : "http://airdata.org/ontology",
+    "range" : "31",
+    "label" : {
+      "IRI-based" : "Airspace-Operation"
+    },
+    "superproperty" : [ "20" ],
+    "domain" : "30",
+    "attributes" : [ "object" ],
+    "id" : "29"
+  }, {
+    "iri" : "http://airdata.org/ontology#stageNumber",
+    "baseIri" : "http://airdata.org/ontology",
+    "range" : "38",
+    "label" : {
+      "IRI-based" : "stageNumber"
+    },
+    "domain" : "37",
+    "attributes" : [ "datatype" ],
+    "id" : "36"
+  }, {
+    "iri" : "http://airdata.org/ontology#airportRule",
+    "baseIri" : "http://airdata.org/ontology",
+    "range" : "44",
+    "label" : {
+      "IRI-based" : "airportRule"
+    },
+    "domain" : "43",
+    "attributes" : [ "datatype" ],
+    "id" : "42"
+  }, {
+    "iri" : "http://airdata.org/ontology#endPrevision",
+    "baseIri" : "http://airdata.org/ontology",
+    "range" : "46",
+    "label" : {
+      "IRI-based" : "endPrevision"
+    },
+    "domain" : "4",
+    "attributes" : [ "datatype" ],
+    "id" : "45"
+  }, {
+    "iri" : "http://airdata.org/ontology#autonomy",
+    "baseIri" : "http://airdata.org/ontology",
+    "range" : "49",
+    "label" : {
+      "IRI-based" : "autonomy"
+    },
+    "domain" : "48",
+    "attributes" : [ "datatype" ],
+    "id" : "47"
+  }, {
+    "iri" : "http://airdata.org/ontology#DepartureOperation-ActualPushbackTime",
+    "baseIri" : "http://airdata.org/ontology",
+    "range" : "52",
+    "label" : {
+      "IRI-based" : "DepartureOperation-ActualPushbackTime"
+    },
+    "superproperty" : [ "53" ],
+    "domain" : "51",
+    "attributes" : [ "object" ],
+    "id" : "50"
+  }, {
+    "iri" : "http://airdata.org/ontology#windSpeed",
+    "baseIri" : "http://airdata.org/ontology",
+    "range" : "41",
+    "label" : {
+      "IRI-based" : "windSpeed"
+    },
+    "domain" : "4",
+    "attributes" : [ "datatype" ],
+    "id" : "54"
+  }, {
+    "iri" : "http://airdata.org/ontology#remarks",
+    "baseIri" : "http://airdata.org/ontology",
+    "range" : "58",
+    "label" : {
+      "IRI-based" : "remarks"
+    },
+    "domain" : "57",
+    "attributes" : [ "datatype" ],
+    "id" : "56"
+  }, {
+    "iri" : "http://airdata.org/ontology#dataRadar",
+    "baseIri" : "http://airdata.org/ontology",
+    "range" : "61",
+    "label" : {
+      "IRI-based" : "dataRadar"
+    },
+    "domain" : "60",
+    "attributes" : [ "datatype" ],
+    "id" : "59"
+  }, {
+    "iri" : "http://airdata.org/ontology#detectorSource",
+    "baseIri" : "http://airdata.org/ontology",
+    "range" : "63",
+    "label" : {
+      "IRI-based" : "detectorSource"
+    },
+    "domain" : "60",
+    "attributes" : [ "datatype" ],
+    "id" : "62"
+  }, {
+    "iri" : "http://airdata.org/ontology#runway",
+    "baseIri" : "http://airdata.org/ontology",
+    "range" : "66",
+    "label" : {
+      "IRI-based" : "runway"
+    },
+    "domain" : "65",
+    "attributes" : [ "datatype" ],
+    "id" : "64"
+  }, {
+    "iri" : "http://airdata.org/ontology#visibility",
+    "baseIri" : "http://airdata.org/ontology",
+    "range" : "34",
+    "label" : {
+      "IRI-based" : "visibility"
+    },
+    "domain" : "4",
+    "attributes" : [ "datatype" ],
+    "id" : "67"
+  }, {
+    "iri" : "http://airdata.org/ontology#route",
+    "baseIri" : "http://airdata.org/ontology",
+    "range" : "70",
+    "label" : {
+      "IRI-based" : "route"
+    },
+    "domain" : "69",
+    "attributes" : [ "datatype" ],
+    "id" : "68"
+  }, {
+    "iri" : "http://airdata.org/ontology#crwy",
+    "baseIri" : "http://airdata.org/ontology",
+    "range" : "73",
+    "label" : {
+      "IRI-based" : "crwy"
+    },
+    "domain" : "72",
+    "attributes" : [ "datatype" ],
+    "id" : "71"
+  }, {
+    "iri" : "http://airdata.org/ontology#movEstimative",
+    "baseIri" : "http://airdata.org/ontology",
+    "range" : "75",
+    "label" : {
+      "IRI-based" : "movEstimative"
+    },
+    "domain" : "30",
+    "attributes" : [ "datatype" ],
+    "id" : "74"
+  }, {
+    "iri" : "http://airdata.org/ontology#TemporalRelation",
+    "baseIri" : "http://airdata.org/ontology",
+    "range" : "0",
+    "label" : {
+      "IRI-based" : "TemporalRelation"
+    },
+    "superproperty" : [ "16" ],
+    "domain" : "0",
+    "subproperty" : [ "14", "53" ],
+    "attributes" : [ "object" ],
+    "id" : "17"
+  }, {
+    "iri" : "http://airdata.org/ontology#aircraftSpeed",
+    "baseIri" : "http://airdata.org/ontology",
+    "range" : "77",
+    "label" : {
+      "IRI-based" : "aircraftSpeed"
+    },
+    "domain" : "30",
+    "attributes" : [ "datatype" ],
+    "id" : "76"
+  }, {
+    "iri" : "http://airdata.org/ontology#callsign",
+    "baseIri" : "http://airdata.org/ontology",
+    "range" : "81",
+    "label" : {
+      "IRI-based" : "callsign"
+    },
+    "domain" : "37",
+    "attributes" : [ "datatype" ],
+    "id" : "80"
+  }, {
+    "iri" : "http://www.w3.org/2002/07/owl#topDataProperty",
+    "baseIri" : "http://www.w3.org/2002/07/owl",
+    "range" : "8",
+    "label" : {
+      "IRI-based" : "topDataProperty"
+    },
+    "domain" : "0",
+    "attributes" : [ "external", "datatype" ],
+    "id" : "84"
+  }, {
+    "iri" : "http://airdata.org/ontology#tempStart",
+    "baseIri" : "http://airdata.org/ontology",
+    "range" : "86",
+    "label" : {
+      "IRI-based" : "tempStart"
+    },
+    "domain" : "4",
+    "attributes" : [ "datatype" ],
+    "id" : "85"
+  }, {
+    "range" : "83",
+    "domain" : "52",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "87"
+  }, {
+    "iri" : "http://airdata.org/ontology#DepartureOperation-ActualDepartureTime",
+    "baseIri" : "http://airdata.org/ontology",
+    "range" : "89",
+    "label" : {
+      "IRI-based" : "DepartureOperation-ActualDepartureTime"
+    },
+    "superproperty" : [ "53" ],
+    "domain" : "51",
+    "attributes" : [ "object" ],
+    "id" : "88"
+  }, {
+    "range" : "83",
+    "domain" : "91",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "90"
+  }, {
+    "range" : "83",
+    "domain" : "89",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "92"
+  }, {
+    "range" : "83",
+    "domain" : "72",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "93"
+  }, {
+    "iri" : "http://airdata.org/ontology#mailWeight",
+    "baseIri" : "http://airdata.org/ontology",
+    "range" : "95",
+    "label" : {
+      "IRI-based" : "mailWeight"
+    },
+    "domain" : "37",
+    "attributes" : [ "datatype" ],
+    "id" : "94"
+  }, {
+    "iri" : "http://airdata.org/ontology#cloudBase",
+    "baseIri" : "http://airdata.org/ontology",
+    "range" : "97",
+    "label" : {
+      "IRI-based" : "cloudBase"
+    },
+    "domain" : "0",
+    "attributes" : [ "datatype" ],
+    "id" : "96"
+  }, {
+    "range" : "101",
+    "domain" : "100",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "99"
+  }, {
+    "range" : "104",
+    "domain" : "103",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "102"
+  }, {
+    "range" : "104",
+    "domain" : "106",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "105"
+  }, {
+    "range" : "83",
+    "domain" : "108",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "107"
+  }, {
+    "range" : "83",
+    "domain" : "110",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "109"
+  }, {
+    "range" : "83",
+    "domain" : "82",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "111"
+  }, {
+    "range" : "114",
+    "domain" : "113",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "112"
+  }, {
+    "range" : "101",
+    "domain" : "116",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "115"
+  }, {
+    "range" : "101",
+    "domain" : "118",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "117"
+  }, {
+    "range" : "101",
+    "domain" : "120",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "119"
+  }, {
+    "range" : "101",
+    "domain" : "104",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "121"
+  }, {
+    "iri" : "http://airdata.org/ontology#iataCode",
+    "baseIri" : "http://airdata.org/ontology",
+    "range" : "124",
+    "label" : {
+      "IRI-based" : "iataCode"
+    },
+    "domain" : "123",
+    "attributes" : [ "datatype" ],
+    "id" : "122"
+  }, {
+    "iri" : "http://airdata.org/ontology#operational",
+    "baseIri" : "http://airdata.org/ontology",
+    "range" : "126",
+    "label" : {
+      "IRI-based" : "operational"
+    },
+    "domain" : "0",
+    "attributes" : [ "datatype" ],
+    "id" : "125"
+  }, {
+    "iri" : "http://airdata.org/ontology#onboardEquipment",
+    "baseIri" : "http://airdata.org/ontology",
+    "range" : "128",
+    "label" : {
+      "IRI-based" : "onboardEquipment"
+    },
+    "domain" : "48",
+    "attributes" : [ "datatype" ],
+    "id" : "127"
+  }, {
+    "iri" : "http://airdata.org/ontology#cpush",
+    "baseIri" : "http://airdata.org/ontology",
+    "range" : "131",
+    "label" : {
+      "IRI-based" : "cpush"
+    },
+    "domain" : "52",
+    "attributes" : [ "datatype" ],
+    "id" : "130"
+  }, {
+    "range" : "116",
+    "domain" : "129",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "132"
+  }, {
+    "range" : "4",
+    "domain" : "134",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "133"
+  }, {
+    "range" : "4",
+    "domain" : "136",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "135"
+  }, {
+    "range" : "4",
+    "domain" : "138",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "137"
+  }, {
+    "range" : "114",
+    "domain" : "83",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "139"
+  }, {
+    "range" : "141",
+    "domain" : "60",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "140"
+  }, {
+    "range" : "120",
+    "domain" : "143",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "142"
+  }, {
+    "range" : "120",
+    "domain" : "145",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "144"
+  }, {
+    "range" : "79",
+    "domain" : "65",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "146"
+  }, {
+    "range" : "79",
+    "domain" : "78",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "147"
+  }, {
+    "iri" : "http://airdata.org/ontology#acronymType",
+    "baseIri" : "http://airdata.org/ontology",
+    "range" : "149",
+    "label" : {
+      "IRI-based" : "acronymType"
+    },
+    "domain" : "37",
+    "attributes" : [ "datatype" ],
+    "id" : "148"
+  }, {
+    "range" : "79",
+    "domain" : "98",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "150"
+  }, {
+    "iri" : "http://airdata.org/ontology#onboardEquipment2",
+    "baseIri" : "http://airdata.org/ontology",
+    "range" : "152",
+    "label" : {
+      "IRI-based" : "onboardEquipment2"
+    },
+    "domain" : "48",
+    "attributes" : [ "datatype" ],
+    "id" : "151"
+  }, {
+    "iri" : "http://airdata.org/ontology#tempGroup",
+    "baseIri" : "http://airdata.org/ontology",
+    "range" : "154",
+    "label" : {
+      "IRI-based" : "tempGroup"
+    },
+    "domain" : "4",
+    "attributes" : [ "datatype" ],
+    "id" : "153"
+  }, {
+    "iri" : "http://airdata.org/ontology#DepartureOperation-EstimatedRunwayTime",
+    "baseIri" : "http://airdata.org/ontology",
+    "range" : "72",
+    "label" : {
+      "IRI-based" : "DepartureOperation-EstimatedRunwayTime"
+    },
+    "superproperty" : [ "53" ],
+    "domain" : "51",
+    "attributes" : [ "object" ],
+    "id" : "155"
+  }, {
+    "iri" : "http://airdata.org/ontology#ArrivalOperation-AerodromeCondition",
+    "baseIri" : "http://airdata.org/ontology",
+    "range" : "136",
+    "label" : {
+      "IRI-based" : "ArrivalOperation-AerodromeCondition"
+    },
+    "superproperty" : [ "18" ],
+    "domain" : "12",
+    "attributes" : [ "object" ],
+    "id" : "156"
+  }, {
+    "iri" : "http://airdata.org/ontology#Flight-ArrivalOperation",
+    "baseIri" : "http://airdata.org/ontology",
+    "range" : "12",
+    "label" : {
+      "IRI-based" : "Flight-ArrivalOperation"
+    },
+    "superproperty" : [ "20" ],
+    "domain" : "37",
+    "attributes" : [ "object" ],
+    "id" : "157"
+  }, {
+    "iri" : "http://airdata.org/ontology#departureProcedure",
+    "baseIri" : "http://airdata.org/ontology",
+    "range" : "159",
+    "label" : {
+      "IRI-based" : "departureProcedure"
+    },
+    "domain" : "43",
+    "attributes" : [ "datatype" ],
+    "id" : "158"
+  }, {
+    "iri" : "http://airdata.org/ontology#cpos",
+    "baseIri" : "http://airdata.org/ontology",
+    "range" : "163",
+    "label" : {
+      "IRI-based" : "cpos"
+    },
+    "domain" : "162",
+    "attributes" : [ "datatype" ],
+    "id" : "161"
+  }, {
+    "range" : "118",
+    "domain" : "165",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "164"
+  }, {
+    "range" : "141",
+    "domain" : "167",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "166"
+  }, {
+    "range" : "141",
+    "domain" : "169",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "168"
+  }, {
+    "iri" : "http://airdata.org/ontology#WeatherRelation",
+    "baseIri" : "http://airdata.org/ontology",
+    "range" : "0",
+    "label" : {
+      "IRI-based" : "WeatherRelation"
+    },
+    "superproperty" : [ "16" ],
+    "domain" : "0",
+    "subproperty" : [ "156", "175", "176" ],
+    "attributes" : [ "object" ],
+    "id" : "18"
+  }, {
+    "iri" : "http://airdata.org/ontology#vertrate",
+    "baseIri" : "http://airdata.org/ontology",
+    "range" : "33",
+    "label" : {
+      "IRI-based" : "vertrate"
+    },
+    "domain" : "60",
+    "attributes" : [ "datatype" ],
+    "id" : "177"
+  }, {
+    "iri" : "http://airdata.org/ontology#type",
+    "baseIri" : "http://airdata.org/ontology",
+    "range" : "55",
+    "label" : {
+      "IRI-based" : "type"
+    },
+    "domain" : "160",
+    "attributes" : [ "datatype" ],
+    "id" : "178"
+  }, {
+    "iri" : "http://airdata.org/ontology#DepartureOperation-ActualTakeoffTime",
+    "baseIri" : "http://airdata.org/ontology",
+    "range" : "108",
+    "label" : {
+      "IRI-based" : "DepartureOperation-ActualTakeoffTime"
+    },
+    "superproperty" : [ "53" ],
+    "domain" : "51",
+    "attributes" : [ "object" ],
+    "id" : "179"
+  }, {
+    "iri" : "http://airdata.org/ontology#typeAircraftOperator",
+    "baseIri" : "http://airdata.org/ontology",
+    "range" : "27",
+    "label" : {
+      "IRI-based" : "typeAircraftOperator"
+    },
+    "domain" : "172",
+    "attributes" : [ "datatype" ],
+    "id" : "180"
+  }, {
+    "iri" : "http://airdata.org/ontology#arrivalProcedure",
+    "baseIri" : "http://airdata.org/ontology",
+    "range" : "185",
+    "label" : {
+      "IRI-based" : "arrivalProcedure"
+    },
+    "domain" : "43",
+    "attributes" : [ "datatype" ],
+    "id" : "184"
+  }, {
+    "iri" : "http://airdata.org/ontology#dewPoint",
+    "baseIri" : "http://airdata.org/ontology",
+    "range" : "187",
+    "label" : {
+      "IRI-based" : "dewPoint"
+    },
+    "domain" : "4",
+    "attributes" : [ "datatype" ],
+    "id" : "186"
+  }, {
+    "iri" : "http://airdata.org/ontology#time",
+    "baseIri" : "http://airdata.org/ontology",
+    "range" : "189",
+    "label" : {
+      "IRI-based" : "time"
+    },
+    "domain" : "170",
+    "attributes" : [ "datatype" ],
+    "id" : "188"
+  }, {
+    "iri" : "http://airdata.org/ontology#typeLine",
+    "baseIri" : "http://airdata.org/ontology",
+    "range" : "28",
+    "label" : {
+      "IRI-based" : "typeLine"
+    },
+    "domain" : "37",
+    "attributes" : [ "datatype" ],
+    "id" : "193"
+  }, {
+    "iri" : "http://airdata.org/ontology#cloudType",
+    "baseIri" : "http://airdata.org/ontology",
+    "range" : "194",
+    "label" : {
+      "IRI-based" : "cloudType"
+    },
+    "domain" : "0",
+    "attributes" : [ "datatype" ],
+    "id" : "197"
+  }, {
+    "iri" : "http://airdata.org/ontology#DepartureOperation-ActualTaxiStartTime",
+    "baseIri" : "http://airdata.org/ontology",
+    "range" : "110",
+    "label" : {
+      "IRI-based" : "DepartureOperation-ActualTaxiStartTime"
+    },
+    "superproperty" : [ "53" ],
+    "domain" : "51",
+    "attributes" : [ "object" ],
+    "id" : "201"
+  }, {
+    "iri" : "http://airdata.org/ontology#observationTime",
+    "baseIri" : "http://airdata.org/ontology",
+    "range" : "209",
+    "label" : {
+      "IRI-based" : "observationTime"
+    },
+    "domain" : "4",
+    "attributes" : [ "datatype" ],
+    "id" : "208"
+  }, {
+    "iri" : "http://airdata.org/ontology#Airspace-DataSource",
+    "baseIri" : "http://airdata.org/ontology",
+    "range" : "212",
+    "label" : {
+      "IRI-based" : "Airspace-DataSource"
+    },
+    "superproperty" : [ "21" ],
+    "domain" : "30",
+    "attributes" : [ "object" ],
+    "id" : "211"
+  }, {
+    "iri" : "http://airdata.org/ontology#baroaltitude",
+    "baseIri" : "http://airdata.org/ontology",
+    "range" : "216",
+    "label" : {
+      "IRI-based" : "baroaltitude"
+    },
+    "domain" : "60",
+    "attributes" : [ "datatype" ],
+    "id" : "215"
+  }, {
+    "iri" : "http://airdata.org/ontology#name",
+    "baseIri" : "http://airdata.org/ontology",
+    "range" : "218",
+    "label" : {
+      "IRI-based" : "name"
+    },
+    "domain" : "174",
+    "attributes" : [ "datatype" ],
+    "id" : "217"
+  }, {
+    "iri" : "http://airdata.org/ontology#changeEnd",
+    "baseIri" : "http://airdata.org/ontology",
+    "range" : "204",
+    "label" : {
+      "IRI-based" : "changeEnd"
+    },
+    "domain" : "4",
+    "attributes" : [ "datatype" ],
+    "id" : "229"
+  }, {
+    "iri" : "http://airdata.org/ontology#tempWeather",
+    "baseIri" : "http://airdata.org/ontology",
+    "range" : "233",
+    "label" : {
+      "IRI-based" : "tempWeather"
+    },
+    "domain" : "4",
+    "attributes" : [ "datatype" ],
+    "id" : "232"
+  }, {
+    "iri" : "http://airdata.org/ontology#Operation-WeatherCondition",
+    "baseIri" : "http://airdata.org/ontology",
+    "range" : "4",
+    "label" : {
+      "IRI-based" : "Operation-WeatherCondition"
+    },
+    "superproperty" : [ "18" ],
+    "domain" : "31",
+    "attributes" : [ "object" ],
+    "id" : "175"
+  }, {
+    "iri" : "http://airdata.org/ontology#wtaxi",
+    "baseIri" : "http://airdata.org/ontology",
+    "range" : "26",
+    "label" : {
+      "IRI-based" : "wtaxi"
+    },
+    "domain" : "235",
+    "attributes" : [ "datatype" ],
+    "id" : "234"
+  }, {
+    "iri" : "http://airdata.org/ontology#aircraft",
+    "baseIri" : "http://airdata.org/ontology",
+    "range" : "9",
+    "label" : {
+      "IRI-based" : "aircraft"
+    },
+    "domain" : "0",
+    "attributes" : [ "datatype" ],
+    "id" : "244"
+  }, {
+    "iri" : "http://airdata.org/ontology#ArrivalOperation-ActualGateArrivalTime",
+    "baseIri" : "http://airdata.org/ontology",
+    "range" : "162",
+    "label" : {
+      "IRI-based" : "ArrivalOperation-ActualGateArrivalTime"
+    },
+    "superproperty" : [ "14" ],
+    "domain" : "12",
+    "attributes" : [ "object" ],
+    "id" : "245"
+  }, {
+    "iri" : "http://airdata.org/ontology#paidPassengers",
+    "baseIri" : "http://airdata.org/ontology",
+    "range" : "243",
+    "label" : {
+      "IRI-based" : "paidPassengers"
+    },
+    "domain" : "37",
+    "attributes" : [ "datatype" ],
+    "id" : "246"
+  }, {
+    "iri" : "http://airdata.org/ontology#IdentificationRelation",
+    "baseIri" : "http://airdata.org/ontology",
+    "range" : "0",
+    "label" : {
+      "IRI-based" : "IdentificationRelation"
+    },
+    "superproperty" : [ "16" ],
+    "domain" : "0",
+    "subproperty" : [ "247", "248" ],
+    "attributes" : [ "object" ],
+    "id" : "19"
+  }, {
+    "iri" : "http://airdata.org/ontology#status",
+    "baseIri" : "http://airdata.org/ontology",
+    "range" : "250",
+    "label" : {
+      "IRI-based" : "status"
+    },
+    "domain" : "37",
+    "attributes" : [ "datatype" ],
+    "id" : "249"
+  }, {
+    "iri" : "http://airdata.org/ontology#excessBaggage",
+    "baseIri" : "http://airdata.org/ontology",
+    "range" : "224",
+    "label" : {
+      "IRI-based" : "excessBaggage"
+    },
+    "domain" : "37",
+    "attributes" : [ "datatype" ],
+    "id" : "252"
+  }, {
+    "iri" : "http://airdata.org/ontology#ssr",
+    "baseIri" : "http://airdata.org/ontology",
+    "range" : "257",
+    "label" : {
+      "IRI-based" : "ssr"
+    },
+    "domain" : "48",
+    "attributes" : [ "datatype" ],
+    "id" : "256"
+  }, {
+    "iri" : "http://airdata.org/ontology#eobt",
+    "baseIri" : "http://airdata.org/ontology",
+    "range" : "237",
+    "label" : {
+      "IRI-based" : "eobt"
+    },
+    "domain" : "82",
+    "attributes" : [ "datatype" ],
+    "id" : "258"
+  }, {
+    "iri" : "http://airdata.org/ontology#flightLevel",
+    "baseIri" : "http://airdata.org/ontology",
+    "range" : "219",
+    "label" : {
+      "IRI-based" : "flightLevel"
+    },
+    "domain" : "60",
+    "attributes" : [ "datatype" ],
+    "id" : "259"
+  }, {
+    "iri" : "http://airdata.org/ontology#fixExitName",
+    "baseIri" : "http://airdata.org/ontology",
+    "range" : "225",
+    "label" : {
+      "IRI-based" : "fixExitName"
+    },
+    "domain" : "214",
+    "attributes" : [ "datatype" ],
+    "id" : "260"
+  }, {
+    "iri" : "http://airdata.org/ontology#ArrivalOperation-ActualLandingTime",
+    "baseIri" : "http://airdata.org/ontology",
+    "range" : "230",
+    "label" : {
+      "IRI-based" : "ArrivalOperation-ActualLandingTime"
+    },
+    "superproperty" : [ "14" ],
+    "domain" : "12",
+    "attributes" : [ "object" ],
+    "id" : "261"
+  }, {
+    "iri" : "http://airdata.org/ontology#Flight-AircraftOperator",
+    "baseIri" : "http://airdata.org/ontology",
+    "range" : "172",
+    "label" : {
+      "IRI-based" : "Flight-AircraftOperator"
+    },
+    "superproperty" : [ "19" ],
+    "domain" : "37",
+    "attributes" : [ "object" ],
+    "id" : "247"
+  }, {
+    "iri" : "http://airdata.org/ontology#latitude",
+    "baseIri" : "http://airdata.org/ontology",
+    "range" : "254",
+    "label" : {
+      "IRI-based" : "latitude"
+    },
+    "domain" : "60",
+    "attributes" : [ "datatype" ],
+    "id" : "263"
+  }, {
+    "iri" : "http://airdata.org/ontology#taxi",
+    "baseIri" : "http://airdata.org/ontology",
+    "range" : "270",
+    "label" : {
+      "IRI-based" : "taxi"
+    },
+    "domain" : "110",
+    "attributes" : [ "datatype" ],
+    "id" : "269"
+  }, {
+    "iri" : "http://airdata.org/ontology#eventName",
+    "baseIri" : "http://airdata.org/ontology",
+    "range" : "227",
+    "label" : {
+      "IRI-based" : "eventName"
+    },
+    "domain" : "114",
+    "attributes" : [ "datatype" ],
+    "id" : "272"
+  }, {
+    "iri" : "http://airdata.org/ontology#additionalData",
+    "baseIri" : "http://airdata.org/ontology",
+    "range" : "279",
+    "label" : {
+      "IRI-based" : "additionalData"
+    },
+    "domain" : "30",
+    "attributes" : [ "datatype" ],
+    "id" : "278"
+  }, {
+    "iri" : "http://airdata.org/ontology#issueTime",
+    "baseIri" : "http://airdata.org/ontology",
+    "range" : "265",
+    "label" : {
+      "IRI-based" : "issueTime"
+    },
+    "domain" : "4",
+    "attributes" : [ "datatype" ],
+    "id" : "282"
+  }, {
+    "iri" : "http://airdata.org/ontology#receivedAt",
+    "baseIri" : "http://airdata.org/ontology",
+    "range" : "284",
+    "label" : {
+      "IRI-based" : "receivedAt"
+    },
+    "domain" : "4",
+    "attributes" : [ "datatype" ],
+    "id" : "283"
+  }, {
+    "iri" : "http://airdata.org/ontology#codeDI",
+    "baseIri" : "http://airdata.org/ontology",
+    "range" : "195",
+    "label" : {
+      "IRI-based" : "codeDI"
+    },
+    "domain" : "37",
+    "attributes" : [ "datatype" ],
+    "id" : "285"
+  }, {
+    "iri" : "http://airdata.org/ontology#rawTaf",
+    "baseIri" : "http://airdata.org/ontology",
+    "range" : "287",
+    "label" : {
+      "IRI-based" : "rawTaf"
+    },
+    "domain" : "4",
+    "attributes" : [ "datatype" ],
+    "id" : "286"
+  }, {
+    "iri" : "http://airdata.org/ontology#arr",
+    "baseIri" : "http://airdata.org/ontology",
+    "range" : "289",
+    "label" : {
+      "IRI-based" : "arr"
+    },
+    "domain" : "230",
+    "attributes" : [ "datatype" ],
+    "id" : "288"
+  }, {
+    "iri" : "http://airdata.org/ontology#maxTemperature",
+    "baseIri" : "http://airdata.org/ontology",
+    "range" : "251",
+    "label" : {
+      "IRI-based" : "maxTemperature"
+    },
+    "domain" : "4",
+    "attributes" : [ "datatype" ],
+    "id" : "290"
+  }, {
+    "iri" : "http://airdata.org/ontology#velocity",
+    "baseIri" : "http://airdata.org/ontology",
+    "range" : "32",
+    "label" : {
+      "IRI-based" : "velocity"
+    },
+    "domain" : "60",
+    "attributes" : [ "datatype" ],
+    "id" : "293"
+  }, {
+    "iri" : "http://airdata.org/ontology#Flight-Trajectory",
+    "baseIri" : "http://airdata.org/ontology",
+    "range" : "141",
+    "label" : {
+      "IRI-based" : "Flight-Trajectory"
+    },
+    "superproperty" : [ "22" ],
+    "domain" : "37",
+    "attributes" : [ "object" ],
+    "id" : "294"
+  }, {
+    "iri" : "http://airdata.org/ontology#Trajectory-Operation",
+    "baseIri" : "http://airdata.org/ontology",
+    "range" : "31",
+    "label" : {
+      "IRI-based" : "Trajectory-Operation"
+    },
+    "superproperty" : [ "20" ],
+    "domain" : "141",
+    "attributes" : [ "object" ],
+    "id" : "295"
+  }, {
+    "iri" : "http://airdata.org/ontology#fixEntryName",
+    "baseIri" : "http://airdata.org/ontology",
+    "range" : "223",
+    "label" : {
+      "IRI-based" : "fixEntryName"
+    },
+    "domain" : "214",
+    "attributes" : [ "datatype" ],
+    "id" : "296"
+  }, {
+    "iri" : "http://airdata.org/ontology#freePassengers",
+    "baseIri" : "http://airdata.org/ontology",
+    "range" : "213",
+    "label" : {
+      "IRI-based" : "freePassengers"
+    },
+    "domain" : "37",
+    "attributes" : [ "datatype" ],
+    "id" : "297"
+  }, {
+    "iri" : "http://airdata.org/ontology#crossingType",
+    "baseIri" : "http://airdata.org/ontology",
+    "range" : "190",
+    "label" : {
+      "IRI-based" : "crossingType"
+    },
+    "domain" : "30",
+    "attributes" : [ "datatype" ],
+    "id" : "298"
+  }, {
+    "iri" : "http://airdata.org/ontology#WeatherCondition-DataSource",
+    "baseIri" : "http://airdata.org/ontology",
+    "range" : "212",
+    "label" : {
+      "IRI-based" : "WeatherCondition-DataSource"
+    },
+    "superproperty" : [ "21" ],
+    "domain" : "4",
+    "attributes" : [ "object" ],
+    "id" : "299"
+  }, {
+    "iri" : "http://airdata.org/ontology#eta",
+    "baseIri" : "http://airdata.org/ontology",
+    "range" : "231",
+    "label" : {
+      "IRI-based" : "eta"
+    },
+    "domain" : "13",
+    "attributes" : [ "datatype" ],
+    "id" : "300"
+  }, {
+    "iri" : "http://airdata.org/ontology#source",
+    "baseIri" : "http://airdata.org/ontology",
+    "range" : "277",
+    "label" : {
+      "IRI-based" : "source"
+    },
+    "domain" : "114",
+    "attributes" : [ "datatype" ],
+    "id" : "301"
+  }, {
+    "iri" : "http://airdata.org/ontology#controllerName",
+    "baseIri" : "http://airdata.org/ontology",
+    "range" : "191",
+    "label" : {
+      "IRI-based" : "controllerName"
+    },
+    "domain" : "30",
+    "attributes" : [ "datatype" ],
+    "id" : "302"
+  }, {
+    "iri" : "http://airdata.org/ontology#Flight-DepartureOperation",
+    "baseIri" : "http://airdata.org/ontology",
+    "range" : "51",
+    "label" : {
+      "IRI-based" : "Flight-DepartureOperation"
+    },
+    "superproperty" : [ "20" ],
+    "domain" : "37",
+    "attributes" : [ "object" ],
+    "id" : "303"
+  }, {
+    "iri" : "http://airdata.org/ontology#accType",
+    "baseIri" : "http://airdata.org/ontology",
+    "range" : "305",
+    "label" : {
+      "IRI-based" : "accType"
+    },
+    "domain" : "60",
+    "attributes" : [ "datatype" ],
+    "id" : "304"
+  }, {
+    "iri" : "http://airdata.org/ontology#code",
+    "baseIri" : "http://airdata.org/ontology",
+    "range" : "196",
+    "label" : {
+      "IRI-based" : "code"
+    },
+    "domain" : "43",
+    "attributes" : [ "datatype" ],
+    "id" : "306"
+  }, {
+    "iri" : "http://airdata.org/ontology#remarksApp",
+    "baseIri" : "http://airdata.org/ontology",
+    "range" : "281",
+    "label" : {
+      "IRI-based" : "remarksApp"
+    },
+    "domain" : "30",
+    "attributes" : [ "datatype" ],
+    "id" : "307"
+  }, {
+    "iri" : "http://airdata.org/ontology#freeBaggage",
+    "baseIri" : "http://airdata.org/ontology",
+    "range" : "221",
+    "label" : {
+      "IRI-based" : "freeBaggage"
+    },
+    "domain" : "37",
+    "attributes" : [ "datatype" ],
+    "id" : "309"
+  }, {
+    "iri" : "http://airdata.org/ontology#estimated",
+    "baseIri" : "http://airdata.org/ontology",
+    "range" : "2",
+    "label" : {
+      "IRI-based" : "estimated"
+    },
+    "domain" : "0",
+    "attributes" : [ "datatype" ],
+    "id" : "311"
+  }, {
+    "iri" : "http://airdata.org/ontology#fixEntryTime",
+    "baseIri" : "http://airdata.org/ontology",
+    "range" : "226",
+    "label" : {
+      "IRI-based" : "fixEntryTime"
+    },
+    "domain" : "214",
+    "attributes" : [ "datatype" ],
+    "id" : "312"
+  }, {
+    "iri" : "http://airdata.org/ontology#identification",
+    "baseIri" : "http://airdata.org/ontology",
+    "range" : "6",
+    "label" : {
+      "IRI-based" : "identification"
+    },
+    "domain" : "0",
+    "attributes" : [ "datatype" ],
+    "id" : "313"
+  }, {
+    "iri" : "http://airdata.org/ontology#flightRule",
+    "baseIri" : "http://airdata.org/ontology",
+    "range" : "222",
+    "label" : {
+      "IRI-based" : "flightRule"
+    },
+    "domain" : "43",
+    "attributes" : [ "datatype" ],
+    "id" : "314"
+  }, {
+    "iri" : "http://airdata.org/ontology#wpush",
+    "baseIri" : "http://airdata.org/ontology",
+    "range" : "25",
+    "label" : {
+      "IRI-based" : "wpush"
+    },
+    "domain" : "316",
+    "attributes" : [ "datatype" ],
+    "id" : "315"
+  }, {
+    "iri" : "http://airdata.org/ontology#box",
+    "baseIri" : "http://airdata.org/ontology",
+    "range" : "206",
+    "label" : {
+      "IRI-based" : "box"
+    },
+    "domain" : "98",
+    "attributes" : [ "datatype" ],
+    "id" : "317"
+  }, {
+    "iri" : "http://airdata.org/ontology#pressureQNH",
+    "baseIri" : "http://airdata.org/ontology",
+    "range" : "242",
+    "label" : {
+      "IRI-based" : "pressureQNH"
+    },
+    "domain" : "4",
+    "attributes" : [ "datatype" ],
+    "id" : "318"
+  }, {
+    "iri" : "http://airdata.org/ontology#beginPrevision",
+    "baseIri" : "http://airdata.org/ontology",
+    "range" : "205",
+    "label" : {
+      "IRI-based" : "beginPrevision"
+    },
+    "domain" : "4",
+    "attributes" : [ "datatype" ],
+    "id" : "319"
+  }, {
+    "iri" : "http://airdata.org/ontology#fixExitTime",
+    "baseIri" : "http://airdata.org/ontology",
+    "range" : "220",
+    "label" : {
+      "IRI-based" : "fixExitTime"
+    },
+    "domain" : "214",
+    "attributes" : [ "datatype" ],
+    "id" : "320"
+  }, {
+    "iri" : "http://airdata.org/ontology#longitude",
+    "baseIri" : "http://airdata.org/ontology",
+    "range" : "255",
+    "label" : {
+      "IRI-based" : "longitude"
+    },
+    "domain" : "60",
+    "attributes" : [ "datatype" ],
+    "id" : "321"
+  }, {
+    "iri" : "http://airdata.org/ontology#ArrivalOperation-Aerodrome",
+    "baseIri" : "http://airdata.org/ontology",
+    "range" : "79",
+    "label" : {
+      "IRI-based" : "ArrivalOperation-Aerodrome"
+    },
+    "superproperty" : [ "22" ],
+    "domain" : "12",
+    "attributes" : [ "object" ],
+    "id" : "322"
+  }, {
+    "iri" : "http://airdata.org/ontology#taxiwayUsed",
+    "baseIri" : "http://airdata.org/ontology",
+    "range" : "275",
+    "label" : {
+      "IRI-based" : "taxiwayUsed"
+    },
+    "domain" : "78",
+    "attributes" : [ "datatype" ],
+    "id" : "323"
+  }, {
+    "iri" : "http://airdata.org/ontology#FlightOperation",
+    "baseIri" : "http://airdata.org/ontology",
+    "range" : "0",
+    "label" : {
+      "IRI-based" : "FlightOperation"
+    },
+    "superproperty" : [ "16" ],
+    "domain" : "0",
+    "subproperty" : [ "29", "157", "303", "295", "325" ],
+    "attributes" : [ "object" ],
+    "id" : "20"
+  }, {
+    "iri" : "http://airdata.org/ontology#DepartureOperation-ExpectedPushbackTime",
+    "baseIri" : "http://airdata.org/ontology",
+    "range" : "316",
+    "label" : {
+      "IRI-based" : "DepartureOperation-ExpectedPushbackTime"
+    },
+    "superproperty" : [ "53" ],
+    "domain" : "51",
+    "attributes" : [ "object" ],
+    "id" : "326"
+  }, {
+    "iri" : "http://airdata.org/ontology#DepartureOperation-AerodromeCondition",
+    "baseIri" : "http://airdata.org/ontology",
+    "range" : "136",
+    "label" : {
+      "IRI-based" : "DepartureOperation-AerodromeCondition"
+    },
+    "superproperty" : [ "18" ],
+    "domain" : "51",
+    "attributes" : [ "object" ],
+    "id" : "176"
+  }, {
+    "iri" : "http://airdata.org/ontology#id",
+    "baseIri" : "http://airdata.org/ontology",
+    "range" : "264",
+    "label" : {
+      "IRI-based" : "id"
+    },
+    "domain" : "79",
+    "attributes" : [ "datatype" ],
+    "id" : "327"
+  }, {
+    "iri" : "http://airdata.org/ontology#spatial",
+    "baseIri" : "http://airdata.org/ontology",
+    "range" : "181",
+    "label" : {
+      "IRI-based" : "spatial"
+    },
+    "domain" : "0",
+    "attributes" : [ "datatype" ],
+    "id" : "328"
+  }, {
+    "iri" : "http://airdata.org/ontology#SpatialRelation",
+    "baseIri" : "http://airdata.org/ontology",
+    "range" : "0",
+    "label" : {
+      "IRI-based" : "SpatialRelation"
+    },
+    "superproperty" : [ "16" ],
+    "domain" : "0",
+    "subproperty" : [ "329", "294", "322", "330" ],
+    "attributes" : [ "object" ],
+    "id" : "22"
+  }, {
+    "iri" : "http://airdata.org/ontology#SourceRelation",
+    "baseIri" : "http://airdata.org/ontology",
+    "range" : "0",
+    "label" : {
+      "IRI-based" : "SourceRelation"
+    },
+    "superproperty" : [ "16" ],
+    "domain" : "0",
+    "subproperty" : [ "211", "331", "332", "299" ],
+    "attributes" : [ "object" ],
+    "id" : "21"
+  }, {
+    "iri" : "http://airdata.org/ontology#changeStart",
+    "baseIri" : "http://airdata.org/ontology",
+    "range" : "198",
+    "label" : {
+      "IRI-based" : "changeStart"
+    },
+    "domain" : "4",
+    "attributes" : [ "datatype" ],
+    "id" : "333"
+  }, {
+    "iri" : "http://airdata.org/ontology#tempEnd",
+    "baseIri" : "http://airdata.org/ontology",
+    "range" : "274",
+    "label" : {
+      "IRI-based" : "tempEnd"
+    },
+    "domain" : "4",
+    "attributes" : [ "datatype" ],
+    "id" : "334"
+  }, {
+    "iri" : "http://airdata.org/ontology#quantityAircraft",
+    "baseIri" : "http://airdata.org/ontology",
+    "range" : "292",
+    "label" : {
+      "IRI-based" : "quantityAircraft"
+    },
+    "domain" : "30",
+    "attributes" : [ "datatype" ],
+    "id" : "335"
+  }, {
+    "iri" : "http://airdata.org/ontology#windGust",
+    "baseIri" : "http://airdata.org/ontology",
+    "range" : "40",
+    "label" : {
+      "IRI-based" : "windGust"
+    },
+    "domain" : "4",
+    "attributes" : [ "datatype" ],
+    "id" : "336"
+  }, {
+    "iri" : "http://airdata.org/ontology#heading",
+    "baseIri" : "http://airdata.org/ontology",
+    "range" : "267",
+    "label" : {
+      "IRI-based" : "heading"
+    },
+    "domain" : "60",
+    "attributes" : [ "datatype" ],
+    "id" : "337"
+  }, {
+    "iri" : "http://airdata.org/ontology#DepartureOperation-EstimatedTaxiStartTime",
+    "baseIri" : "http://airdata.org/ontology",
+    "range" : "235",
+    "label" : {
+      "IRI-based" : "DepartureOperation-EstimatedTaxiStartTime"
+    },
+    "superproperty" : [ "53" ],
+    "domain" : "51",
+    "attributes" : [ "object" ],
+    "id" : "338"
+  }, {
+    "iri" : "http://airdata.org/ontology#atsUnit",
+    "baseIri" : "http://airdata.org/ontology",
+    "range" : "340",
+    "label" : {
+      "IRI-based" : "atsUnit"
+    },
+    "domain" : "30",
+    "attributes" : [ "datatype" ],
+    "id" : "339"
+  }, {
+    "iri" : "http://airdata.org/ontology#changeGroup",
+    "baseIri" : "http://airdata.org/ontology",
+    "range" : "203",
+    "label" : {
+      "IRI-based" : "changeGroup"
+    },
+    "domain" : "4",
+    "attributes" : [ "datatype" ],
+    "id" : "341"
+  }, {
+    "iri" : "http://airdata.org/ontology#icaoCode",
+    "baseIri" : "http://airdata.org/ontology",
+    "range" : "268",
+    "label" : {
+      "IRI-based" : "icaoCode"
+    },
+    "domain" : "171",
+    "attributes" : [ "datatype" ],
+    "id" : "342"
+  }, {
+    "iri" : "http://airdata.org/ontology#cdep",
+    "baseIri" : "http://airdata.org/ontology",
+    "range" : "202",
+    "label" : {
+      "IRI-based" : "cdep"
+    },
+    "domain" : "108",
+    "attributes" : [ "datatype" ],
+    "id" : "343"
+  }, {
+    "iri" : "http://airdata.org/ontology#changeCloud",
+    "baseIri" : "http://airdata.org/ontology",
+    "range" : "200",
+    "label" : {
+      "IRI-based" : "changeCloud"
+    },
+    "domain" : "4",
+    "attributes" : [ "datatype" ],
+    "id" : "344"
+  }, {
+    "iri" : "http://airdata.org/ontology#dataSource",
+    "baseIri" : "http://airdata.org/ontology",
+    "range" : "239",
+    "label" : {
+      "IRI-based" : "dataSource"
+    },
+    "domain" : "4",
+    "attributes" : [ "datatype" ],
+    "id" : "345"
+  }, {
+    "iri" : "http://airdata.org/ontology#DepartureOperation-Aerodrome",
+    "baseIri" : "http://airdata.org/ontology",
+    "range" : "79",
+    "label" : {
+      "IRI-based" : "DepartureOperation-Aerodrome"
+    },
+    "superproperty" : [ "22" ],
+    "domain" : "51",
+    "attributes" : [ "object" ],
+    "id" : "329"
+  }, {
+    "iri" : "http://airdata.org/ontology#freeCargoWeight",
+    "baseIri" : "http://airdata.org/ontology",
+    "range" : "207",
+    "label" : {
+      "IRI-based" : "freeCargoWeight"
+    },
+    "domain" : "37",
+    "attributes" : [ "datatype" ],
+    "id" : "346"
+  }, {
+    "iri" : "http://airdata.org/ontology#windDirection",
+    "baseIri" : "http://airdata.org/ontology",
+    "range" : "39",
+    "label" : {
+      "IRI-based" : "windDirection"
+    },
+    "domain" : "4",
+    "attributes" : [ "datatype" ],
+    "id" : "347"
+  }, {
+    "iri" : "http://airdata.org/ontology#Aerodrome-Operation",
+    "baseIri" : "http://airdata.org/ontology",
+    "range" : "31",
+    "label" : {
+      "IRI-based" : "Aerodrome-Operation"
+    },
+    "superproperty" : [ "20" ],
+    "domain" : "79",
+    "attributes" : [ "object" ],
+    "id" : "325"
+  }, {
+    "iri" : "http://airdata.org/ontology#geoaltitude",
+    "baseIri" : "http://airdata.org/ontology",
+    "range" : "210",
+    "label" : {
+      "IRI-based" : "geoaltitude"
+    },
+    "domain" : "60",
+    "attributes" : [ "datatype" ],
+    "id" : "348"
+  }, {
+    "iri" : "http://airdata.org/ontology#location",
+    "baseIri" : "http://airdata.org/ontology",
+    "range" : "253",
+    "label" : {
+      "IRI-based" : "location"
+    },
+    "domain" : "173",
+    "attributes" : [ "datatype" ],
+    "id" : "349"
+  }, {
+    "iri" : "http://airdata.org/ontology#onground",
+    "baseIri" : "http://airdata.org/ontology",
+    "range" : "241",
+    "label" : {
+      "IRI-based" : "onground"
+    },
+    "domain" : "60",
+    "attributes" : [ "datatype" ],
+    "id" : "350"
+  }, {
+    "range" : "100",
+    "domain" : "324",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "351"
+  }, {
+    "iri" : "http://airdata.org/ontology#turbulenceWake",
+    "baseIri" : "http://airdata.org/ontology",
+    "range" : "310",
+    "label" : {
+      "IRI-based" : "turbulenceWake"
+    },
+    "domain" : "37",
+    "attributes" : [ "datatype" ],
+    "id" : "352"
+  }, {
+    "iri" : "http://airdata.org/ontology#cloudAmount",
+    "baseIri" : "http://airdata.org/ontology",
+    "range" : "199",
+    "label" : {
+      "IRI-based" : "cloudAmount"
+    },
+    "domain" : "4",
+    "attributes" : [ "datatype" ],
+    "id" : "353"
+  }, {
+    "iri" : "http://airdata.org/ontology#actual",
+    "baseIri" : "http://airdata.org/ontology",
+    "range" : "7",
+    "label" : {
+      "IRI-based" : "actual"
+    },
+    "domain" : "0",
+    "attributes" : [ "datatype" ],
+    "id" : "354"
+  }, {
+    "iri" : "http://airdata.org/ontology#weather",
+    "baseIri" : "http://airdata.org/ontology",
+    "range" : "35",
+    "label" : {
+      "IRI-based" : "weather"
+    },
+    "domain" : "0",
+    "attributes" : [ "datatype" ],
+    "id" : "355"
+  }, {
+    "range" : "113",
+    "domain" : "13",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "356"
+  }, {
+    "range" : "113",
+    "domain" : "230",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "357"
+  }, {
+    "range" : "100",
+    "domain" : "183",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "358"
+  }, {
+    "iri" : "http://airdata.org/ontology#ArrivalTemporalRelation",
+    "baseIri" : "http://airdata.org/ontology",
+    "range" : "0",
+    "label" : {
+      "IRI-based" : "ArrivalTemporalRelation"
+    },
+    "superproperty" : [ "17" ],
+    "domain" : "0",
+    "subproperty" : [ "261", "245", "11" ],
+    "attributes" : [ "object" ],
+    "id" : "14"
+  }, {
+    "iri" : "http://airdata.org/ontology#rawMetar",
+    "baseIri" : "http://airdata.org/ontology",
+    "range" : "291",
+    "label" : {
+      "IRI-based" : "rawMetar"
+    },
+    "domain" : "4",
+    "attributes" : [ "datatype" ],
+    "id" : "359"
+  }, {
+    "iri" : "http://airdata.org/ontology#Trajectory-DataSource",
+    "baseIri" : "http://airdata.org/ontology",
+    "range" : "212",
+    "label" : {
+      "IRI-based" : "Trajectory-DataSource"
+    },
+    "superproperty" : [ "21" ],
+    "domain" : "141",
+    "attributes" : [ "object" ],
+    "id" : "331"
+  }, {
+    "iri" : "http://airdata.org/ontology#hold",
+    "baseIri" : "http://airdata.org/ontology",
+    "range" : "266",
+    "label" : {
+      "IRI-based" : "hold"
+    },
+    "domain" : "91",
+    "attributes" : [ "datatype" ],
+    "id" : "360"
+  }, {
+    "range" : "83",
+    "domain" : "235",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "361"
+  }, {
+    "range" : "83",
+    "domain" : "316",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "362"
+  }, {
+    "range" : "30",
+    "domain" : "214",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "363"
+  }, {
+    "range" : "30",
+    "domain" : "43",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "364"
+  }, {
+    "range" : "31",
+    "domain" : "12",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "365"
+  }, {
+    "range" : "31",
+    "domain" : "51",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "366"
+  }, {
+    "iri" : "http://airdata.org/ontology#paidCargoWeight",
+    "baseIri" : "http://airdata.org/ontology",
+    "range" : "240",
+    "label" : {
+      "IRI-based" : "paidCargoWeight"
+    },
+    "domain" : "37",
+    "attributes" : [ "datatype" ],
+    "id" : "367"
+  }, {
+    "iri" : "http://airdata.org/ontology#DepartureTemporalRelation",
+    "baseIri" : "http://airdata.org/ontology",
+    "range" : "0",
+    "label" : {
+      "IRI-based" : "DepartureTemporalRelation"
+    },
+    "superproperty" : [ "17" ],
+    "domain" : "0",
+    "subproperty" : [ "88", "50", "338", "326", "201", "368", "369", "179", "155" ],
+    "attributes" : [ "object" ],
+    "id" : "53"
+  }, {
+    "range" : "113",
+    "domain" : "162",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "370"
+  }, {
+    "iri" : "http://airdata.org/ontology#codeshare",
+    "baseIri" : "http://airdata.org/ontology",
+    "range" : "192",
+    "label" : {
+      "IRI-based" : "codeshare"
+    },
+    "domain" : "37",
+    "attributes" : [ "datatype" ],
+    "id" : "371"
+  }, {
+    "iri" : "http://airdata.org/ontology#taxiwayAlignment",
+    "baseIri" : "http://airdata.org/ontology",
+    "range" : "273",
+    "label" : {
+      "IRI-based" : "taxiwayAlignment"
+    },
+    "domain" : "78",
+    "attributes" : [ "datatype" ],
+    "id" : "372"
+  }, {
+    "iri" : "http://airdata.org/ontology#weatherPhenomena",
+    "baseIri" : "http://airdata.org/ontology",
+    "range" : "10",
+    "label" : {
+      "IRI-based" : "weatherPhenomena"
+    },
+    "domain" : "0",
+    "attributes" : [ "datatype" ],
+    "id" : "373"
+  }, {
+    "iri" : "http://airdata.org/ontology#temperature",
+    "baseIri" : "http://airdata.org/ontology",
+    "range" : "271",
+    "label" : {
+      "IRI-based" : "temperature"
+    },
+    "domain" : "4",
+    "attributes" : [ "datatype" ],
+    "id" : "374"
+  }, {
+    "iri" : "http://airdata.org/ontology#DepartureOperation-EstimatedOffBlockTime",
+    "baseIri" : "http://airdata.org/ontology",
+    "range" : "82",
+    "label" : {
+      "IRI-based" : "DepartureOperation-EstimatedOffBlockTime"
+    },
+    "superproperty" : [ "53" ],
+    "domain" : "51",
+    "attributes" : [ "object" ],
+    "id" : "368"
+  }, {
+    "iri" : "http://airdata.org/ontology#dep",
+    "baseIri" : "http://airdata.org/ontology",
+    "range" : "238",
+    "label" : {
+      "IRI-based" : "dep"
+    },
+    "domain" : "89",
+    "attributes" : [ "datatype" ],
+    "id" : "375"
+  }, {
+    "iri" : "http://airdata.org/ontology#stageName",
+    "baseIri" : "http://airdata.org/ontology",
+    "range" : "276",
+    "label" : {
+      "IRI-based" : "stageName"
+    },
+    "domain" : "37",
+    "attributes" : [ "datatype" ],
+    "id" : "376"
+  }, {
+    "iri" : "http://airdata.org/ontology#Flight-Aircraft",
+    "baseIri" : "http://airdata.org/ontology",
+    "range" : "48",
+    "label" : {
+      "IRI-based" : "Flight-Aircraft"
+    },
+    "superproperty" : [ "19" ],
+    "domain" : "37",
+    "attributes" : [ "object" ],
+    "id" : "248"
+  }, {
+    "iri" : "http://airdata.org/ontology#eventDescription",
+    "baseIri" : "http://airdata.org/ontology",
+    "range" : "228",
+    "label" : {
+      "IRI-based" : "eventDescription"
+    },
+    "domain" : "114",
+    "attributes" : [ "datatype" ],
+    "id" : "377"
+  }, {
+    "iri" : "http://airdata.org/ontology#insertedInDB",
+    "baseIri" : "http://airdata.org/ontology",
+    "range" : "262",
+    "label" : {
+      "IRI-based" : "insertedInDB"
+    },
+    "domain" : "30",
+    "attributes" : [ "datatype" ],
+    "id" : "378"
+  }, {
+    "iri" : "http://airdata.org/ontology#TemporalEvent-DataSource",
+    "baseIri" : "http://airdata.org/ontology",
+    "range" : "212",
+    "label" : {
+      "IRI-based" : "TemporalEvent-DataSource"
+    },
+    "superproperty" : [ "21" ],
+    "domain" : "114",
+    "attributes" : [ "object" ],
+    "id" : "332"
+  }, {
+    "iri" : "http://airdata.org/ontology#equipmentCode",
+    "baseIri" : "http://airdata.org/ontology",
+    "range" : "236",
+    "label" : {
+      "IRI-based" : "equipmentCode"
+    },
+    "domain" : "48",
+    "attributes" : [ "datatype", "functional" ],
+    "id" : "379"
+  }, {
+    "iri" : "http://airdata.org/ontology#DepartureOperation-HoldTime",
+    "baseIri" : "http://airdata.org/ontology",
+    "range" : "91",
+    "label" : {
+      "IRI-based" : "DepartureOperation-HoldTime"
+    },
+    "superproperty" : [ "53" ],
+    "domain" : "51",
+    "attributes" : [ "object" ],
+    "id" : "369"
+  }, {
+    "iri" : "http://airdata.org/ontology#squawk",
+    "baseIri" : "http://airdata.org/ontology",
+    "range" : "280",
+    "label" : {
+      "IRI-based" : "squawk"
+    },
+    "domain" : "48",
+    "attributes" : [ "datatype" ],
+    "id" : "380"
+  }, {
+    "iri" : "http://airdata.org/ontology#Flight-Airspace",
+    "baseIri" : "http://airdata.org/ontology",
+    "range" : "30",
+    "label" : {
+      "IRI-based" : "Flight-Airspace"
+    },
+    "superproperty" : [ "22" ],
+    "domain" : "37",
+    "attributes" : [ "object", "inverse functional" ],
+    "id" : "330"
+  }, {
+    "iri" : "http://airdata.org/ontology#timestamp",
+    "baseIri" : "http://airdata.org/ontology",
+    "range" : "308",
+    "label" : {
+      "IRI-based" : "timestamp"
+    },
+    "domain" : "114",
+    "attributes" : [ "datatype" ],
+    "id" : "381"
+  }, {
+    "iri" : "http://airdata.org/ontology#temporal",
+    "baseIri" : "http://airdata.org/ontology",
+    "range" : "182",
+    "label" : {
+      "IRI-based" : "temporal"
+    },
+    "domain" : "0",
+    "attributes" : [ "datatype" ],
+    "id" : "382"
+  } ]
+}

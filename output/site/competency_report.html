@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Relatório de Perguntas de Competência - AirData</title>
+  <style>
+    body {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background: #f8fafc;
+      color: #1f2933;
+      margin: 0;
+      padding: 2rem;
+    }
+    .container {
+      max-width: 980px;
+      margin: 0 auto;
+      background: #ffffff;
+      border: 1px solid #e6e9ef;
+      border-radius: 10px;
+      padding: 2rem;
+      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.06);
+    }
+    h1 {
+      color: #003C7D;
+      margin-top: 0;
+    }
+    h3 {
+      color: #003C7D;
+      margin-top: 2rem;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1rem;
+    }
+    th, td {
+      text-align: left;
+      padding: 0.75rem;
+      border-bottom: 1px solid #e6e9ef;
+    }
+    th {
+      width: 45%;
+      color: #475569;
+      font-weight: 600;
+    }
+    tr.success {
+      background: #f0f9f0;
+    }
+    tr.failed {
+      background: #fff0f0;
+    }
+    .badge {
+      display: inline-block;
+      padding: 0.2rem 0.5rem;
+      font-size: 0.85em;
+      font-weight: 600;
+      background: #e8e8e8;
+      color: #000000;
+    }
+    .badge.importance-crítica {
+      background: #cc0000;
+      color: white;
+    }
+    .badge.importance-alta {
+      background: #ff8800;
+      color: white;
+    }
+    .badge.importance-média {
+      background: #0066cc;
+      color: white;
+    }
+    .badge.importance-baixa {
+      background: #666666;
+      color: white;
+    }
+    .error-msg {
+      color: #cc0000;
+      font-size: 0.9em;
+      padding: 0.5rem;
+      background: #ffe8e8;
+      border: 1px solid #cc0000;
+      margin-top: 0.25rem;
+    }
+    .meta {
+      color: #64748b;
+      font-size: 0.95rem;
+    }
+    .summary-card {
+      background: #f1f5f9;
+      padding: 1rem;
+      border-radius: 8px;
+      margin-bottom: 1.5rem;
+    }
+  </style>
+
+<!-- AirData Header Style Start -->
+<style>
+  /* Base Styles */
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+    margin: 0;
+    color: #24292e;
+  }
+
+  /* Header */
+  .airdata-header {
+    background-color: #ffffff;
+    border-bottom: 1px solid #d1d5da;
+    padding: 16px 32px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 40px;
+  }
+
+  /* Logo */
+  .airdata-header .logo-container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    color: #003C7D;
+  }
+
+  .airdata-header .logo-img {
+    height: 40px;
+  }
+
+  .airdata-header .logo-text {
+    font-size: 1.25rem;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+
+  /* Navigation */
+  .airdata-header .nav-container {
+    display: flex;
+    gap: 16px;
+  }
+
+  .airdata-header .nav-item {
+    position: relative;
+  }
+
+  .airdata-header .nav-link {
+    display: block;
+    padding: 8px 12px;
+    color: #586069;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1rem;
+    border-radius: 6px;
+    transition: background-color 0.2s ease, color 0.2s ease;
+  }
+
+  .airdata-header .nav-link:hover,
+  .airdata-header .dropdown:hover .nav-link {
+    background-color: #f6f8fa;
+    color: #0366d6;
+  }
+
+  /* Dropdown */
+  .airdata-header .dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #ffffff;
+    min-width: 220px;
+    border: 1px solid #d1d5da;
+    border-radius: 6px;
+    box-shadow: 0 8px 24px rgba(149, 157, 165, 0.2);
+    z-index: 1000;
+    padding: 8px 0;
+  }
+
+  .airdata-header .dropdown:hover .dropdown-content {
+    display: block;
+  }
+
+  .airdata-header .dropdown-item {
+    display: block;
+    padding: 8px 16px;
+    color: #24292e;
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 0.9rem;
+    text-align: left;
+  }
+
+  .airdata-header .dropdown-item:hover {
+    background-color: #f6f8fa;
+  }
+</style>
+<!-- AirData Header Style End -->
+</head>
+<body>
+<!-- AirData Header Start -->
+<header class="airdata-header">
+  <a href="index.html" class="logo-container">
+    <img src="airdata-logo.png" alt="AirData Logo" class="logo-img">
+    <span class="logo-text">AirData Ontology</span>
+  </a>
+
+  <nav class="nav-container">
+    <div class="nav-item">
+      <a href="index.html" class="nav-link">In&iacute;cio</a>
+    </div>
+
+    <div class="nav-item dropdown">
+      <a href="#" class="nav-link">Ontologia &#9662;</a>
+      <div class="dropdown-content">
+        <a href="docs/index-pt.html" class="dropdown-item">Documenta&ccedil;&atilde;o</a>
+        <a href="docs/webvowl/index.html" class="dropdown-item">Grafo</a>
+        <a href="statistics.html" class="dropdown-item">Estat&iacute;sticas</a>
+      </div>
+    </div>
+
+    <div class="nav-item dropdown">
+      <a href="#" class="nav-link">Evolu&ccedil;&atilde;o &#9662;</a>
+      <div class="dropdown-content">
+        <a href="changelog.html" class="dropdown-item">Hist&oacute;rico de Mudan&ccedil;as</a>
+        <a href="versions.html" class="dropdown-item">Vers&otilde;es OWL</a>
+      </div>
+    </div>
+
+    <div class="nav-item dropdown">
+      <a href="#" class="nav-link">Relat&oacute;rios &#9662;</a>
+      <div class="dropdown-content">
+        <a href="quality_report.html" class="dropdown-item">Valida&ccedil;&atilde;o Sint&aacute;tica</a>
+        <a href="quality_report_extended.html" class="dropdown-item">An&aacute;lise Sem&acirc;ntica</a>
+        <a href="logic_report.html" class="dropdown-item">Axiomas L&oacute;gicos OWL</a>
+        <a href="llm_readability.html" class="dropdown-item">Usabilidade para LLMs</a>
+        <a href="sparql_validation.html" class="dropdown-item">Valida&ccedil;&atilde;o SPARQL</a>
+        <a href="competency_report.html" class="dropdown-item">Perguntas de Compet&ecirc;ncia</a>
+        <a href="quality-guide.html" class="dropdown-item">Guia de Interpreta&ccedil;&atilde;o</a>
+      </div>
+    </div>
+
+    <div class="nav-item dropdown">
+      <a href="#" class="nav-link">Evolu&ccedil;&atilde;o &#9662;</a>
+      <div class="dropdown-content">
+        <a href="changelog.html" class="dropdown-item">Hist&oacute;rico de Mudan&ccedil;as</a>
+        <a href="versions.html" class="dropdown-item">Vers&otilde;es OWL</a>
+        <a href="delta_report.html" class="dropdown-item">Relat&oacute;rio Delta de Qualidade</a>
+      </div>
+    </div>
+  </nav>
+</header>
+<!-- AirData Header End -->
+  <div class="container">
+    <h1>Relatório de Perguntas de Competência</h1>
+    <p class="meta">Gerado automaticamente em 2026-01-27T19:21:48.748548</p>
+    <p class="meta">Arquivo OWL: /home/guterres/Dropbox/Agents/airdata-owl/OntoOwl/airdata_owl_v0.0.2.owl</p>
+
+    <div class="summary-card">
+      <h3>Resumo Geral</h3>
+      <table>
+        <tr>
+          <th width="70%">Métrica</th>
+          <th width="30%" style="text-align: center;">Valor</th>
+        </tr>
+        <tr>
+          <td>Score Total de Competência</td>
+          <td style="text-align: center;"><strong>8.62/10</strong></td>
+        </tr>
+        <tr>
+          <td>Classificação</td>
+          <td style="text-align: center;">Bom - A maioria das perguntas importantes é respondida</td>
+        </tr>
+        <tr>
+          <td>Total de Perguntas Testadas</td>
+          <td style="text-align: center;">10</td>
+        </tr>
+        <tr>
+          <td>Perguntas Bem-sucedidas</td>
+          <td style="text-align: center;">10</td>
+        </tr>
+        <tr>
+          <td>Perguntas Falharam</td>
+          <td style="text-align: center;">0</td>
+        </tr>
+        <tr>
+          <td>Taxa de Sucesso</td>
+          <td style="text-align: center;"><strong>100.0%</strong></td>
+        </tr>
+      </table>
+    </div>
+
+    <h3>Perguntas Críticas</h3>
+    <p>Perguntas críticas são essenciais para a funcionalidade da ontologia.</p>
+    <p><strong>1/1</strong> perguntas críticas bem-sucedidas</p>
+
+    <h3>Resultados Detalhados por Categoria</h3>
+    
+            <h3>Hierarquia de Classes</h3>
+            <p>Taxa de sucesso: 100.0% (1/1)</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th width="5%">Status</th>
+                        <th width="8%">ID</th>
+                        <th width="35%">Pergunta</th>
+                        <th width="12%">Resultados</th>
+                        <th width="15%">Tempo</th>
+                        <th width="15%">Importância</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                <tr class="success">
+                    <td>✓</td>
+                    <td>CQ001</td>
+                    <td>Quais são todos os tipos de aeronaves na ontologia?</td>
+                    <td>1</td>
+                    <td>65.64 ms</td>
+                    <td><span class="badge importance-crítica">CRÍTICA</span></td>
+                </tr>
+                
+                </tbody>
+            </table>
+            
+            <h3>Propriedades e Relações</h3>
+            <p>Taxa de sucesso: 100.0% (1/1)</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th width="5%">Status</th>
+                        <th width="8%">ID</th>
+                        <th width="35%">Pergunta</th>
+                        <th width="12%">Resultados</th>
+                        <th width="15%">Tempo</th>
+                        <th width="15%">Importância</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                <tr class="success">
+                    <td>✓</td>
+                    <td>CQ002</td>
+                    <td>Quais propriedades conectam aeródromos a operações?</td>
+                    <td>1</td>
+                    <td>2.0 ms</td>
+                    <td><span class="badge importance-alta">ALTA</span></td>
+                </tr>
+                
+                </tbody>
+            </table>
+            
+            <h3>Anotações Multilíngues</h3>
+            <p>Taxa de sucesso: 100.0% (1/1)</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th width="5%">Status</th>
+                        <th width="8%">ID</th>
+                        <th width="35%">Pergunta</th>
+                        <th width="12%">Resultados</th>
+                        <th width="15%">Tempo</th>
+                        <th width="15%">Importância</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                <tr class="success">
+                    <td>✓</td>
+                    <td>CQ003</td>
+                    <td>Todas as classes têm labels em português?</td>
+                    <td>51</td>
+                    <td>7.38 ms</td>
+                    <td><span class="badge importance-alta">ALTA</span></td>
+                </tr>
+                
+                </tbody>
+            </table>
+            
+            <h3>Domínio e Range</h3>
+            <p>Taxa de sucesso: 100.0% (1/1)</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th width="5%">Status</th>
+                        <th width="8%">ID</th>
+                        <th width="35%">Pergunta</th>
+                        <th width="12%">Resultados</th>
+                        <th width="15%">Tempo</th>
+                        <th width="15%">Importância</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                <tr class="success">
+                    <td>✓</td>
+                    <td>CQ004</td>
+                    <td>Quais propriedades de dados (DataProperty) estão definidas?</td>
+                    <td>130</td>
+                    <td>2.98 ms</td>
+                    <td><span class="badge importance-média">MÉDIA</span></td>
+                </tr>
+                
+                </tbody>
+            </table>
+            
+            <h3>Restrições Lógicas</h3>
+            <p>Taxa de sucesso: 100.0% (1/1)</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th width="5%">Status</th>
+                        <th width="8%">ID</th>
+                        <th width="35%">Pergunta</th>
+                        <th width="12%">Resultados</th>
+                        <th width="15%">Tempo</th>
+                        <th width="15%">Importância</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                <tr class="success">
+                    <td>✓</td>
+                    <td>CQ005</td>
+                    <td>Quais classes têm restrições de cardinalidade?</td>
+                    <td>0</td>
+                    <td>4.26 ms</td>
+                    <td><span class="badge importance-média">MÉDIA</span></td>
+                </tr>
+                
+                </tbody>
+            </table>
+            
+            <h3>Hierarquia de Propriedades</h3>
+            <p>Taxa de sucesso: 100.0% (1/1)</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th width="5%">Status</th>
+                        <th width="8%">ID</th>
+                        <th width="35%">Pergunta</th>
+                        <th width="12%">Resultados</th>
+                        <th width="15%">Tempo</th>
+                        <th width="15%">Importância</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                <tr class="success">
+                    <td>✓</td>
+                    <td>CQ006</td>
+                    <td>Existem sub-propriedades de 'FlightOperation'?</td>
+                    <td>5</td>
+                    <td>2.28 ms</td>
+                    <td><span class="badge importance-média">MÉDIA</span></td>
+                </tr>
+                
+                </tbody>
+            </table>
+            
+            <h3>Propriedades Inversas</h3>
+            <p>Taxa de sucesso: 100.0% (1/1)</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th width="5%">Status</th>
+                        <th width="8%">ID</th>
+                        <th width="35%">Pergunta</th>
+                        <th width="12%">Resultados</th>
+                        <th width="15%">Tempo</th>
+                        <th width="15%">Importância</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                <tr class="success">
+                    <td>✓</td>
+                    <td>CQ007</td>
+                    <td>Quais pares de propriedades são inversas uma da outra?</td>
+                    <td>0</td>
+                    <td>1.91 ms</td>
+                    <td><span class="badge importance-alta">ALTA</span></td>
+                </tr>
+                
+                </tbody>
+            </table>
+            
+            <h3>Classes Disjuntas</h3>
+            <p>Taxa de sucesso: 100.0% (1/1)</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th width="5%">Status</th>
+                        <th width="8%">ID</th>
+                        <th width="35%">Pergunta</th>
+                        <th width="12%">Resultados</th>
+                        <th width="15%">Tempo</th>
+                        <th width="15%">Importância</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                <tr class="success">
+                    <td>✓</td>
+                    <td>CQ008</td>
+                    <td>Quais classes são declaradas como mutuamente exclusivas?</td>
+                    <td>0</td>
+                    <td>1.37 ms</td>
+                    <td><span class="badge importance-média">MÉDIA</span></td>
+                </tr>
+                
+                </tbody>
+            </table>
+            
+            <h3>Alinhamentos Externos</h3>
+            <p>Taxa de sucesso: 100.0% (1/1)</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th width="5%">Status</th>
+                        <th width="8%">ID</th>
+                        <th width="35%">Pergunta</th>
+                        <th width="12%">Resultados</th>
+                        <th width="15%">Tempo</th>
+                        <th width="15%">Importância</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                <tr class="success">
+                    <td>✓</td>
+                    <td>CQ009</td>
+                    <td>A ontologia tem alinhamentos com bases externas (DBpedia, etc.)?</td>
+                    <td>0</td>
+                    <td>3.09 ms</td>
+                    <td><span class="badge importance-baixa">BAIXA</span></td>
+                </tr>
+                
+                </tbody>
+            </table>
+            
+            <h3>Propriedades Funcionais</h3>
+            <p>Taxa de sucesso: 100.0% (1/1)</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th width="5%">Status</th>
+                        <th width="8%">ID</th>
+                        <th width="35%">Pergunta</th>
+                        <th width="12%">Resultados</th>
+                        <th width="15%">Tempo</th>
+                        <th width="15%">Importância</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                <tr class="success">
+                    <td>✓</td>
+                    <td>CQ010</td>
+                    <td>Quais propriedades são funcionais (máximo 1 valor por sujeito)?</td>
+                    <td>1</td>
+                    <td>2.4 ms</td>
+                    <td><span class="badge importance-baixa">BAIXA</span></td>
+                </tr>
+                
+                </tbody>
+            </table>
+            
+
+    <div class="summary-card">
+      <h3>Resumo Executivo</h3>
+      <p>
+        ✓ A ontologia demonstra alta capacidade de responder perguntas de competência!
+      </p>
+    </div>
+  </div>
+</body>
+</html>

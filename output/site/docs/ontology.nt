@@ -1,0 +1,1257 @@
+<http://airdata.org/ontology#> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
+<http://airdata.org/ontology#> <http://www.w3.org/2002/07/owl#versionIRI> <http://airdata.org/ontology/0.0.2> .
+<http://airdata.org/ontology#> <http://www.w3.org/2000/01/rdf-schema#label> "AirData Ontology - Air Operations"@en .
+<http://airdata.org/ontology#> <http://www.w3.org/2000/01/rdf-schema#label> "Ontologia AirData - Operacoes Aereas"@pt .
+<http://airdata.org/ontology#> <http://www.w3.org/2002/07/owl#versionInfo> "0.0.2" .
+# 
+# 
+# #################################################################
+# #
+# #    Annotation properties
+# #
+# #################################################################
+# 
+# 
+# http://airdata.org/ontology#hasDataSource
+<http://airdata.org/ontology#hasDataSource> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+<http://airdata.org/ontology#hasDataSource> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+# 
+# http://www.w3.org/2002/07/owl#cardinality
+<http://www.w3.org/2002/07/owl#cardinality> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Datatypes
+# #
+# #################################################################
+# 
+# 
+# http://www.w3.org/2001/XMLSchema#date
+<http://www.w3.org/2001/XMLSchema#date> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Datatype> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Object Properties
+# #
+# #################################################################
+# 
+# 
+# http://airdata.org/ontology#Aerodrome-Operation
+<http://airdata.org/ontology#Aerodrome-Operation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://airdata.org/ontology#Aerodrome-Operation> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://airdata.org/ontology#FlightOperation> .
+<http://airdata.org/ontology#Aerodrome-Operation> <http://www.w3.org/2000/01/rdf-schema#domain> <http://airdata.org/ontology#Aerodrome> .
+<http://airdata.org/ontology#Aerodrome-Operation> <http://www.w3.org/2000/01/rdf-schema#range> <http://airdata.org/ontology#Operation> .
+# 
+# http://airdata.org/ontology#Airspace-DataSource
+<http://airdata.org/ontology#Airspace-DataSource> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://airdata.org/ontology#Airspace-DataSource> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://airdata.org/ontology#SourceRelation> .
+<http://airdata.org/ontology#Airspace-DataSource> <http://www.w3.org/2000/01/rdf-schema#domain> <http://airdata.org/ontology#Airspace> .
+<http://airdata.org/ontology#Airspace-DataSource> <http://www.w3.org/2000/01/rdf-schema#range> <http://airdata.org/ontology#DataSource> .
+# 
+# http://airdata.org/ontology#Airspace-Operation
+<http://airdata.org/ontology#Airspace-Operation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://airdata.org/ontology#Airspace-Operation> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://airdata.org/ontology#FlightOperation> .
+<http://airdata.org/ontology#Airspace-Operation> <http://www.w3.org/2000/01/rdf-schema#domain> <http://airdata.org/ontology#Airspace> .
+<http://airdata.org/ontology#Airspace-Operation> <http://www.w3.org/2000/01/rdf-schema#range> <http://airdata.org/ontology#Operation> .
+# 
+# http://airdata.org/ontology#ArrivalOperation-ActualGateArrivalTime
+<http://airdata.org/ontology#ArrivalOperation-ActualGateArrivalTime> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://airdata.org/ontology#ArrivalOperation-ActualGateArrivalTime> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://airdata.org/ontology#ArrivalTemporalRelation> .
+<http://airdata.org/ontology#ArrivalOperation-ActualGateArrivalTime> <http://www.w3.org/2000/01/rdf-schema#domain> <http://airdata.org/ontology#ArrivalOperation> .
+<http://airdata.org/ontology#ArrivalOperation-ActualGateArrivalTime> <http://www.w3.org/2000/01/rdf-schema#range> <http://airdata.org/ontology#ActualGateArrivalTime> .
+# 
+# http://airdata.org/ontology#ArrivalOperation-ActualLandingTime
+<http://airdata.org/ontology#ArrivalOperation-ActualLandingTime> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://airdata.org/ontology#ArrivalOperation-ActualLandingTime> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://airdata.org/ontology#ArrivalTemporalRelation> .
+<http://airdata.org/ontology#ArrivalOperation-ActualLandingTime> <http://www.w3.org/2000/01/rdf-schema#domain> <http://airdata.org/ontology#ArrivalOperation> .
+<http://airdata.org/ontology#ArrivalOperation-ActualLandingTime> <http://www.w3.org/2000/01/rdf-schema#range> <http://airdata.org/ontology#ActualLandingTime> .
+# 
+# http://airdata.org/ontology#ArrivalOperation-Aerodrome
+<http://airdata.org/ontology#ArrivalOperation-Aerodrome> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://airdata.org/ontology#ArrivalOperation-Aerodrome> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://airdata.org/ontology#SpatialRelation> .
+<http://airdata.org/ontology#ArrivalOperation-Aerodrome> <http://www.w3.org/2000/01/rdf-schema#domain> <http://airdata.org/ontology#ArrivalOperation> .
+<http://airdata.org/ontology#ArrivalOperation-Aerodrome> <http://www.w3.org/2000/01/rdf-schema#range> <http://airdata.org/ontology#Aerodrome> .
+# 
+# http://airdata.org/ontology#ArrivalOperation-AerodromeCondition
+<http://airdata.org/ontology#ArrivalOperation-AerodromeCondition> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://airdata.org/ontology#ArrivalOperation-AerodromeCondition> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://airdata.org/ontology#WeatherRelation> .
+<http://airdata.org/ontology#ArrivalOperation-AerodromeCondition> <http://www.w3.org/2000/01/rdf-schema#domain> <http://airdata.org/ontology#ArrivalOperation> .
+<http://airdata.org/ontology#ArrivalOperation-AerodromeCondition> <http://www.w3.org/2000/01/rdf-schema#range> <http://airdata.org/ontology#AerodromeCondition> .
+# 
+# http://airdata.org/ontology#ArrivalOperation-EstimatedArrivalTime
+<http://airdata.org/ontology#ArrivalOperation-EstimatedArrivalTime> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://airdata.org/ontology#ArrivalOperation-EstimatedArrivalTime> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://airdata.org/ontology#ArrivalTemporalRelation> .
+<http://airdata.org/ontology#ArrivalOperation-EstimatedArrivalTime> <http://www.w3.org/2000/01/rdf-schema#domain> <http://airdata.org/ontology#ArrivalOperation> .
+<http://airdata.org/ontology#ArrivalOperation-EstimatedArrivalTime> <http://www.w3.org/2000/01/rdf-schema#range> <http://airdata.org/ontology#EstimatedArrivalTime> .
+# 
+# http://airdata.org/ontology#ArrivalTemporalRelation
+<http://airdata.org/ontology#ArrivalTemporalRelation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://airdata.org/ontology#ArrivalTemporalRelation> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://airdata.org/ontology#TemporalRelation> .
+# 
+# http://airdata.org/ontology#DepartureOperation-ActualDepartureTime
+<http://airdata.org/ontology#DepartureOperation-ActualDepartureTime> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://airdata.org/ontology#DepartureOperation-ActualDepartureTime> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://airdata.org/ontology#DepartureTemporalRelation> .
+<http://airdata.org/ontology#DepartureOperation-ActualDepartureTime> <http://www.w3.org/2000/01/rdf-schema#domain> <http://airdata.org/ontology#DepartureOperation> .
+<http://airdata.org/ontology#DepartureOperation-ActualDepartureTime> <http://www.w3.org/2000/01/rdf-schema#range> <http://airdata.org/ontology#ActualDepartureTime> .
+# 
+# http://airdata.org/ontology#DepartureOperation-ActualPushbackTime
+<http://airdata.org/ontology#DepartureOperation-ActualPushbackTime> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://airdata.org/ontology#DepartureOperation-ActualPushbackTime> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://airdata.org/ontology#DepartureTemporalRelation> .
+<http://airdata.org/ontology#DepartureOperation-ActualPushbackTime> <http://www.w3.org/2000/01/rdf-schema#domain> <http://airdata.org/ontology#DepartureOperation> .
+<http://airdata.org/ontology#DepartureOperation-ActualPushbackTime> <http://www.w3.org/2000/01/rdf-schema#range> <http://airdata.org/ontology#ActualPushbackTime> .
+# 
+# http://airdata.org/ontology#DepartureOperation-ActualTakeoffTime
+<http://airdata.org/ontology#DepartureOperation-ActualTakeoffTime> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://airdata.org/ontology#DepartureOperation-ActualTakeoffTime> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://airdata.org/ontology#DepartureTemporalRelation> .
+<http://airdata.org/ontology#DepartureOperation-ActualTakeoffTime> <http://www.w3.org/2000/01/rdf-schema#domain> <http://airdata.org/ontology#DepartureOperation> .
+<http://airdata.org/ontology#DepartureOperation-ActualTakeoffTime> <http://www.w3.org/2000/01/rdf-schema#range> <http://airdata.org/ontology#ActualTakeoffTime> .
+# 
+# http://airdata.org/ontology#DepartureOperation-ActualTaxiStartTime
+<http://airdata.org/ontology#DepartureOperation-ActualTaxiStartTime> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://airdata.org/ontology#DepartureOperation-ActualTaxiStartTime> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://airdata.org/ontology#DepartureTemporalRelation> .
+<http://airdata.org/ontology#DepartureOperation-ActualTaxiStartTime> <http://www.w3.org/2000/01/rdf-schema#domain> <http://airdata.org/ontology#DepartureOperation> .
+<http://airdata.org/ontology#DepartureOperation-ActualTaxiStartTime> <http://www.w3.org/2000/01/rdf-schema#range> <http://airdata.org/ontology#ActualTaxiStartTime> .
+# 
+# http://airdata.org/ontology#DepartureOperation-Aerodrome
+<http://airdata.org/ontology#DepartureOperation-Aerodrome> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://airdata.org/ontology#DepartureOperation-Aerodrome> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://airdata.org/ontology#SpatialRelation> .
+<http://airdata.org/ontology#DepartureOperation-Aerodrome> <http://www.w3.org/2000/01/rdf-schema#domain> <http://airdata.org/ontology#DepartureOperation> .
+<http://airdata.org/ontology#DepartureOperation-Aerodrome> <http://www.w3.org/2000/01/rdf-schema#range> <http://airdata.org/ontology#Aerodrome> .
+# 
+# http://airdata.org/ontology#DepartureOperation-AerodromeCondition
+<http://airdata.org/ontology#DepartureOperation-AerodromeCondition> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://airdata.org/ontology#DepartureOperation-AerodromeCondition> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://airdata.org/ontology#WeatherRelation> .
+<http://airdata.org/ontology#DepartureOperation-AerodromeCondition> <http://www.w3.org/2000/01/rdf-schema#domain> <http://airdata.org/ontology#DepartureOperation> .
+<http://airdata.org/ontology#DepartureOperation-AerodromeCondition> <http://www.w3.org/2000/01/rdf-schema#range> <http://airdata.org/ontology#AerodromeCondition> .
+# 
+# http://airdata.org/ontology#DepartureOperation-EstimatedOffBlockTime
+<http://airdata.org/ontology#DepartureOperation-EstimatedOffBlockTime> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://airdata.org/ontology#DepartureOperation-EstimatedOffBlockTime> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://airdata.org/ontology#DepartureTemporalRelation> .
+<http://airdata.org/ontology#DepartureOperation-EstimatedOffBlockTime> <http://www.w3.org/2000/01/rdf-schema#domain> <http://airdata.org/ontology#DepartureOperation> .
+<http://airdata.org/ontology#DepartureOperation-EstimatedOffBlockTime> <http://www.w3.org/2000/01/rdf-schema#range> <http://airdata.org/ontology#EstimatedOffBlockTime> .
+# 
+# http://airdata.org/ontology#DepartureOperation-EstimatedRunwayTime
+<http://airdata.org/ontology#DepartureOperation-EstimatedRunwayTime> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://airdata.org/ontology#DepartureOperation-EstimatedRunwayTime> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://airdata.org/ontology#DepartureTemporalRelation> .
+<http://airdata.org/ontology#DepartureOperation-EstimatedRunwayTime> <http://www.w3.org/2000/01/rdf-schema#domain> <http://airdata.org/ontology#DepartureOperation> .
+<http://airdata.org/ontology#DepartureOperation-EstimatedRunwayTime> <http://www.w3.org/2000/01/rdf-schema#range> <http://airdata.org/ontology#EstimatedRunwayTime> .
+# 
+# http://airdata.org/ontology#DepartureOperation-EstimatedTaxiStartTime
+<http://airdata.org/ontology#DepartureOperation-EstimatedTaxiStartTime> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://airdata.org/ontology#DepartureOperation-EstimatedTaxiStartTime> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://airdata.org/ontology#DepartureTemporalRelation> .
+<http://airdata.org/ontology#DepartureOperation-EstimatedTaxiStartTime> <http://www.w3.org/2000/01/rdf-schema#domain> <http://airdata.org/ontology#DepartureOperation> .
+<http://airdata.org/ontology#DepartureOperation-EstimatedTaxiStartTime> <http://www.w3.org/2000/01/rdf-schema#range> <http://airdata.org/ontology#EstimatedTaxiStartTime> .
+# 
+# http://airdata.org/ontology#DepartureOperation-ExpectedPushbackTime
+<http://airdata.org/ontology#DepartureOperation-ExpectedPushbackTime> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://airdata.org/ontology#DepartureOperation-ExpectedPushbackTime> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://airdata.org/ontology#DepartureTemporalRelation> .
+<http://airdata.org/ontology#DepartureOperation-ExpectedPushbackTime> <http://www.w3.org/2000/01/rdf-schema#domain> <http://airdata.org/ontology#DepartureOperation> .
+<http://airdata.org/ontology#DepartureOperation-ExpectedPushbackTime> <http://www.w3.org/2000/01/rdf-schema#range> <http://airdata.org/ontology#ExpectedPushbackTime> .
+# 
+# http://airdata.org/ontology#DepartureOperation-HoldTime
+<http://airdata.org/ontology#DepartureOperation-HoldTime> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://airdata.org/ontology#DepartureOperation-HoldTime> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://airdata.org/ontology#DepartureTemporalRelation> .
+<http://airdata.org/ontology#DepartureOperation-HoldTime> <http://www.w3.org/2000/01/rdf-schema#domain> <http://airdata.org/ontology#DepartureOperation> .
+<http://airdata.org/ontology#DepartureOperation-HoldTime> <http://www.w3.org/2000/01/rdf-schema#range> <http://airdata.org/ontology#HoldTime> .
+# 
+# http://airdata.org/ontology#DepartureTemporalRelation
+<http://airdata.org/ontology#DepartureTemporalRelation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://airdata.org/ontology#DepartureTemporalRelation> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://airdata.org/ontology#TemporalRelation> .
+# 
+# http://airdata.org/ontology#Flight-Aircraft
+<http://airdata.org/ontology#Flight-Aircraft> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://airdata.org/ontology#Flight-Aircraft> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://airdata.org/ontology#IdentificationRelation> .
+<http://airdata.org/ontology#Flight-Aircraft> <http://www.w3.org/2000/01/rdf-schema#domain> <http://airdata.org/ontology#Flight> .
+<http://airdata.org/ontology#Flight-Aircraft> <http://www.w3.org/2000/01/rdf-schema#range> <http://airdata.org/ontology#Aircraft> .
+# 
+# http://airdata.org/ontology#Flight-AircraftOperator
+<http://airdata.org/ontology#Flight-AircraftOperator> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://airdata.org/ontology#Flight-AircraftOperator> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://airdata.org/ontology#IdentificationRelation> .
+<http://airdata.org/ontology#Flight-AircraftOperator> <http://www.w3.org/2000/01/rdf-schema#domain> <http://airdata.org/ontology#Flight> .
+<http://airdata.org/ontology#Flight-AircraftOperator> <http://www.w3.org/2000/01/rdf-schema#range> <http://airdata.org/ontology#AircraftOperator> .
+# 
+# http://airdata.org/ontology#Flight-Airspace
+<http://airdata.org/ontology#Flight-Airspace> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://airdata.org/ontology#Flight-Airspace> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://airdata.org/ontology#SpatialRelation> .
+<http://airdata.org/ontology#Flight-Airspace> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#InverseFunctionalProperty> .
+<http://airdata.org/ontology#Flight-Airspace> <http://www.w3.org/2000/01/rdf-schema#domain> <http://airdata.org/ontology#Flight> .
+<http://airdata.org/ontology#Flight-Airspace> <http://www.w3.org/2000/01/rdf-schema#range> <http://airdata.org/ontology#Airspace> .
+# 
+# http://airdata.org/ontology#Flight-ArrivalOperation
+<http://airdata.org/ontology#Flight-ArrivalOperation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://airdata.org/ontology#Flight-ArrivalOperation> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://airdata.org/ontology#FlightOperation> .
+<http://airdata.org/ontology#Flight-ArrivalOperation> <http://www.w3.org/2000/01/rdf-schema#domain> <http://airdata.org/ontology#Flight> .
+<http://airdata.org/ontology#Flight-ArrivalOperation> <http://www.w3.org/2000/01/rdf-schema#range> <http://airdata.org/ontology#ArrivalOperation> .
+# 
+# http://airdata.org/ontology#Flight-DepartureOperation
+<http://airdata.org/ontology#Flight-DepartureOperation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://airdata.org/ontology#Flight-DepartureOperation> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://airdata.org/ontology#FlightOperation> .
+<http://airdata.org/ontology#Flight-DepartureOperation> <http://www.w3.org/2000/01/rdf-schema#domain> <http://airdata.org/ontology#Flight> .
+<http://airdata.org/ontology#Flight-DepartureOperation> <http://www.w3.org/2000/01/rdf-schema#range> <http://airdata.org/ontology#DepartureOperation> .
+# 
+# http://airdata.org/ontology#Flight-Trajectory
+<http://airdata.org/ontology#Flight-Trajectory> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://airdata.org/ontology#Flight-Trajectory> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://airdata.org/ontology#SpatialRelation> .
+<http://airdata.org/ontology#Flight-Trajectory> <http://www.w3.org/2000/01/rdf-schema#domain> <http://airdata.org/ontology#Flight> .
+<http://airdata.org/ontology#Flight-Trajectory> <http://www.w3.org/2000/01/rdf-schema#range> <http://airdata.org/ontology#Trajectory> .
+# 
+# http://airdata.org/ontology#FlightOperation
+<http://airdata.org/ontology#FlightOperation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://airdata.org/ontology#FlightOperation> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topObjectProperty> .
+# 
+# http://airdata.org/ontology#IdentificationRelation
+<http://airdata.org/ontology#IdentificationRelation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://airdata.org/ontology#IdentificationRelation> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topObjectProperty> .
+# 
+# http://airdata.org/ontology#Operation-WeatherCondition
+<http://airdata.org/ontology#Operation-WeatherCondition> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://airdata.org/ontology#Operation-WeatherCondition> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://airdata.org/ontology#WeatherRelation> .
+<http://airdata.org/ontology#Operation-WeatherCondition> <http://www.w3.org/2000/01/rdf-schema#domain> <http://airdata.org/ontology#Operation> .
+<http://airdata.org/ontology#Operation-WeatherCondition> <http://www.w3.org/2000/01/rdf-schema#range> <http://airdata.org/ontology#WeatherCondition> .
+# 
+# http://airdata.org/ontology#SourceRelation
+<http://airdata.org/ontology#SourceRelation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://airdata.org/ontology#SourceRelation> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topObjectProperty> .
+# 
+# http://airdata.org/ontology#SpatialRelation
+<http://airdata.org/ontology#SpatialRelation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://airdata.org/ontology#SpatialRelation> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topObjectProperty> .
+# 
+# http://airdata.org/ontology#TemporalEvent-DataSource
+<http://airdata.org/ontology#TemporalEvent-DataSource> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://airdata.org/ontology#TemporalEvent-DataSource> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://airdata.org/ontology#SourceRelation> .
+<http://airdata.org/ontology#TemporalEvent-DataSource> <http://www.w3.org/2000/01/rdf-schema#domain> <http://airdata.org/ontology#TemporalEvent> .
+<http://airdata.org/ontology#TemporalEvent-DataSource> <http://www.w3.org/2000/01/rdf-schema#range> <http://airdata.org/ontology#DataSource> .
+# 
+# http://airdata.org/ontology#TemporalRelation
+<http://airdata.org/ontology#TemporalRelation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://airdata.org/ontology#TemporalRelation> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topObjectProperty> .
+# 
+# http://airdata.org/ontology#Trajectory-DataSource
+<http://airdata.org/ontology#Trajectory-DataSource> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://airdata.org/ontology#Trajectory-DataSource> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://airdata.org/ontology#SourceRelation> .
+<http://airdata.org/ontology#Trajectory-DataSource> <http://www.w3.org/2000/01/rdf-schema#domain> <http://airdata.org/ontology#Trajectory> .
+<http://airdata.org/ontology#Trajectory-DataSource> <http://www.w3.org/2000/01/rdf-schema#range> <http://airdata.org/ontology#DataSource> .
+# 
+# http://airdata.org/ontology#Trajectory-Operation
+<http://airdata.org/ontology#Trajectory-Operation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://airdata.org/ontology#Trajectory-Operation> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://airdata.org/ontology#FlightOperation> .
+<http://airdata.org/ontology#Trajectory-Operation> <http://www.w3.org/2000/01/rdf-schema#domain> <http://airdata.org/ontology#Trajectory> .
+<http://airdata.org/ontology#Trajectory-Operation> <http://www.w3.org/2000/01/rdf-schema#range> <http://airdata.org/ontology#Operation> .
+# 
+# http://airdata.org/ontology#WeatherCondition-DataSource
+<http://airdata.org/ontology#WeatherCondition-DataSource> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://airdata.org/ontology#WeatherCondition-DataSource> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://airdata.org/ontology#SourceRelation> .
+<http://airdata.org/ontology#WeatherCondition-DataSource> <http://www.w3.org/2000/01/rdf-schema#domain> <http://airdata.org/ontology#WeatherCondition> .
+<http://airdata.org/ontology#WeatherCondition-DataSource> <http://www.w3.org/2000/01/rdf-schema#range> <http://airdata.org/ontology#DataSource> .
+# 
+# http://airdata.org/ontology#WeatherRelation
+<http://airdata.org/ontology#WeatherRelation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://airdata.org/ontology#WeatherRelation> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topObjectProperty> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Data properties
+# #
+# #################################################################
+# 
+# 
+# http://airdata.org/ontology#accType
+<http://airdata.org/ontology#accType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://airdata.org/ontology#accType> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://airdata.org/ontology#spatial> .
+<http://airdata.org/ontology#accType> <http://www.w3.org/2000/01/rdf-schema#domain> <http://airdata.org/ontology#TrajectoryPoint> .
+<http://airdata.org/ontology#accType> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+# 
+# http://airdata.org/ontology#acronymType
+<http://airdata.org/ontology#acronymType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://airdata.org/ontology#acronymType> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://airdata.org/ontology#operational> .
+<http://airdata.org/ontology#acronymType> <http://www.w3.org/2000/01/rdf-schema#domain> <http://airdata.org/ontology#Flight> .
+<http://airdata.org/ontology#acronymType> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+# 
+# http://airdata.org/ontology#actual
+<http://airdata.org/ontology#actual> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://airdata.org/ontology#actual> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://airdata.org/ontology#timestamp> .
+# 
+# http://airdata.org/ontology#additionalData
+<http://airdata.org/ontology#additionalData> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://airdata.org/ontology#additionalData> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://airdata.org/ontology#operational> .
+<http://airdata.org/ontology#additionalData> <http://www.w3.org/2000/01/rdf-schema#domain> <http://airdata.org/ontology#Airspace> .
+<http://airdata.org/ontology#additionalData> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+# 
+# http://airdata.org/ontology#aircraft
+<http://airdata.org/ontology#aircraft> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://airdata.org/ontology#aircraft> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topDataProperty> .
+# 
+# http://airdata.org/ontology#aircraftSpeed
+<http://airdata.org/ontology#aircraftSpeed> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://airdata.org/ontology#aircraftSpeed> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://airdata.org/ontology#operational> .
+<http://airdata.org/ontology#aircraftSpeed> <http://www.w3.org/2000/01/rdf-schema#domain> <http://airdata.org/ontology#Airspace> .
+<http://airdata.org/ontology#aircraftSpeed> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#integer> .
+# 
+# http://airdata.org/ontology#airportRule
+<http://airdata.org/ontology#airportRule> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://airdata.org/ontology#airportRule> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://airdata.org/ontology#operational> .
+<http://airdata.org/ontology#airportRule> <http://www.w3.org/2000/01/rdf-schema#domain> <http://airdata.org/ontology#Procedure> .
+<http://airdata.org/ontology#airportRule> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+# 
+# http://airdata.org/ontology#arr
+<http://airdata.org/ontology#arr> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://airdata.org/ontology#arr> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://airdata.org/ontology#actual> .
+<http://airdata.org/ontology#arr> <http://www.w3.org/2000/01/rdf-schema#domain> <http://airdata.org/ontology#ActualLandingTime> .
+<http://airdata.org/ontology#arr> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#dateTime> .
+# 
+# http://airdata.org/ontology#arrivalProcedure
+<http://airdata.org/ontology#arrivalProcedure> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://airdata.org/ontology#arrivalProcedure> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://airdata.org/ontology#operational> .
+<http://airdata.org/ontology#arrivalProcedure> <http://www.w3.org/2000/01/rdf-schema#domain> <http://airdata.org/ontology#Procedure> .
+<http://airdata.org/ontology#arrivalProcedure> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+# 
+# http://airdata.org/ontology#atsUnit
+<http://airdata.org/ontology#atsUnit> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://airdata.org/ontology#atsUnit> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://airdata.org/ontology#operational> .
+<http://airdata.org/ontology#atsUnit> <http://www.w3.org/2000/01/rdf-schema#domain> <http://airdata.org/ontology#Airspace> .
+<http://airdata.org/ontology#atsUnit> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+# 
+# http://airdata.org/ontology#autonomy
+<http://airdata.org/ontology#autonomy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://airdata.org/ontology#autonomy> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://airdata.org/ontology#aircraft> .
+<http://airdata.org/ontology#autonomy> <http://www.w3.org/2000/01/rdf-schema#domain> <http://airdata.org/ontology#Aircraft> .
+<http://airdata.org/ontology#autonomy> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+# 
+# http://airdata.org/ontology#baroaltitude
+<http://airdata.org/ontology#baroaltitude> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://airdata.org/ontology#baroaltitude> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://airdata.org/ontology#spatial> .
+<http://airdata.org/ontology#baroaltitude> <http://www.w3.org/2000/01/rdf-schema#domain> <http://airdata.org/ontology#TrajectoryPoint> .
+<http://airdata.org/ontology#baroaltitude> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#dateTime> .
+# 
+# http://airdata.org/ontology#beginPrevision
+<http://airdata.org/ontology#beginPrevision> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://airdata.org/ontology#beginPrevision> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://airdata.org/ontology#weather> .
+<http://airdata.org/ontology#beginPrevision> <http://www.w3.org/2000/01/rdf-schema#domain> <http://airdata.org/ontology#WeatherCondition> .
+<http://airdata.org/ontology#beginPrevision> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#dateTime> .
+# 
+# http://airdata.org/ontology#box
+<http://airdata.org/ontology#box> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://airdata.org/ontology#box> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://airdata.org/ontology#operational> .
+<http://airdata.org/ontology#box> <http://www.w3.org/2000/01/rdf-schema#domain> <http://airdata.org/ontology#Gate> .
+<http://airdata.org/ontology#box> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+# 
+# http://airdata.org/ontology#callsign
+<http://airdata.org/ontology#callsign> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://airdata.org/ontology#callsign> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://airdata.org/ontology#identification> .
+<http://airdata.org/ontology#callsign> <http://www.w3.org/2000/01/rdf-schema#domain> <http://airdata.org/ontology#Flight> .
+<http://airdata.org/ontology#callsign> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+# 
+# http://airdata.org/ontology#cdep
+<http://airdata.org/ontology#cdep> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://airdata.org/ontology#cdep> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://airdata.org/ontology#actual> .
+<http://airdata.org/ontology#cdep> <http://www.w3.org/2000/01/rdf-schema#domain> <http://airdata.org/ontology#ActualTakeoffTime> .
+<http://airdata.org/ontology#cdep> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#dateTime> .
+# 
+# http://airdata.org/ontology#changeCloud
+<http://airdata.org/ontology#changeCloud> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://airdata.org/ontology#changeCloud> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://airdata.org/ontology#weather> .
+<http://airdata.org/ontology#changeCloud> <http://www.w3.org/2000/01/rdf-schema#domain> <http://airdata.org/ontology#WeatherCondition> .
+<http://airdata.org/ontology#changeCloud> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+# 
+# http://airdata.org/ontology#changeEnd
+<http://airdata.org/ontology#changeEnd> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://airdata.org/ontology#changeEnd> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://airdata.org/ontology#weather> .
+<http://airdata.org/ontology#changeEnd> <http://www.w3.org/2000/01/rdf-schema#domain> <http://airdata.org/ontology#WeatherCondition> .
+<http://airdata.org/ontology#changeEnd> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#dateTime> .
+# 
+# http://airdata.org/ontology#changeGroup
+<http://airdata.org/ontology#changeGroup> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://airdata.org/ontology#changeGroup> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://airdata.org/ontology#weather> .
+<http://airdata.org/ontology#changeGroup> <http://www.w3.org/2000/01/rdf-schema#domain> <http://airdata.org/ontology#WeatherCondition> .
+<http://airdata.org/ontology#changeGroup> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+# 
+# http://airdata.org/ontology#changeStart
+<http://airdata.org/ontology#changeStart> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://airdata.org/ontology#changeStart> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://airdata.org/ontology#weather> .
+<http://airdata.org/ontology#changeStart> <http://www.w3.org/2000/01/rdf-schema#domain> <http://airdata.org/ontology#WeatherCondition> .
+<http://airdata.org/ontology#changeStart> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#dateTime> .
+# 
+# http://airdata.org/ontology#changeVisibility
+<http://airdata.org/ontology#changeVisibility> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://airdata.org/ontology#changeVisibility> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://airdata.org/ontology#weather> .
+<http://airdata.org/ontology#changeVisibility> <http://www.w3.org/2000/01/rdf-schema#domain> <http://airdata.org/ontology#WeatherCondition> .
+<http://airdata.org/ontology#changeVisibility> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+# 
+# http://airdata.org/ontology#cloudAmount
+<http://airdata.org/ontology#cloudAmount> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://airdata.org/ontology#cloudAmount> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://airdata.org/ontology#weather> .
+<http://airdata.org/ontology#cloudAmount> <http://www.w3.org/2000/01/rdf-schema#domain> <http://airdata.org/ontology#WeatherCondition> .
+<http://airdata.org/ontology#cloudAmount> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+# 
+# http://airdata.org/ontology#cloudBase
+<http://airdata.org/ontology#cloudBase> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://airdata.org/ontology#cloudBase> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://airdata.org/ontology#weather> .
+<http://airdata.org/ontology#cloudBase> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#int> .
+# 
+# http://airdata.org/ontology#cloudType
+<http://airdata.org/ontology#cloudType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://airdata.org/ontology#cloudType> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://airdata.org/ontology#weather> .
+<http://airdata.org/ontology#cloudType> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+# 
+# http://airdata.org/ontology#code
+<http://airdata.org/ontology#code> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://airdata.org/ontology#code> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://airdata.org/ontology#operational> .
+<http://airdata.org/ontology#code> <http://www.w3.org/2000/01/rdf-schema#domain> <http://airdata.org/ontology#Procedure> .
+<http://airdata.org/ontology#code> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+# 
+# http://airdata.org/ontology#codeDI
+<http://airdata.org/ontology#codeDI> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://airdata.org/ontology#codeDI> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://airdata.org/ontology#identification> .
+<http://airdata.org/ontology#codeDI> <http://www.w3.org/2000/01/rdf-schema#domain> <http://airdata.org/ontology#Flight> .
+<http://airdata.org/ontology#codeDI> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+# 
+# http://airdata.org/ontology#codeshare
+<http://airdata.org/ontology#codeshare> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://airdata.org/ontology#codeshare> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://airdata.org/ontology#identification> .
+<http://airdata.org/ontology#codeshare> <http://www.w3.org/2000/01/rdf-schema#domain> <http://airdata.org/ontology#Flight> .
+<http://airdata.org/ontology#codeshare> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+# 
+# http://airdata.org/ontology#controllerName
+<http://airdata.org/ontology#controllerName> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://airdata.org/ontology#controllerName> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://airdata.org/ontology#operational> .
+<http://airdata.org/ontology#controllerName> <http://www.w3.org/2000/01/rdf-schema#domain> <http://airdata.org/ontology#Airspace> .
+<http://airdata.org/ontology#controllerName> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+# 
+# http://airdata.org/ontology#cpos
+<http://airdata.org/ontology#cpos> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://airdata.org/ontology#cpos> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://airdata.org/ontology#actual> .
+<http://airdata.org/ontology#cpos> <http://www.w3.org/2000/01/rdf-schema#domain> <http://airdata.org/ontology#ActualGateArrivalTime> .
+<http://airdata.org/ontology#cpos> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#dateTime> .
+# 
+# http://airdata.org/ontology#cpush
+<http://airdata.org/ontology#cpush> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://airdata.org/ontology#cpush> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://airdata.org/ontology#actual> .
+<http://airdata.org/ontology#cpush> <http://www.w3.org/2000/01/rdf-schema#domain> <http://airdata.org/ontology#ActualPushbackTime> .
+<http://airdata.org/ontology#cpush> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#dateTime> .
+# 
+# http://airdata.org/ontology#crossingType
+<http://airdata.org/ontology#crossingType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://airdata.org/ontology#crossingType> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://airdata.org/ontology#operational> .
+<http://airdata.org/ontology#crossingType> <http://www.w3.org/2000/01/rdf-schema#domain> <http://airdata.org/ontology#Airspace> .
+<http://airdata.org/ontology#crossingType> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+# 
+# http://airdata.org/ontology#crwy
+<http://airdata.org/ontology#crwy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://airdata.org/ontology#crwy> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://airdata.org/ontology#estimated> .
+<http://airdata.org/ontology#crwy> <http://www.w3.org/2000/01/rdf-schema#domain> <http://airdata.org/ontology#EstimatedRunwayTime> .
+<http://airdata.org/ontology#crwy> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#dateTime> .
+# 
+# http://airdata.org/ontology#dataRadar
+<http://airdata.org/ontology#dataRadar> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://airdata.org/ontology#dataRadar> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://airdata.org/ontology#spatial> .
+<http://airdata.org/ontology#dataRadar> <http://www.w3.org/2000/01/rdf-schema#domain> <http://airdata.org/ontology#TrajectoryPoint> .
+<http://airdata.org/ontology#dataRadar> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#dateTime> .
+# 
+# http://airdata.org/ontology#dataSource
+<http://airdata.org/ontology#dataSource> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://airdata.org/ontology#dataSource> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://airdata.org/ontology#weather> .
+<http://airdata.org/ontology#dataSource> <http://www.w3.org/2000/01/rdf-schema#domain> <http://airdata.org/ontology#WeatherCondition> .
+<http://airdata.org/ontology#dataSource> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+# 
+# http://airdata.org/ontology#dep
+<http://airdata.org/ontology#dep> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://airdata.org/ontology#dep> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://airdata.org/ontology#actual> .
+<http://airdata.org/ontology#dep> <http://www.w3.org/2000/01/rdf-schema#domain> <http://airdata.org/ontology#ActualDepartureTime> .
+<http://airdata.org/ontology#dep> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#dateTime> .
+# 
+# http://airdata.org/ontology#departureProcedure
+<http://airdata.org/ontology#departureProcedure> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://airdata.org/ontology#departureProcedure> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://airdata.org/ontology#operational> .
+<http://airdata.org/ontology#departureProcedure> <http://www.w3.org/2000/01/rdf-schema#domain> <http://airdata.org/ontology#Procedure> .
+<http://airdata.org/ontology#departureProcedure> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+# 
+# http://airdata.org/ontology#descriptive
+<http://airdata.org/ontology#descriptive> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://airdata.org/ontology#descriptive> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topDataProperty> .
+# 
+# http://airdata.org/ontology#detectorSource
+<http://airdata.org/ontology#detectorSource> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://airdata.org/ontology#detectorSource> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://airdata.org/ontology#spatial> .
+<http://airdata.org/ontology#detectorSource> <http://www.w3.org/2000/01/rdf-schema#domain> <http://airdata.org/ontology#TrajectoryPoint> .
+<http://airdata.org/ontology#detectorSource> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+# 
+# http://airdata.org/ontology#dewPoint
+<http://airdata.org/ontology#dewPoint> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://airdata.org/ontology#dewPoint> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://airdata.org/ontology#weather> .
+<http://airdata.org/ontology#dewPoint> <http://www.w3.org/2000/01/rdf-schema#domain> <http://airdata.org/ontology#WeatherCondition> .
+<http://airdata.org/ontology#dewPoint> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#decimal> .
+# 
+# http://airdata.org/ontology#endPrevision
+<http://airdata.org/ontology#endPrevision> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://airdata.org/ontology#endPrevision> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://airdata.org/ontology#weather> .
+<http://airdata.org/ontology#endPrevision> <http://www.w3.org/2000/01/rdf-schema#domain> <http://airdata.org/ontology#WeatherCondition> .
+<http://airdata.org/ontology#endPrevision> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#dateTime> .
+# 
+# http://airdata.org/ontology#eobt
+<http://airdata.org/ontology#eobt> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://airdata.org/ontology#eobt> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://airdata.org/ontology#estimated> .
+<http://airdata.org/ontology#eobt> <http://www.w3.org/2000/01/rdf-schema#domain> <http://airdata.org/ontology#EstimatedOffBlockTime> .
+<http://airdata.org/ontology#eobt> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#dateTime> .
+# 
+# http://airdata.org/ontology#equipmentCode
+<http://airdata.org/ontology#equipmentCode> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://airdata.org/ontology#equipmentCode> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://airdata.org/ontology#aircraft> .
+<http://airdata.org/ontology#equipmentCode> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<http://airdata.org/ontology#equipmentCode> <http://www.w3.org/2000/01/rdf-schema#domain> <http://airdata.org/ontology#Aircraft> .
+<http://airdata.org/ontology#equipmentCode> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+# 
+# http://airdata.org/ontology#estimated
+<http://airdata.org/ontology#estimated> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://airdata.org/ontology#estimated> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://airdata.org/ontology#timestamp> .
+# 
+# http://airdata.org/ontology#eta
+<http://airdata.org/ontology#eta> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://airdata.org/ontology#eta> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://airdata.org/ontology#estimated> .
+<http://airdata.org/ontology#eta> <http://www.w3.org/2000/01/rdf-schema#domain> <http://airdata.org/ontology#EstimatedArrivalTime> .
+<http://airdata.org/ontology#eta> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#dateTime> .
+# 
+# http://airdata.org/ontology#eventDescription
+<http://airdata.org/ontology#eventDescription> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://airdata.org/ontology#eventDescription> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://airdata.org/ontology#descriptive> .
+<http://airdata.org/ontology#eventDescription> <http://www.w3.org/2000/01/rdf-schema#domain> <http://airdata.org/ontology#TemporalEvent> .
+<http://airdata.org/ontology#eventDescription> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+# 
+# http://airdata.org/ontology#eventName
+<http://airdata.org/ontology#eventName> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://airdata.org/ontology#eventName> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://airdata.org/ontology#descriptive> .
+<http://airdata.org/ontology#eventName> <http://www.w3.org/2000/01/rdf-schema#domain> <http://airdata.org/ontology#TemporalEvent> .
+<http://airdata.org/ontology#eventName> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+# 
+# http://airdata.org/ontology#excessBaggage
+<http://airdata.org/ontology#excessBaggage> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://airdata.org/ontology#excessBaggage> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://airdata.org/ontology#aircraft> .
+<http://airdata.org/ontology#excessBaggage> <http://www.w3.org/2000/01/rdf-schema#domain> <http://airdata.org/ontology#Flight> .
+<http://airdata.org/ontology#excessBaggage> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#decimal> .
+# 
+# http://airdata.org/ontology#fixEntryName
+<http://airdata.org/ontology#fixEntryName> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://airdata.org/ontology#fixEntryName> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://airdata.org/ontology#operational> .
+<http://airdata.org/ontology#fixEntryName> <http://www.w3.org/2000/01/rdf-schema#domain> <http://airdata.org/ontology#FixPoint> .
+<http://airdata.org/ontology#fixEntryName> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+# 
+# http://airdata.org/ontology#fixEntryTime
+<http://airdata.org/ontology#fixEntryTime> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://airdata.org/ontology#fixEntryTime> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://airdata.org/ontology#operational> .
+<http://airdata.org/ontology#fixEntryTime> <http://www.w3.org/2000/01/rdf-schema#domain> <http://airdata.org/ontology#FixPoint> .
+<http://airdata.org/ontology#fixEntryTime> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#dateTime> .
+# 
+# http://airdata.org/ontology#fixExitName
+<http://airdata.org/ontology#fixExitName> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://airdata.org/ontology#fixExitName> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://airdata.org/ontology#operational> .
+<http://airdata.org/ontology#fixExitName> <http://www.w3.org/2000/01/rdf-schema#domain> <http://airdata.org/ontology#FixPoint> .
+<http://airdata.org/ontology#fixExitName> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+# 
+# http://airdata.org/ontology#fixExitTime
+<http://airdata.org/ontology#fixExitTime> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://airdata.org/ontology#fixExitTime> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://airdata.org/ontology#operational> .
+<http://airdata.org/ontology#fixExitTime> <http://www.w3.org/2000/01/rdf-schema#domain> <http://airdata.org/ontology#FixPoint> .
+<http://airdata.org/ontology#fixExitTime> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#dateTime> .
+# 
+# http://airdata.org/ontology#flightLevel
+<http://airdata.org/ontology#flightLevel> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://airdata.org/ontology#flightLevel> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://airdata.org/ontology#spatial> .
+<http://airdata.org/ontology#flightLevel> <http://www.w3.org/2000/01/rdf-schema#domain> <http://airdata.org/ontology#TrajectoryPoint> .
+<http://airdata.org/ontology#flightLevel> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#int> .
+# 
+# http://airdata.org/ontology#flightRule
+<http://airdata.org/ontology#flightRule> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://airdata.org/ontology#flightRule> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://airdata.org/ontology#operational> .
+<http://airdata.org/ontology#flightRule> <http://www.w3.org/2000/01/rdf-schema#domain> <http://airdata.org/ontology#Procedure> .
+<http://airdata.org/ontology#flightRule> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+# 
+# http://airdata.org/ontology#freeBaggage
+<http://airdata.org/ontology#freeBaggage> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://airdata.org/ontology#freeBaggage> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://airdata.org/ontology#aircraft> .
+<http://airdata.org/ontology#freeBaggage> <http://www.w3.org/2000/01/rdf-schema#domain> <http://airdata.org/ontology#Flight> .
+<http://airdata.org/ontology#freeBaggage> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#decimal> .
+# 
+# http://airdata.org/ontology#freeCargoWeight
+<http://airdata.org/ontology#freeCargoWeight> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://airdata.org/ontology#freeCargoWeight> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://airdata.org/ontology#aircraft> .
+<http://airdata.org/ontology#freeCargoWeight> <http://www.w3.org/2000/01/rdf-schema#domain> <http://airdata.org/ontology#Flight> .
+<http://airdata.org/ontology#freeCargoWeight> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#decimal> .
+# 
+# http://airdata.org/ontology#freePassengers
+<http://airdata.org/ontology#freePassengers> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://airdata.org/ontology#freePassengers> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://airdata.org/ontology#aircraft> .
+<http://airdata.org/ontology#freePassengers> <http://www.w3.org/2000/01/rdf-schema#domain> <http://airdata.org/ontology#Flight> .
+<http://airdata.org/ontology#freePassengers> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#int> .
+# 
+# http://airdata.org/ontology#geoaltitude
+<http://airdata.org/ontology#geoaltitude> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://airdata.org/ontology#geoaltitude> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://airdata.org/ontology#spatial> .
+<http://airdata.org/ontology#geoaltitude> <http://www.w3.org/2000/01/rdf-schema#domain> <http://airdata.org/ontology#TrajectoryPoint> .
+<http://airdata.org/ontology#geoaltitude> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#decimal> .
+# 
+# http://airdata.org/ontology#heading
+<http://airdata.org/ontology#heading> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://airdata.org/ontology#heading> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://airdata.org/ontology#spatial> .
+<http://airdata.org/ontology#heading> <http://www.w3.org/2000/01/rdf-schema#domain> <http://airdata.org/ontology#TrajectoryPoint> .
+<http://airdata.org/ontology#heading> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#decimal> .
+# 
+# http://airdata.org/ontology#hold
+<http://airdata.org/ontology#hold> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://airdata.org/ontology#hold> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://airdata.org/ontology#actual> .
+<http://airdata.org/ontology#hold> <http://www.w3.org/2000/01/rdf-schema#domain> <http://airdata.org/ontology#HoldTime> .
+<http://airdata.org/ontology#hold> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#dateTime> .
+# 
+# http://airdata.org/ontology#iataCode
+<http://airdata.org/ontology#iataCode> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://airdata.org/ontology#iataCode> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://airdata.org/ontology#identification> .
+<http://airdata.org/ontology#iataCode> <http://www.w3.org/2000/01/rdf-schema#domain> <http://airdata.org/ontology#Aerodrome> .
+<http://airdata.org/ontology#iataCode> <http://www.w3.org/2000/01/rdf-schema#domain> <http://airdata.org/ontology#AircraftOperator> .
+<http://airdata.org/ontology#iataCode> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+# 
+# http://airdata.org/ontology#icaoCode
+<http://airdata.org/ontology#icaoCode> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://airdata.org/ontology#icaoCode> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://airdata.org/ontology#aircraft> .
+<http://airdata.org/ontology#icaoCode> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://airdata.org/ontology#identification> .
+<http://airdata.org/ontology#icaoCode> <http://www.w3.org/2000/01/rdf-schema#domain> <http://airdata.org/ontology#Aerodrome> .
+<http://airdata.org/ontology#icaoCode> <http://www.w3.org/2000/01/rdf-schema#domain> <http://airdata.org/ontology#Aircraft> .
+<http://airdata.org/ontology#icaoCode> <http://www.w3.org/2000/01/rdf-schema#domain> <http://airdata.org/ontology#AircraftOperator> .
+<http://airdata.org/ontology#icaoCode> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+# 
+# http://airdata.org/ontology#id
+<http://airdata.org/ontology#id> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://airdata.org/ontology#id> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://airdata.org/ontology#identification> .
+<http://airdata.org/ontology#id> <http://www.w3.org/2000/01/rdf-schema#domain> <http://airdata.org/ontology#Aerodrome> .
+<http://airdata.org/ontology#id> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#int> .
+# 
+# http://airdata.org/ontology#identification
+<http://airdata.org/ontology#identification> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://airdata.org/ontology#identification> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topDataProperty> .
+# 
+# http://airdata.org/ontology#insertedInDB
+<http://airdata.org/ontology#insertedInDB> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://airdata.org/ontology#insertedInDB> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://airdata.org/ontology#operational> .
+<http://airdata.org/ontology#insertedInDB> <http://www.w3.org/2000/01/rdf-schema#domain> <http://airdata.org/ontology#Airspace> .
+<http://airdata.org/ontology#insertedInDB> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#dateTime> .
+# 
+# http://airdata.org/ontology#issueTime
+<http://airdata.org/ontology#issueTime> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://airdata.org/ontology#issueTime> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://airdata.org/ontology#weather> .
+<http://airdata.org/ontology#issueTime> <http://www.w3.org/2000/01/rdf-schema#domain> <http://airdata.org/ontology#WeatherCondition> .
+<http://airdata.org/ontology#issueTime> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#dateTime> .
+# 
+# http://airdata.org/ontology#latitude
+<http://airdata.org/ontology#latitude> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://airdata.org/ontology#latitude> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://airdata.org/ontology#spatial> .
+<http://airdata.org/ontology#latitude> <http://www.w3.org/2000/01/rdf-schema#domain> <http://airdata.org/ontology#TrajectoryPoint> .
+<http://airdata.org/ontology#latitude> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#decimal> .
+# 
+# http://airdata.org/ontology#location
+<http://airdata.org/ontology#location> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://airdata.org/ontology#location> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://airdata.org/ontology#spatial> .
+<http://airdata.org/ontology#location> <http://www.w3.org/2000/01/rdf-schema#domain> <http://airdata.org/ontology#Aerodrome> .
+<http://airdata.org/ontology#location> <http://www.w3.org/2000/01/rdf-schema#domain> <http://airdata.org/ontology#AircraftOperator> .
+<http://airdata.org/ontology#location> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+# 
+# http://airdata.org/ontology#longitude
+<http://airdata.org/ontology#longitude> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://airdata.org/ontology#longitude> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://airdata.org/ontology#spatial> .
+<http://airdata.org/ontology#longitude> <http://www.w3.org/2000/01/rdf-schema#domain> <http://airdata.org/ontology#TrajectoryPoint> .
+<http://airdata.org/ontology#longitude> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#decimal> .
+# 
+# http://airdata.org/ontology#mailWeight
+<http://airdata.org/ontology#mailWeight> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://airdata.org/ontology#mailWeight> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://airdata.org/ontology#aircraft> .
+<http://airdata.org/ontology#mailWeight> <http://www.w3.org/2000/01/rdf-schema#domain> <http://airdata.org/ontology#Flight> .
+<http://airdata.org/ontology#mailWeight> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#decimal> .
+# 
+# http://airdata.org/ontology#maxTemperature
+<http://airdata.org/ontology#maxTemperature> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://airdata.org/ontology#maxTemperature> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://airdata.org/ontology#weather> .
+<http://airdata.org/ontology#maxTemperature> <http://www.w3.org/2000/01/rdf-schema#domain> <http://airdata.org/ontology#WeatherCondition> .
+<http://airdata.org/ontology#maxTemperature> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#decimal> .
+# 
+# http://airdata.org/ontology#minTemperature
+<http://airdata.org/ontology#minTemperature> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://airdata.org/ontology#minTemperature> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://airdata.org/ontology#weather> .
+<http://airdata.org/ontology#minTemperature> <http://www.w3.org/2000/01/rdf-schema#domain> <http://airdata.org/ontology#WeatherCondition> .
+<http://airdata.org/ontology#minTemperature> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#decimal> .
+# 
+# http://airdata.org/ontology#movEstimative
+<http://airdata.org/ontology#movEstimative> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://airdata.org/ontology#movEstimative> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://airdata.org/ontology#operational> .
+<http://airdata.org/ontology#movEstimative> <http://www.w3.org/2000/01/rdf-schema#domain> <http://airdata.org/ontology#Airspace> .
+<http://airdata.org/ontology#movEstimative> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#dateTime> .
+# 
+# http://airdata.org/ontology#name
+<http://airdata.org/ontology#name> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://airdata.org/ontology#name> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://airdata.org/ontology#identification> .
+<http://airdata.org/ontology#name> <http://www.w3.org/2000/01/rdf-schema#domain> <http://airdata.org/ontology#Aerodrome> .
+<http://airdata.org/ontology#name> <http://www.w3.org/2000/01/rdf-schema#domain> <http://airdata.org/ontology#AircraftOperator> .
+<http://airdata.org/ontology#name> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+# 
+# http://airdata.org/ontology#observationTime
+<http://airdata.org/ontology#observationTime> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://airdata.org/ontology#observationTime> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://airdata.org/ontology#weather> .
+<http://airdata.org/ontology#observationTime> <http://www.w3.org/2000/01/rdf-schema#domain> <http://airdata.org/ontology#WeatherCondition> .
+<http://airdata.org/ontology#observationTime> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#dateTime> .
+# 
+# http://airdata.org/ontology#onboardEquipment
+<http://airdata.org/ontology#onboardEquipment> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://airdata.org/ontology#onboardEquipment> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://airdata.org/ontology#aircraft> .
+<http://airdata.org/ontology#onboardEquipment> <http://www.w3.org/2000/01/rdf-schema#domain> <http://airdata.org/ontology#Aircraft> .
+<http://airdata.org/ontology#onboardEquipment> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+# 
+# http://airdata.org/ontology#onboardEquipment2
+<http://airdata.org/ontology#onboardEquipment2> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://airdata.org/ontology#onboardEquipment2> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://airdata.org/ontology#aircraft> .
+<http://airdata.org/ontology#onboardEquipment2> <http://www.w3.org/2000/01/rdf-schema#domain> <http://airdata.org/ontology#Aircraft> .
+<http://airdata.org/ontology#onboardEquipment2> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+# 
+# http://airdata.org/ontology#onground
+<http://airdata.org/ontology#onground> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://airdata.org/ontology#onground> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://airdata.org/ontology#spatial> .
+<http://airdata.org/ontology#onground> <http://www.w3.org/2000/01/rdf-schema#domain> <http://airdata.org/ontology#TrajectoryPoint> .
+<http://airdata.org/ontology#onground> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#boolean> .
+# 
+# http://airdata.org/ontology#operational
+<http://airdata.org/ontology#operational> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://airdata.org/ontology#operational> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topDataProperty> .
+# 
+# http://airdata.org/ontology#paidCargoWeight
+<http://airdata.org/ontology#paidCargoWeight> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://airdata.org/ontology#paidCargoWeight> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://airdata.org/ontology#aircraft> .
+<http://airdata.org/ontology#paidCargoWeight> <http://www.w3.org/2000/01/rdf-schema#domain> <http://airdata.org/ontology#Flight> .
+<http://airdata.org/ontology#paidCargoWeight> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#decimal> .
+# 
+# http://airdata.org/ontology#paidPassengers
+<http://airdata.org/ontology#paidPassengers> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://airdata.org/ontology#paidPassengers> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://airdata.org/ontology#aircraft> .
+<http://airdata.org/ontology#paidPassengers> <http://www.w3.org/2000/01/rdf-schema#domain> <http://airdata.org/ontology#Flight> .
+<http://airdata.org/ontology#paidPassengers> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#int> .
+# 
+# http://airdata.org/ontology#pressureQNH
+<http://airdata.org/ontology#pressureQNH> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://airdata.org/ontology#pressureQNH> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://airdata.org/ontology#weather> .
+<http://airdata.org/ontology#pressureQNH> <http://www.w3.org/2000/01/rdf-schema#domain> <http://airdata.org/ontology#WeatherCondition> .
+<http://airdata.org/ontology#pressureQNH> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#decimal> .
+# 
+# http://airdata.org/ontology#quantityAircraft
+<http://airdata.org/ontology#quantityAircraft> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://airdata.org/ontology#quantityAircraft> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://airdata.org/ontology#operational> .
+<http://airdata.org/ontology#quantityAircraft> <http://www.w3.org/2000/01/rdf-schema#domain> <http://airdata.org/ontology#Airspace> .
+<http://airdata.org/ontology#quantityAircraft> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#integer> .
+# 
+# http://airdata.org/ontology#rawMetar
+<http://airdata.org/ontology#rawMetar> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://airdata.org/ontology#rawMetar> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://airdata.org/ontology#weather> .
+<http://airdata.org/ontology#rawMetar> <http://www.w3.org/2000/01/rdf-schema#domain> <http://airdata.org/ontology#WeatherCondition> .
+<http://airdata.org/ontology#rawMetar> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+# 
+# http://airdata.org/ontology#rawTaf
+<http://airdata.org/ontology#rawTaf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://airdata.org/ontology#rawTaf> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://airdata.org/ontology#weather> .
+<http://airdata.org/ontology#rawTaf> <http://www.w3.org/2000/01/rdf-schema#domain> <http://airdata.org/ontology#WeatherCondition> .
+<http://airdata.org/ontology#rawTaf> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+# 
+# http://airdata.org/ontology#receivedAt
+<http://airdata.org/ontology#receivedAt> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://airdata.org/ontology#receivedAt> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://airdata.org/ontology#weather> .
+<http://airdata.org/ontology#receivedAt> <http://www.w3.org/2000/01/rdf-schema#domain> <http://airdata.org/ontology#WeatherCondition> .
+<http://airdata.org/ontology#receivedAt> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#dateTime> .
+# 
+# http://airdata.org/ontology#remarks
+<http://airdata.org/ontology#remarks> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://airdata.org/ontology#remarks> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://airdata.org/ontology#operational> .
+<http://airdata.org/ontology#remarks> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://airdata.org/ontology#weather> .
+<http://airdata.org/ontology#remarks> <http://www.w3.org/2000/01/rdf-schema#domain> <http://airdata.org/ontology#Airspace> .
+<http://airdata.org/ontology#remarks> <http://www.w3.org/2000/01/rdf-schema#domain> <http://airdata.org/ontology#WeatherCondition> .
+<http://airdata.org/ontology#remarks> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+# 
+# http://airdata.org/ontology#remarksApp
+<http://airdata.org/ontology#remarksApp> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://airdata.org/ontology#remarksApp> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://airdata.org/ontology#operational> .
+<http://airdata.org/ontology#remarksApp> <http://www.w3.org/2000/01/rdf-schema#domain> <http://airdata.org/ontology#Airspace> .
+<http://airdata.org/ontology#remarksApp> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+# 
+# http://airdata.org/ontology#route
+<http://airdata.org/ontology#route> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://airdata.org/ontology#route> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://airdata.org/ontology#operational> .
+<http://airdata.org/ontology#route> <http://www.w3.org/2000/01/rdf-schema#domain> <http://airdata.org/ontology#Flight> .
+<http://airdata.org/ontology#route> <http://www.w3.org/2000/01/rdf-schema#domain> <http://airdata.org/ontology#PlannedTrajectory> .
+<http://airdata.org/ontology#route> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+# 
+# http://airdata.org/ontology#runway
+<http://airdata.org/ontology#runway> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://airdata.org/ontology#runway> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://airdata.org/ontology#operational> .
+<http://airdata.org/ontology#runway> <http://www.w3.org/2000/01/rdf-schema#domain> <http://airdata.org/ontology#Runway> .
+<http://airdata.org/ontology#runway> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+# 
+# http://airdata.org/ontology#source
+<http://airdata.org/ontology#source> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://airdata.org/ontology#source> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://airdata.org/ontology#descriptive> .
+<http://airdata.org/ontology#source> <http://www.w3.org/2000/01/rdf-schema#domain> <http://airdata.org/ontology#TemporalEvent> .
+<http://airdata.org/ontology#source> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+# 
+# http://airdata.org/ontology#spatial
+<http://airdata.org/ontology#spatial> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://airdata.org/ontology#spatial> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topDataProperty> .
+# 
+# http://airdata.org/ontology#squawk
+<http://airdata.org/ontology#squawk> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://airdata.org/ontology#squawk> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://airdata.org/ontology#aircraft> .
+<http://airdata.org/ontology#squawk> <http://www.w3.org/2000/01/rdf-schema#domain> <http://airdata.org/ontology#Aircraft> .
+<http://airdata.org/ontology#squawk> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+# 
+# http://airdata.org/ontology#ssr
+<http://airdata.org/ontology#ssr> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://airdata.org/ontology#ssr> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://airdata.org/ontology#aircraft> .
+<http://airdata.org/ontology#ssr> <http://www.w3.org/2000/01/rdf-schema#domain> <http://airdata.org/ontology#Aircraft> .
+<http://airdata.org/ontology#ssr> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+# 
+# http://airdata.org/ontology#stageName
+<http://airdata.org/ontology#stageName> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://airdata.org/ontology#stageName> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://airdata.org/ontology#operational> .
+<http://airdata.org/ontology#stageName> <http://www.w3.org/2000/01/rdf-schema#domain> <http://airdata.org/ontology#Flight> .
+<http://airdata.org/ontology#stageName> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+# 
+# http://airdata.org/ontology#stageNumber
+<http://airdata.org/ontology#stageNumber> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://airdata.org/ontology#stageNumber> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://airdata.org/ontology#operational> .
+<http://airdata.org/ontology#stageNumber> <http://www.w3.org/2000/01/rdf-schema#domain> <http://airdata.org/ontology#Flight> .
+<http://airdata.org/ontology#stageNumber> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#integer> .
+# 
+# http://airdata.org/ontology#status
+<http://airdata.org/ontology#status> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://airdata.org/ontology#status> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://airdata.org/ontology#operational> .
+<http://airdata.org/ontology#status> <http://www.w3.org/2000/01/rdf-schema#domain> <http://airdata.org/ontology#Flight> .
+<http://airdata.org/ontology#status> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+# 
+# http://airdata.org/ontology#taxi
+<http://airdata.org/ontology#taxi> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://airdata.org/ontology#taxi> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://airdata.org/ontology#actual> .
+<http://airdata.org/ontology#taxi> <http://www.w3.org/2000/01/rdf-schema#domain> <http://airdata.org/ontology#ActualTaxiStartTime> .
+<http://airdata.org/ontology#taxi> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#dateTime> .
+# 
+# http://airdata.org/ontology#taxiwayAlignment
+<http://airdata.org/ontology#taxiwayAlignment> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://airdata.org/ontology#taxiwayAlignment> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://airdata.org/ontology#operational> .
+<http://airdata.org/ontology#taxiwayAlignment> <http://www.w3.org/2000/01/rdf-schema#domain> <http://airdata.org/ontology#Taxiway> .
+<http://airdata.org/ontology#taxiwayAlignment> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+# 
+# http://airdata.org/ontology#taxiwayUsed
+<http://airdata.org/ontology#taxiwayUsed> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://airdata.org/ontology#taxiwayUsed> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://airdata.org/ontology#operational> .
+<http://airdata.org/ontology#taxiwayUsed> <http://www.w3.org/2000/01/rdf-schema#domain> <http://airdata.org/ontology#Taxiway> .
+<http://airdata.org/ontology#taxiwayUsed> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+# 
+# http://airdata.org/ontology#tempEnd
+<http://airdata.org/ontology#tempEnd> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://airdata.org/ontology#tempEnd> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://airdata.org/ontology#weather> .
+<http://airdata.org/ontology#tempEnd> <http://www.w3.org/2000/01/rdf-schema#domain> <http://airdata.org/ontology#WeatherCondition> .
+<http://airdata.org/ontology#tempEnd> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#dateTime> .
+# 
+# http://airdata.org/ontology#tempGroup
+<http://airdata.org/ontology#tempGroup> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://airdata.org/ontology#tempGroup> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://airdata.org/ontology#weather> .
+<http://airdata.org/ontology#tempGroup> <http://www.w3.org/2000/01/rdf-schema#domain> <http://airdata.org/ontology#WeatherCondition> .
+<http://airdata.org/ontology#tempGroup> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+# 
+# http://airdata.org/ontology#tempStart
+<http://airdata.org/ontology#tempStart> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://airdata.org/ontology#tempStart> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://airdata.org/ontology#weather> .
+<http://airdata.org/ontology#tempStart> <http://www.w3.org/2000/01/rdf-schema#domain> <http://airdata.org/ontology#WeatherCondition> .
+<http://airdata.org/ontology#tempStart> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#dateTime> .
+# 
+# http://airdata.org/ontology#tempWeather
+<http://airdata.org/ontology#tempWeather> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://airdata.org/ontology#tempWeather> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://airdata.org/ontology#weather> .
+<http://airdata.org/ontology#tempWeather> <http://www.w3.org/2000/01/rdf-schema#domain> <http://airdata.org/ontology#WeatherCondition> .
+<http://airdata.org/ontology#tempWeather> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+# 
+# http://airdata.org/ontology#temperature
+<http://airdata.org/ontology#temperature> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://airdata.org/ontology#temperature> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://airdata.org/ontology#weather> .
+<http://airdata.org/ontology#temperature> <http://www.w3.org/2000/01/rdf-schema#domain> <http://airdata.org/ontology#WeatherCondition> .
+<http://airdata.org/ontology#temperature> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#decimal> .
+# 
+# http://airdata.org/ontology#temporal
+<http://airdata.org/ontology#temporal> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://airdata.org/ontology#temporal> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topDataProperty> .
+# 
+# http://airdata.org/ontology#time
+<http://airdata.org/ontology#time> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://airdata.org/ontology#time> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://airdata.org/ontology#spatial> .
+<http://airdata.org/ontology#time> <http://www.w3.org/2000/01/rdf-schema#domain> <http://airdata.org/ontology#ActualTrajectory> .
+<http://airdata.org/ontology#time> <http://www.w3.org/2000/01/rdf-schema#domain> <http://airdata.org/ontology#TrajectoryPoint> .
+<http://airdata.org/ontology#time> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#dateTime> .
+# 
+# http://airdata.org/ontology#timestamp
+<http://airdata.org/ontology#timestamp> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://airdata.org/ontology#timestamp> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://airdata.org/ontology#temporal> .
+<http://airdata.org/ontology#timestamp> <http://www.w3.org/2000/01/rdf-schema#domain> <http://airdata.org/ontology#TemporalEvent> .
+<http://airdata.org/ontology#timestamp> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#dateTime> .
+# 
+# http://airdata.org/ontology#turbulenceWake
+<http://airdata.org/ontology#turbulenceWake> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://airdata.org/ontology#turbulenceWake> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://airdata.org/ontology#operational> .
+<http://airdata.org/ontology#turbulenceWake> <http://www.w3.org/2000/01/rdf-schema#domain> <http://airdata.org/ontology#Flight> .
+<http://airdata.org/ontology#turbulenceWake> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+# 
+# http://airdata.org/ontology#type
+<http://airdata.org/ontology#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://airdata.org/ontology#type> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://airdata.org/ontology#operational> .
+<http://airdata.org/ontology#type> <http://www.w3.org/2000/01/rdf-schema#domain> <http://airdata.org/ontology#Flight> .
+<http://airdata.org/ontology#type> <http://www.w3.org/2000/01/rdf-schema#domain> <http://airdata.org/ontology#Operation> .
+<http://airdata.org/ontology#type> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+# 
+# http://airdata.org/ontology#typeAircraftOperator
+<http://airdata.org/ontology#typeAircraftOperator> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://airdata.org/ontology#typeAircraftOperator> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://airdata.org/ontology#identification> .
+<http://airdata.org/ontology#typeAircraftOperator> <http://www.w3.org/2000/01/rdf-schema#domain> <http://airdata.org/ontology#AircraftOperator> .
+<http://airdata.org/ontology#typeAircraftOperator> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+# 
+# http://airdata.org/ontology#typeLine
+<http://airdata.org/ontology#typeLine> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://airdata.org/ontology#typeLine> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://airdata.org/ontology#identification> .
+<http://airdata.org/ontology#typeLine> <http://www.w3.org/2000/01/rdf-schema#domain> <http://airdata.org/ontology#Flight> .
+<http://airdata.org/ontology#typeLine> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+# 
+# http://airdata.org/ontology#velocity
+<http://airdata.org/ontology#velocity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://airdata.org/ontology#velocity> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://airdata.org/ontology#spatial> .
+<http://airdata.org/ontology#velocity> <http://www.w3.org/2000/01/rdf-schema#domain> <http://airdata.org/ontology#TrajectoryPoint> .
+<http://airdata.org/ontology#velocity> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#decimal> .
+# 
+# http://airdata.org/ontology#vertrate
+<http://airdata.org/ontology#vertrate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://airdata.org/ontology#vertrate> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://airdata.org/ontology#spatial> .
+<http://airdata.org/ontology#vertrate> <http://www.w3.org/2000/01/rdf-schema#domain> <http://airdata.org/ontology#TrajectoryPoint> .
+<http://airdata.org/ontology#vertrate> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#decimal> .
+# 
+# http://airdata.org/ontology#visibility
+<http://airdata.org/ontology#visibility> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://airdata.org/ontology#visibility> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://airdata.org/ontology#weather> .
+<http://airdata.org/ontology#visibility> <http://www.w3.org/2000/01/rdf-schema#domain> <http://airdata.org/ontology#WeatherCondition> .
+<http://airdata.org/ontology#visibility> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+# 
+# http://airdata.org/ontology#weather
+<http://airdata.org/ontology#weather> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://airdata.org/ontology#weather> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topDataProperty> .
+<http://airdata.org/ontology#weather> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+# 
+# http://airdata.org/ontology#weatherPhenomena
+<http://airdata.org/ontology#weatherPhenomena> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://airdata.org/ontology#weatherPhenomena> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://airdata.org/ontology#weather> .
+# 
+# http://airdata.org/ontology#windDirection
+<http://airdata.org/ontology#windDirection> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://airdata.org/ontology#windDirection> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://airdata.org/ontology#weather> .
+<http://airdata.org/ontology#windDirection> <http://www.w3.org/2000/01/rdf-schema#domain> <http://airdata.org/ontology#WeatherCondition> .
+<http://airdata.org/ontology#windDirection> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+# 
+# http://airdata.org/ontology#windGust
+<http://airdata.org/ontology#windGust> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://airdata.org/ontology#windGust> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://airdata.org/ontology#weather> .
+<http://airdata.org/ontology#windGust> <http://www.w3.org/2000/01/rdf-schema#domain> <http://airdata.org/ontology#WeatherCondition> .
+<http://airdata.org/ontology#windGust> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+# 
+# http://airdata.org/ontology#windSpeed
+<http://airdata.org/ontology#windSpeed> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://airdata.org/ontology#windSpeed> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://airdata.org/ontology#weather> .
+<http://airdata.org/ontology#windSpeed> <http://www.w3.org/2000/01/rdf-schema#domain> <http://airdata.org/ontology#WeatherCondition> .
+<http://airdata.org/ontology#windSpeed> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+# 
+# http://airdata.org/ontology#wpush
+<http://airdata.org/ontology#wpush> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://airdata.org/ontology#wpush> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://airdata.org/ontology#estimated> .
+<http://airdata.org/ontology#wpush> <http://www.w3.org/2000/01/rdf-schema#domain> <http://airdata.org/ontology#ExpectedPushbackTime> .
+<http://airdata.org/ontology#wpush> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#dateTime> .
+# 
+# http://airdata.org/ontology#wtaxi
+<http://airdata.org/ontology#wtaxi> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://airdata.org/ontology#wtaxi> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://airdata.org/ontology#estimated> .
+<http://airdata.org/ontology#wtaxi> <http://www.w3.org/2000/01/rdf-schema#domain> <http://airdata.org/ontology#EstimatedTaxiStartTime> .
+<http://airdata.org/ontology#wtaxi> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#dateTime> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Classes
+# #
+# #################################################################
+# 
+# 
+# http://airdata.org/ontology#ATMFuelBurnKPI
+<http://airdata.org/ontology#ATMFuelBurnKPI> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://airdata.org/ontology#ATMFuelBurnKPI> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://airdata.org/ontology#FuelEfficiencyKPI> .
+<http://airdata.org/ontology#ATMFuelBurnKPI> <http://www.w3.org/2000/01/rdf-schema#label> "ATMFuelBurnKPI" .
+# 
+# http://airdata.org/ontology#ActualDepartureTime
+<http://airdata.org/ontology#ActualDepartureTime> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://airdata.org/ontology#ActualDepartureTime> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://airdata.org/ontology#DepartureEvent> .
+# 
+# http://airdata.org/ontology#ActualGateArrivalTime
+<http://airdata.org/ontology#ActualGateArrivalTime> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://airdata.org/ontology#ActualGateArrivalTime> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://airdata.org/ontology#ArrivalEvent> .
+# 
+# http://airdata.org/ontology#ActualLandingTime
+<http://airdata.org/ontology#ActualLandingTime> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://airdata.org/ontology#ActualLandingTime> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://airdata.org/ontology#ArrivalEvent> .
+# 
+# http://airdata.org/ontology#ActualPushbackTime
+<http://airdata.org/ontology#ActualPushbackTime> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://airdata.org/ontology#ActualPushbackTime> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://airdata.org/ontology#DepartureEvent> .
+# 
+# http://airdata.org/ontology#ActualTakeoffTime
+<http://airdata.org/ontology#ActualTakeoffTime> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://airdata.org/ontology#ActualTakeoffTime> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://airdata.org/ontology#DepartureEvent> .
+# 
+# http://airdata.org/ontology#ActualTaxiStartTime
+<http://airdata.org/ontology#ActualTaxiStartTime> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://airdata.org/ontology#ActualTaxiStartTime> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://airdata.org/ontology#DepartureEvent> .
+# 
+# http://airdata.org/ontology#ActualTrajectory
+<http://airdata.org/ontology#ActualTrajectory> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://airdata.org/ontology#ActualTrajectory> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://airdata.org/ontology#Trajectory> .
+# 
+# http://airdata.org/ontology#Aerodrome
+<http://airdata.org/ontology#Aerodrome> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://airdata.org/ontology#Aerodrome> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/2002/07/owl#Thing> .
+# 
+# http://airdata.org/ontology#AerodromeCondition
+<http://airdata.org/ontology#AerodromeCondition> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://airdata.org/ontology#AerodromeCondition> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://airdata.org/ontology#WeatherCondition> .
+# 
+# http://airdata.org/ontology#Aircraft
+<http://airdata.org/ontology#Aircraft> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://airdata.org/ontology#Aircraft> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/2002/07/owl#Thing> .
+# 
+# http://airdata.org/ontology#AircraftOperator
+<http://airdata.org/ontology#AircraftOperator> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://airdata.org/ontology#AircraftOperator> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/2002/07/owl#Thing> .
+# 
+# http://airdata.org/ontology#Airspace
+<http://airdata.org/ontology#Airspace> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://airdata.org/ontology#Airspace> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/2002/07/owl#Thing> .
+# 
+# http://airdata.org/ontology#AirspaceCondition
+<http://airdata.org/ontology#AirspaceCondition> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://airdata.org/ontology#AirspaceCondition> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://airdata.org/ontology#WeatherCondition> .
+# 
+# http://airdata.org/ontology#ArrivalEvent
+<http://airdata.org/ontology#ArrivalEvent> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://airdata.org/ontology#ArrivalEvent> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://airdata.org/ontology#TemporalEvent> .
+# 
+# http://airdata.org/ontology#ArrivalOperation
+<http://airdata.org/ontology#ArrivalOperation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://airdata.org/ontology#ArrivalOperation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://airdata.org/ontology#Operation> .
+# 
+# http://airdata.org/ontology#ArrivalPerformanceKPI
+<http://airdata.org/ontology#ArrivalPerformanceKPI> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://airdata.org/ontology#ArrivalPerformanceKPI> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://airdata.org/ontology#Performance> .
+<http://airdata.org/ontology#ArrivalPerformanceKPI> <http://www.w3.org/2000/01/rdf-schema#label> "ArrivalPerformanceKPI" .
+# 
+# http://airdata.org/ontology#DataSource
+<http://airdata.org/ontology#DataSource> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://airdata.org/ontology#DataSource> <http://www.w3.org/2000/01/rdf-schema#label> "DataSource" .
+# 
+# http://airdata.org/ontology#DepartureEvent
+<http://airdata.org/ontology#DepartureEvent> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://airdata.org/ontology#DepartureEvent> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://airdata.org/ontology#TemporalEvent> .
+# 
+# http://airdata.org/ontology#DepartureOperation
+<http://airdata.org/ontology#DepartureOperation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://airdata.org/ontology#DepartureOperation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://airdata.org/ontology#Operation> .
+# 
+# http://airdata.org/ontology#DeparturePerformanceKPI
+<http://airdata.org/ontology#DeparturePerformanceKPI> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://airdata.org/ontology#DeparturePerformanceKPI> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://airdata.org/ontology#Performance> .
+<http://airdata.org/ontology#DeparturePerformanceKPI> <http://www.w3.org/2000/01/rdf-schema#comment> "Agrupa os indicadores relacionados às operações de partida do voo." .
+<http://airdata.org/ontology#DeparturePerformanceKPI> <http://www.w3.org/2000/01/rdf-schema#label> "DeparturePerformanceKPI" .
+# 
+# http://airdata.org/ontology#EnRoutePerformanceKPI
+<http://airdata.org/ontology#EnRoutePerformanceKPI> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://airdata.org/ontology#EnRoutePerformanceKPI> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://airdata.org/ontology#Performance> .
+<http://airdata.org/ontology#EnRoutePerformanceKPI> <http://www.w3.org/2000/01/rdf-schema#label> "EnRoutePerformanceKPI" .
+# 
+# http://airdata.org/ontology#EstimatedArrivalTime
+<http://airdata.org/ontology#EstimatedArrivalTime> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://airdata.org/ontology#EstimatedArrivalTime> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://airdata.org/ontology#ArrivalEvent> .
+# 
+# http://airdata.org/ontology#EstimatedOffBlockTime
+<http://airdata.org/ontology#EstimatedOffBlockTime> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://airdata.org/ontology#EstimatedOffBlockTime> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://airdata.org/ontology#DepartureEvent> .
+# 
+# http://airdata.org/ontology#EstimatedRunwayTime
+<http://airdata.org/ontology#EstimatedRunwayTime> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://airdata.org/ontology#EstimatedRunwayTime> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://airdata.org/ontology#DepartureEvent> .
+# 
+# http://airdata.org/ontology#EstimatedTaxiStartTime
+<http://airdata.org/ontology#EstimatedTaxiStartTime> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://airdata.org/ontology#EstimatedTaxiStartTime> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://airdata.org/ontology#DepartureEvent> .
+# 
+# http://airdata.org/ontology#ExpectedPushbackTime
+<http://airdata.org/ontology#ExpectedPushbackTime> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://airdata.org/ontology#ExpectedPushbackTime> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://airdata.org/ontology#DepartureEvent> .
+# 
+# http://airdata.org/ontology#FixPoint
+<http://airdata.org/ontology#FixPoint> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://airdata.org/ontology#FixPoint> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://airdata.org/ontology#Airspace> .
+# 
+# http://airdata.org/ontology#Flight
+<http://airdata.org/ontology#Flight> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://airdata.org/ontology#Flight> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/2002/07/owl#Thing> .
+# 
+# http://airdata.org/ontology#FuelEfficiencyKPI
+<http://airdata.org/ontology#FuelEfficiencyKPI> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://airdata.org/ontology#FuelEfficiencyKPI> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://airdata.org/ontology#Performance> .
+<http://airdata.org/ontology#FuelEfficiencyKPI> <http://www.w3.org/2000/01/rdf-schema#label> "FuelEfficiencyKPI" .
+# 
+# http://airdata.org/ontology#Gate
+<http://airdata.org/ontology#Gate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://airdata.org/ontology#Gate> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://airdata.org/ontology#Aerodrome> .
+# 
+# http://airdata.org/ontology#GateArrivalOnTimeKPI
+<http://airdata.org/ontology#GateArrivalOnTimeKPI> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://airdata.org/ontology#GateArrivalOnTimeKPI> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://airdata.org/ontology#ArrivalPerformanceKPI> .
+<http://airdata.org/ontology#GateArrivalOnTimeKPI> <http://www.w3.org/2000/01/rdf-schema#label> "GateArrivalOnTimeKPI" .
+# 
+# http://airdata.org/ontology#GateDepartureOnTimeKPI
+<http://airdata.org/ontology#GateDepartureOnTimeKPI> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://airdata.org/ontology#GateDepartureOnTimeKPI> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://airdata.org/ontology#DeparturePerformanceKPI> .
+<http://airdata.org/ontology#GateDepartureOnTimeKPI> <http://www.w3.org/2000/01/rdf-schema#label> "GateDepartureOnTimeKPI" .
+# 
+# http://airdata.org/ontology#HoldTime
+<http://airdata.org/ontology#HoldTime> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://airdata.org/ontology#HoldTime> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://airdata.org/ontology#DepartureEvent> .
+# 
+# http://airdata.org/ontology#Operation
+<http://airdata.org/ontology#Operation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://airdata.org/ontology#Operation> <http://www.w3.org/2000/01/rdf-schema#label> "Operation" .
+# 
+# http://airdata.org/ontology#Performance
+<http://airdata.org/ontology#Performance> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://airdata.org/ontology#Performance> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/2002/07/owl#Thing> .
+<http://airdata.org/ontology#Performance> <http://www.w3.org/2000/01/rdf-schema#comment> "Representa os indicadores-chave de desempenho (KPIs) definidos pela ICAO..." .
+<http://airdata.org/ontology#Performance> <http://www.w3.org/2000/01/rdf-schema#label> "Performance" .
+# 
+# http://airdata.org/ontology#PlannedTrajectory
+<http://airdata.org/ontology#PlannedTrajectory> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://airdata.org/ontology#PlannedTrajectory> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://airdata.org/ontology#Trajectory> .
+# 
+# http://airdata.org/ontology#Procedure
+<http://airdata.org/ontology#Procedure> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://airdata.org/ontology#Procedure> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://airdata.org/ontology#Airspace> .
+# 
+# http://airdata.org/ontology#RouteDistanceEfficiencyKPI
+<http://airdata.org/ontology#RouteDistanceEfficiencyKPI> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://airdata.org/ontology#RouteDistanceEfficiencyKPI> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://airdata.org/ontology#EnRoutePerformanceKPI> .
+<http://airdata.org/ontology#RouteDistanceEfficiencyKPI> <http://www.w3.org/2000/01/rdf-schema#label> "RouteDistanceEfficiencyKPI" .
+# 
+# http://airdata.org/ontology#Runway
+<http://airdata.org/ontology#Runway> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://airdata.org/ontology#Runway> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://airdata.org/ontology#Aerodrome> .
+# 
+# http://airdata.org/ontology#RunwayCondition
+<http://airdata.org/ontology#RunwayCondition> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://airdata.org/ontology#RunwayCondition> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://airdata.org/ontology#WeatherCondition> .
+# 
+# http://airdata.org/ontology#TaxilnEfficiencyKPI
+<http://airdata.org/ontology#TaxilnEfficiencyKPI> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://airdata.org/ontology#TaxilnEfficiencyKPI> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://airdata.org/ontology#ArrivalPerformanceKPI> .
+<http://airdata.org/ontology#TaxilnEfficiencyKPI> <http://www.w3.org/2000/01/rdf-schema#label> "TaxilnEfficiencyKPI" .
+# 
+# http://airdata.org/ontology#Taxiway
+<http://airdata.org/ontology#Taxiway> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://airdata.org/ontology#Taxiway> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://airdata.org/ontology#Aerodrome> .
+# 
+# http://airdata.org/ontology#TemporalEvent
+<http://airdata.org/ontology#TemporalEvent> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://airdata.org/ontology#TemporalEvent> <http://www.w3.org/2000/01/rdf-schema#label> "TemporalEvent" .
+# 
+# http://airdata.org/ontology#TerminalAirspaceEfficiencyKPI
+<http://airdata.org/ontology#TerminalAirspaceEfficiencyKPI> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://airdata.org/ontology#TerminalAirspaceEfficiencyKPI> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://airdata.org/ontology#EnRoutePerformanceKPI> .
+<http://airdata.org/ontology#TerminalAirspaceEfficiencyKPI> <http://www.w3.org/2000/01/rdf-schema#label> "TerminalAirspaceEfficiencyKPI" .
+# 
+# http://airdata.org/ontology#TopOfClimbEfficiencyKPI
+<http://airdata.org/ontology#TopOfClimbEfficiencyKPI> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://airdata.org/ontology#TopOfClimbEfficiencyKPI> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://airdata.org/ontology#VerticalEfficiencyKPI> .
+<http://airdata.org/ontology#TopOfClimbEfficiencyKPI> <http://www.w3.org/2000/01/rdf-schema#label> "TopOfClimbEfficiencyKPI" .
+# 
+# http://airdata.org/ontology#TopOfDescentEfficiencyKPI
+<http://airdata.org/ontology#TopOfDescentEfficiencyKPI> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://airdata.org/ontology#TopOfDescentEfficiencyKPI> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://airdata.org/ontology#VerticalEfficiencyKPI> .
+<http://airdata.org/ontology#TopOfDescentEfficiencyKPI> <http://www.w3.org/2000/01/rdf-schema#label> "TopOfDescentEfficiencyKPI" .
+# 
+# http://airdata.org/ontology#Trajectory
+<http://airdata.org/ontology#Trajectory> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://airdata.org/ontology#Trajectory> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/2002/07/owl#Thing> .
+# 
+# http://airdata.org/ontology#TrajectoryPoint
+<http://airdata.org/ontology#TrajectoryPoint> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://airdata.org/ontology#TrajectoryPoint> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://airdata.org/ontology#Trajectory> .
+# 
+# http://airdata.org/ontology#VerticalEfficiencyKPI
+<http://airdata.org/ontology#VerticalEfficiencyKPI> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://airdata.org/ontology#VerticalEfficiencyKPI> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://airdata.org/ontology#Performance> .
+<http://airdata.org/ontology#VerticalEfficiencyKPI> <http://www.w3.org/2000/01/rdf-schema#label> "VerticalEfficiencyKPI" .
+# 
+# http://airdata.org/ontology#WeatherCondition
+<http://airdata.org/ontology#WeatherCondition> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://airdata.org/ontology#WeatherCondition> <http://www.w3.org/2000/01/rdf-schema#label> "WeatherCondition" .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Individuals
+# #
+# #################################################################
+# 
+# 
+# http://airdata.org/ontology#CodeRVRReadingType-END
+<http://airdata.org/ontology#CodeRVRReadingType-END> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://airdata.org/ontology#CodeRVRReadingType-END> <http://www.w3.org/2000/01/rdf-schema#label> "END" .
+# 
+# http://airdata.org/ontology#CodeRVRReadingType-MID
+<http://airdata.org/ontology#CodeRVRReadingType-MID> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://airdata.org/ontology#CodeRVRReadingType-MID> <http://www.w3.org/2000/01/rdf-schema#label> "MID" .
+# 
+# http://airdata.org/ontology#CodeRVRReadingType-TDZ
+<http://airdata.org/ontology#CodeRVRReadingType-TDZ> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://airdata.org/ontology#CodeRVRReadingType-TDZ> <http://www.w3.org/2000/01/rdf-schema#label> "TDZ" .
+# 
+# http://airdata.org/ontology#CodeRVRTendencyType-DOWN
+<http://airdata.org/ontology#CodeRVRTendencyType-DOWN> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://airdata.org/ontology#CodeRVRTendencyType-DOWN> <http://www.w3.org/2000/01/rdf-schema#label> "DOWN" .
+# 
+# http://airdata.org/ontology#CodeRVRTendencyType-NC
+<http://airdata.org/ontology#CodeRVRTendencyType-NC> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://airdata.org/ontology#CodeRVRTendencyType-NC> <http://www.w3.org/2000/01/rdf-schema#label> "NC" .
+# 
+# http://airdata.org/ontology#CodeRVRTendencyType-UP
+<http://airdata.org/ontology#CodeRVRTendencyType-UP> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://airdata.org/ontology#CodeRVRTendencyType-UP> <http://www.w3.org/2000/01/rdf-schema#label> "UP" .
+# 
+# http://airdata.org/ontology#CodeTimeReferenceType-UTC
+<http://airdata.org/ontology#CodeTimeReferenceType-UTC> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://airdata.org/ontology#CodeTimeReferenceType-UTC> <http://www.w3.org/2000/01/rdf-schema#label> "UTC" .
+# 
+# http://airdata.org/ontology#CodeTimeReferenceType-UTC-3
+<http://airdata.org/ontology#CodeTimeReferenceType-UTC-3> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://airdata.org/ontology#CodeTimeReferenceType-UTC-3> <http://www.w3.org/2000/01/rdf-schema#label> "UTC-3" .
+# 
+# http://airdata.org/ontology#R9HmZkzr9HZSOYHFK9nsHlc
+<http://airdata.org/ontology#R9HmZkzr9HZSOYHFK9nsHlc> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://airdata.org/ontology#R9HmZkzr9HZSOYHFK9nsHlc> <http://www.w3.org/2000/01/rdf-schema#label> "METAR" .
+# 
+_:genid1 <http://www.w3.org/2002/07/owl#cardinality> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+# Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/

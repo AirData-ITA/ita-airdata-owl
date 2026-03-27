@@ -1,0 +1,105 @@
+{
+  "metadata": {
+    "timestamp": "2026-01-27T19:21:48.381499",
+    "owl_file": "/home/guterres/Dropbox/Agents/airdata-owl/OntoOwl/airdata_owl_v0.0.2.owl",
+    "validation_type": "LLM Readability"
+  },
+  "multilingual": {
+    "entities_with_pt_label": 0,
+    "entities_with_en_label": 0,
+    "entities_with_both_languages": 0,
+    "entities_without_label": 192,
+    "pt_coverage_pct": 0.0,
+    "en_coverage_pct": 0.0,
+    "bilingual_coverage_pct": 0.0,
+    "warning": "Baixa cobertura bilíngue - LLMs podem não entender em inglês"
+  },
+  "definitions": {
+    "entities_with_definition": 2,
+    "definition_coverage_pct": 0.9523809523809524,
+    "short_definitions": 2,
+    "medium_definitions": 0,
+    "long_definitions": 0,
+    "avg_definition_length_words": 9.5,
+    "definitions_with_examples": 0,
+    "examples_coverage_pct": 0.0,
+    "warning": "Poucas definições com exemplos - LLMs se beneficiam de exemplos concretos"
+  },
+  "alignments": {
+    "total_sameas_links": 0,
+    "entities_with_sameas": 0,
+    "alignment_coverage_pct": 0.0,
+    "alignments_by_source": {
+      "DBpedia": 0,
+      "Wikidata": 0,
+      "Schema.org": 0,
+      "FOAF": 0,
+      "Dublin Core": 0
+    },
+    "warning": "Sem alinhamentos externos - LLMs não podem conectar com conhecimento externo"
+  },
+  "query_friendliness": {
+    "properties_with_inverse": 0,
+    "inverse_coverage_pct": 0.0,
+    "properties_with_domain_and_range": 139,
+    "domain_range_coverage_pct": 365.7894736842105,
+    "classes_with_short_labels": 18,
+    "short_label_pct": 35.294117647058826,
+    "warning": "Poucas propriedades inversas - dificulta queries bidirecionais (ex: ?parent :hasChild ?x vs ?x :isChildOf ?parent)"
+  },
+  "naming_ambiguity": {
+    "potentially_ambiguous_names": 8,
+    "ambiguous_examples": [
+      "dataRadar",
+      "additionalData",
+      "TemporalEvent-DataSource",
+      "Trajectory-DataSource",
+      "dataSource",
+      "DataSource",
+      "WeatherCondition-DataSource",
+      "Airspace-DataSource"
+    ],
+    "duplicate_names": 0,
+    "duplicate_examples": [],
+    "single_word_names": 60,
+    "single_word_pct": 28.57142857142857,
+    "warning": null
+  },
+  "llm_readability_score": {
+    "total_score": 2.82,
+    "level": "Precisa Melhorar - Difícil para LLMs interpretarem",
+    "breakdown": {
+      "multilingual": 0.0,
+      "definitions": 0.05,
+      "alignments": 0.0,
+      "query_friendly": 10,
+      "naming_clarity": 8.1
+    },
+    "recommendations": [
+      {
+        "priority": "ALTA",
+        "category": "Multilíngue",
+        "issue": "Apenas 0.0% das entidades têm labels pt+en",
+        "suggestion": "Adicionar rdfs:label@pt e rdfs:label@en para todas as classes e propriedades"
+      },
+      {
+        "priority": "ALTA",
+        "category": "Definições",
+        "issue": "Apenas 0.0% das definições têm exemplos",
+        "suggestion": "Incluir exemplos concretos nas definições (rdfs:comment ou IAO:0000115): \"Ex: Aeronave comercial como Boeing 737\""
+      },
+      {
+        "priority": "MÉDIA",
+        "category": "Alinhamentos",
+        "issue": "Nenhum alinhamento externo (owl:sameAs)",
+        "suggestion": "Adicionar owl:sameAs para DBpedia/Wikidata: ex: :Aircraft owl:sameAs <http://dbpedia.org/resource/Aircraft>"
+      },
+      {
+        "priority": "ALTA",
+        "category": "Query-Friendliness",
+        "issue": "0.0% de propriedades têm inversas",
+        "suggestion": "Criar propriedades inversas com owl:inverseOf: :hasParent owl:inverseOf :isParentOf"
+      }
+    ]
+  }
+}

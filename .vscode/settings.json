@@ -1,0 +1,12 @@
+{
+  "workbench.editor.enablePreview": false,
+  "workbench.editor.enablePreviewFromQuickOpen": false,
+  "workbench.editor.openSideBySideDirection": "right",
+  "workbench.editor.openPositioning": "right",
+  "workbench.editor.splitSizing": "distribute",
+  "python.defaultInterpreterPath": "/home/guterres/ai-envs/airdata-owl/bin/python",
+  "python.terminal.activateEnvironment": true,
+  "python.analysis.extraPaths": [
+    "${workspaceFolder}/OntoDoc"
+  ]
+}

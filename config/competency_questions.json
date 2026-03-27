@@ -1,0 +1,130 @@
+{
+  "_metadata": {
+    "description": "Competency Questions para validação da Ontologia AirData",
+    "purpose": "Testar se a ontologia permite responder perguntas fundamentais do domínio",
+    "usage": "Este arquivo define perguntas que LLMs devem conseguir traduzir em queries SPARQL",
+    "last_updated": "2026-01-24",
+    "note": "Adicione novas perguntas conforme o domínio evolui. Queries SPARQL devem ser válidas."
+  },
+
+  "questions": [
+    {
+      "id": "CQ001",
+      "category": "Hierarquia de Classes",
+      "question": "Quais são todos os tipos de aeronaves na ontologia?",
+      "sparql": "PREFIX : <http://airdata.org/ontology#>\nSELECT DISTINCT ?aircraft ?label WHERE {\n  ?aircraft rdfs:subClassOf* :Aircraft .\n  OPTIONAL { ?aircraft rdfs:label ?label }\n}",
+      "min_expected_results": 1,
+      "importance": "CRÍTICA",
+      "rationale": "Fundamental para navegar taxonomia de aeronaves"
+    },
+
+    {
+      "id": "CQ002",
+      "category": "Propriedades e Relações",
+      "question": "Quais propriedades conectam aeródromos a operações?",
+      "sparql": "PREFIX : <http://airdata.org/ontology#>\nSELECT DISTINCT ?property WHERE {\n  ?property rdfs:domain :Aerodrome .\n  ?property rdfs:range :Operation .\n}",
+      "min_expected_results": 0,
+      "importance": "ALTA",
+      "rationale": "Essencial para modelar operações em aeródromos"
+    },
+
+    {
+      "id": "CQ003",
+      "category": "Anotações Multilíngues",
+      "question": "Todas as classes têm labels em português?",
+      "sparql": "PREFIX : <http://airdata.org/ontology#>\nSELECT DISTINCT ?class WHERE {\n  ?class a owl:Class .\n  FILTER NOT EXISTS {\n    ?class rdfs:label ?label .\n    FILTER(lang(?label) = \"pt\" || lang(?label) = \"pt-br\")\n  }\n}",
+      "min_expected_results": 0,
+      "importance": "ALTA",
+      "rationale": "Cobertura multilíngue é crítica para LLMs brasileiros",
+      "interpretation": "Resultado vazio significa 100% cobertura (desejável)"
+    },
+
+    {
+      "id": "CQ004",
+      "category": "Domínio e Range",
+      "question": "Quais propriedades de dados (DataProperty) estão definidas?",
+      "sparql": "PREFIX : <http://airdata.org/ontology#>\nSELECT DISTINCT ?dataProp ?domain ?range WHERE {\n  ?dataProp a owl:DatatypeProperty .\n  OPTIONAL { ?dataProp rdfs:domain ?domain }\n  OPTIONAL { ?dataProp rdfs:range ?range }\n}",
+      "min_expected_results": 0,
+      "importance": "MÉDIA",
+      "rationale": "Data properties são essenciais para atributos literais"
+    },
+
+    {
+      "id": "CQ005",
+      "category": "Restrições Lógicas",
+      "question": "Quais classes têm restrições de cardinalidade?",
+      "sparql": "PREFIX : <http://airdata.org/ontology#>\nSELECT DISTINCT ?class ?restriction ?property WHERE {\n  ?class rdfs:subClassOf ?restriction .\n  ?restriction a owl:Restriction .\n  ?restriction owl:onProperty ?property .\n  { ?restriction owl:cardinality ?card }\n  UNION\n  { ?restriction owl:minCardinality ?card }\n  UNION\n  { ?restriction owl:maxCardinality ?card }\n}",
+      "min_expected_results": 0,
+      "importance": "MÉDIA",
+      "rationale": "Cardinalidades definem estrutura obrigatória de instâncias"
+    },
+
+    {
+      "id": "CQ006",
+      "category": "Hierarquia de Propriedades",
+      "question": "Existem sub-propriedades de 'FlightOperation'?",
+      "sparql": "PREFIX : <http://airdata.org/ontology#>\nSELECT DISTINCT ?subProp ?label WHERE {\n  ?subProp rdfs:subPropertyOf :FlightOperation .\n  OPTIONAL { ?subProp rdfs:label ?label }\n}",
+      "min_expected_results": 0,
+      "importance": "MÉDIA",
+      "rationale": "Sub-propriedades permitem especialização de relações"
+    },
+
+    {
+      "id": "CQ007",
+      "category": "Propriedades Inversas",
+      "question": "Quais pares de propriedades são inversas uma da outra?",
+      "sparql": "PREFIX : <http://airdata.org/ontology#>\nSELECT DISTINCT ?prop1 ?prop2 WHERE {\n  ?prop1 owl:inverseOf ?prop2 .\n}",
+      "min_expected_results": 0,
+      "importance": "ALTA",
+      "rationale": "Inversas facilitam navegação bidirecional em queries"
+    },
+
+    {
+      "id": "CQ008",
+      "category": "Classes Disjuntas",
+      "question": "Quais classes são declaradas como mutuamente exclusivas?",
+      "sparql": "PREFIX : <http://airdata.org/ontology#>\nSELECT DISTINCT ?class1 ?class2 WHERE {\n  ?class1 owl:disjointWith ?class2 .\n}",
+      "min_expected_results": 0,
+      "importance": "MÉDIA",
+      "rationale": "Disjunções evitam classificações ambíguas"
+    },
+
+    {
+      "id": "CQ009",
+      "category": "Alinhamentos Externos",
+      "question": "A ontologia tem alinhamentos com bases externas (DBpedia, etc.)?",
+      "sparql": "PREFIX : <http://airdata.org/ontology#>\nSELECT DISTINCT ?entity ?externalEntity WHERE {\n  ?entity owl:sameAs ?externalEntity .\n  FILTER(isURI(?externalEntity))\n}",
+      "min_expected_results": 0,
+      "importance": "BAIXA",
+      "rationale": "Alinhamentos conectam ontologia com conhecimento externo"
+    },
+
+    {
+      "id": "CQ010",
+      "category": "Propriedades Funcionais",
+      "question": "Quais propriedades são funcionais (máximo 1 valor por sujeito)?",
+      "sparql": "PREFIX : <http://airdata.org/ontology#>\nSELECT DISTINCT ?funcProp ?label WHERE {\n  ?funcProp a owl:FunctionalProperty .\n  OPTIONAL { ?funcProp rdfs:label ?label }\n}",
+      "min_expected_results": 0,
+      "importance": "BAIXA",
+      "rationale": "Propriedades funcionais garantem unicidade de valores"
+    }
+  ],
+
+  "_instructions": {
+    "how_to_add_question": "Adicione novo objeto ao array 'questions' com os campos: id, category, question, sparql, min_expected_results, importance, rationale",
+    "importance_levels": ["CRÍTICA", "ALTA", "MÉDIA", "BAIXA"],
+    "categories": [
+      "Hierarquia de Classes",
+      "Propriedades e Relações",
+      "Anotações Multilíngues",
+      "Domínio e Range",
+      "Restrições Lógicas",
+      "Hierarquia de Propriedades",
+      "Propriedades Inversas",
+      "Classes Disjuntas",
+      "Alinhamentos Externos",
+      "Propriedades Funcionais"
+    ],
+    "validation_notes": "Execute este arquivo com test_sparql_queries.py (futuro) ou valide queries manualmente"
+  }
+}

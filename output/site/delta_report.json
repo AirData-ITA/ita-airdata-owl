@@ -1,0 +1,129 @@
+{
+  "metadata": {
+    "timestamp": "2026-01-25T00:39:54.013748",
+    "comparison": "/home/guterres/Dropbox/Agents/agent_AirData/OntoOwl/airdata_owl_v0.0.2.owl -> /home/guterres/Dropbox/Agents/agent_AirData/OntoOwl/airdata_owl_v0.0.2.owl",
+    "previous_file": "/home/guterres/Dropbox/Agents/agent_AirData/OntoOwl/airdata_owl_v0.0.2.owl",
+    "current_file": "/home/guterres/Dropbox/Agents/agent_AirData/OntoOwl/airdata_owl_v0.0.2.owl"
+  },
+  "logic_comparison": {
+    "current": 0,
+    "previous": 0,
+    "difference": 0,
+    "percentage_change": 0,
+    "improvement": false
+  },
+  "llm_readability_comparison": {
+    "current": 0,
+    "previous": 0,
+    "difference": 0,
+    "percentage_change": 0,
+    "improvement": false
+  },
+  "sparql_comparison": {
+    "current": 8.62,
+    "previous": 10.0,
+    "difference": -1.38,
+    "percentage_change": -13.8,
+    "improvement": false
+  },
+  "statistics_comparison": {
+    "classes": {
+      "current": 0,
+      "previous": 0,
+      "difference": 0,
+      "percentage_change": 0,
+      "improvement": false
+    },
+    "object_properties": {
+      "current": 0,
+      "previous": 0,
+      "difference": 0,
+      "percentage_change": 0,
+      "improvement": false
+    },
+    "data_properties": {
+      "current": 0,
+      "previous": 0,
+      "difference": 0,
+      "percentage_change": 0,
+      "improvement": false
+    },
+    "individuals": {
+      "current": 0,
+      "previous": 0,
+      "difference": 0,
+      "percentage_change": 0,
+      "improvement": false
+    },
+    "axioms": {
+      "current": 0,
+      "previous": 0,
+      "difference": 0,
+      "percentage_change": 0,
+      "improvement": false
+    },
+    "hierarchy_max_depth": {
+      "current": 0,
+      "previous": 0,
+      "difference": 0,
+      "percentage_change": 0,
+      "improvement": false
+    },
+    "hierarchy_avg_subclasses": {
+      "current": 0,
+      "previous": 0,
+      "difference": 0,
+      "percentage_change": 0,
+      "improvement": false
+    },
+    "hierarchy_leaf_classes": {
+      "current": 0,
+      "previous": 0,
+      "difference": 0,
+      "percentage_change": 0,
+      "improvement": false
+    },
+    "hierarchy_no_explicit_superclass": {
+      "current": 0,
+      "previous": 0,
+      "difference": 0,
+      "percentage_change": 0,
+      "improvement": false
+    },
+    "quality_classes_no_label": {
+      "current": 0,
+      "previous": 0,
+      "difference": 0,
+      "percentage_change": 0,
+      "improvement": false
+    },
+    "quality_classes_no_comment": {
+      "current": 0,
+      "previous": 0,
+      "difference": 0,
+      "percentage_change": 0,
+      "improvement": false
+    },
+    "quality_properties_no_domain": {
+      "current": 0,
+      "previous": 0,
+      "difference": 0,
+      "percentage_change": 0,
+      "improvement": false
+    },
+    "quality_properties_no_range": {
+      "current": 0,
+      "previous": 0,
+      "difference": 0,
+      "percentage_change": 0,
+      "improvement": false
+    },
+    "consistency": {
+      "current": "desconhecido",
+      "previous": "desconhecido",
+      "difference": "N/A",
+      "percentage_change": "N/A",
+      "improvement": false
+    }
+  }
+}

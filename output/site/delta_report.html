@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Relatório Delta de Qualidade - AirData</title>
+  <style>
+    body {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background: #f8fafc;
+      color: #1f2933;
+      margin: 0;
+      padding: 2rem;
+    }
+    .container {
+      max-width: 980px;
+      margin: 0 auto;
+      background: #ffffff;
+      border: 1px solid #e6e9ef;
+      border-radius: 10px;
+      padding: 2rem;
+      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.06);
+    }
+    h1 {
+      color: #003C7D;
+      margin-top: 0;
+    }
+    h3 {
+      color: #003C7D;
+      margin-top: 2rem;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1rem;
+    }
+    th, td {
+      text-align: left;
+      padding: 0.75rem;
+      border-bottom: 1px solid #e6e9ef;
+    }
+    th {
+      width: 45%;
+      color: #475569;
+      font-weight: 600;
+    }
+    ul {
+      padding-left: 1.25rem;
+    }
+    .meta {
+      color: #64748b;
+      font-size: 0.95rem;
+    }
+    .summary-card {
+      background: #f1f5f9;
+      padding: 1rem;
+      border-radius: 8px;
+      margin-bottom: 1.5rem;
+    }
+  </style>
+
+
+
+
+
+<!-- AirData Header Style Start -->
+<style>
+  /* Base Styles */
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+    margin: 0;
+    color: #24292e;
+  }
+
+  /* Header */
+  .airdata-header {
+    background-color: #ffffff;
+    border-bottom: 1px solid #d1d5da;
+    padding: 16px 32px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 40px;
+  }
+
+  /* Logo */
+  .airdata-header .logo-container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    color: #003C7D;
+  }
+
+  .airdata-header .logo-img {
+    height: 40px;
+  }
+
+  .airdata-header .logo-text {
+    font-size: 1.25rem;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+
+  /* Navigation */
+  .airdata-header .nav-container {
+    display: flex;
+    gap: 16px;
+  }
+
+  .airdata-header .nav-item {
+    position: relative;
+  }
+
+  .airdata-header .nav-link {
+    display: block;
+    padding: 8px 12px;
+    color: #586069;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1rem;
+    border-radius: 6px;
+    transition: background-color 0.2s ease, color 0.2s ease;
+  }
+
+  .airdata-header .nav-link:hover,
+  .airdata-header .dropdown:hover .nav-link {
+    background-color: #f6f8fa;
+    color: #0366d6;
+  }
+
+  /* Dropdown */
+  .airdata-header .dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #ffffff;
+    min-width: 220px;
+    border: 1px solid #d1d5da;
+    border-radius: 6px;
+    box-shadow: 0 8px 24px rgba(149, 157, 165, 0.2);
+    z-index: 1000;
+    padding: 8px 0;
+  }
+
+  .airdata-header .dropdown:hover .dropdown-content {
+    display: block;
+  }
+
+  .airdata-header .dropdown-item {
+    display: block;
+    padding: 8px 16px;
+    color: #24292e;
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 0.9rem;
+    text-align: left;
+  }
+
+  .airdata-header .dropdown-item:hover {
+    background-color: #f6f8fa;
+  }
+</style>
+<!-- AirData Header Style End -->
+</head>
+<body>
+<!-- AirData Header Start -->
+<header class="airdata-header">
+  <a href="index.html" class="logo-container">
+    <img src="airdata-logo.png" alt="AirData Logo" class="logo-img">
+    <span class="logo-text">AirData Ontology</span>
+  </a>
+
+  <nav class="nav-container">
+    <div class="nav-item">
+      <a href="index.html" class="nav-link">In&iacute;cio</a>
+    </div>
+
+    <div class="nav-item dropdown">
+      <a href="#" class="nav-link">Ontologia &#9662;</a>
+      <div class="dropdown-content">
+        <a href="docs/index-pt.html" class="dropdown-item">Documenta&ccedil;&atilde;o</a>
+        <a href="docs/webvowl/index.html" class="dropdown-item">Grafo</a>
+        <a href="statistics.html" class="dropdown-item">Estat&iacute;sticas</a>
+      </div>
+    </div>
+
+    <div class="nav-item dropdown">
+      <a href="#" class="nav-link">Evolu&ccedil;&atilde;o &#9662;</a>
+      <div class="dropdown-content">
+        <a href="changelog.html" class="dropdown-item">Hist&oacute;rico de Mudan&ccedil;as</a>
+        <a href="versions.html" class="dropdown-item">Vers&otilde;es OWL</a>
+      </div>
+    </div>
+
+    <div class="nav-item dropdown">
+      <a href="#" class="nav-link">Relat&oacute;rios &#9662;</a>
+      <div class="dropdown-content">
+        <a href="quality_report.html" class="dropdown-item">Valida&ccedil;&atilde;o Sint&aacute;tica</a>
+        <a href="quality_report_extended.html" class="dropdown-item">An&aacute;lise Sem&acirc;ntica</a>
+        <a href="logic_report.html" class="dropdown-item">Axiomas L&oacute;gicos OWL</a>
+        <a href="llm_readability.html" class="dropdown-item">Usabilidade para LLMs</a>
+        <a href="sparql_validation.html" class="dropdown-item">Valida&ccedil;&atilde;o SPARQL</a>
+        <a href="competency_report.html" class="dropdown-item">Perguntas de Compet&ecirc;ncia</a>
+        <a href="quality-guide.html" class="dropdown-item">Guia de Interpreta&ccedil;&atilde;o</a>
+      </div>
+    </div>
+
+    <div class="nav-item dropdown">
+      <a href="#" class="nav-link">Evolu&ccedil;&atilde;o &#9662;</a>
+      <div class="dropdown-content">
+        <a href="changelog.html" class="dropdown-item">Hist&oacute;rico de Mudan&ccedil;as</a>
+        <a href="versions.html" class="dropdown-item">Vers&otilde;es OWL</a>
+        <a href="delta_report.html" class="dropdown-item">Relat&oacute;rio Delta de Qualidade</a>
+      </div>
+    </div>
+  </nav>
+</header>
+<!-- AirData Header End -->
+
+
+  <div class="container">
+    <h1>Relatório Delta de Qualidade</h1>
+    <p class="meta">Comparação entre versões: v0.0.2 → v0.0.2</p>
+    <p class="meta">Gerado automaticamente em 2026-01-25T00:39:54.013748</p>
+
+    <div class="summary-card">
+      <h3>Resumo da Comparação</h3>
+      <p>Comparando <strong>v0.0.2</strong> → <strong>v0.0.2</strong></p>
+    </div>
+
+    <h3>Scores de Qualidade</h3>
+    <table>
+      <tr>
+        <th>Métrica</th>
+        <th>Versão Anterior</th>
+        <th>Versão Atual</th>
+        <th>Variação</th>
+      </tr>
+      
+      <tr>
+        <th>Score de Riqueza Lógica</th>
+        <td>0/10</td>
+        <td>0/10</td>
+        <td style="color: #d73a49; font-weight: bold;">
+          ↓ 0 (0%)
+        </td>
+      </tr>
+      <tr>
+        <th>Score de Legibilidade por LLM</th>
+        <td>0/10</td>
+        <td>0/10</td>
+        <td style="color: #d73a49; font-weight: bold;">
+          ↓ 0 (0%)
+        </td>
+      </tr>
+      <tr>
+        <th>Score de Consultas SPARQL</th>
+        <td>10.0/10</td>
+        <td>8.62/10</td>
+        <td style="color: #d73a49; font-weight: bold;">
+          ↓ -1.38 (-13.8%)
+        </td>
+      </tr>
+    
+    </table>
+
+    <h3>Estrutura</h3>
+    <table>
+      <tr>
+        <th>Componente</th>
+        <th>Versão Anterior</th>
+        <th>Versão Atual</th>
+        <th>Variação</th>
+      </tr>
+      
+          <tr>
+            <th>Classes</th>
+            <td>0</td>
+            <td>0</td>
+            <td style="color: #d73a49; font-weight: bold;">↓ 0 (0%)</td>
+          </tr>
+        
+          <tr>
+            <th>Object Properties</th>
+            <td>0</td>
+            <td>0</td>
+            <td style="color: #d73a49; font-weight: bold;">↓ 0 (0%)</td>
+          </tr>
+        
+          <tr>
+            <th>Data Properties</th>
+            <td>0</td>
+            <td>0</td>
+            <td style="color: #d73a49; font-weight: bold;">↓ 0 (0%)</td>
+          </tr>
+        
+          <tr>
+            <th>Individuals</th>
+            <td>0</td>
+            <td>0</td>
+            <td style="color: #d73a49; font-weight: bold;">↓ 0 (0%)</td>
+          </tr>
+        
+          <tr>
+            <th>Axioms</th>
+            <td>0</td>
+            <td>0</td>
+            <td style="color: #d73a49; font-weight: bold;">↓ 0 (0%)</td>
+          </tr>
+        
+          <tr>
+            <th>Consistency</th>
+            <td>desconhecido</td>
+            <td>desconhecido</td>
+            <td style="color: ; font-weight: bold;">- N/A (N/A%)</td>
+          </tr>
+        
+    </table>
+
+    <h3>Hierarquia</h3>
+    <table>
+      <tr>
+        <th>Aspecto</th>
+        <th>Versão Anterior</th>
+        <th>Versão Atual</th>
+        <th>Variação</th>
+      </tr>
+      
+              <tr>
+                <th>Max Depth</th>
+                <td>0</td>
+                <td>0</td>
+                <td style="color: #d73a49; font-weight: bold;">↓ 0 (0%)</td>
+              </tr>
+            
+              <tr>
+                <th>Avg Subclasses</th>
+                <td>0</td>
+                <td>0</td>
+                <td style="color: #d73a49; font-weight: bold;">↓ 0 (0%)</td>
+              </tr>
+            
+              <tr>
+                <th>Leaf Classes</th>
+                <td>0</td>
+                <td>0</td>
+                <td style="color: #d73a49; font-weight: bold;">↓ 0 (0%)</td>
+              </tr>
+            
+              <tr>
+                <th>No Explicit Superclass</th>
+                <td>0</td>
+                <td>0</td>
+                <td style="color: #d73a49; font-weight: bold;">↓ 0 (0%)</td>
+              </tr>
+            
+    </table>
+
+    <h3>Qualidade Objetiva</h3>
+    <table>
+      <tr>
+        <th>Aspecto</th>
+        <th>Versão Anterior</th>
+        <th>Versão Atual</th>
+        <th>Variação</th>
+      </tr>
+      
+              <tr>
+                <th>Classes No Label</th>
+                <td>0</td>
+                <td>0</td>
+                <td style="color: #d73a49; font-weight: bold;">↓ 0 (0%)</td>
+              </tr>
+            
+              <tr>
+                <th>Classes No Comment</th>
+                <td>0</td>
+                <td>0</td>
+                <td style="color: #d73a49; font-weight: bold;">↓ 0 (0%)</td>
+              </tr>
+            
+              <tr>
+                <th>Properties No Domain</th>
+                <td>0</td>
+                <td>0</td>
+                <td style="color: #d73a49; font-weight: bold;">↓ 0 (0%)</td>
+              </tr>
+            
+              <tr>
+                <th>Properties No Range</th>
+                <td>0</td>
+                <td>0</td>
+                <td style="color: #d73a49; font-weight: bold;">↓ 0 (0%)</td>
+              </tr>
+            
+    </table>
+
+    <div class="summary-card">
+      <h3>Resumo Executivo</h3>
+      <p>
+        → Nenhuma melhoria significativa detectada.
+      </p>
+    </div>
+  </div>
+</body>
+</html>

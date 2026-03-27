@@ -1,0 +1,198 @@
+{
+  "metadata": {
+    "timestamp": "2026-01-27T19:21:48.499367",
+    "owl_file": "/home/guterres/Dropbox/Agents/airdata-owl/OntoOwl/airdata_owl_v0.0.2.owl",
+    "validation_type": "SPARQL Query Testing"
+  },
+  "summary": {
+    "total_queries": 15,
+    "successful_queries": 15,
+    "failed_queries": 0,
+    "success_rate_pct": 100.0
+  },
+  "detailed_results": {
+    "basic_discovery": {
+      "queries": [
+        {
+          "name": "Listar todas as classes",
+          "success": true,
+          "result_count": 51,
+          "execution_time_ms": 61.53,
+          "meets_expectation": true,
+          "importance": "CRÍTICA",
+          "error": null
+        },
+        {
+          "name": "Listar object properties",
+          "success": true,
+          "result_count": 38,
+          "execution_time_ms": 1.48,
+          "meets_expectation": true,
+          "importance": "CRÍTICA",
+          "error": null
+        },
+        {
+          "name": "Listar data properties",
+          "success": true,
+          "result_count": 121,
+          "execution_time_ms": 1.36,
+          "meets_expectation": true,
+          "importance": "MÉDIA",
+          "error": null
+        }
+      ],
+      "success_count": 3,
+      "total_count": 3,
+      "success_rate": 100.0
+    },
+    "hierarchy_navigation": {
+      "queries": [
+        {
+          "name": "Buscar hierarquia de classes (subclasses)",
+          "success": true,
+          "result_count": 47,
+          "execution_time_ms": 3.84,
+          "meets_expectation": true,
+          "importance": "ALTA",
+          "error": null
+        },
+        {
+          "name": "Buscar hierarquia de propriedades",
+          "success": true,
+          "result_count": 161,
+          "execution_time_ms": 1.34,
+          "meets_expectation": true,
+          "importance": "MÉDIA",
+          "error": null
+        }
+      ],
+      "success_count": 2,
+      "total_count": 2,
+      "success_rate": 100.0
+    },
+    "domain_range": {
+      "queries": [
+        {
+          "name": "Listar propriedades com domain e range",
+          "success": true,
+          "result_count": 148,
+          "execution_time_ms": 1.81,
+          "meets_expectation": true,
+          "importance": "ALTA",
+          "error": null
+        },
+        {
+          "name": "Buscar properties sem domain declarado",
+          "success": true,
+          "result_count": 20,
+          "execution_time_ms": 3.56,
+          "meets_expectation": true,
+          "importance": "MÉDIA",
+          "error": null
+        }
+      ],
+      "success_count": 2,
+      "total_count": 2,
+      "success_rate": 100.0
+    },
+    "annotations": {
+      "queries": [
+        {
+          "name": "Buscar classes com labels",
+          "success": true,
+          "result_count": 18,
+          "execution_time_ms": 2.03,
+          "meets_expectation": true,
+          "importance": "ALTA",
+          "error": null
+        },
+        {
+          "name": "Buscar definições (rdfs:comment)",
+          "success": true,
+          "result_count": 2,
+          "execution_time_ms": 1.34,
+          "meets_expectation": true,
+          "importance": "MÉDIA",
+          "error": null
+        },
+        {
+          "name": "Buscar labels em português",
+          "success": true,
+          "result_count": 1,
+          "execution_time_ms": 7.16,
+          "meets_expectation": true,
+          "importance": "ALTA",
+          "error": null
+        }
+      ],
+      "success_count": 3,
+      "total_count": 3,
+      "success_rate": 100.0
+    },
+    "restrictions": {
+      "queries": [
+        {
+          "name": "Listar restrições OWL",
+          "success": true,
+          "result_count": 0,
+          "execution_time_ms": 2.03,
+          "meets_expectation": true,
+          "importance": "MÉDIA",
+          "error": null
+        },
+        {
+          "name": "Buscar cardinalidades",
+          "success": true,
+          "result_count": 0,
+          "execution_time_ms": 3.58,
+          "meets_expectation": true,
+          "importance": "MÉDIA",
+          "error": null
+        }
+      ],
+      "success_count": 2,
+      "total_count": 2,
+      "success_rate": 100.0
+    },
+    "advanced": {
+      "queries": [
+        {
+          "name": "Buscar propriedades funcionais",
+          "success": true,
+          "result_count": 1,
+          "execution_time_ms": 1.53,
+          "meets_expectation": true,
+          "importance": "BAIXA",
+          "error": null
+        },
+        {
+          "name": "Buscar propriedades inversas",
+          "success": true,
+          "result_count": 0,
+          "execution_time_ms": 1.35,
+          "meets_expectation": true,
+          "importance": "MÉDIA",
+          "error": null
+        },
+        {
+          "name": "Buscar classes disjuntas",
+          "success": true,
+          "result_count": 0,
+          "execution_time_ms": 1.31,
+          "meets_expectation": true,
+          "importance": "MÉDIA",
+          "error": null
+        }
+      ],
+      "success_count": 3,
+      "total_count": 3,
+      "success_rate": 100.0
+    }
+  },
+  "score": {
+    "total_score": 10.0,
+    "level": "Excelente - Todas as queries essenciais funcionam",
+    "critical_queries_success": 2,
+    "critical_queries_total": 2
+  }
+}

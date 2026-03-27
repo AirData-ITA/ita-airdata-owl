@@ -1,0 +1,61 @@
+{
+  "metadata": {
+    "timestamp": "2026-01-23T23:36:14.623490",
+    "owl_file": "OntoOwl/airdata_owl_v0.0.1.owl",
+    "num_classes": 0,
+    "num_properties": 0
+  },
+  "structure": {
+    "max_depth": 0,
+    "avg_depth": 0,
+    "num_leaf_classes": 0,
+    "num_intermediate_classes": 0,
+    "leaf_percentage": 0
+  },
+  "completeness": {
+    "label_pct": 0,
+    "label_pt_pct": 0,
+    "definition_pct": 0,
+    "comment_pct": 0,
+    "domain_pct": 0,
+    "range_pct": 0,
+    "prop_label_pct": 0
+  },
+  "naming": {
+    "num_naming_violations": 0,
+    "classes_violations": 0,
+    "properties_violations": 0,
+    "labels_too_long": 0
+  },
+  "connectivity": {
+    "num_isolated": 0,
+    "num_components": 0,
+    "density": 0,
+    "top_central_classes": []
+  },
+  "reusability": {
+    "vocabularies_usage": {
+      "Dublin Core": 9,
+      "SKOS": 0,
+      "FOAF": 0
+    },
+    "vocabularies_used_count": 1,
+    "reusability_pct": 33.33333333333333
+  },
+  "antipatterns": {
+    "num_dead_classes": 0,
+    "num_singleton_properties": 0,
+    "dead_classes_sample": []
+  },
+  "score": {
+    "total_score": 6.33,
+    "quality_level": "Bom",
+    "breakdown": {
+      "completeness": 0.0,
+      "consistency": 10.0,
+      "connectivity": 10.0,
+      "naming": 10.0,
+      "reusability": 3.33
+    }
+  }
+}

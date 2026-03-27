@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF
+  xmlns="http://airdata.org/ontology#"
+  xml:base="http://airdata.org/ontology"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+  xmlns:owl="http://www.w3.org/2002/07/owl#"
+  xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+  xmlns:dcterms="http://purl.org/dc/terms/"
+  xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+  xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+  
+  <owl:Ontology rdf:about="http://airdata.org/ontology#">
+    <dcterms:title xml:lang="pt">Ontologia AirData</dcterms:title>
+    <dcterms:title xml:lang="en">AirData Ontology</dcterms:title>
+    <dcterms:description xml:lang="pt">Ontologia inicial do projeto AirData - estrutura basica.</dcterms:description>
+    <dcterms:description xml:lang="en">Initial AirData project ontology - basic structure.</dcterms:description>
+    <dcterms:license rdf:resource="https://creativecommons.org/licenses/by/4.0/"/>
+    <owl:versionInfo>0.0.1</owl:versionInfo>
+    <owl:versionIRI rdf:resource="http://airdata.org/ontology/0.0.1"/>
+    <dcterms:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-01-23</dcterms:issued>
+    <dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-01-23</dcterms:modified>
+    <dcterms:creator xml:lang="en">AirData Team - ITA</dcterms:creator>
+    <dcterms:publisher xml:lang="en">Instituto Tecnologico de Aeronautica</dcterms:publisher>
+    <rdfs:comment xml:lang="pt">Versao inicial - estrutura basica da ontologia sem classes definidas.</rdfs:comment>
+    <rdfs:comment xml:lang="en">Initial version - basic ontology structure without defined classes.</rdfs:comment>
+  </owl:Ontology>
+
+</rdf:RDF>

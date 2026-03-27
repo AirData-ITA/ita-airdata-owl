@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relatório de Usabilidade para LLMs - AirData</title>
+
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; background: #f8fafc; color: #1f2933; margin: 0; padding: 2rem; }
+        .container { max-width: 980px; margin: 0 auto; background: #ffffff; border: 1px solid #e6e9ef; border-radius: 10px; padding: 2rem; box-shadow: 0 10px 30px rgba(15, 23, 42, 0.06); }
+        h1 { color: #003C7D; margin-top: 0; }
+        h2 { color: #003C7D; margin-top: 2rem; margin-bottom: 0.8rem; font-size: 1.3em; font-weight: 600; padding-bottom: 0.3rem; }
+        h3 { color: #003C7D; margin-top: 1.5rem; margin-bottom: 0.5rem; font-size: 1.1em; font-weight: 600; }
+
+        .recommendation { border: 1px solid #cccccc; padding: 1rem; margin: 1rem 0; background: #fafafa; }
+        .recommendation.priority-high { border-left: 4px solid #cc0000; }
+        .recommendation.priority-medium { border-left: 4px solid #ff8800; }
+        .recommendation.priority-info { border-left: 4px solid #006600; }
+
+        .rec-header { margin-bottom: 0.5rem; }
+        .priority-badge { display: inline-block; background: #333333; color: white; padding: 0.2rem 0.5rem; font-size: 0.85em; font-weight: 600; margin-right: 0.5rem; }
+        .category { color: #000000; font-weight: 600; }
+        .rec-issue { margin: 0.5rem 0; color: #000000; }
+        .rec-suggestion { margin-top: 0.5rem; padding: 0.5rem; background: white; border: 1px solid #cccccc; }
+
+        table { width: 100%; border-collapse: collapse; margin-top: 1rem; }
+        th, td { text-align: left; padding: 0.75rem; border-bottom: 1px solid #e6e9ef; }
+        th { width: 45%; color: #475569; font-weight: 600; }
+
+        .warning { color: #cc0000; font-weight: 600; padding: 0.5rem; background: #ffe8e8; border: 1px solid #cc0000; margin-top: 0.5rem; }
+        .timestamp { color: #64748b; font-size: 0.95rem; }
+    </style>
+
+<!-- AirData Header Style Start -->
+<style>
+  /* Base Styles */
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+    margin: 0;
+    color: #24292e;
+  }
+
+  /* Header */
+  .airdata-header {
+    background-color: #ffffff;
+    border-bottom: 1px solid #d1d5da;
+    padding: 16px 32px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 40px;
+  }
+
+  /* Logo */
+  .airdata-header .logo-container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    color: #003C7D;
+  }
+
+  .airdata-header .logo-img {
+    height: 40px;
+  }
+
+  .airdata-header .logo-text {
+    font-size: 1.25rem;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+
+  /* Navigation */
+  .airdata-header .nav-container {
+    display: flex;
+    gap: 16px;
+  }
+
+  .airdata-header .nav-item {
+    position: relative;
+  }
+
+  .airdata-header .nav-link {
+    display: block;
+    padding: 8px 12px;
+    color: #586069;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1rem;
+    border-radius: 6px;
+    transition: background-color 0.2s ease, color 0.2s ease;
+  }
+
+  .airdata-header .nav-link:hover,
+  .airdata-header .dropdown:hover .nav-link {
+    background-color: #f6f8fa;
+    color: #0366d6;
+  }
+
+  /* Dropdown */
+  .airdata-header .dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #ffffff;
+    min-width: 220px;
+    border: 1px solid #d1d5da;
+    border-radius: 6px;
+    box-shadow: 0 8px 24px rgba(149, 157, 165, 0.2);
+    z-index: 1000;
+    padding: 8px 0;
+  }
+
+  .airdata-header .dropdown:hover .dropdown-content {
+    display: block;
+  }
+
+  .airdata-header .dropdown-item {
+    display: block;
+    padding: 8px 16px;
+    color: #24292e;
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 0.9rem;
+    text-align: left;
+  }
+
+  .airdata-header .dropdown-item:hover {
+    background-color: #f6f8fa;
+  }
+</style>
+<!-- AirData Header Style End -->
+
+<!-- AirData Footer Style Start -->
+<style>
+/* Footer Styles */
+.footer {
+  background-color: #f6f8fa;
+  border-top: 1px solid #d1d5da;
+  padding-top: 32px;
+  margin-top: 60px;
+  text-align: center;
+  color: #586069;
+  padding-bottom: 0;
+}
+
+.footer-content {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  padding-bottom: 32px;
+}
+
+.footer-org {
+  font-size: 1rem;
+  margin: 0;
+}
+
+.footer-links {
+  display: flex;
+  gap: 24px;
+  margin: 1rem 0;
+}
+
+.footer-links a {
+  color: #003C7D;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+.footer-copyright {
+  margin: 0;
+  opacity: 0.8;
+  font-size: 0.9rem;
+}
+
+.footer-bottom-bar {
+  height: 8px;
+  background-color: #003C7D;
+  width: 100%;
+}
+</style>
+<!-- AirData Footer Style End -->
+
+</head>
+<body>
+<!-- AirData Header Start -->
+<header class="airdata-header">
+  <a href="index.html" class="logo-container">
+    <img src="airdata-logo.png" alt="AirData Logo" class="logo-img">
+    <span class="logo-text">AirData Ontology</span>
+  </a>
+
+  <nav class="nav-container">
+    <div class="nav-item">
+      <a href="index.html" class="nav-link">In&iacute;cio</a>
+    </div>
+
+    <div class="nav-item dropdown">
+      <a href="#" class="nav-link">Ontologia &#9662;</a>
+      <div class="dropdown-content">
+        <a href="docs/index-pt.html" class="dropdown-item">Documenta&ccedil;&atilde;o</a>
+        <a href="docs/webvowl/index.html" class="dropdown-item">Grafo</a>
+        <a href="statistics.html" class="dropdown-item">Estat&iacute;sticas</a>
+      </div>
+    </div>
+
+    <div class="nav-item dropdown">
+      <a href="#" class="nav-link">Evolu&ccedil;&atilde;o &#9662;</a>
+      <div class="dropdown-content">
+        <a href="changelog.html" class="dropdown-item">Hist&oacute;rico de Mudan&ccedil;as</a>
+        <a href="versions.html" class="dropdown-item">Vers&otilde;es OWL</a>
+      </div>
+    </div>
+
+    <div class="nav-item dropdown">
+      <a href="#" class="nav-link">Relat&oacute;rios &#9662;</a>
+      <div class="dropdown-content">
+        <a href="quality_report.html" class="dropdown-item">Valida&ccedil;&atilde;o Sint&aacute;tica</a>
+        <a href="quality_report_extended.html" class="dropdown-item">An&aacute;lise Sem&acirc;ntica</a>
+        <a href="logic_report.html" class="dropdown-item">Axiomas L&oacute;gicos OWL</a>
+        <a href="llm_readability.html" class="dropdown-item">Usabilidade para LLMs</a>
+        <a href="sparql_validation.html" class="dropdown-item">Valida&ccedil;&atilde;o SPARQL</a>
+        <a href="competency_report.html" class="dropdown-item">Perguntas de Compet&ecirc;ncia</a>
+        <a href="quality-guide.html" class="dropdown-item">Guia de Interpreta&ccedil;&atilde;o</a>
+      </div>
+    </div>
+
+    <div class="nav-item dropdown">
+      <a href="#" class="nav-link">Evolu&ccedil;&atilde;o &#9662;</a>
+      <div class="dropdown-content">
+        <a href="changelog.html" class="dropdown-item">Hist&oacute;rico de Mudan&ccedil;as</a>
+        <a href="versions.html" class="dropdown-item">Vers&otilde;es OWL</a>
+        <a href="delta_report.html" class="dropdown-item">Relat&oacute;rio Delta de Qualidade</a>
+      </div>
+    </div>
+  </nav>
+</header>
+<!-- AirData Header End -->
+
+    <div class="container">
+        <h1>Relatório de Usabilidade para LLMs</h1>
+
+        <h2>Resumo Geral</h2>
+        <table>
+            <tr>
+                <th style="width: 70%;">Métrica</th>
+                <th style="width: 30%; text-align: center;">Valor</th>
+            </tr>
+            <tr>
+                <td>Score Total de Usabilidade para LLMs</td>
+                <td style="text-align: center;"><strong>2.82/10</strong></td>
+            </tr>
+            <tr>
+                <td>Classificação</td>
+                <td style="text-align: center;">Precisa Melhorar - Difícil para LLMs interpretarem</td>
+            </tr>
+        </table>
+
+        <h2>Detalhamento por Categoria</h2>
+        <table>
+            <tr>
+                <th>Categoria</th>
+                <th style="text-align: center;">Score</th>
+            </tr>
+            <tr>
+                <td>Cobertura Multilíngue (pt/en)</td>
+                <td style="text-align: center;">0.0/10</td>
+            </tr>
+            <tr>
+                <td>Qualidade de Definições</td>
+                <td style="text-align: center;">0.05/10</td>
+            </tr>
+            <tr>
+                <td>Alinhamentos Externos</td>
+                <td style="text-align: center;">0.0/10</td>
+            </tr>
+            <tr>
+                <td>Query-Friendliness</td>
+                <td style="text-align: center;">10/10</td>
+            </tr>
+            <tr>
+                <td>Clareza de Nomenclatura</td>
+                <td style="text-align: center;">8.1/10</td>
+            </tr>
+        </table>
+
+        <h2>Análise Detalhada</h2>
+
+        <h3>Cobertura Multilíngue</h3>
+        <table>
+            <tr><th>Métrica</th><th>Valor</th></tr>
+            <tr><td>Entidades com label pt</td><td>0</td></tr>
+            <tr><td>Entidades com label en</td><td>0</td></tr>
+            <tr><td>Entidades bilíngues (pt+en)</td><td>0</td></tr>
+            <tr><td>Cobertura bilíngue</td><td>0.0%</td></tr>
+        </table>
+        <div class='warning'>⚠️ Baixa cobertura bilíngue - LLMs podem não entender em inglês</div>
+
+        <h3>Qualidade de Definições</h3>
+        <table>
+            <tr><th>Métrica</th><th>Valor</th></tr>
+            <tr><td>Entidades com definição</td><td>2</td></tr>
+            <tr><td>Cobertura de definições</td><td>1.0%</td></tr>
+            <tr><td>Definições curtas (&lt;20 palavras)</td><td>2</td></tr>
+            <tr><td>Definições médias (20-100 palavras)</td><td>0</td></tr>
+            <tr><td>Definições longas (&gt;100 palavras)</td><td>0</td></tr>
+            <tr><td>Tamanho médio</td><td>9.5 palavras</td></tr>
+            <tr><td>Definições com exemplos</td><td>0</td></tr>
+            <tr><td>Cobertura de exemplos</td><td>0.0%</td></tr>
+        </table>
+        <div class='warning'>⚠️ Poucas definições com exemplos - LLMs se beneficiam de exemplos concretos</div>
+
+        <h3>Alinhamentos Externos</h3>
+        <table>
+            <tr><th>Métrica</th><th>Valor</th></tr>
+            <tr><td>Total de owl:sameAs links</td><td>0</td></tr>
+            <tr><td>Entidades com alinhamento</td><td>0</td></tr>
+            <tr><td>Cobertura</td><td>0.0%</td></tr>
+        </table>
+        <h4>Por Fonte Externa:</h4>
+        <table>
+            <tr><th>Fonte</th><th>Links</th></tr>
+            <tr><td>DBpedia</td><td>0</td></tr><tr><td>Wikidata</td><td>0</td></tr><tr><td>Schema.org</td><td>0</td></tr><tr><td>FOAF</td><td>0</td></tr><tr><td>Dublin Core</td><td>0</td></tr>
+        </table>
+        <div class='warning'>⚠️ Sem alinhamentos externos - LLMs não podem conectar com conhecimento externo</div>
+
+        <h3>Query-Friendliness</h3>
+        <table>
+            <tr><th>Métrica</th><th>Valor</th></tr>
+            <tr><td>Propriedades com inversas</td><td>0</td></tr>
+            <tr><td>Cobertura de inversas</td><td>0.0%</td></tr>
+            <tr><td>Propriedades com domain+range</td><td>139</td></tr>
+            <tr><td>Cobertura domain+range</td><td>365.8%</td></tr>
+            <tr><td>Classes com labels curtos</td><td>18</td></tr>
+            <tr><td>Cobertura labels curtos</td><td>35.3%</td></tr>
+        </table>
+        <div class='warning'>⚠️ Poucas propriedades inversas - dificulta queries bidirecionais (ex: ?parent :hasChild ?x vs ?x :isChildOf ?parent)</div>
+
+        <h3>Ambiguidade de Nomenclatura</h3>
+        <table>
+            <tr><th>Métrica</th><th>Valor</th></tr>
+            <tr><td>Nomes potencialmente ambíguos</td><td>8</td></tr>
+            <tr><td>Nomes duplicados</td><td>0</td></tr>
+            <tr><td>Nomes de palavra única</td><td>60</td></tr>
+            <tr><td>Percentual palavra única</td><td>28.6%</td></tr>
+        </table>
+        
+
+        <h2>💡 Recomendações para Próxima Versão</h2>
+        
+            <div class="recommendation priority-high">
+                <div class="rec-header">
+                    <span class="priority-badge">ALTA</span>
+                    <span class="category">Multilíngue</span>
+                </div>
+                <div class="rec-issue">Apenas 0.0% das entidades têm labels pt+en</div>
+                <div class="rec-suggestion">💡 Adicionar rdfs:label@pt e rdfs:label@en para todas as classes e propriedades</div>
+            </div>
+            
+            <div class="recommendation priority-high">
+                <div class="rec-header">
+                    <span class="priority-badge">ALTA</span>
+                    <span class="category">Definições</span>
+                </div>
+                <div class="rec-issue">Apenas 0.0% das definições têm exemplos</div>
+                <div class="rec-suggestion">💡 Incluir exemplos concretos nas definições (rdfs:comment ou IAO:0000115): "Ex: Aeronave comercial como Boeing 737"</div>
+            </div>
+            
+            <div class="recommendation priority-medium">
+                <div class="rec-header">
+                    <span class="priority-badge">MÉDIA</span>
+                    <span class="category">Alinhamentos</span>
+                </div>
+                <div class="rec-issue">Nenhum alinhamento externo (owl:sameAs)</div>
+                <div class="rec-suggestion">💡 Adicionar owl:sameAs para DBpedia/Wikidata: ex: :Aircraft owl:sameAs <http://dbpedia.org/resource/Aircraft></div>
+            </div>
+            
+            <div class="recommendation priority-high">
+                <div class="rec-header">
+                    <span class="priority-badge">ALTA</span>
+                    <span class="category">Query-Friendliness</span>
+                </div>
+                <div class="rec-issue">0.0% de propriedades têm inversas</div>
+                <div class="rec-suggestion">💡 Criar propriedades inversas com owl:inverseOf: :hasParent owl:inverseOf :isParentOf</div>
+            </div>
+            
+
+        <div class="timestamp">
+            Relatório gerado automaticamente em 2026-01-27T19:21:48.381499<br>
+            Arquivo analisado: /home/guterres/Dropbox/Agents/airdata-owl/OntoOwl/airdata_owl_v0.0.2.owl<br>
+            <strong>IMPORTANTE:</strong> Este relatório apenas diagnostica. Edições devem ser feitas manualmente no Protégé.
+        </div>
+    </div>
+
+<!-- AirData Footer Start -->
+<footer class="footer">
+    <div class="footer-content">
+        <p class="footer-org"><strong>Instituto Tecnológico de Aeronáutica - ITA</strong></p>
+        <div class="footer-links">
+            <a href="https://www.airdata.ita.br" target="_blank">Portal AirData</a>
+            <a href="https://github.com/ita-airdata/OntoSite" target="_blank">GitHub</a>
+        </div>
+        <p class="footer-copyright">
+            © 2026 Projeto AirData - Todos os direitos reservados
+        </p>
+    </div>
+    <div class="footer-bottom-bar"></div>
+</footer>
+<!-- AirData Footer End -->
+
+</body>
+</html>

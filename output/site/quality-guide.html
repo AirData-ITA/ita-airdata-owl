@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Página de Desenvolvimento da Ontologia AirData" />
+  <title>Desenvolvimento - AirData Ontology</title>
+
+<!-- AirData Header Style Start -->
+<style>
+  /* Base Styles */
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+    margin: 0;
+    color: #24292e;
+  }
+
+  /* Header */
+  .airdata-header {
+    background-color: #ffffff;
+    border-bottom: 1px solid #d1d5da;
+    padding: 16px 32px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 40px;
+  }
+
+  /* Logo */
+  .airdata-header .logo-container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    color: #003C7D;
+  }
+
+  .airdata-header .logo-img {
+    height: 40px;
+  }
+
+  .airdata-header .logo-text {
+    font-size: 1.25rem;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+
+  /* Navigation */
+  .airdata-header .nav-container {
+    display: flex;
+    gap: 16px;
+  }
+
+  .airdata-header .nav-item {
+    position: relative;
+  }
+
+  .airdata-header .nav-link {
+    display: block;
+    padding: 8px 12px;
+    color: #586069;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1rem;
+    border-radius: 6px;
+    transition: background-color 0.2s ease, color 0.2s ease;
+  }
+
+  .airdata-header .nav-link:hover,
+  .airdata-header .dropdown:hover .nav-link {
+    background-color: #f6f8fa;
+    color: #0366d6;
+  }
+
+  /* Dropdown */
+  .airdata-header .dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #ffffff;
+    min-width: 220px;
+    border: 1px solid #d1d5da;
+    border-radius: 6px;
+    box-shadow: 0 8px 24px rgba(149, 157, 165, 0.2);
+    z-index: 1000;
+    padding: 8px 0;
+  }
+
+  .airdata-header .dropdown:hover .dropdown-content {
+    display: block;
+  }
+
+  .airdata-header .dropdown-item {
+    display: block;
+    padding: 8px 16px;
+    color: #24292e;
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 0.9rem;
+    text-align: left;
+  }
+
+  .airdata-header .dropdown-item:hover {
+    background-color: #f6f8fa;
+  }
+</style>
+<!-- AirData Header Style End -->
+
+<!-- AirData Footer Style Start -->
+<style>
+/* Footer Styles */
+.footer {
+  background-color: #f6f8fa;
+  border-top: 1px solid #d1d5da;
+  padding-top: 32px;
+  margin-top: 60px;
+  text-align: center;
+  color: #586069;
+  padding-bottom: 0;
+}
+
+.footer-content {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  padding-bottom: 32px;
+}
+
+.footer-org {
+  font-size: 1rem;
+  margin: 0;
+}
+
+.footer-links {
+  display: flex;
+  gap: 24px;
+  margin: 1rem 0;
+}
+
+.footer-links a {
+  color: #003C7D;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+.footer-copyright {
+  margin: 0;
+  opacity: 0.8;
+  font-size: 0.9rem;
+}
+
+.footer-bottom-bar {
+  height: 8px;
+  background-color: #003C7D;
+  width: 100%;
+}
+</style>
+<!-- AirData Footer Style End -->
+
+</head>
+
+<body>
+<!-- AirData Header Start -->
+<header class="airdata-header">
+  <a href="index.html" class="logo-container">
+    <img src="airdata-logo.png" alt="AirData Logo" class="logo-img">
+    <span class="logo-text">AirData Ontology</span>
+  </a>
+
+  <nav class="nav-container">
+    <div class="nav-item">
+      <a href="index.html" class="nav-link">In&iacute;cio</a>
+    </div>
+
+    <div class="nav-item dropdown">
+      <a href="#" class="nav-link">Ontologia &#9662;</a>
+      <div class="dropdown-content">
+        <a href="docs/index-pt.html" class="dropdown-item">Documenta&ccedil;&atilde;o</a>
+        <a href="docs/webvowl/index.html" class="dropdown-item">Grafo</a>
+        <a href="statistics.html" class="dropdown-item">Estat&iacute;sticas</a>
+      </div>
+    </div>
+
+    <div class="nav-item dropdown">
+      <a href="#" class="nav-link">Evolu&ccedil;&atilde;o &#9662;</a>
+      <div class="dropdown-content">
+        <a href="changelog.html" class="dropdown-item">Hist&oacute;rico de Mudan&ccedil;as</a>
+        <a href="versions.html" class="dropdown-item">Vers&otilde;es OWL</a>
+      </div>
+    </div>
+
+    <div class="nav-item dropdown">
+      <a href="#" class="nav-link">Relat&oacute;rios &#9662;</a>
+      <div class="dropdown-content">
+        <a href="quality_report.html" class="dropdown-item">Valida&ccedil;&atilde;o Sint&aacute;tica</a>
+        <a href="quality_report_extended.html" class="dropdown-item">An&aacute;lise Sem&acirc;ntica</a>
+        <a href="logic_report.html" class="dropdown-item">Axiomas L&oacute;gicos OWL</a>
+        <a href="llm_readability.html" class="dropdown-item">Usabilidade para LLMs</a>
+        <a href="sparql_validation.html" class="dropdown-item">Valida&ccedil;&atilde;o SPARQL</a>
+        <a href="competency_report.html" class="dropdown-item">Perguntas de Compet&ecirc;ncia</a>
+        <a href="quality-guide.html" class="dropdown-item">Guia de Interpreta&ccedil;&atilde;o</a>
+      </div>
+    </div>
+
+    <div class="nav-item dropdown">
+      <a href="#" class="nav-link">Evolu&ccedil;&atilde;o &#9662;</a>
+      <div class="dropdown-content">
+        <a href="changelog.html" class="dropdown-item">Hist&oacute;rico de Mudan&ccedil;as</a>
+        <a href="versions.html" class="dropdown-item">Vers&otilde;es OWL</a>
+        <a href="delta_report.html" class="dropdown-item">Relat&oacute;rio Delta de Qualidade</a>
+      </div>
+    </div>
+  </nav>
+</header>
+<!-- AirData Header End -->
+
+<style>
+  /* Development Page Styles */
+  .dev-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    line-height: 1.6;
+  }
+
+  .dev-container h1 {
+    font-size: 2rem;
+    border-bottom: 1px solid #eaecef;
+    padding-bottom: 0.3em;
+    margin-bottom: 24px;
+    color: #24292e;
+  }
+
+  .dev-container h2 {
+    font-size: 1.5rem;
+    border-bottom: 1px solid #eaecef;
+    padding-bottom: 0.3em;
+    margin-top: 36px;
+    margin-bottom: 16px;
+    color: #24292e;
+  }
+
+  .dev-container h3 {
+    font-size: 1.25rem;
+    margin-top: 24px;
+    margin-bottom: 12px;
+  }
+
+  .dev-container h4 {
+    font-size: 1.1rem;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    color: #586069;
+  }
+
+  .dev-container p {
+    margin-bottom: 16px;
+    color: #24292e;
+  }
+
+  .dev-container a {
+    color: #0366d6;
+    text-decoration: none;
+  }
+
+  .dev-container a:hover {
+    text-decoration: underline;
+  }
+
+  .dev-container ul, .dev-container ol {
+    padding-left: 2em;
+    margin-bottom: 16px;
+  }
+
+  .dev-container li {
+    margin-bottom: 8px;
+  }
+
+  .dev-container code {
+    background-color: #f6f8fa;
+    padding: 0.2em 0.4em;
+    border-radius: 3px;
+    font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+    font-size: 85%;
+  }
+
+  .dev-container strong {
+    font-weight: 600;
+  }
+
+  .intro-text {
+    background-color: #f6f8fa;
+    border-left: 3px solid #003C7D;
+    padding: 16px 20px;
+    margin-bottom: 24px;
+    border-radius: 3px;
+  }
+</style>
+
+<div class="dev-container">
+  <h1>Guia de Interpretação dos Relatórios de Qualidade</h1>
+
+  <div class="intro-text">
+    <p>A Ontologia AirData é avaliada continuamente através de <strong>análises automatizadas de qualidade</strong>. Esta página explica como interpretar os relatórios disponíveis e fazer julgamentos informados sobre a maturidade e adequação da ontologia.</p>
+
+    <p>Disponibilizamos dois tipos de relatórios complementares: <a href="quality_report.html">Relatório ROBOT</a> (validação técnica) e <a href="quality_report_extended.html">Análise de Qualidade</a> (avaliação multidimensional).</p>
+  </div>
+
+  <h2>Relatório ROBOT - Validação Técnica</h2>
+
+  <p>O <a href="quality_report.html">Relatório ROBOT</a> identifica problemas técnicos específicos na ontologia. Os resultados são classificados em três níveis de severidade:</p>
+
+  <h3>Níveis de Severidade</h3>
+
+  <h4>ERROR - Erros Críticos</h4>
+  <p>Violações de padrões obrigatórios que <strong>devem ser corrigidas</strong> para garantir interoperabilidade e conformidade:</p>
+  <ul>
+    <li><strong>Labels ausentes</strong> (<code>rdfs:label</code>): Classes ou propriedades sem rótulos legíveis comprometem a usabilidade</li>
+    <li><strong>Definições faltantes</strong> (<code>IAO_0000115</code>): Ausência de definições formais prejudica o entendimento semântico</li>
+    <li><strong>URIs malformadas</strong>: Identificadores inválidos ou inconsistentes violam especificações RDF/OWL</li>
+    <li><strong>Metadados obrigatórios</strong>: Falta de informações essenciais (versão, licença, descrição)</li>
+  </ul>
+
+  <p><strong>Como interpretar:</strong> A presença de ERRORs indica que a ontologia não atende aos requisitos mínimos de qualidade. Priorize a correção destes problemas.</p>
+
+  <h4>WARN - Avisos</h4>
+  <p>Problemas que afetam a <strong>usabilidade e manutenibilidade</strong>, mas não impedem o uso básico:</p>
+  <ul>
+    <li><strong>Labels duplicados</strong>: Múltiplas classes com o mesmo rótulo causam ambiguidade</li>
+    <li><strong>Hierarquias incompletas</strong>: Classes sem superclasses explícitas dificultam a navegação</li>
+    <li><strong>Propriedades sem restrições</strong>: Ausência de domínio/range reduz a capacidade de validação automática</li>
+  </ul>
+
+  <p><strong>Como interpretar:</strong> WARNs indicam áreas de melhoria importantes. A ontologia é funcional, mas pode apresentar limitações em cenários avançados.</p>
+
+  <h4>INFO - Informações</h4>
+  <p>Sugestões de <strong>melhores práticas</strong> que aumentam a qualidade geral:</p>
+  <ul>
+    <li><strong>Anotações adicionais</strong>: Uso de <code>skos:altLabel</code>, <code>rdfs:comment</code> para melhorar documentação</li>
+    <li><strong>Convenções de nomenclatura</strong>: Padrões de estilo (PascalCase para classes, camelCase para propriedades)</li>
+  </ul>
+
+  <p><strong>Como interpretar:</strong> INFOs representam oportunidades de refinamento. Seu impacto é menor, mas contribuem para a maturidade profissional da ontologia.</p>
+
+  <h2>Análise de Qualidade Estendida - Avaliação Multidimensional</h2>
+
+  <p>A <a href="quality_report_extended.html">Análise de Qualidade</a> avalia a ontologia em cinco dimensões fundamentais, gerando um <strong>score geral de 0 a 10</strong>. Cada dimensão mede aspectos distintos da qualidade.</p>
+
+  <h3>Dimensões Avaliadas</h3>
+
+  <h4>1. Completude (0-10)</h4>
+  <p><strong>O que mede:</strong> Grau de documentação e anotação dos elementos da ontologia.</p>
+
+  <p><strong>Métricas consideradas:</strong></p>
+  <ul>
+    <li>Percentual de classes com labels em português (pt-br)</li>
+    <li>Percentual de classes com definições formais (IAO_0000115)</li>
+    <li>Percentual de propriedades com domínio declarado</li>
+    <li>Percentual de propriedades com range declarado</li>
+  </ul>
+
+  <p><strong>Como interpretar:</strong></p>
+  <ul>
+    <li><strong>0-3:</strong> Ontologia pouco documentada. Difícil de entender e reutilizar.</li>
+    <li><strong>4-6:</strong> Documentação parcial. Uso possível, mas requer conhecimento prévio do domínio.</li>
+    <li><strong>7-10:</strong> Bem documentada. Auto-explicativa e adequada para reutilização por terceiros.</li>
+  </ul>
+
+  <h4>2. Consistência (0-10)</h4>
+  <p><strong>O que mede:</strong> Ausência de contradições lógicas e conformidade com especificações OWL.</p>
+
+  <p><strong>Verificações realizadas:</strong></p>
+  <ul>
+    <li>Validação com reasoner (verificação de inconsistências lógicas)</li>
+    <li>Conformidade com perfis OWL (OWL 2 DL, OWL 2 EL, etc.)</li>
+    <li>Detecção de axiomas conflitantes</li>
+  </ul>
+
+  <p><strong>Como interpretar:</strong></p>
+  <ul>
+    <li><strong>10:</strong> Logicamente consistente. Pode ser usada com reasoners sem problemas.</li>
+    <li><strong>0:</strong> Contém contradições lógicas. Raciocínio automatizado pode falhar ou gerar resultados incorretos.</li>
+  </ul>
+
+  <h4>3. Conectividade (0-10)</h4>
+  <p><strong>O que mede:</strong> Coesão da estrutura hierárquica e uso de relacionamentos entre classes.</p>
+
+  <p><strong>Indicadores analisados:</strong></p>
+  <ul>
+    <li>Percentual de classes conectadas à hierarquia principal</li>
+    <li>Existência de classes isoladas (sem superclasses ou relações)</li>
+    <li>Densidade de relações entre conceitos</li>
+  </ul>
+
+  <p><strong>Como interpretar:</strong></p>
+  <ul>
+    <li><strong>8-10:</strong> Estrutura bem conectada. Conceitos organizados hierarquicamente.</li>
+    <li><strong>4-7:</strong> Algumas classes isoladas. Hierarquia parcialmente fragmentada.</li>
+    <li><strong>0-3:</strong> Muitas classes desconectadas. Ontologia mais próxima de um vocabulário simples.</li>
+  </ul>
+
+  <h4>4. Nomenclatura (0-10)</h4>
+  <p><strong>O que mede:</strong> Aderência a convenções de nomenclatura e clareza dos identificadores.</p>
+
+  <p><strong>Padrões verificados:</strong></p>
+  <ul>
+    <li>Classes seguem PascalCase (ex: <code>AircraftType</code>)</li>
+    <li>Propriedades seguem camelCase (ex: <code>hasMaxSpeed</code>)</li>
+    <li>Labels não excedem 6 palavras (legibilidade)</li>
+    <li>URIs seguem convenções de namespace</li>
+  </ul>
+
+  <p><strong>Como interpretar:</strong></p>
+  <ul>
+    <li><strong>8-10:</strong> Nomenclatura padronizada e profissional.</li>
+    <li><strong>4-7:</strong> Nomenclatura inconsistente em algumas áreas.</li>
+    <li><strong>0-3:</strong> Nomenclatura ad-hoc. Dificulta manutenção e colaboração.</li>
+  </ul>
+
+  <h4>5. Reusabilidade (0-10)</h4>
+  <p><strong>O que mede:</strong> Facilidade de reutilização por outros projetos ou integração com ontologias externas.</p>
+
+  <p><strong>Fatores avaliados:</strong></p>
+  <ul>
+    <li>Uso de vocabulários padrão (Dublin Core, SKOS, FOAF)</li>
+    <li>Presença de mapeamentos para ontologias de referência</li>
+    <li>Modularidade e separação de conceitos</li>
+    <li>Licença declarada e acessibilidade do código</li>
+  </ul>
+
+  <p><strong>Como interpretar:</strong></p>
+  <ul>
+    <li><strong>7-10:</strong> Pronta para integração. Segue padrões da comunidade.</li>
+    <li><strong>4-6:</strong> Reusável com adaptações. Pode exigir mapeamentos customizados.</li>
+    <li><strong>0-3:</strong> Baixa reusabilidade. Projetada para uso isolado ou domínio muito específico.</li>
+  </ul>
+
+  <h2>Score Geral de Qualidade</h2>
+
+  <p>O score geral é a <strong>média ponderada</strong> das cinco dimensões. Ele oferece uma visão consolidada da maturidade da ontologia:</p>
+
+  <ul>
+    <li><strong>9-10 (Excelente):</strong> Ontologia madura, bem documentada e pronta para uso em produção</li>
+    <li><strong>7-8 (Bom):</strong> Qualidade satisfatória. Adequada para uso com melhorias incrementais</li>
+    <li><strong>5-6 (Regular):</strong> Funcional, mas requer refinamentos significativos</li>
+    <li><strong>3-4 (Ruim):</strong> Problemas estruturais importantes. Uso recomendado apenas para prototipagem</li>
+    <li><strong>0-2 (Crítico):</strong> Ontologia em estágio inicial ou com problemas graves. Não recomendada para uso</li>
+  </ul>
+
+  <h2>Como Usar os Relatórios para Avaliação</h2>
+
+  <h3>1. Avaliar o Contexto de Uso</h3>
+  <p>Nem todas as dimensões têm o mesmo peso dependendo do seu caso de uso:</p>
+  <ul>
+    <li><strong>Uso interno em projeto específico:</strong> Consistência e Conectividade são prioritárias</li>
+    <li><strong>Publicação para comunidade:</strong> Completude, Nomenclatura e Reusabilidade são críticas</li>
+    <li><strong>Integração com sistemas legados:</strong> Reusabilidade e presença de mapeamentos são essenciais</li>
+  </ul>
+
+  <h3>2. Identificar Prioridades de Melhoria</h3>
+  <p>Foque nas dimensões com scores mais baixos e maior impacto no seu contexto:</p>
+  <ol>
+    <li>Corrija primeiro os ERRORs do Relatório ROBOT</li>
+    <li>Melhore a dimensão com menor score na Análise Estendida</li>
+    <li>Aborde WARNs que afetam usabilidade</li>
+    <li>Refine INFOs quando o score geral atingir &gt; 7</li>
+  </ol>
+
+  <h3>3. Acompanhar Evolução</h3>
+  <p>Os relatórios são regenerados automaticamente a cada versão. Compare scores ao longo do tempo para:</p>
+  <ul>
+    <li>Verificar se melhorias estão elevando a qualidade geral</li>
+    <li>Identificar regressões (scores que pioram)</li>
+    <li>Validar que correções de ERRORs não introduziram novos problemas</li>
+  </ul>
+
+  <h2>Limitações e Considerações</h2>
+
+  <p><strong>Os relatórios automatizados não avaliam:</strong></p>
+  <ul>
+    <li><strong>Adequação semântica:</strong> Se os conceitos modelam corretamente o domínio real</li>
+    <li><strong>Competency questions:</strong> Se a ontologia responde às perguntas para as quais foi projetada</li>
+    <li><strong>Usabilidade em aplicações reais:</strong> Desempenho de queries ou integração com sistemas</li>
+  </ul>
+
+  <p>Portanto, scores altos indicam <strong>qualidade técnica</strong>, mas não substituem validação com especialistas do domínio e testes em cenários de uso reais.</p>
+
+  <h2>Próximos Passos Recomendados</h2>
+
+  <p>Após analisar os relatórios:</p>
+
+  <ol>
+    <li><strong>Consulte as <a href="statistics.html">Estatísticas</a></strong> para entender a dimensão e complexidade da ontologia</li>
+    <li><strong>Explore a <a href="docs/index-pt.html">Documentação Técnica</a></strong> para ver detalhes de classes e propriedades</li>
+    <li><strong>Visualize o <a href="docs/webvowl/index.html">Grafo Interativo</a></strong> para compreender relações estruturais</li>
+    <li><strong>Revise o <a href="changelog.html">Histórico de Mudanças</a></strong> para contexto sobre decisões de modelagem</li>
+  </ol>
+</div>
+  
+
+<!-- AirData Footer Start -->
+<footer class="footer">
+    <div class="footer-content">
+        <p class="footer-org"><strong>Instituto Tecnológico de Aeronáutica - ITA</strong></p>
+        <div class="footer-links">
+            <a href="https://www.airdata.ita.br" target="_blank">Portal AirData</a>
+            <a href="https://github.com/ita-airdata/OntoSite" target="_blank">GitHub</a>
+        </div>
+        <p class="footer-copyright">
+            © 2026 Projeto AirData - Todos os direitos reservados
+        </p>
+    </div>
+    <div class="footer-bottom-bar"></div>
+</footer>
+<!-- AirData Footer End -->
+
+</body>
+
+</html>

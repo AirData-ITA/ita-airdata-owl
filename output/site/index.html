@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AirData Ontology - Modelo Semântico para Operações de Aviação">
+    <title>AirData Ontology</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: white;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Menu Superior Flutuante */
+        .navbar {
+            background-color: white;
+            padding: 1rem 2rem;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            transition: all 0.3s ease;
+            border-bottom: 1px solid #eee;
+        }
+
+        .navbar.scrolled {
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            color: #003C7D;
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .logo-main {
+            font-size: 1.5rem;
+        }
+
+        .logo-sub {
+            font-size: 0.75rem;
+            opacity: 0.9;
+            font-weight: normal;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links li {
+            position: relative;
+        }
+
+        .nav-links a,
+        .nav-links .dropdown-toggle {
+            color: #003C7D;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+            cursor: pointer;
+            background: none;
+            border: none;
+            font-size: 1rem;
+        }
+
+        .nav-links a:hover,
+        .nav-links .dropdown-toggle:hover {
+            background-color: rgba(0, 60, 125, 0.05);
+        }
+
+        /* Dropdown Menu */
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: white;
+            min-width: 220px;
+            border-radius: 8px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: all 0.3s ease;
+            margin-top: 0.5rem;
+            z-index: 1000;
+            border: 1px solid #eee;
+        }
+
+        .dropdown:hover .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .dropdown-menu a {
+            display: block;
+            padding: 1rem 1.5rem;
+            color: #003C7D;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            border-radius: 0;
+        }
+
+        .dropdown-menu a:first-child {
+            border-radius: 8px 8px 0 0;
+        }
+
+        .dropdown-menu a:last-child {
+            border-radius: 0 0 8px 8px;
+        }
+
+        .dropdown-menu a:hover {
+            background-color: rgba(0, 60, 125, 0.05);
+        }
+
+        .dropdown-icon {
+            font-size: 0.7rem;
+            transition: transform 0.3s ease;
+        }
+
+        .dropdown:hover .dropdown-icon {
+            transform: rotate(180deg);
+        }
+
+        /* Hero Section */
+        .hero {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 3rem 2rem;
+            background: white;
+        }
+
+        .hero-content {
+            text-align: center;
+            max-width: 800px;
+            padding: 2rem 1rem;
+        }
+
+        .hero-description {
+            font-size: 1.2rem;
+            color: #2c3e50;
+            line-height: 1.9;
+            text-align: justify;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Footer */
+        
+
+        
+
+        
+
+        
+
+        
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .navbar-content {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .nav-links {
+                gap: 1rem;
+                width: 100%;
+                justify-content: center;
+            }
+
+            .dropdown-menu {
+                position: fixed;
+                left: 50%;
+                transform: translateX(-50%) translateY(-10px);
+                width: 90%;
+                max-width: 300px;
+            }
+
+            .dropdown:hover .dropdown-menu {
+                transform: translateX(-50%) translateY(0);
+            }
+
+            .hero-description {
+                font-size: 1rem;
+                text-align: justify;
+                padding: 0 1rem;
+            }
+
+            .hero-content {
+                padding: 1.5rem 1rem;
+            }
+        }
+    </style>
+
+<!-- AirData Header Style Start -->
+<style>
+  /* Base Styles */
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+    margin: 0;
+    color: #24292e;
+  }
+
+  /* Header */
+  .airdata-header {
+    background-color: #ffffff;
+    border-bottom: 1px solid #d1d5da;
+    padding: 16px 32px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 40px;
+  }
+
+  /* Logo */
+  .airdata-header .logo-container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    color: #003C7D;
+  }
+
+  .airdata-header .logo-img {
+    height: 40px;
+  }
+
+  .airdata-header .logo-text {
+    font-size: 1.25rem;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+
+  /* Navigation */
+  .airdata-header .nav-container {
+    display: flex;
+    gap: 16px;
+  }
+
+  .airdata-header .nav-item {
+    position: relative;
+  }
+
+  .airdata-header .nav-link {
+    display: block;
+    padding: 8px 12px;
+    color: #586069;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1rem;
+    border-radius: 6px;
+    transition: background-color 0.2s ease, color 0.2s ease;
+  }
+
+  .airdata-header .nav-link:hover,
+  .airdata-header .dropdown:hover .nav-link {
+    background-color: #f6f8fa;
+    color: #0366d6;
+  }
+
+  /* Dropdown */
+  .airdata-header .dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #ffffff;
+    min-width: 220px;
+    border: 1px solid #d1d5da;
+    border-radius: 6px;
+    box-shadow: 0 8px 24px rgba(149, 157, 165, 0.2);
+    z-index: 1000;
+    padding: 8px 0;
+  }
+
+  .airdata-header .dropdown:hover .dropdown-content {
+    display: block;
+  }
+
+  .airdata-header .dropdown-item {
+    display: block;
+    padding: 8px 16px;
+    color: #24292e;
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 0.9rem;
+    text-align: left;
+  }
+
+  .airdata-header .dropdown-item:hover {
+    background-color: #f6f8fa;
+  }
+</style>
+<!-- AirData Header Style End -->
+
+<!-- AirData Footer Style Start -->
+<style>
+/* Resources Section */
+.resources-section {
+  padding: 3rem 2rem;
+  background: #f8f9fa;
+}
+
+.resources-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.resources-title {
+  font-size: 1.75rem;
+  color: #003C7D;
+  margin-bottom: 0.5rem;
+}
+
+.resources-subtitle {
+  color: #586069;
+  margin-bottom: 2rem;
+}
+
+.resources-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.resource-card {
+  background: white;
+  border: 1px solid #e1e4e8;
+  border-radius: 8px;
+  padding: 1.5rem;
+  text-align: left;
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.2s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.resource-card:hover {
+  border-color: #003C7D;
+  box-shadow: 0 4px 12px rgba(0, 60, 125, 0.1);
+  transform: translateY(-2px);
+}
+
+.resource-icon {
+  font-size: 2rem;
+  margin-bottom: 0.75rem;
+}
+
+.resource-card h3 {
+  color: #003C7D;
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.resource-card p {
+  color: #586069;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin: 0;
+}
+
+@media (max-width: 900px) {
+  .resources-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .resources-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Footer Styles */
+.footer {
+  background-color: #f6f8fa;
+  border-top: 1px solid #d1d5da;
+  padding-top: 32px;
+  margin-top: 60px;
+  text-align: center;
+  color: #586069;
+  padding-bottom: 0;
+}
+
+.footer-content {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  padding-bottom: 32px;
+}
+
+.footer-org {
+  font-size: 1rem;
+  margin: 0;
+}
+
+.footer-links {
+  display: flex;
+  gap: 24px;
+  margin: 1rem 0;
+}
+
+.footer-links a {
+  color: #003C7D;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+.footer-copyright {
+  margin: 0;
+  opacity: 0.8;
+  font-size: 0.9rem;
+}
+
+.footer-bottom-bar {
+  height: 8px;
+  background-color: #003C7D;
+  width: 100%;
+}
+</style>
+<!-- AirData Footer Style End -->
+
+</head>
+<body>
+<!-- AirData Header Start -->
+<header class="airdata-header">
+  <a href="index.html" class="logo-container">
+    <img src="airdata-logo.png" alt="AirData Logo" class="logo-img">
+    <span class="logo-text">AirData Ontology</span>
+  </a>
+
+  <nav class="nav-container">
+    <div class="nav-item">
+      <a href="index.html" class="nav-link">In&iacute;cio</a>
+    </div>
+
+    <div class="nav-item dropdown">
+      <a href="#" class="nav-link">Ontologia &#9662;</a>
+      <div class="dropdown-content">
+        <a href="docs/index-pt.html" class="dropdown-item">Documenta&ccedil;&atilde;o</a>
+        <a href="docs/webvowl/index.html" class="dropdown-item">Grafo</a>
+        <a href="statistics.html" class="dropdown-item">Estat&iacute;sticas</a>
+      </div>
+    </div>
+
+    <div class="nav-item dropdown">
+      <a href="#" class="nav-link">Evolu&ccedil;&atilde;o &#9662;</a>
+      <div class="dropdown-content">
+        <a href="changelog.html" class="dropdown-item">Hist&oacute;rico de Mudan&ccedil;as</a>
+        <a href="versions.html" class="dropdown-item">Vers&otilde;es OWL</a>
+      </div>
+    </div>
+
+    <div class="nav-item dropdown">
+      <a href="#" class="nav-link">Relat&oacute;rios &#9662;</a>
+      <div class="dropdown-content">
+        <a href="quality_report.html" class="dropdown-item">Valida&ccedil;&atilde;o Sint&aacute;tica</a>
+        <a href="quality_report_extended.html" class="dropdown-item">An&aacute;lise Sem&acirc;ntica</a>
+        <a href="logic_report.html" class="dropdown-item">Axiomas L&oacute;gicos OWL</a>
+        <a href="llm_readability.html" class="dropdown-item">Usabilidade para LLMs</a>
+        <a href="sparql_validation.html" class="dropdown-item">Valida&ccedil;&atilde;o SPARQL</a>
+        <a href="competency_report.html" class="dropdown-item">Perguntas de Compet&ecirc;ncia</a>
+        <a href="quality-guide.html" class="dropdown-item">Guia de Interpreta&ccedil;&atilde;o</a>
+      </div>
+    </div>
+
+    <div class="nav-item dropdown">
+      <a href="#" class="nav-link">Evolu&ccedil;&atilde;o &#9662;</a>
+      <div class="dropdown-content">
+        <a href="changelog.html" class="dropdown-item">Hist&oacute;rico de Mudan&ccedil;as</a>
+        <a href="versions.html" class="dropdown-item">Vers&otilde;es OWL</a>
+        <a href="delta_report.html" class="dropdown-item">Relat&oacute;rio Delta de Qualidade</a>
+      </div>
+    </div>
+  </nav>
+</header>
+<!-- AirData Header End -->
+
+    <!-- Menu Superior -->
+    
+
+    <!-- Hero Section -->
+    <main class="hero">
+        <div class="hero-content">
+            <p class="hero-description">
+                O projeto Artificial Intelligence for Aviation Data Analysis (AirData) envolve o desenvolvimento de um sistema de armazenamento e análise de dados para o setor de aviação brasileiro, focado na aviação civil, fundamentado em técnicas de Inteligência Artificial (IA).
+            </p>
+            <p class="hero-description" style="margin-top: 1.5rem;">
+                Uma das partes integrantes do projeto é o desenvolvimento de uma ontologia formal para o setor. A ontologia funciona como uma base de conhecimento estruturada que permite aos modelos de linguagem (LLMs) compreender com precisão os conceitos, relações e regras do domínio aeronáutico. Ao integrar essa estrutura semântica, os modelos podem fornecer respostas mais precisas, contextualizadas e alinhadas com a terminologia técnica da aviação civil brasileira.
+            </p>
+            <p class="hero-description" style="margin-top: 1rem;">
+                Este portal apresenta o status atual de desenvolvimento da ontologia AirData.
+            </p>
+        </div>
+    </main>
+
+    <!-- Recursos Section -->
+    <section class="resources-section">
+        <div class="resources-container">
+            <h2 class="resources-title">Recursos da Ontologia</h2>
+            <p class="resources-subtitle">Acesse rapidamente os principais recursos do projeto</p>
+
+            <div class="resources-grid">
+                <a href="docs/index-pt.html" class="resource-card">
+                    <div class="resource-icon">&#128202;</div>
+                    <h3>Documentação Completa</h3>
+                    <p>Explore a documentação detalhada da ontologia, incluindo classes, propriedades e axiomas definidos no modelo semântico.</p>
+                </a>
+
+                <a href="docs/webvowl/index.html" class="resource-card">
+                    <div class="resource-icon">&#127760;</div>
+                    <h3>Visualização Interativa</h3>
+                    <p>Navegue pela ontologia de forma visual e interativa através do WebVOWL, facilitando a compreensão das relações entre conceitos.</p>
+                </a>
+
+                <a href="statistics.html" class="resource-card">
+                    <div class="resource-icon">&#128200;</div>
+                    <h3>Estatísticas</h3>
+                    <p>Visualize métricas e estatísticas sobre a ontologia, incluindo número de classes, propriedades e cobertura do domínio.</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Relatórios de Qualidade -->
+    <section class="resources-section" style="background: white;">
+        <div class="resources-container">
+            <h2 class="resources-title">Relatórios de Qualidade</h2>
+            <p class="resources-subtitle">Análises automatizadas de qualidade da ontologia</p>
+
+            <div class="resources-grid">
+                <a href="quality_report.html" class="resource-card">
+                    <div class="resource-icon">&#9989;</div>
+                    <h3>Validação Sintática</h3>
+                    <p>Relatório ROBOT com validação de sintaxe OWL e compatibilidade com reasoners.</p>
+                </a>
+
+                <a href="quality_report_extended.html" class="resource-card">
+                    <div class="resource-icon">&#128270;</div>
+                    <h3>Análise Semântica</h3>
+                    <p>Análise estendida de completude, consistência, conectividade e reusabilidade.</p>
+                </a>
+
+                <a href="logic_report.html" class="resource-card">
+                    <div class="resource-icon">&#129520;</div>
+                    <h3>Axiomas Lógicos OWL</h3>
+                    <p>Validação de riqueza lógica: cardinalidade, disjunções, propriedades funcionais e inversas.</p>
+                </a>
+
+                <a href="llm_readability.html" class="resource-card">
+                    <div class="resource-icon">&#129302;</div>
+                    <h3>Usabilidade para LLMs</h3>
+                    <p>Análise de legibilidade e estrutura para integração com modelos de linguagem.</p>
+                </a>
+
+                <a href="sparql_validation.html" class="resource-card">
+                    <div class="resource-icon">&#128269;</div>
+                    <h3>Validação SPARQL</h3>
+                    <p>Testes de queries SPARQL para verificar a consultabilidade da ontologia.</p>
+                </a>
+
+                <a href="competency_report.html" class="resource-card">
+                    <div class="resource-icon">&#10067;</div>
+                    <h3>Perguntas de Competência</h3>
+                    <p>Verifica se a ontologia responde às perguntas fundamentais do domínio.</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Evolução -->
+    <section class="resources-section">
+        <div class="resources-container">
+            <h2 class="resources-title">Evolução e Versionamento</h2>
+            <p class="resources-subtitle">Acompanhe o histórico de desenvolvimento da ontologia</p>
+
+            <div class="resources-grid">
+                <a href="changelog.html" class="resource-card">
+                    <div class="resource-icon">&#128197;</div>
+                    <h3>Histórico de Mudanças</h3>
+                    <p>Registro de todas as alterações, adições e remoções entre versões.</p>
+                </a>
+
+                <a href="versions.html" class="resource-card">
+                    <div class="resource-icon">&#128230;</div>
+                    <h3>Versões OWL</h3>
+                    <p>Download de todas as versões publicadas da ontologia em formato OWL.</p>
+                </a>
+
+                <a href="delta_report.html" class="resource-card">
+                    <div class="resource-icon">&#128200;</div>
+                    <h3>Relatório Delta</h3>
+                    <p>Comparação detalhada de métricas de qualidade entre versões.</p>
+                </a>
+
+                <a href="quality-guide.html" class="resource-card">
+                    <div class="resource-icon">&#128214;</div>
+                    <h3>Guia de Qualidade</h3>
+                    <p>Orientações para interpretar os relatórios e métricas de qualidade.</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    
+
+    <script>
+        // Adiciona efeito de sombra no menu ao rolar
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+    </script>
+
+<!-- AirData Footer Start -->
+<footer class="footer">
+    <div class="footer-content">
+        <p class="footer-org"><strong>Instituto Tecnológico de Aeronáutica - ITA</strong></p>
+        <div class="footer-links">
+            <a href="https://www.airdata.ita.br" target="_blank">Portal AirData</a>
+            <a href="https://github.com/ita-airdata/OntoSite" target="_blank">GitHub</a>
+        </div>
+        <p class="footer-copyright">
+            © 2026 Projeto AirData - Todos os direitos reservados
+        </p>
+    </div>
+    <div class="footer-bottom-bar"></div>
+</footer>
+<!-- AirData Footer End -->
+
+</body>
+</html>

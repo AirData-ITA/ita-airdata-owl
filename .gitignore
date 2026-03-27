@@ -1,0 +1,35 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+dist/
+build/
+
+# Ambientes virtuais
+venv/
+airdata-venv/
+.venv/
+
+# IDEs e editores
+.idea/
+*.swp
+*.swo
+
+# Agentes IA
+.claude/
+.gemini/
+token/
+
+# Temporarios
+tmp/
+*.log
+.Rhistory
+
+# Sistema
+.DS_Store
+Thumbs.db
+
+# Arquivos sensíveis
+*.env
+credentials.*

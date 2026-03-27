@@ -1,0 +1,212 @@
+{
+  "metadata": {
+    "timestamp": "2026-01-27T19:21:48.748548",
+    "owl_file": "/home/guterres/Dropbox/Agents/airdata-owl/OntoOwl/airdata_owl_v0.0.2.owl",
+    "questions_file": "/home/guterres/Dropbox/Agents/airdata-owl/OntoDoc/competency_questions.json",
+    "validation_type": "Competency Questions Testing"
+  },
+  "summary": {
+    "total_questions": 10,
+    "successful_questions": 10,
+    "failed_questions": 0,
+    "success_rate_pct": 100.0
+  },
+  "detailed_results": {
+    "Hierarquia de Classes": {
+      "questions": [
+        {
+          "id": "CQ001",
+          "question": "Quais são todos os tipos de aeronaves na ontologia?",
+          "category": "Hierarquia de Classes",
+          "success": true,
+          "result_count": 1,
+          "execution_time_ms": 65.64,
+          "meets_expectation": true,
+          "importance": "CRÍTICA",
+          "error": null,
+          "sparql": "PREFIX : <http://airdata.org/ontology#>\nSELECT DISTINCT ?aircraft ?label WHERE {\n  ?aircraft rdfs:subClassOf* :Aircraft .\n  OPTIONAL { ?aircraft rdfs:label ?label }\n}"
+        }
+      ],
+      "success_count": 1,
+      "total_count": 1,
+      "success_rate": 100.0
+    },
+    "Propriedades e Relações": {
+      "questions": [
+        {
+          "id": "CQ002",
+          "question": "Quais propriedades conectam aeródromos a operações?",
+          "category": "Propriedades e Relações",
+          "success": true,
+          "result_count": 1,
+          "execution_time_ms": 2.0,
+          "meets_expectation": true,
+          "importance": "ALTA",
+          "error": null,
+          "sparql": "PREFIX : <http://airdata.org/ontology#>\nSELECT DISTINCT ?property WHERE {\n  ?property rdfs:domain :Aerodrome .\n  ?property rdfs:range :Operation .\n}"
+        }
+      ],
+      "success_count": 1,
+      "total_count": 1,
+      "success_rate": 100.0
+    },
+    "Anotações Multilíngues": {
+      "questions": [
+        {
+          "id": "CQ003",
+          "question": "Todas as classes têm labels em português?",
+          "category": "Anotações Multilíngues",
+          "success": true,
+          "result_count": 51,
+          "execution_time_ms": 7.38,
+          "meets_expectation": false,
+          "importance": "ALTA",
+          "error": null,
+          "sparql": "PREFIX : <http://airdata.org/ontology#>\nSELECT DISTINCT ?class WHERE {\n  ?class a owl:Class .\n  FILTER NOT EXISTS {\n    ?class rdfs:label ?label .\n    FILTER(lang(?label) = \"pt\" || lang(?label) = \"pt-br\")\n  }\n}"
+        }
+      ],
+      "success_count": 1,
+      "total_count": 1,
+      "success_rate": 100.0
+    },
+    "Domínio e Range": {
+      "questions": [
+        {
+          "id": "CQ004",
+          "question": "Quais propriedades de dados (DataProperty) estão definidas?",
+          "category": "Domínio e Range",
+          "success": true,
+          "result_count": 130,
+          "execution_time_ms": 2.98,
+          "meets_expectation": true,
+          "importance": "MÉDIA",
+          "error": null,
+          "sparql": "PREFIX : <http://airdata.org/ontology#>\nSELECT DISTINCT ?dataProp ?domain ?range WHERE {\n  ?dataProp a owl:DatatypeProperty .\n  OPTIONAL { ?dataProp rdfs:domain ?domain }\n  OPTIONAL { ?dataProp rdfs:range ?range }\n}"
+        }
+      ],
+      "success_count": 1,
+      "total_count": 1,
+      "success_rate": 100.0
+    },
+    "Restrições Lógicas": {
+      "questions": [
+        {
+          "id": "CQ005",
+          "question": "Quais classes têm restrições de cardinalidade?",
+          "category": "Restrições Lógicas",
+          "success": true,
+          "result_count": 0,
+          "execution_time_ms": 4.26,
+          "meets_expectation": true,
+          "importance": "MÉDIA",
+          "error": null,
+          "sparql": "PREFIX : <http://airdata.org/ontology#>\nSELECT DISTINCT ?class ?restriction ?property WHERE {\n  ?class rdfs:subClassOf ?restriction .\n  ?restriction a owl:Restriction .\n  ?restriction owl:onProperty ?property .\n  { ?restriction owl:cardinality ?card }\n  UNION\n  { ?restriction owl:minCardinality ?card }\n  UNION\n  { ?restriction owl:maxCardinality ?card }\n}"
+        }
+      ],
+      "success_count": 1,
+      "total_count": 1,
+      "success_rate": 100.0
+    },
+    "Hierarquia de Propriedades": {
+      "questions": [
+        {
+          "id": "CQ006",
+          "question": "Existem sub-propriedades de 'FlightOperation'?",
+          "category": "Hierarquia de Propriedades",
+          "success": true,
+          "result_count": 5,
+          "execution_time_ms": 2.28,
+          "meets_expectation": true,
+          "importance": "MÉDIA",
+          "error": null,
+          "sparql": "PREFIX : <http://airdata.org/ontology#>\nSELECT DISTINCT ?subProp ?label WHERE {\n  ?subProp rdfs:subPropertyOf :FlightOperation .\n  OPTIONAL { ?subProp rdfs:label ?label }\n}"
+        }
+      ],
+      "success_count": 1,
+      "total_count": 1,
+      "success_rate": 100.0
+    },
+    "Propriedades Inversas": {
+      "questions": [
+        {
+          "id": "CQ007",
+          "question": "Quais pares de propriedades são inversas uma da outra?",
+          "category": "Propriedades Inversas",
+          "success": true,
+          "result_count": 0,
+          "execution_time_ms": 1.91,
+          "meets_expectation": true,
+          "importance": "ALTA",
+          "error": null,
+          "sparql": "PREFIX : <http://airdata.org/ontology#>\nSELECT DISTINCT ?prop1 ?prop2 WHERE {\n  ?prop1 owl:inverseOf ?prop2 .\n}"
+        }
+      ],
+      "success_count": 1,
+      "total_count": 1,
+      "success_rate": 100.0
+    },
+    "Classes Disjuntas": {
+      "questions": [
+        {
+          "id": "CQ008",
+          "question": "Quais classes são declaradas como mutuamente exclusivas?",
+          "category": "Classes Disjuntas",
+          "success": true,
+          "result_count": 0,
+          "execution_time_ms": 1.37,
+          "meets_expectation": true,
+          "importance": "MÉDIA",
+          "error": null,
+          "sparql": "PREFIX : <http://airdata.org/ontology#>\nSELECT DISTINCT ?class1 ?class2 WHERE {\n  ?class1 owl:disjointWith ?class2 .\n}"
+        }
+      ],
+      "success_count": 1,
+      "total_count": 1,
+      "success_rate": 100.0
+    },
+    "Alinhamentos Externos": {
+      "questions": [
+        {
+          "id": "CQ009",
+          "question": "A ontologia tem alinhamentos com bases externas (DBpedia, etc.)?",
+          "category": "Alinhamentos Externos",
+          "success": true,
+          "result_count": 0,
+          "execution_time_ms": 3.09,
+          "meets_expectation": true,
+          "importance": "BAIXA",
+          "error": null,
+          "sparql": "PREFIX : <http://airdata.org/ontology#>\nSELECT DISTINCT ?entity ?externalEntity WHERE {\n  ?entity owl:sameAs ?externalEntity .\n  FILTER(isURI(?externalEntity))\n}"
+        }
+      ],
+      "success_count": 1,
+      "total_count": 1,
+      "success_rate": 100.0
+    },
+    "Propriedades Funcionais": {
+      "questions": [
+        {
+          "id": "CQ010",
+          "question": "Quais propriedades são funcionais (máximo 1 valor por sujeito)?",
+          "category": "Propriedades Funcionais",
+          "success": true,
+          "result_count": 1,
+          "execution_time_ms": 2.4,
+          "meets_expectation": true,
+          "importance": "BAIXA",
+          "error": null,
+          "sparql": "PREFIX : <http://airdata.org/ontology#>\nSELECT DISTINCT ?funcProp ?label WHERE {\n  ?funcProp a owl:FunctionalProperty .\n  OPTIONAL { ?funcProp rdfs:label ?label }\n}"
+        }
+      ],
+      "success_count": 1,
+      "total_count": 1,
+      "success_rate": 100.0
+    }
+  },
+  "score": {
+    "total_score": 8.62,
+    "level": "Bom - A maioria das perguntas importantes é respondida",
+    "critical_questions_success": 1,
+    "critical_questions_total": 1
+  }
+}

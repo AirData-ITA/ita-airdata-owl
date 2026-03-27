@@ -1,0 +1,60 @@
+{
+  "generated_at": "2026-01-27 22:21:51Z",
+  "owl_file": "airdata_owl_v0.0.2.owl",
+  "version": "desconhecida",
+  "modified_at": "2026-01-23",
+  "ontology_iri": "http://airdata.org/ontology#",
+  "consistency_check": "sim",
+  "consistency_extended": {
+    "status": "sim",
+    "reasoners": {
+      "HermiT": {
+        "consistent": true,
+        "warnings": [],
+        "return_code": 0
+      },
+      "ELK": {
+        "consistent": true,
+        "warnings": [],
+        "return_code": 0
+      },
+      "structural": {
+        "consistent": true,
+        "warnings": [],
+        "return_code": 0
+      }
+    },
+    "warnings": [],
+    "profile": "unknown"
+  },
+  "owl_profile": "nao detectado",
+  "structure": {
+    "classes": 51,
+    "object_properties": 38,
+    "data_properties": 121,
+    "individuals": 9,
+    "axioms": 758,
+    "imports": []
+  },
+  "hierarchy": {
+    "max_depth": 4,
+    "avg_subclasses": 0.7843137254901961,
+    "leaf_classes": 37,
+    "no_explicit_superclass": 4
+  },
+  "quality": {
+    "classes_no_label": 33,
+    "classes_no_comment": 49,
+    "properties_no_domain": 20,
+    "properties_no_range": 17
+  },
+  "evolution": {
+    "classes_added": 51,
+    "classes_removed": 0,
+    "object_properties_added": 38,
+    "object_properties_removed": 0,
+    "data_properties_added": 121,
+    "data_properties_removed": 0
+  },
+  "previous_version": "desconhecida"
+}

@@ -1,0 +1,3142 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+<!-- AirData Header Style Start -->
+<style>
+  /* Base Styles */
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+    margin: 0;
+    color: #24292e;
+  }
+
+  /* Header */
+  .airdata-header {
+    background-color: #ffffff;
+    border-bottom: 1px solid #d1d5da;
+    padding: 16px 32px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 40px;
+  }
+
+  /* Logo */
+  .airdata-header .logo-container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    color: #003C7D;
+  }
+
+  .airdata-header .logo-img {
+    height: 40px;
+  }
+
+  .airdata-header .logo-text {
+    font-size: 1.25rem;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+
+  /* Navigation */
+  .airdata-header .nav-container {
+    display: flex;
+    gap: 16px;
+  }
+
+  .airdata-header .nav-item {
+    position: relative;
+  }
+
+  .airdata-header .nav-link {
+    display: block;
+    padding: 8px 12px;
+    color: #586069;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1rem;
+    border-radius: 6px;
+    transition: background-color 0.2s ease, color 0.2s ease;
+  }
+
+  .airdata-header .nav-link:hover,
+  .airdata-header .dropdown:hover .nav-link {
+    background-color: #f6f8fa;
+    color: #0366d6;
+  }
+
+  /* Dropdown */
+  .airdata-header .dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #ffffff;
+    min-width: 220px;
+    border: 1px solid #d1d5da;
+    border-radius: 6px;
+    box-shadow: 0 8px 24px rgba(149, 157, 165, 0.2);
+    z-index: 1000;
+    padding: 8px 0;
+  }
+
+  .airdata-header .dropdown:hover .dropdown-content {
+    display: block;
+  }
+
+  .airdata-header .dropdown-item {
+    display: block;
+    padding: 8px 16px;
+    color: #24292e;
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 0.9rem;
+    text-align: left;
+  }
+
+  .airdata-header .dropdown-item:hover {
+    background-color: #f6f8fa;
+  }
+</style>
+<!-- AirData Header Style End -->
+
+<!-- AirData Footer Style Start -->
+<style>
+/* Footer Styles */
+.footer {
+  background-color: #f6f8fa;
+  border-top: 1px solid #d1d5da;
+  padding-top: 32px;
+  margin-top: 60px;
+  text-align: center;
+  color: #586069;
+  padding-bottom: 0;
+}
+
+.footer-content {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  padding-bottom: 32px;
+}
+
+.footer-org {
+  font-size: 1rem;
+  margin: 0;
+}
+
+.footer-links {
+  display: flex;
+  gap: 24px;
+  margin: 1rem 0;
+}
+
+.footer-links a {
+  color: #003C7D;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+.footer-copyright {
+  margin: 0;
+  opacity: 0.8;
+  font-size: 0.9rem;
+}
+
+.footer-bottom-bar {
+  height: 8px;
+  background-color: #003C7D;
+  width: 100%;
+}
+</style>
+<!-- AirData Footer Style End -->
+
+</head>
+<body>
+<!-- AirData Header Start -->
+<header class="airdata-header">
+  <a href="index.html" class="logo-container">
+    <img src="airdata-logo.png" alt="AirData Logo" class="logo-img">
+    <span class="logo-text">AirData Ontology</span>
+  </a>
+
+  <nav class="nav-container">
+    <div class="nav-item">
+      <a href="index.html" class="nav-link">In&iacute;cio</a>
+    </div>
+
+    <div class="nav-item dropdown">
+      <a href="#" class="nav-link">Ontologia &#9662;</a>
+      <div class="dropdown-content">
+        <a href="docs/index-pt.html" class="dropdown-item">Documenta&ccedil;&atilde;o</a>
+        <a href="docs/webvowl/index.html" class="dropdown-item">Grafo</a>
+        <a href="statistics.html" class="dropdown-item">Estat&iacute;sticas</a>
+      </div>
+    </div>
+
+    <div class="nav-item dropdown">
+      <a href="#" class="nav-link">Evolu&ccedil;&atilde;o &#9662;</a>
+      <div class="dropdown-content">
+        <a href="changelog.html" class="dropdown-item">Hist&oacute;rico de Mudan&ccedil;as</a>
+        <a href="versions.html" class="dropdown-item">Vers&otilde;es OWL</a>
+      </div>
+    </div>
+
+    <div class="nav-item dropdown">
+      <a href="#" class="nav-link">Relat&oacute;rios &#9662;</a>
+      <div class="dropdown-content">
+        <a href="quality_report.html" class="dropdown-item">Valida&ccedil;&atilde;o Sint&aacute;tica</a>
+        <a href="quality_report_extended.html" class="dropdown-item">An&aacute;lise Sem&acirc;ntica</a>
+        <a href="logic_report.html" class="dropdown-item">Axiomas L&oacute;gicos OWL</a>
+        <a href="llm_readability.html" class="dropdown-item">Usabilidade para LLMs</a>
+        <a href="sparql_validation.html" class="dropdown-item">Valida&ccedil;&atilde;o SPARQL</a>
+        <a href="competency_report.html" class="dropdown-item">Perguntas de Compet&ecirc;ncia</a>
+        <a href="quality-guide.html" class="dropdown-item">Guia de Interpreta&ccedil;&atilde;o</a>
+      </div>
+    </div>
+
+    <div class="nav-item dropdown">
+      <a href="#" class="nav-link">Evolu&ccedil;&atilde;o &#9662;</a>
+      <div class="dropdown-content">
+        <a href="changelog.html" class="dropdown-item">Hist&oacute;rico de Mudan&ccedil;as</a>
+        <a href="versions.html" class="dropdown-item">Vers&otilde;es OWL</a>
+        <a href="delta_report.html" class="dropdown-item">Relat&oacute;rio Delta de Qualidade</a>
+      </div>
+    </div>
+  </nav>
+</header>
+<!-- AirData Header End -->
+
+<table class="table table-bordered table-striped">
+<thead class="bg-dark text-white header-row">
+<tr>
+  <th>Level</th>
+  <th>Rule Name</th>
+  <th>Subject</th>
+  <th>Property</th>
+  <th>Value</th>
+</tr>
+</thead>
+	<tr class="table-danger">
+		<td>ERROR</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_label">missing_label</a></td>
+		<td><a href="http://airdata.org/ontology#ActualDepartureTime">http://airdata.org/ontology#ActualDepartureTime</a></td>
+		<td><a href="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-danger">
+		<td>ERROR</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_label">missing_label</a></td>
+		<td><a href="http://airdata.org/ontology#ActualGateArrivalTime">http://airdata.org/ontology#ActualGateArrivalTime</a></td>
+		<td><a href="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-danger">
+		<td>ERROR</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_label">missing_label</a></td>
+		<td><a href="http://airdata.org/ontology#ActualLandingTime">http://airdata.org/ontology#ActualLandingTime</a></td>
+		<td><a href="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-danger">
+		<td>ERROR</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_label">missing_label</a></td>
+		<td><a href="http://airdata.org/ontology#ActualPushbackTime">http://airdata.org/ontology#ActualPushbackTime</a></td>
+		<td><a href="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-danger">
+		<td>ERROR</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_label">missing_label</a></td>
+		<td><a href="http://airdata.org/ontology#ActualTakeoffTime">http://airdata.org/ontology#ActualTakeoffTime</a></td>
+		<td><a href="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-danger">
+		<td>ERROR</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_label">missing_label</a></td>
+		<td><a href="http://airdata.org/ontology#ActualTaxiStartTime">http://airdata.org/ontology#ActualTaxiStartTime</a></td>
+		<td><a href="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-danger">
+		<td>ERROR</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_label">missing_label</a></td>
+		<td><a href="http://airdata.org/ontology#ActualTrajectory">http://airdata.org/ontology#ActualTrajectory</a></td>
+		<td><a href="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-danger">
+		<td>ERROR</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_label">missing_label</a></td>
+		<td><a href="http://airdata.org/ontology#Aerodrome">http://airdata.org/ontology#Aerodrome</a></td>
+		<td><a href="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-danger">
+		<td>ERROR</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_label">missing_label</a></td>
+		<td><a href="http://airdata.org/ontology#Aerodrome-Operation">http://airdata.org/ontology#Aerodrome-Operation</a></td>
+		<td><a href="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-danger">
+		<td>ERROR</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_label">missing_label</a></td>
+		<td><a href="http://airdata.org/ontology#AerodromeCondition">http://airdata.org/ontology#AerodromeCondition</a></td>
+		<td><a href="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-danger">
+		<td>ERROR</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_label">missing_label</a></td>
+		<td><a href="http://airdata.org/ontology#Aircraft">http://airdata.org/ontology#Aircraft</a></td>
+		<td><a href="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-danger">
+		<td>ERROR</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_label">missing_label</a></td>
+		<td><a href="http://airdata.org/ontology#AircraftOperator">http://airdata.org/ontology#AircraftOperator</a></td>
+		<td><a href="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-danger">
+		<td>ERROR</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_label">missing_label</a></td>
+		<td><a href="http://airdata.org/ontology#Airspace">http://airdata.org/ontology#Airspace</a></td>
+		<td><a href="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-danger">
+		<td>ERROR</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_label">missing_label</a></td>
+		<td><a href="http://airdata.org/ontology#Airspace-DataSource">http://airdata.org/ontology#Airspace-DataSource</a></td>
+		<td><a href="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-danger">
+		<td>ERROR</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_label">missing_label</a></td>
+		<td><a href="http://airdata.org/ontology#Airspace-Operation">http://airdata.org/ontology#Airspace-Operation</a></td>
+		<td><a href="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-danger">
+		<td>ERROR</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_label">missing_label</a></td>
+		<td><a href="http://airdata.org/ontology#AirspaceCondition">http://airdata.org/ontology#AirspaceCondition</a></td>
+		<td><a href="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-danger">
+		<td>ERROR</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_label">missing_label</a></td>
+		<td><a href="http://airdata.org/ontology#ArrivalEvent">http://airdata.org/ontology#ArrivalEvent</a></td>
+		<td><a href="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-danger">
+		<td>ERROR</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_label">missing_label</a></td>
+		<td><a href="http://airdata.org/ontology#ArrivalOperation">http://airdata.org/ontology#ArrivalOperation</a></td>
+		<td><a href="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-danger">
+		<td>ERROR</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_label">missing_label</a></td>
+		<td><a href="http://airdata.org/ontology#ArrivalOperation-ActualGateArrivalTime">http://airdata.org/ontology#ArrivalOperation-ActualGateArrivalTime</a></td>
+		<td><a href="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-danger">
+		<td>ERROR</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_label">missing_label</a></td>
+		<td><a href="http://airdata.org/ontology#ArrivalOperation-ActualLandingTime">http://airdata.org/ontology#ArrivalOperation-ActualLandingTime</a></td>
+		<td><a href="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-danger">
+		<td>ERROR</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_label">missing_label</a></td>
+		<td><a href="http://airdata.org/ontology#ArrivalOperation-Aerodrome">http://airdata.org/ontology#ArrivalOperation-Aerodrome</a></td>
+		<td><a href="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-danger">
+		<td>ERROR</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_label">missing_label</a></td>
+		<td><a href="http://airdata.org/ontology#ArrivalOperation-AerodromeCondition">http://airdata.org/ontology#ArrivalOperation-AerodromeCondition</a></td>
+		<td><a href="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-danger">
+		<td>ERROR</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_label">missing_label</a></td>
+		<td><a href="http://airdata.org/ontology#ArrivalOperation-EstimatedArrivalTime">http://airdata.org/ontology#ArrivalOperation-EstimatedArrivalTime</a></td>
+		<td><a href="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-danger">
+		<td>ERROR</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_label">missing_label</a></td>
+		<td><a href="http://airdata.org/ontology#ArrivalTemporalRelation">http://airdata.org/ontology#ArrivalTemporalRelation</a></td>
+		<td><a href="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-danger">
+		<td>ERROR</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_label">missing_label</a></td>
+		<td><a href="http://airdata.org/ontology#DepartureEvent">http://airdata.org/ontology#DepartureEvent</a></td>
+		<td><a href="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-danger">
+		<td>ERROR</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_label">missing_label</a></td>
+		<td><a href="http://airdata.org/ontology#DepartureOperation">http://airdata.org/ontology#DepartureOperation</a></td>
+		<td><a href="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-danger">
+		<td>ERROR</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_label">missing_label</a></td>
+		<td><a href="http://airdata.org/ontology#DepartureOperation-ActualDepartureTime">http://airdata.org/ontology#DepartureOperation-ActualDepartureTime</a></td>
+		<td><a href="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-danger">
+		<td>ERROR</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_label">missing_label</a></td>
+		<td><a href="http://airdata.org/ontology#DepartureOperation-ActualPushbackTime">http://airdata.org/ontology#DepartureOperation-ActualPushbackTime</a></td>
+		<td><a href="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-danger">
+		<td>ERROR</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_label">missing_label</a></td>
+		<td><a href="http://airdata.org/ontology#DepartureOperation-ActualTakeoffTime">http://airdata.org/ontology#DepartureOperation-ActualTakeoffTime</a></td>
+		<td><a href="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-danger">
+		<td>ERROR</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_label">missing_label</a></td>
+		<td><a href="http://airdata.org/ontology#DepartureOperation-ActualTaxiStartTime">http://airdata.org/ontology#DepartureOperation-ActualTaxiStartTime</a></td>
+		<td><a href="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-danger">
+		<td>ERROR</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_label">missing_label</a></td>
+		<td><a href="http://airdata.org/ontology#DepartureOperation-Aerodrome">http://airdata.org/ontology#DepartureOperation-Aerodrome</a></td>
+		<td><a href="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-danger">
+		<td>ERROR</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_label">missing_label</a></td>
+		<td><a href="http://airdata.org/ontology#DepartureOperation-AerodromeCondition">http://airdata.org/ontology#DepartureOperation-AerodromeCondition</a></td>
+		<td><a href="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-danger">
+		<td>ERROR</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_label">missing_label</a></td>
+		<td><a href="http://airdata.org/ontology#DepartureOperation-EstimatedOffBlockTime">http://airdata.org/ontology#DepartureOperation-EstimatedOffBlockTime</a></td>
+		<td><a href="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-danger">
+		<td>ERROR</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_label">missing_label</a></td>
+		<td><a href="http://airdata.org/ontology#DepartureOperation-EstimatedRunwayTime">http://airdata.org/ontology#DepartureOperation-EstimatedRunwayTime</a></td>
+		<td><a href="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-danger">
+		<td>ERROR</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_label">missing_label</a></td>
+		<td><a href="http://airdata.org/ontology#DepartureOperation-EstimatedTaxiStartTime">http://airdata.org/ontology#DepartureOperation-EstimatedTaxiStartTime</a></td>
+		<td><a href="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-danger">
+		<td>ERROR</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_label">missing_label</a></td>
+		<td><a href="http://airdata.org/ontology#DepartureOperation-ExpectedPushbackTime">http://airdata.org/ontology#DepartureOperation-ExpectedPushbackTime</a></td>
+		<td><a href="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-danger">
+		<td>ERROR</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_label">missing_label</a></td>
+		<td><a href="http://airdata.org/ontology#DepartureOperation-HoldTime">http://airdata.org/ontology#DepartureOperation-HoldTime</a></td>
+		<td><a href="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-danger">
+		<td>ERROR</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_label">missing_label</a></td>
+		<td><a href="http://airdata.org/ontology#DepartureTemporalRelation">http://airdata.org/ontology#DepartureTemporalRelation</a></td>
+		<td><a href="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-danger">
+		<td>ERROR</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_label">missing_label</a></td>
+		<td><a href="http://airdata.org/ontology#EstimatedArrivalTime">http://airdata.org/ontology#EstimatedArrivalTime</a></td>
+		<td><a href="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-danger">
+		<td>ERROR</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_label">missing_label</a></td>
+		<td><a href="http://airdata.org/ontology#EstimatedOffBlockTime">http://airdata.org/ontology#EstimatedOffBlockTime</a></td>
+		<td><a href="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-danger">
+		<td>ERROR</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_label">missing_label</a></td>
+		<td><a href="http://airdata.org/ontology#EstimatedRunwayTime">http://airdata.org/ontology#EstimatedRunwayTime</a></td>
+		<td><a href="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-danger">
+		<td>ERROR</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_label">missing_label</a></td>
+		<td><a href="http://airdata.org/ontology#EstimatedTaxiStartTime">http://airdata.org/ontology#EstimatedTaxiStartTime</a></td>
+		<td><a href="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-danger">
+		<td>ERROR</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_label">missing_label</a></td>
+		<td><a href="http://airdata.org/ontology#ExpectedPushbackTime">http://airdata.org/ontology#ExpectedPushbackTime</a></td>
+		<td><a href="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-danger">
+		<td>ERROR</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_label">missing_label</a></td>
+		<td><a href="http://airdata.org/ontology#FixPoint">http://airdata.org/ontology#FixPoint</a></td>
+		<td><a href="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-danger">
+		<td>ERROR</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_label">missing_label</a></td>
+		<td><a href="http://airdata.org/ontology#Flight">http://airdata.org/ontology#Flight</a></td>
+		<td><a href="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-danger">
+		<td>ERROR</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_label">missing_label</a></td>
+		<td><a href="http://airdata.org/ontology#Flight-Aircraft">http://airdata.org/ontology#Flight-Aircraft</a></td>
+		<td><a href="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-danger">
+		<td>ERROR</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_label">missing_label</a></td>
+		<td><a href="http://airdata.org/ontology#Flight-AircraftOperator">http://airdata.org/ontology#Flight-AircraftOperator</a></td>
+		<td><a href="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-danger">
+		<td>ERROR</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_label">missing_label</a></td>
+		<td><a href="http://airdata.org/ontology#Flight-Airspace">http://airdata.org/ontology#Flight-Airspace</a></td>
+		<td><a href="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-danger">
+		<td>ERROR</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_label">missing_label</a></td>
+		<td><a href="http://airdata.org/ontology#Flight-ArrivalOperation">http://airdata.org/ontology#Flight-ArrivalOperation</a></td>
+		<td><a href="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-danger">
+		<td>ERROR</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_label">missing_label</a></td>
+		<td><a href="http://airdata.org/ontology#Flight-DepartureOperation">http://airdata.org/ontology#Flight-DepartureOperation</a></td>
+		<td><a href="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-danger">
+		<td>ERROR</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_label">missing_label</a></td>
+		<td><a href="http://airdata.org/ontology#Flight-Trajectory">http://airdata.org/ontology#Flight-Trajectory</a></td>
+		<td><a href="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-danger">
+		<td>ERROR</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_label">missing_label</a></td>
+		<td><a href="http://airdata.org/ontology#FlightOperation">http://airdata.org/ontology#FlightOperation</a></td>
+		<td><a href="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-danger">
+		<td>ERROR</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_label">missing_label</a></td>
+		<td><a href="http://airdata.org/ontology#Gate">http://airdata.org/ontology#Gate</a></td>
+		<td><a href="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-danger">
+		<td>ERROR</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_label">missing_label</a></td>
+		<td><a href="http://airdata.org/ontology#HoldTime">http://airdata.org/ontology#HoldTime</a></td>
+		<td><a href="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-danger">
+		<td>ERROR</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_label">missing_label</a></td>
+		<td><a href="http://airdata.org/ontology#IdentificationRelation">http://airdata.org/ontology#IdentificationRelation</a></td>
+		<td><a href="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-danger">
+		<td>ERROR</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_label">missing_label</a></td>
+		<td><a href="http://airdata.org/ontology#Operation-WeatherCondition">http://airdata.org/ontology#Operation-WeatherCondition</a></td>
+		<td><a href="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-danger">
+		<td>ERROR</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_label">missing_label</a></td>
+		<td><a href="http://airdata.org/ontology#PlannedTrajectory">http://airdata.org/ontology#PlannedTrajectory</a></td>
+		<td><a href="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-danger">
+		<td>ERROR</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_label">missing_label</a></td>
+		<td><a href="http://airdata.org/ontology#Procedure">http://airdata.org/ontology#Procedure</a></td>
+		<td><a href="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-danger">
+		<td>ERROR</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_label">missing_label</a></td>
+		<td><a href="http://airdata.org/ontology#Runway">http://airdata.org/ontology#Runway</a></td>
+		<td><a href="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-danger">
+		<td>ERROR</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_label">missing_label</a></td>
+		<td><a href="http://airdata.org/ontology#RunwayCondition">http://airdata.org/ontology#RunwayCondition</a></td>
+		<td><a href="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-danger">
+		<td>ERROR</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_label">missing_label</a></td>
+		<td><a href="http://airdata.org/ontology#SourceRelation">http://airdata.org/ontology#SourceRelation</a></td>
+		<td><a href="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-danger">
+		<td>ERROR</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_label">missing_label</a></td>
+		<td><a href="http://airdata.org/ontology#SpatialRelation">http://airdata.org/ontology#SpatialRelation</a></td>
+		<td><a href="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-danger">
+		<td>ERROR</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_label">missing_label</a></td>
+		<td><a href="http://airdata.org/ontology#Taxiway">http://airdata.org/ontology#Taxiway</a></td>
+		<td><a href="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-danger">
+		<td>ERROR</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_label">missing_label</a></td>
+		<td><a href="http://airdata.org/ontology#TemporalEvent-DataSource">http://airdata.org/ontology#TemporalEvent-DataSource</a></td>
+		<td><a href="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-danger">
+		<td>ERROR</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_label">missing_label</a></td>
+		<td><a href="http://airdata.org/ontology#TemporalRelation">http://airdata.org/ontology#TemporalRelation</a></td>
+		<td><a href="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-danger">
+		<td>ERROR</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_label">missing_label</a></td>
+		<td><a href="http://airdata.org/ontology#Trajectory">http://airdata.org/ontology#Trajectory</a></td>
+		<td><a href="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-danger">
+		<td>ERROR</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_label">missing_label</a></td>
+		<td><a href="http://airdata.org/ontology#Trajectory-DataSource">http://airdata.org/ontology#Trajectory-DataSource</a></td>
+		<td><a href="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-danger">
+		<td>ERROR</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_label">missing_label</a></td>
+		<td><a href="http://airdata.org/ontology#Trajectory-Operation">http://airdata.org/ontology#Trajectory-Operation</a></td>
+		<td><a href="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-danger">
+		<td>ERROR</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_label">missing_label</a></td>
+		<td><a href="http://airdata.org/ontology#TrajectoryPoint">http://airdata.org/ontology#TrajectoryPoint</a></td>
+		<td><a href="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-danger">
+		<td>ERROR</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_label">missing_label</a></td>
+		<td><a href="http://airdata.org/ontology#WeatherCondition-DataSource">http://airdata.org/ontology#WeatherCondition-DataSource</a></td>
+		<td><a href="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-danger">
+		<td>ERROR</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_label">missing_label</a></td>
+		<td><a href="http://airdata.org/ontology#WeatherRelation">http://airdata.org/ontology#WeatherRelation</a></td>
+		<td><a href="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-danger">
+		<td>ERROR</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_label">missing_label</a></td>
+		<td><a href="http://airdata.org/ontology#accType">http://airdata.org/ontology#accType</a></td>
+		<td><a href="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-danger">
+		<td>ERROR</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_label">missing_label</a></td>
+		<td><a href="http://airdata.org/ontology#acronymType">http://airdata.org/ontology#acronymType</a></td>
+		<td><a href="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-danger">
+		<td>ERROR</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_label">missing_label</a></td>
+		<td><a href="http://airdata.org/ontology#actual">http://airdata.org/ontology#actual</a></td>
+		<td><a href="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-danger">
+		<td>ERROR</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_label">missing_label</a></td>
+		<td><a href="http://airdata.org/ontology#additionalData">http://airdata.org/ontology#additionalData</a></td>
+		<td><a href="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-danger">
+		<td>ERROR</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_label">missing_label</a></td>
+		<td><a href="http://airdata.org/ontology#aircraft">http://airdata.org/ontology#aircraft</a></td>
+		<td><a href="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-danger">
+		<td>ERROR</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_label">missing_label</a></td>
+		<td><a href="http://airdata.org/ontology#aircraftSpeed">http://airdata.org/ontology#aircraftSpeed</a></td>
+		<td><a href="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-danger">
+		<td>ERROR</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_label">missing_label</a></td>
+		<td><a href="http://airdata.org/ontology#airportRule">http://airdata.org/ontology#airportRule</a></td>
+		<td><a href="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-danger">
+		<td>ERROR</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_label">missing_label</a></td>
+		<td><a href="http://airdata.org/ontology#arr">http://airdata.org/ontology#arr</a></td>
+		<td><a href="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-danger">
+		<td>ERROR</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_label">missing_label</a></td>
+		<td><a href="http://airdata.org/ontology#arrivalProcedure">http://airdata.org/ontology#arrivalProcedure</a></td>
+		<td><a href="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-danger">
+		<td>ERROR</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_label">missing_label</a></td>
+		<td><a href="http://airdata.org/ontology#atsUnit">http://airdata.org/ontology#atsUnit</a></td>
+		<td><a href="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-danger">
+		<td>ERROR</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_label">missing_label</a></td>
+		<td><a href="http://airdata.org/ontology#autonomy">http://airdata.org/ontology#autonomy</a></td>
+		<td><a href="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-danger">
+		<td>ERROR</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_label">missing_label</a></td>
+		<td><a href="http://airdata.org/ontology#baroaltitude">http://airdata.org/ontology#baroaltitude</a></td>
+		<td><a href="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-danger">
+		<td>ERROR</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_label">missing_label</a></td>
+		<td><a href="http://airdata.org/ontology#beginPrevision">http://airdata.org/ontology#beginPrevision</a></td>
+		<td><a href="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-danger">
+		<td>ERROR</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_label">missing_label</a></td>
+		<td><a href="http://airdata.org/ontology#box">http://airdata.org/ontology#box</a></td>
+		<td><a href="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-danger">
+		<td>ERROR</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_label">missing_label</a></td>
+		<td><a href="http://airdata.org/ontology#callsign">http://airdata.org/ontology#callsign</a></td>
+		<td><a href="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-danger">
+		<td>ERROR</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_label">missing_label</a></td>
+		<td><a href="http://airdata.org/ontology#cdep">http://airdata.org/ontology#cdep</a></td>
+		<td><a href="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-danger">
+		<td>ERROR</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_label">missing_label</a></td>
+		<td><a href="http://airdata.org/ontology#changeCloud">http://airdata.org/ontology#changeCloud</a></td>
+		<td><a href="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-danger">
+		<td>ERROR</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_label">missing_label</a></td>
+		<td><a href="http://airdata.org/ontology#changeEnd">http://airdata.org/ontology#changeEnd</a></td>
+		<td><a href="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-danger">
+		<td>ERROR</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_label">missing_label</a></td>
+		<td><a href="http://airdata.org/ontology#changeGroup">http://airdata.org/ontology#changeGroup</a></td>
+		<td><a href="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-danger">
+		<td>ERROR</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_label">missing_label</a></td>
+		<td><a href="http://airdata.org/ontology#changeStart">http://airdata.org/ontology#changeStart</a></td>
+		<td><a href="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-danger">
+		<td>ERROR</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_label">missing_label</a></td>
+		<td><a href="http://airdata.org/ontology#changeVisibility">http://airdata.org/ontology#changeVisibility</a></td>
+		<td><a href="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-danger">
+		<td>ERROR</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_label">missing_label</a></td>
+		<td><a href="http://airdata.org/ontology#cloudAmount">http://airdata.org/ontology#cloudAmount</a></td>
+		<td><a href="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-danger">
+		<td>ERROR</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_label">missing_label</a></td>
+		<td><a href="http://airdata.org/ontology#cloudBase">http://airdata.org/ontology#cloudBase</a></td>
+		<td><a href="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-danger">
+		<td>ERROR</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_label">missing_label</a></td>
+		<td><a href="http://airdata.org/ontology#cloudType">http://airdata.org/ontology#cloudType</a></td>
+		<td><a href="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-danger">
+		<td>ERROR</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_label">missing_label</a></td>
+		<td><a href="http://airdata.org/ontology#code">http://airdata.org/ontology#code</a></td>
+		<td><a href="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-danger">
+		<td>ERROR</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_label">missing_label</a></td>
+		<td><a href="http://airdata.org/ontology#codeDI">http://airdata.org/ontology#codeDI</a></td>
+		<td><a href="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-danger">
+		<td>ERROR</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_label">missing_label</a></td>
+		<td><a href="http://airdata.org/ontology#codeshare">http://airdata.org/ontology#codeshare</a></td>
+		<td><a href="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-danger">
+		<td>ERROR</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_label">missing_label</a></td>
+		<td><a href="http://airdata.org/ontology#controllerName">http://airdata.org/ontology#controllerName</a></td>
+		<td><a href="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-danger">
+		<td>ERROR</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_label">missing_label</a></td>
+		<td><a href="http://airdata.org/ontology#cpos">http://airdata.org/ontology#cpos</a></td>
+		<td><a href="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-danger">
+		<td>ERROR</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_label">missing_label</a></td>
+		<td><a href="http://airdata.org/ontology#cpush">http://airdata.org/ontology#cpush</a></td>
+		<td><a href="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-danger">
+		<td>ERROR</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_label">missing_label</a></td>
+		<td><a href="http://airdata.org/ontology#crossingType">http://airdata.org/ontology#crossingType</a></td>
+		<td><a href="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-danger">
+		<td>ERROR</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_label">missing_label</a></td>
+		<td><a href="http://airdata.org/ontology#crwy">http://airdata.org/ontology#crwy</a></td>
+		<td><a href="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-danger">
+		<td>ERROR</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_label">missing_label</a></td>
+		<td><a href="http://airdata.org/ontology#dataRadar">http://airdata.org/ontology#dataRadar</a></td>
+		<td><a href="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-danger">
+		<td>ERROR</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_label">missing_label</a></td>
+		<td><a href="http://airdata.org/ontology#dataSource">http://airdata.org/ontology#dataSource</a></td>
+		<td><a href="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-danger">
+		<td>ERROR</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_label">missing_label</a></td>
+		<td><a href="http://airdata.org/ontology#dep">http://airdata.org/ontology#dep</a></td>
+		<td><a href="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-danger">
+		<td>ERROR</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_label">missing_label</a></td>
+		<td><a href="http://airdata.org/ontology#departureProcedure">http://airdata.org/ontology#departureProcedure</a></td>
+		<td><a href="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-danger">
+		<td>ERROR</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_label">missing_label</a></td>
+		<td><a href="http://airdata.org/ontology#descriptive">http://airdata.org/ontology#descriptive</a></td>
+		<td><a href="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-danger">
+		<td>ERROR</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_label">missing_label</a></td>
+		<td><a href="http://airdata.org/ontology#detectorSource">http://airdata.org/ontology#detectorSource</a></td>
+		<td><a href="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-danger">
+		<td>ERROR</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_label">missing_label</a></td>
+		<td><a href="http://airdata.org/ontology#dewPoint">http://airdata.org/ontology#dewPoint</a></td>
+		<td><a href="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-danger">
+		<td>ERROR</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_label">missing_label</a></td>
+		<td><a href="http://airdata.org/ontology#endPrevision">http://airdata.org/ontology#endPrevision</a></td>
+		<td><a href="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-danger">
+		<td>ERROR</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_label">missing_label</a></td>
+		<td><a href="http://airdata.org/ontology#eobt">http://airdata.org/ontology#eobt</a></td>
+		<td><a href="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-danger">
+		<td>ERROR</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_label">missing_label</a></td>
+		<td><a href="http://airdata.org/ontology#equipmentCode">http://airdata.org/ontology#equipmentCode</a></td>
+		<td><a href="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-danger">
+		<td>ERROR</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_label">missing_label</a></td>
+		<td><a href="http://airdata.org/ontology#estimated">http://airdata.org/ontology#estimated</a></td>
+		<td><a href="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-danger">
+		<td>ERROR</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_label">missing_label</a></td>
+		<td><a href="http://airdata.org/ontology#eta">http://airdata.org/ontology#eta</a></td>
+		<td><a href="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-danger">
+		<td>ERROR</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_label">missing_label</a></td>
+		<td><a href="http://airdata.org/ontology#eventDescription">http://airdata.org/ontology#eventDescription</a></td>
+		<td><a href="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-danger">
+		<td>ERROR</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_label">missing_label</a></td>
+		<td><a href="http://airdata.org/ontology#eventName">http://airdata.org/ontology#eventName</a></td>
+		<td><a href="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-danger">
+		<td>ERROR</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_label">missing_label</a></td>
+		<td><a href="http://airdata.org/ontology#excessBaggage">http://airdata.org/ontology#excessBaggage</a></td>
+		<td><a href="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-danger">
+		<td>ERROR</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_label">missing_label</a></td>
+		<td><a href="http://airdata.org/ontology#fixEntryName">http://airdata.org/ontology#fixEntryName</a></td>
+		<td><a href="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-danger">
+		<td>ERROR</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_label">missing_label</a></td>
+		<td><a href="http://airdata.org/ontology#fixEntryTime">http://airdata.org/ontology#fixEntryTime</a></td>
+		<td><a href="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-danger">
+		<td>ERROR</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_label">missing_label</a></td>
+		<td><a href="http://airdata.org/ontology#fixExitName">http://airdata.org/ontology#fixExitName</a></td>
+		<td><a href="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-danger">
+		<td>ERROR</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_label">missing_label</a></td>
+		<td><a href="http://airdata.org/ontology#fixExitTime">http://airdata.org/ontology#fixExitTime</a></td>
+		<td><a href="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-danger">
+		<td>ERROR</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_label">missing_label</a></td>
+		<td><a href="http://airdata.org/ontology#flightLevel">http://airdata.org/ontology#flightLevel</a></td>
+		<td><a href="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-danger">
+		<td>ERROR</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_label">missing_label</a></td>
+		<td><a href="http://airdata.org/ontology#flightRule">http://airdata.org/ontology#flightRule</a></td>
+		<td><a href="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-danger">
+		<td>ERROR</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_label">missing_label</a></td>
+		<td><a href="http://airdata.org/ontology#freeBaggage">http://airdata.org/ontology#freeBaggage</a></td>
+		<td><a href="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-danger">
+		<td>ERROR</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_label">missing_label</a></td>
+		<td><a href="http://airdata.org/ontology#freeCargoWeight">http://airdata.org/ontology#freeCargoWeight</a></td>
+		<td><a href="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-danger">
+		<td>ERROR</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_label">missing_label</a></td>
+		<td><a href="http://airdata.org/ontology#freePassengers">http://airdata.org/ontology#freePassengers</a></td>
+		<td><a href="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-danger">
+		<td>ERROR</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_label">missing_label</a></td>
+		<td><a href="http://airdata.org/ontology#geoaltitude">http://airdata.org/ontology#geoaltitude</a></td>
+		<td><a href="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-danger">
+		<td>ERROR</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_label">missing_label</a></td>
+		<td><a href="http://airdata.org/ontology#hasDataSource">http://airdata.org/ontology#hasDataSource</a></td>
+		<td><a href="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-danger">
+		<td>ERROR</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_label">missing_label</a></td>
+		<td><a href="http://airdata.org/ontology#heading">http://airdata.org/ontology#heading</a></td>
+		<td><a href="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-danger">
+		<td>ERROR</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_label">missing_label</a></td>
+		<td><a href="http://airdata.org/ontology#hold">http://airdata.org/ontology#hold</a></td>
+		<td><a href="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-danger">
+		<td>ERROR</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_label">missing_label</a></td>
+		<td><a href="http://airdata.org/ontology#iataCode">http://airdata.org/ontology#iataCode</a></td>
+		<td><a href="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-danger">
+		<td>ERROR</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_label">missing_label</a></td>
+		<td><a href="http://airdata.org/ontology#icaoCode">http://airdata.org/ontology#icaoCode</a></td>
+		<td><a href="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-danger">
+		<td>ERROR</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_label">missing_label</a></td>
+		<td><a href="http://airdata.org/ontology#id">http://airdata.org/ontology#id</a></td>
+		<td><a href="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-danger">
+		<td>ERROR</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_label">missing_label</a></td>
+		<td><a href="http://airdata.org/ontology#identification">http://airdata.org/ontology#identification</a></td>
+		<td><a href="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-danger">
+		<td>ERROR</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_label">missing_label</a></td>
+		<td><a href="http://airdata.org/ontology#insertedInDB">http://airdata.org/ontology#insertedInDB</a></td>
+		<td><a href="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-danger">
+		<td>ERROR</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_label">missing_label</a></td>
+		<td><a href="http://airdata.org/ontology#issueTime">http://airdata.org/ontology#issueTime</a></td>
+		<td><a href="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-danger">
+		<td>ERROR</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_label">missing_label</a></td>
+		<td><a href="http://airdata.org/ontology#latitude">http://airdata.org/ontology#latitude</a></td>
+		<td><a href="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-danger">
+		<td>ERROR</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_label">missing_label</a></td>
+		<td><a href="http://airdata.org/ontology#location">http://airdata.org/ontology#location</a></td>
+		<td><a href="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-danger">
+		<td>ERROR</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_label">missing_label</a></td>
+		<td><a href="http://airdata.org/ontology#longitude">http://airdata.org/ontology#longitude</a></td>
+		<td><a href="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-danger">
+		<td>ERROR</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_label">missing_label</a></td>
+		<td><a href="http://airdata.org/ontology#mailWeight">http://airdata.org/ontology#mailWeight</a></td>
+		<td><a href="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-danger">
+		<td>ERROR</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_label">missing_label</a></td>
+		<td><a href="http://airdata.org/ontology#maxTemperature">http://airdata.org/ontology#maxTemperature</a></td>
+		<td><a href="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-danger">
+		<td>ERROR</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_label">missing_label</a></td>
+		<td><a href="http://airdata.org/ontology#minTemperature">http://airdata.org/ontology#minTemperature</a></td>
+		<td><a href="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-danger">
+		<td>ERROR</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_label">missing_label</a></td>
+		<td><a href="http://airdata.org/ontology#movEstimative">http://airdata.org/ontology#movEstimative</a></td>
+		<td><a href="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-danger">
+		<td>ERROR</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_label">missing_label</a></td>
+		<td><a href="http://airdata.org/ontology#name">http://airdata.org/ontology#name</a></td>
+		<td><a href="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-danger">
+		<td>ERROR</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_label">missing_label</a></td>
+		<td><a href="http://airdata.org/ontology#observationTime">http://airdata.org/ontology#observationTime</a></td>
+		<td><a href="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-danger">
+		<td>ERROR</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_label">missing_label</a></td>
+		<td><a href="http://airdata.org/ontology#onboardEquipment">http://airdata.org/ontology#onboardEquipment</a></td>
+		<td><a href="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-danger">
+		<td>ERROR</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_label">missing_label</a></td>
+		<td><a href="http://airdata.org/ontology#onboardEquipment2">http://airdata.org/ontology#onboardEquipment2</a></td>
+		<td><a href="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-danger">
+		<td>ERROR</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_label">missing_label</a></td>
+		<td><a href="http://airdata.org/ontology#onground">http://airdata.org/ontology#onground</a></td>
+		<td><a href="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-danger">
+		<td>ERROR</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_label">missing_label</a></td>
+		<td><a href="http://airdata.org/ontology#operational">http://airdata.org/ontology#operational</a></td>
+		<td><a href="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-danger">
+		<td>ERROR</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_label">missing_label</a></td>
+		<td><a href="http://airdata.org/ontology#paidCargoWeight">http://airdata.org/ontology#paidCargoWeight</a></td>
+		<td><a href="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-danger">
+		<td>ERROR</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_label">missing_label</a></td>
+		<td><a href="http://airdata.org/ontology#paidPassengers">http://airdata.org/ontology#paidPassengers</a></td>
+		<td><a href="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-danger">
+		<td>ERROR</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_label">missing_label</a></td>
+		<td><a href="http://airdata.org/ontology#pressureQNH">http://airdata.org/ontology#pressureQNH</a></td>
+		<td><a href="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-danger">
+		<td>ERROR</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_label">missing_label</a></td>
+		<td><a href="http://airdata.org/ontology#quantityAircraft">http://airdata.org/ontology#quantityAircraft</a></td>
+		<td><a href="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-danger">
+		<td>ERROR</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_label">missing_label</a></td>
+		<td><a href="http://airdata.org/ontology#rawMetar">http://airdata.org/ontology#rawMetar</a></td>
+		<td><a href="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-danger">
+		<td>ERROR</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_label">missing_label</a></td>
+		<td><a href="http://airdata.org/ontology#rawTaf">http://airdata.org/ontology#rawTaf</a></td>
+		<td><a href="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-danger">
+		<td>ERROR</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_label">missing_label</a></td>
+		<td><a href="http://airdata.org/ontology#receivedAt">http://airdata.org/ontology#receivedAt</a></td>
+		<td><a href="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-danger">
+		<td>ERROR</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_label">missing_label</a></td>
+		<td><a href="http://airdata.org/ontology#remarks">http://airdata.org/ontology#remarks</a></td>
+		<td><a href="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-danger">
+		<td>ERROR</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_label">missing_label</a></td>
+		<td><a href="http://airdata.org/ontology#remarksApp">http://airdata.org/ontology#remarksApp</a></td>
+		<td><a href="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-danger">
+		<td>ERROR</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_label">missing_label</a></td>
+		<td><a href="http://airdata.org/ontology#route">http://airdata.org/ontology#route</a></td>
+		<td><a href="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-danger">
+		<td>ERROR</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_label">missing_label</a></td>
+		<td><a href="http://airdata.org/ontology#runway">http://airdata.org/ontology#runway</a></td>
+		<td><a href="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-danger">
+		<td>ERROR</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_label">missing_label</a></td>
+		<td><a href="http://airdata.org/ontology#source">http://airdata.org/ontology#source</a></td>
+		<td><a href="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-danger">
+		<td>ERROR</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_label">missing_label</a></td>
+		<td><a href="http://airdata.org/ontology#spatial">http://airdata.org/ontology#spatial</a></td>
+		<td><a href="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-danger">
+		<td>ERROR</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_label">missing_label</a></td>
+		<td><a href="http://airdata.org/ontology#squawk">http://airdata.org/ontology#squawk</a></td>
+		<td><a href="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-danger">
+		<td>ERROR</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_label">missing_label</a></td>
+		<td><a href="http://airdata.org/ontology#ssr">http://airdata.org/ontology#ssr</a></td>
+		<td><a href="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-danger">
+		<td>ERROR</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_label">missing_label</a></td>
+		<td><a href="http://airdata.org/ontology#stageName">http://airdata.org/ontology#stageName</a></td>
+		<td><a href="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-danger">
+		<td>ERROR</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_label">missing_label</a></td>
+		<td><a href="http://airdata.org/ontology#stageNumber">http://airdata.org/ontology#stageNumber</a></td>
+		<td><a href="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-danger">
+		<td>ERROR</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_label">missing_label</a></td>
+		<td><a href="http://airdata.org/ontology#status">http://airdata.org/ontology#status</a></td>
+		<td><a href="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-danger">
+		<td>ERROR</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_label">missing_label</a></td>
+		<td><a href="http://airdata.org/ontology#taxi">http://airdata.org/ontology#taxi</a></td>
+		<td><a href="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-danger">
+		<td>ERROR</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_label">missing_label</a></td>
+		<td><a href="http://airdata.org/ontology#taxiwayAlignment">http://airdata.org/ontology#taxiwayAlignment</a></td>
+		<td><a href="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-danger">
+		<td>ERROR</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_label">missing_label</a></td>
+		<td><a href="http://airdata.org/ontology#taxiwayUsed">http://airdata.org/ontology#taxiwayUsed</a></td>
+		<td><a href="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-danger">
+		<td>ERROR</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_label">missing_label</a></td>
+		<td><a href="http://airdata.org/ontology#tempEnd">http://airdata.org/ontology#tempEnd</a></td>
+		<td><a href="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-danger">
+		<td>ERROR</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_label">missing_label</a></td>
+		<td><a href="http://airdata.org/ontology#tempGroup">http://airdata.org/ontology#tempGroup</a></td>
+		<td><a href="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-danger">
+		<td>ERROR</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_label">missing_label</a></td>
+		<td><a href="http://airdata.org/ontology#tempStart">http://airdata.org/ontology#tempStart</a></td>
+		<td><a href="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-danger">
+		<td>ERROR</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_label">missing_label</a></td>
+		<td><a href="http://airdata.org/ontology#tempWeather">http://airdata.org/ontology#tempWeather</a></td>
+		<td><a href="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-danger">
+		<td>ERROR</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_label">missing_label</a></td>
+		<td><a href="http://airdata.org/ontology#temperature">http://airdata.org/ontology#temperature</a></td>
+		<td><a href="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-danger">
+		<td>ERROR</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_label">missing_label</a></td>
+		<td><a href="http://airdata.org/ontology#temporal">http://airdata.org/ontology#temporal</a></td>
+		<td><a href="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-danger">
+		<td>ERROR</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_label">missing_label</a></td>
+		<td><a href="http://airdata.org/ontology#time">http://airdata.org/ontology#time</a></td>
+		<td><a href="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-danger">
+		<td>ERROR</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_label">missing_label</a></td>
+		<td><a href="http://airdata.org/ontology#timestamp">http://airdata.org/ontology#timestamp</a></td>
+		<td><a href="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-danger">
+		<td>ERROR</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_label">missing_label</a></td>
+		<td><a href="http://airdata.org/ontology#turbulenceWake">http://airdata.org/ontology#turbulenceWake</a></td>
+		<td><a href="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-danger">
+		<td>ERROR</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_label">missing_label</a></td>
+		<td><a href="http://airdata.org/ontology#type">http://airdata.org/ontology#type</a></td>
+		<td><a href="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-danger">
+		<td>ERROR</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_label">missing_label</a></td>
+		<td><a href="http://airdata.org/ontology#typeAircraftOperator">http://airdata.org/ontology#typeAircraftOperator</a></td>
+		<td><a href="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-danger">
+		<td>ERROR</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_label">missing_label</a></td>
+		<td><a href="http://airdata.org/ontology#typeLine">http://airdata.org/ontology#typeLine</a></td>
+		<td><a href="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-danger">
+		<td>ERROR</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_label">missing_label</a></td>
+		<td><a href="http://airdata.org/ontology#velocity">http://airdata.org/ontology#velocity</a></td>
+		<td><a href="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-danger">
+		<td>ERROR</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_label">missing_label</a></td>
+		<td><a href="http://airdata.org/ontology#vertrate">http://airdata.org/ontology#vertrate</a></td>
+		<td><a href="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-danger">
+		<td>ERROR</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_label">missing_label</a></td>
+		<td><a href="http://airdata.org/ontology#visibility">http://airdata.org/ontology#visibility</a></td>
+		<td><a href="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-danger">
+		<td>ERROR</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_label">missing_label</a></td>
+		<td><a href="http://airdata.org/ontology#weather">http://airdata.org/ontology#weather</a></td>
+		<td><a href="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-danger">
+		<td>ERROR</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_label">missing_label</a></td>
+		<td><a href="http://airdata.org/ontology#weatherPhenomena">http://airdata.org/ontology#weatherPhenomena</a></td>
+		<td><a href="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-danger">
+		<td>ERROR</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_label">missing_label</a></td>
+		<td><a href="http://airdata.org/ontology#windDirection">http://airdata.org/ontology#windDirection</a></td>
+		<td><a href="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-danger">
+		<td>ERROR</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_label">missing_label</a></td>
+		<td><a href="http://airdata.org/ontology#windGust">http://airdata.org/ontology#windGust</a></td>
+		<td><a href="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-danger">
+		<td>ERROR</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_label">missing_label</a></td>
+		<td><a href="http://airdata.org/ontology#windSpeed">http://airdata.org/ontology#windSpeed</a></td>
+		<td><a href="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-danger">
+		<td>ERROR</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_label">missing_label</a></td>
+		<td><a href="http://airdata.org/ontology#wpush">http://airdata.org/ontology#wpush</a></td>
+		<td><a href="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-danger">
+		<td>ERROR</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_label">missing_label</a></td>
+		<td><a href="http://airdata.org/ontology#wtaxi">http://airdata.org/ontology#wtaxi</a></td>
+		<td><a href="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-danger">
+		<td>ERROR</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_ontology_description">missing_ontology_description</a></td>
+		<td>http://airdata.org/ontology#</td>
+		<td><a href="http://purl.org/dc/terms/description">dc:description</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-danger">
+		<td>ERROR</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_ontology_license">missing_ontology_license</a></td>
+		<td>http://airdata.org/ontology#</td>
+		<td><a href="http://purl.org/dc/terms/license">dc:license</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-danger">
+		<td>ERROR</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_ontology_title">missing_ontology_title</a></td>
+		<td>http://airdata.org/ontology#</td>
+		<td><a href="http://purl.org/dc/terms/title">dc:title</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-danger">
+		<td>ERROR</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/multiple_labels">multiple_labels</a></td>
+		<td>http://airdata.org/ontology#</td>
+		<td><a href="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+		<td>AirData Ontology - Air Operations@en</td>
+	</tr>
+	<tr class="table-danger">
+		<td>ERROR</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/multiple_labels">multiple_labels</a></td>
+		<td>http://airdata.org/ontology#</td>
+		<td><a href="http://www.w3.org/2000/01/rdf-schema#label">rdfs:label</a></td>
+		<td>Ontologia AirData - Operacoes Aereas@pt</td>
+	</tr>
+	<tr class="table-warning">
+		<td>WARN</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_definition">missing_definition</a></td>
+		<td><a href="http://airdata.org/ontology#ATMFuelBurnKPI">http://airdata.org/ontology#ATMFuelBurnKPI</a></td>
+		<td><a href="http://purl.obolibrary.org/obo/IAO_0000115">IAO:0000115</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-warning">
+		<td>WARN</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_definition">missing_definition</a></td>
+		<td><a href="http://airdata.org/ontology#ActualDepartureTime">http://airdata.org/ontology#ActualDepartureTime</a></td>
+		<td><a href="http://purl.obolibrary.org/obo/IAO_0000115">IAO:0000115</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-warning">
+		<td>WARN</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_definition">missing_definition</a></td>
+		<td><a href="http://airdata.org/ontology#ActualGateArrivalTime">http://airdata.org/ontology#ActualGateArrivalTime</a></td>
+		<td><a href="http://purl.obolibrary.org/obo/IAO_0000115">IAO:0000115</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-warning">
+		<td>WARN</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_definition">missing_definition</a></td>
+		<td><a href="http://airdata.org/ontology#ActualLandingTime">http://airdata.org/ontology#ActualLandingTime</a></td>
+		<td><a href="http://purl.obolibrary.org/obo/IAO_0000115">IAO:0000115</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-warning">
+		<td>WARN</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_definition">missing_definition</a></td>
+		<td><a href="http://airdata.org/ontology#ActualPushbackTime">http://airdata.org/ontology#ActualPushbackTime</a></td>
+		<td><a href="http://purl.obolibrary.org/obo/IAO_0000115">IAO:0000115</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-warning">
+		<td>WARN</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_definition">missing_definition</a></td>
+		<td><a href="http://airdata.org/ontology#ActualTakeoffTime">http://airdata.org/ontology#ActualTakeoffTime</a></td>
+		<td><a href="http://purl.obolibrary.org/obo/IAO_0000115">IAO:0000115</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-warning">
+		<td>WARN</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_definition">missing_definition</a></td>
+		<td><a href="http://airdata.org/ontology#ActualTaxiStartTime">http://airdata.org/ontology#ActualTaxiStartTime</a></td>
+		<td><a href="http://purl.obolibrary.org/obo/IAO_0000115">IAO:0000115</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-warning">
+		<td>WARN</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_definition">missing_definition</a></td>
+		<td><a href="http://airdata.org/ontology#ActualTrajectory">http://airdata.org/ontology#ActualTrajectory</a></td>
+		<td><a href="http://purl.obolibrary.org/obo/IAO_0000115">IAO:0000115</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-warning">
+		<td>WARN</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_definition">missing_definition</a></td>
+		<td><a href="http://airdata.org/ontology#Aerodrome">http://airdata.org/ontology#Aerodrome</a></td>
+		<td><a href="http://purl.obolibrary.org/obo/IAO_0000115">IAO:0000115</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-warning">
+		<td>WARN</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_definition">missing_definition</a></td>
+		<td><a href="http://airdata.org/ontology#Aerodrome-Operation">http://airdata.org/ontology#Aerodrome-Operation</a></td>
+		<td><a href="http://purl.obolibrary.org/obo/IAO_0000115">IAO:0000115</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-warning">
+		<td>WARN</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_definition">missing_definition</a></td>
+		<td><a href="http://airdata.org/ontology#AerodromeCondition">http://airdata.org/ontology#AerodromeCondition</a></td>
+		<td><a href="http://purl.obolibrary.org/obo/IAO_0000115">IAO:0000115</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-warning">
+		<td>WARN</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_definition">missing_definition</a></td>
+		<td><a href="http://airdata.org/ontology#Aircraft">http://airdata.org/ontology#Aircraft</a></td>
+		<td><a href="http://purl.obolibrary.org/obo/IAO_0000115">IAO:0000115</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-warning">
+		<td>WARN</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_definition">missing_definition</a></td>
+		<td><a href="http://airdata.org/ontology#AircraftOperator">http://airdata.org/ontology#AircraftOperator</a></td>
+		<td><a href="http://purl.obolibrary.org/obo/IAO_0000115">IAO:0000115</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-warning">
+		<td>WARN</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_definition">missing_definition</a></td>
+		<td><a href="http://airdata.org/ontology#Airspace">http://airdata.org/ontology#Airspace</a></td>
+		<td><a href="http://purl.obolibrary.org/obo/IAO_0000115">IAO:0000115</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-warning">
+		<td>WARN</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_definition">missing_definition</a></td>
+		<td><a href="http://airdata.org/ontology#Airspace-DataSource">http://airdata.org/ontology#Airspace-DataSource</a></td>
+		<td><a href="http://purl.obolibrary.org/obo/IAO_0000115">IAO:0000115</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-warning">
+		<td>WARN</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_definition">missing_definition</a></td>
+		<td><a href="http://airdata.org/ontology#Airspace-Operation">http://airdata.org/ontology#Airspace-Operation</a></td>
+		<td><a href="http://purl.obolibrary.org/obo/IAO_0000115">IAO:0000115</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-warning">
+		<td>WARN</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_definition">missing_definition</a></td>
+		<td><a href="http://airdata.org/ontology#AirspaceCondition">http://airdata.org/ontology#AirspaceCondition</a></td>
+		<td><a href="http://purl.obolibrary.org/obo/IAO_0000115">IAO:0000115</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-warning">
+		<td>WARN</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_definition">missing_definition</a></td>
+		<td><a href="http://airdata.org/ontology#ArrivalEvent">http://airdata.org/ontology#ArrivalEvent</a></td>
+		<td><a href="http://purl.obolibrary.org/obo/IAO_0000115">IAO:0000115</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-warning">
+		<td>WARN</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_definition">missing_definition</a></td>
+		<td><a href="http://airdata.org/ontology#ArrivalOperation">http://airdata.org/ontology#ArrivalOperation</a></td>
+		<td><a href="http://purl.obolibrary.org/obo/IAO_0000115">IAO:0000115</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-warning">
+		<td>WARN</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_definition">missing_definition</a></td>
+		<td><a href="http://airdata.org/ontology#ArrivalOperation-ActualGateArrivalTime">http://airdata.org/ontology#ArrivalOperation-ActualGateArrivalTime</a></td>
+		<td><a href="http://purl.obolibrary.org/obo/IAO_0000115">IAO:0000115</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-warning">
+		<td>WARN</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_definition">missing_definition</a></td>
+		<td><a href="http://airdata.org/ontology#ArrivalOperation-ActualLandingTime">http://airdata.org/ontology#ArrivalOperation-ActualLandingTime</a></td>
+		<td><a href="http://purl.obolibrary.org/obo/IAO_0000115">IAO:0000115</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-warning">
+		<td>WARN</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_definition">missing_definition</a></td>
+		<td><a href="http://airdata.org/ontology#ArrivalOperation-Aerodrome">http://airdata.org/ontology#ArrivalOperation-Aerodrome</a></td>
+		<td><a href="http://purl.obolibrary.org/obo/IAO_0000115">IAO:0000115</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-warning">
+		<td>WARN</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_definition">missing_definition</a></td>
+		<td><a href="http://airdata.org/ontology#ArrivalOperation-AerodromeCondition">http://airdata.org/ontology#ArrivalOperation-AerodromeCondition</a></td>
+		<td><a href="http://purl.obolibrary.org/obo/IAO_0000115">IAO:0000115</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-warning">
+		<td>WARN</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_definition">missing_definition</a></td>
+		<td><a href="http://airdata.org/ontology#ArrivalOperation-EstimatedArrivalTime">http://airdata.org/ontology#ArrivalOperation-EstimatedArrivalTime</a></td>
+		<td><a href="http://purl.obolibrary.org/obo/IAO_0000115">IAO:0000115</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-warning">
+		<td>WARN</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_definition">missing_definition</a></td>
+		<td><a href="http://airdata.org/ontology#ArrivalPerformanceKPI">http://airdata.org/ontology#ArrivalPerformanceKPI</a></td>
+		<td><a href="http://purl.obolibrary.org/obo/IAO_0000115">IAO:0000115</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-warning">
+		<td>WARN</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_definition">missing_definition</a></td>
+		<td><a href="http://airdata.org/ontology#ArrivalTemporalRelation">http://airdata.org/ontology#ArrivalTemporalRelation</a></td>
+		<td><a href="http://purl.obolibrary.org/obo/IAO_0000115">IAO:0000115</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-warning">
+		<td>WARN</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_definition">missing_definition</a></td>
+		<td><a href="http://airdata.org/ontology#DataSource">http://airdata.org/ontology#DataSource</a></td>
+		<td><a href="http://purl.obolibrary.org/obo/IAO_0000115">IAO:0000115</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-warning">
+		<td>WARN</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_definition">missing_definition</a></td>
+		<td><a href="http://airdata.org/ontology#DepartureEvent">http://airdata.org/ontology#DepartureEvent</a></td>
+		<td><a href="http://purl.obolibrary.org/obo/IAO_0000115">IAO:0000115</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-warning">
+		<td>WARN</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_definition">missing_definition</a></td>
+		<td><a href="http://airdata.org/ontology#DepartureOperation">http://airdata.org/ontology#DepartureOperation</a></td>
+		<td><a href="http://purl.obolibrary.org/obo/IAO_0000115">IAO:0000115</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-warning">
+		<td>WARN</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_definition">missing_definition</a></td>
+		<td><a href="http://airdata.org/ontology#DepartureOperation-ActualDepartureTime">http://airdata.org/ontology#DepartureOperation-ActualDepartureTime</a></td>
+		<td><a href="http://purl.obolibrary.org/obo/IAO_0000115">IAO:0000115</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-warning">
+		<td>WARN</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_definition">missing_definition</a></td>
+		<td><a href="http://airdata.org/ontology#DepartureOperation-ActualPushbackTime">http://airdata.org/ontology#DepartureOperation-ActualPushbackTime</a></td>
+		<td><a href="http://purl.obolibrary.org/obo/IAO_0000115">IAO:0000115</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-warning">
+		<td>WARN</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_definition">missing_definition</a></td>
+		<td><a href="http://airdata.org/ontology#DepartureOperation-ActualTakeoffTime">http://airdata.org/ontology#DepartureOperation-ActualTakeoffTime</a></td>
+		<td><a href="http://purl.obolibrary.org/obo/IAO_0000115">IAO:0000115</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-warning">
+		<td>WARN</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_definition">missing_definition</a></td>
+		<td><a href="http://airdata.org/ontology#DepartureOperation-ActualTaxiStartTime">http://airdata.org/ontology#DepartureOperation-ActualTaxiStartTime</a></td>
+		<td><a href="http://purl.obolibrary.org/obo/IAO_0000115">IAO:0000115</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-warning">
+		<td>WARN</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_definition">missing_definition</a></td>
+		<td><a href="http://airdata.org/ontology#DepartureOperation-Aerodrome">http://airdata.org/ontology#DepartureOperation-Aerodrome</a></td>
+		<td><a href="http://purl.obolibrary.org/obo/IAO_0000115">IAO:0000115</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-warning">
+		<td>WARN</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_definition">missing_definition</a></td>
+		<td><a href="http://airdata.org/ontology#DepartureOperation-AerodromeCondition">http://airdata.org/ontology#DepartureOperation-AerodromeCondition</a></td>
+		<td><a href="http://purl.obolibrary.org/obo/IAO_0000115">IAO:0000115</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-warning">
+		<td>WARN</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_definition">missing_definition</a></td>
+		<td><a href="http://airdata.org/ontology#DepartureOperation-EstimatedOffBlockTime">http://airdata.org/ontology#DepartureOperation-EstimatedOffBlockTime</a></td>
+		<td><a href="http://purl.obolibrary.org/obo/IAO_0000115">IAO:0000115</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-warning">
+		<td>WARN</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_definition">missing_definition</a></td>
+		<td><a href="http://airdata.org/ontology#DepartureOperation-EstimatedRunwayTime">http://airdata.org/ontology#DepartureOperation-EstimatedRunwayTime</a></td>
+		<td><a href="http://purl.obolibrary.org/obo/IAO_0000115">IAO:0000115</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-warning">
+		<td>WARN</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_definition">missing_definition</a></td>
+		<td><a href="http://airdata.org/ontology#DepartureOperation-EstimatedTaxiStartTime">http://airdata.org/ontology#DepartureOperation-EstimatedTaxiStartTime</a></td>
+		<td><a href="http://purl.obolibrary.org/obo/IAO_0000115">IAO:0000115</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-warning">
+		<td>WARN</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_definition">missing_definition</a></td>
+		<td><a href="http://airdata.org/ontology#DepartureOperation-ExpectedPushbackTime">http://airdata.org/ontology#DepartureOperation-ExpectedPushbackTime</a></td>
+		<td><a href="http://purl.obolibrary.org/obo/IAO_0000115">IAO:0000115</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-warning">
+		<td>WARN</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_definition">missing_definition</a></td>
+		<td><a href="http://airdata.org/ontology#DepartureOperation-HoldTime">http://airdata.org/ontology#DepartureOperation-HoldTime</a></td>
+		<td><a href="http://purl.obolibrary.org/obo/IAO_0000115">IAO:0000115</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-warning">
+		<td>WARN</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_definition">missing_definition</a></td>
+		<td><a href="http://airdata.org/ontology#DeparturePerformanceKPI">http://airdata.org/ontology#DeparturePerformanceKPI</a></td>
+		<td><a href="http://purl.obolibrary.org/obo/IAO_0000115">IAO:0000115</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-warning">
+		<td>WARN</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_definition">missing_definition</a></td>
+		<td><a href="http://airdata.org/ontology#DepartureTemporalRelation">http://airdata.org/ontology#DepartureTemporalRelation</a></td>
+		<td><a href="http://purl.obolibrary.org/obo/IAO_0000115">IAO:0000115</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-warning">
+		<td>WARN</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_definition">missing_definition</a></td>
+		<td><a href="http://airdata.org/ontology#EnRoutePerformanceKPI">http://airdata.org/ontology#EnRoutePerformanceKPI</a></td>
+		<td><a href="http://purl.obolibrary.org/obo/IAO_0000115">IAO:0000115</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-warning">
+		<td>WARN</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_definition">missing_definition</a></td>
+		<td><a href="http://airdata.org/ontology#EstimatedArrivalTime">http://airdata.org/ontology#EstimatedArrivalTime</a></td>
+		<td><a href="http://purl.obolibrary.org/obo/IAO_0000115">IAO:0000115</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-warning">
+		<td>WARN</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_definition">missing_definition</a></td>
+		<td><a href="http://airdata.org/ontology#EstimatedOffBlockTime">http://airdata.org/ontology#EstimatedOffBlockTime</a></td>
+		<td><a href="http://purl.obolibrary.org/obo/IAO_0000115">IAO:0000115</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-warning">
+		<td>WARN</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_definition">missing_definition</a></td>
+		<td><a href="http://airdata.org/ontology#EstimatedRunwayTime">http://airdata.org/ontology#EstimatedRunwayTime</a></td>
+		<td><a href="http://purl.obolibrary.org/obo/IAO_0000115">IAO:0000115</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-warning">
+		<td>WARN</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_definition">missing_definition</a></td>
+		<td><a href="http://airdata.org/ontology#EstimatedTaxiStartTime">http://airdata.org/ontology#EstimatedTaxiStartTime</a></td>
+		<td><a href="http://purl.obolibrary.org/obo/IAO_0000115">IAO:0000115</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-warning">
+		<td>WARN</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_definition">missing_definition</a></td>
+		<td><a href="http://airdata.org/ontology#ExpectedPushbackTime">http://airdata.org/ontology#ExpectedPushbackTime</a></td>
+		<td><a href="http://purl.obolibrary.org/obo/IAO_0000115">IAO:0000115</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-warning">
+		<td>WARN</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_definition">missing_definition</a></td>
+		<td><a href="http://airdata.org/ontology#FixPoint">http://airdata.org/ontology#FixPoint</a></td>
+		<td><a href="http://purl.obolibrary.org/obo/IAO_0000115">IAO:0000115</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-warning">
+		<td>WARN</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_definition">missing_definition</a></td>
+		<td><a href="http://airdata.org/ontology#Flight">http://airdata.org/ontology#Flight</a></td>
+		<td><a href="http://purl.obolibrary.org/obo/IAO_0000115">IAO:0000115</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-warning">
+		<td>WARN</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_definition">missing_definition</a></td>
+		<td><a href="http://airdata.org/ontology#Flight-Aircraft">http://airdata.org/ontology#Flight-Aircraft</a></td>
+		<td><a href="http://purl.obolibrary.org/obo/IAO_0000115">IAO:0000115</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-warning">
+		<td>WARN</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_definition">missing_definition</a></td>
+		<td><a href="http://airdata.org/ontology#Flight-AircraftOperator">http://airdata.org/ontology#Flight-AircraftOperator</a></td>
+		<td><a href="http://purl.obolibrary.org/obo/IAO_0000115">IAO:0000115</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-warning">
+		<td>WARN</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_definition">missing_definition</a></td>
+		<td><a href="http://airdata.org/ontology#Flight-Airspace">http://airdata.org/ontology#Flight-Airspace</a></td>
+		<td><a href="http://purl.obolibrary.org/obo/IAO_0000115">IAO:0000115</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-warning">
+		<td>WARN</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_definition">missing_definition</a></td>
+		<td><a href="http://airdata.org/ontology#Flight-ArrivalOperation">http://airdata.org/ontology#Flight-ArrivalOperation</a></td>
+		<td><a href="http://purl.obolibrary.org/obo/IAO_0000115">IAO:0000115</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-warning">
+		<td>WARN</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_definition">missing_definition</a></td>
+		<td><a href="http://airdata.org/ontology#Flight-DepartureOperation">http://airdata.org/ontology#Flight-DepartureOperation</a></td>
+		<td><a href="http://purl.obolibrary.org/obo/IAO_0000115">IAO:0000115</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-warning">
+		<td>WARN</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_definition">missing_definition</a></td>
+		<td><a href="http://airdata.org/ontology#Flight-Trajectory">http://airdata.org/ontology#Flight-Trajectory</a></td>
+		<td><a href="http://purl.obolibrary.org/obo/IAO_0000115">IAO:0000115</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-warning">
+		<td>WARN</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_definition">missing_definition</a></td>
+		<td><a href="http://airdata.org/ontology#FlightOperation">http://airdata.org/ontology#FlightOperation</a></td>
+		<td><a href="http://purl.obolibrary.org/obo/IAO_0000115">IAO:0000115</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-warning">
+		<td>WARN</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_definition">missing_definition</a></td>
+		<td><a href="http://airdata.org/ontology#FuelEfficiencyKPI">http://airdata.org/ontology#FuelEfficiencyKPI</a></td>
+		<td><a href="http://purl.obolibrary.org/obo/IAO_0000115">IAO:0000115</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-warning">
+		<td>WARN</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_definition">missing_definition</a></td>
+		<td><a href="http://airdata.org/ontology#Gate">http://airdata.org/ontology#Gate</a></td>
+		<td><a href="http://purl.obolibrary.org/obo/IAO_0000115">IAO:0000115</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-warning">
+		<td>WARN</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_definition">missing_definition</a></td>
+		<td><a href="http://airdata.org/ontology#GateArrivalOnTimeKPI">http://airdata.org/ontology#GateArrivalOnTimeKPI</a></td>
+		<td><a href="http://purl.obolibrary.org/obo/IAO_0000115">IAO:0000115</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-warning">
+		<td>WARN</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_definition">missing_definition</a></td>
+		<td><a href="http://airdata.org/ontology#GateDepartureOnTimeKPI">http://airdata.org/ontology#GateDepartureOnTimeKPI</a></td>
+		<td><a href="http://purl.obolibrary.org/obo/IAO_0000115">IAO:0000115</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-warning">
+		<td>WARN</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_definition">missing_definition</a></td>
+		<td><a href="http://airdata.org/ontology#HoldTime">http://airdata.org/ontology#HoldTime</a></td>
+		<td><a href="http://purl.obolibrary.org/obo/IAO_0000115">IAO:0000115</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-warning">
+		<td>WARN</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_definition">missing_definition</a></td>
+		<td><a href="http://airdata.org/ontology#IdentificationRelation">http://airdata.org/ontology#IdentificationRelation</a></td>
+		<td><a href="http://purl.obolibrary.org/obo/IAO_0000115">IAO:0000115</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-warning">
+		<td>WARN</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_definition">missing_definition</a></td>
+		<td><a href="http://airdata.org/ontology#Operation">http://airdata.org/ontology#Operation</a></td>
+		<td><a href="http://purl.obolibrary.org/obo/IAO_0000115">IAO:0000115</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-warning">
+		<td>WARN</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_definition">missing_definition</a></td>
+		<td><a href="http://airdata.org/ontology#Operation-WeatherCondition">http://airdata.org/ontology#Operation-WeatherCondition</a></td>
+		<td><a href="http://purl.obolibrary.org/obo/IAO_0000115">IAO:0000115</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-warning">
+		<td>WARN</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_definition">missing_definition</a></td>
+		<td><a href="http://airdata.org/ontology#Performance">http://airdata.org/ontology#Performance</a></td>
+		<td><a href="http://purl.obolibrary.org/obo/IAO_0000115">IAO:0000115</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-warning">
+		<td>WARN</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_definition">missing_definition</a></td>
+		<td><a href="http://airdata.org/ontology#PlannedTrajectory">http://airdata.org/ontology#PlannedTrajectory</a></td>
+		<td><a href="http://purl.obolibrary.org/obo/IAO_0000115">IAO:0000115</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-warning">
+		<td>WARN</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_definition">missing_definition</a></td>
+		<td><a href="http://airdata.org/ontology#Procedure">http://airdata.org/ontology#Procedure</a></td>
+		<td><a href="http://purl.obolibrary.org/obo/IAO_0000115">IAO:0000115</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-warning">
+		<td>WARN</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_definition">missing_definition</a></td>
+		<td><a href="http://airdata.org/ontology#RouteDistanceEfficiencyKPI">http://airdata.org/ontology#RouteDistanceEfficiencyKPI</a></td>
+		<td><a href="http://purl.obolibrary.org/obo/IAO_0000115">IAO:0000115</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-warning">
+		<td>WARN</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_definition">missing_definition</a></td>
+		<td><a href="http://airdata.org/ontology#Runway">http://airdata.org/ontology#Runway</a></td>
+		<td><a href="http://purl.obolibrary.org/obo/IAO_0000115">IAO:0000115</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-warning">
+		<td>WARN</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_definition">missing_definition</a></td>
+		<td><a href="http://airdata.org/ontology#RunwayCondition">http://airdata.org/ontology#RunwayCondition</a></td>
+		<td><a href="http://purl.obolibrary.org/obo/IAO_0000115">IAO:0000115</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-warning">
+		<td>WARN</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_definition">missing_definition</a></td>
+		<td><a href="http://airdata.org/ontology#SourceRelation">http://airdata.org/ontology#SourceRelation</a></td>
+		<td><a href="http://purl.obolibrary.org/obo/IAO_0000115">IAO:0000115</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-warning">
+		<td>WARN</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_definition">missing_definition</a></td>
+		<td><a href="http://airdata.org/ontology#SpatialRelation">http://airdata.org/ontology#SpatialRelation</a></td>
+		<td><a href="http://purl.obolibrary.org/obo/IAO_0000115">IAO:0000115</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-warning">
+		<td>WARN</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_definition">missing_definition</a></td>
+		<td><a href="http://airdata.org/ontology#TaxilnEfficiencyKPI">http://airdata.org/ontology#TaxilnEfficiencyKPI</a></td>
+		<td><a href="http://purl.obolibrary.org/obo/IAO_0000115">IAO:0000115</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-warning">
+		<td>WARN</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_definition">missing_definition</a></td>
+		<td><a href="http://airdata.org/ontology#Taxiway">http://airdata.org/ontology#Taxiway</a></td>
+		<td><a href="http://purl.obolibrary.org/obo/IAO_0000115">IAO:0000115</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-warning">
+		<td>WARN</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_definition">missing_definition</a></td>
+		<td><a href="http://airdata.org/ontology#TemporalEvent">http://airdata.org/ontology#TemporalEvent</a></td>
+		<td><a href="http://purl.obolibrary.org/obo/IAO_0000115">IAO:0000115</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-warning">
+		<td>WARN</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_definition">missing_definition</a></td>
+		<td><a href="http://airdata.org/ontology#TemporalEvent-DataSource">http://airdata.org/ontology#TemporalEvent-DataSource</a></td>
+		<td><a href="http://purl.obolibrary.org/obo/IAO_0000115">IAO:0000115</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-warning">
+		<td>WARN</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_definition">missing_definition</a></td>
+		<td><a href="http://airdata.org/ontology#TemporalRelation">http://airdata.org/ontology#TemporalRelation</a></td>
+		<td><a href="http://purl.obolibrary.org/obo/IAO_0000115">IAO:0000115</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-warning">
+		<td>WARN</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_definition">missing_definition</a></td>
+		<td><a href="http://airdata.org/ontology#TerminalAirspaceEfficiencyKPI">http://airdata.org/ontology#TerminalAirspaceEfficiencyKPI</a></td>
+		<td><a href="http://purl.obolibrary.org/obo/IAO_0000115">IAO:0000115</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-warning">
+		<td>WARN</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_definition">missing_definition</a></td>
+		<td><a href="http://airdata.org/ontology#TopOfClimbEfficiencyKPI">http://airdata.org/ontology#TopOfClimbEfficiencyKPI</a></td>
+		<td><a href="http://purl.obolibrary.org/obo/IAO_0000115">IAO:0000115</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-warning">
+		<td>WARN</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_definition">missing_definition</a></td>
+		<td><a href="http://airdata.org/ontology#TopOfDescentEfficiencyKPI">http://airdata.org/ontology#TopOfDescentEfficiencyKPI</a></td>
+		<td><a href="http://purl.obolibrary.org/obo/IAO_0000115">IAO:0000115</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-warning">
+		<td>WARN</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_definition">missing_definition</a></td>
+		<td><a href="http://airdata.org/ontology#Trajectory">http://airdata.org/ontology#Trajectory</a></td>
+		<td><a href="http://purl.obolibrary.org/obo/IAO_0000115">IAO:0000115</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-warning">
+		<td>WARN</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_definition">missing_definition</a></td>
+		<td><a href="http://airdata.org/ontology#Trajectory-DataSource">http://airdata.org/ontology#Trajectory-DataSource</a></td>
+		<td><a href="http://purl.obolibrary.org/obo/IAO_0000115">IAO:0000115</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-warning">
+		<td>WARN</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_definition">missing_definition</a></td>
+		<td><a href="http://airdata.org/ontology#Trajectory-Operation">http://airdata.org/ontology#Trajectory-Operation</a></td>
+		<td><a href="http://purl.obolibrary.org/obo/IAO_0000115">IAO:0000115</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-warning">
+		<td>WARN</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_definition">missing_definition</a></td>
+		<td><a href="http://airdata.org/ontology#TrajectoryPoint">http://airdata.org/ontology#TrajectoryPoint</a></td>
+		<td><a href="http://purl.obolibrary.org/obo/IAO_0000115">IAO:0000115</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-warning">
+		<td>WARN</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_definition">missing_definition</a></td>
+		<td><a href="http://airdata.org/ontology#VerticalEfficiencyKPI">http://airdata.org/ontology#VerticalEfficiencyKPI</a></td>
+		<td><a href="http://purl.obolibrary.org/obo/IAO_0000115">IAO:0000115</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-warning">
+		<td>WARN</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_definition">missing_definition</a></td>
+		<td><a href="http://airdata.org/ontology#WeatherCondition">http://airdata.org/ontology#WeatherCondition</a></td>
+		<td><a href="http://purl.obolibrary.org/obo/IAO_0000115">IAO:0000115</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-warning">
+		<td>WARN</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_definition">missing_definition</a></td>
+		<td><a href="http://airdata.org/ontology#WeatherCondition-DataSource">http://airdata.org/ontology#WeatherCondition-DataSource</a></td>
+		<td><a href="http://purl.obolibrary.org/obo/IAO_0000115">IAO:0000115</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-warning">
+		<td>WARN</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_definition">missing_definition</a></td>
+		<td><a href="http://airdata.org/ontology#WeatherRelation">http://airdata.org/ontology#WeatherRelation</a></td>
+		<td><a href="http://purl.obolibrary.org/obo/IAO_0000115">IAO:0000115</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-warning">
+		<td>WARN</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_definition">missing_definition</a></td>
+		<td><a href="http://airdata.org/ontology#accType">http://airdata.org/ontology#accType</a></td>
+		<td><a href="http://purl.obolibrary.org/obo/IAO_0000115">IAO:0000115</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-warning">
+		<td>WARN</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_definition">missing_definition</a></td>
+		<td><a href="http://airdata.org/ontology#acronymType">http://airdata.org/ontology#acronymType</a></td>
+		<td><a href="http://purl.obolibrary.org/obo/IAO_0000115">IAO:0000115</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-warning">
+		<td>WARN</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_definition">missing_definition</a></td>
+		<td><a href="http://airdata.org/ontology#actual">http://airdata.org/ontology#actual</a></td>
+		<td><a href="http://purl.obolibrary.org/obo/IAO_0000115">IAO:0000115</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-warning">
+		<td>WARN</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_definition">missing_definition</a></td>
+		<td><a href="http://airdata.org/ontology#additionalData">http://airdata.org/ontology#additionalData</a></td>
+		<td><a href="http://purl.obolibrary.org/obo/IAO_0000115">IAO:0000115</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-warning">
+		<td>WARN</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_definition">missing_definition</a></td>
+		<td><a href="http://airdata.org/ontology#aircraft">http://airdata.org/ontology#aircraft</a></td>
+		<td><a href="http://purl.obolibrary.org/obo/IAO_0000115">IAO:0000115</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-warning">
+		<td>WARN</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_definition">missing_definition</a></td>
+		<td><a href="http://airdata.org/ontology#aircraftSpeed">http://airdata.org/ontology#aircraftSpeed</a></td>
+		<td><a href="http://purl.obolibrary.org/obo/IAO_0000115">IAO:0000115</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-warning">
+		<td>WARN</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_definition">missing_definition</a></td>
+		<td><a href="http://airdata.org/ontology#airportRule">http://airdata.org/ontology#airportRule</a></td>
+		<td><a href="http://purl.obolibrary.org/obo/IAO_0000115">IAO:0000115</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-warning">
+		<td>WARN</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_definition">missing_definition</a></td>
+		<td><a href="http://airdata.org/ontology#arr">http://airdata.org/ontology#arr</a></td>
+		<td><a href="http://purl.obolibrary.org/obo/IAO_0000115">IAO:0000115</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-warning">
+		<td>WARN</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_definition">missing_definition</a></td>
+		<td><a href="http://airdata.org/ontology#arrivalProcedure">http://airdata.org/ontology#arrivalProcedure</a></td>
+		<td><a href="http://purl.obolibrary.org/obo/IAO_0000115">IAO:0000115</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-warning">
+		<td>WARN</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_definition">missing_definition</a></td>
+		<td><a href="http://airdata.org/ontology#atsUnit">http://airdata.org/ontology#atsUnit</a></td>
+		<td><a href="http://purl.obolibrary.org/obo/IAO_0000115">IAO:0000115</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-warning">
+		<td>WARN</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_definition">missing_definition</a></td>
+		<td><a href="http://airdata.org/ontology#autonomy">http://airdata.org/ontology#autonomy</a></td>
+		<td><a href="http://purl.obolibrary.org/obo/IAO_0000115">IAO:0000115</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-warning">
+		<td>WARN</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_definition">missing_definition</a></td>
+		<td><a href="http://airdata.org/ontology#baroaltitude">http://airdata.org/ontology#baroaltitude</a></td>
+		<td><a href="http://purl.obolibrary.org/obo/IAO_0000115">IAO:0000115</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-warning">
+		<td>WARN</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_definition">missing_definition</a></td>
+		<td><a href="http://airdata.org/ontology#beginPrevision">http://airdata.org/ontology#beginPrevision</a></td>
+		<td><a href="http://purl.obolibrary.org/obo/IAO_0000115">IAO:0000115</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-warning">
+		<td>WARN</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_definition">missing_definition</a></td>
+		<td><a href="http://airdata.org/ontology#box">http://airdata.org/ontology#box</a></td>
+		<td><a href="http://purl.obolibrary.org/obo/IAO_0000115">IAO:0000115</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-warning">
+		<td>WARN</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_definition">missing_definition</a></td>
+		<td><a href="http://airdata.org/ontology#callsign">http://airdata.org/ontology#callsign</a></td>
+		<td><a href="http://purl.obolibrary.org/obo/IAO_0000115">IAO:0000115</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-warning">
+		<td>WARN</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_definition">missing_definition</a></td>
+		<td><a href="http://airdata.org/ontology#cdep">http://airdata.org/ontology#cdep</a></td>
+		<td><a href="http://purl.obolibrary.org/obo/IAO_0000115">IAO:0000115</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-warning">
+		<td>WARN</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_definition">missing_definition</a></td>
+		<td><a href="http://airdata.org/ontology#changeCloud">http://airdata.org/ontology#changeCloud</a></td>
+		<td><a href="http://purl.obolibrary.org/obo/IAO_0000115">IAO:0000115</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-warning">
+		<td>WARN</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_definition">missing_definition</a></td>
+		<td><a href="http://airdata.org/ontology#changeEnd">http://airdata.org/ontology#changeEnd</a></td>
+		<td><a href="http://purl.obolibrary.org/obo/IAO_0000115">IAO:0000115</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-warning">
+		<td>WARN</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_definition">missing_definition</a></td>
+		<td><a href="http://airdata.org/ontology#changeGroup">http://airdata.org/ontology#changeGroup</a></td>
+		<td><a href="http://purl.obolibrary.org/obo/IAO_0000115">IAO:0000115</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-warning">
+		<td>WARN</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_definition">missing_definition</a></td>
+		<td><a href="http://airdata.org/ontology#changeStart">http://airdata.org/ontology#changeStart</a></td>
+		<td><a href="http://purl.obolibrary.org/obo/IAO_0000115">IAO:0000115</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-warning">
+		<td>WARN</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_definition">missing_definition</a></td>
+		<td><a href="http://airdata.org/ontology#changeVisibility">http://airdata.org/ontology#changeVisibility</a></td>
+		<td><a href="http://purl.obolibrary.org/obo/IAO_0000115">IAO:0000115</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-warning">
+		<td>WARN</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_definition">missing_definition</a></td>
+		<td><a href="http://airdata.org/ontology#cloudAmount">http://airdata.org/ontology#cloudAmount</a></td>
+		<td><a href="http://purl.obolibrary.org/obo/IAO_0000115">IAO:0000115</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-warning">
+		<td>WARN</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_definition">missing_definition</a></td>
+		<td><a href="http://airdata.org/ontology#cloudBase">http://airdata.org/ontology#cloudBase</a></td>
+		<td><a href="http://purl.obolibrary.org/obo/IAO_0000115">IAO:0000115</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-warning">
+		<td>WARN</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_definition">missing_definition</a></td>
+		<td><a href="http://airdata.org/ontology#cloudType">http://airdata.org/ontology#cloudType</a></td>
+		<td><a href="http://purl.obolibrary.org/obo/IAO_0000115">IAO:0000115</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-warning">
+		<td>WARN</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_definition">missing_definition</a></td>
+		<td><a href="http://airdata.org/ontology#code">http://airdata.org/ontology#code</a></td>
+		<td><a href="http://purl.obolibrary.org/obo/IAO_0000115">IAO:0000115</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-warning">
+		<td>WARN</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_definition">missing_definition</a></td>
+		<td><a href="http://airdata.org/ontology#codeDI">http://airdata.org/ontology#codeDI</a></td>
+		<td><a href="http://purl.obolibrary.org/obo/IAO_0000115">IAO:0000115</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-warning">
+		<td>WARN</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_definition">missing_definition</a></td>
+		<td><a href="http://airdata.org/ontology#codeshare">http://airdata.org/ontology#codeshare</a></td>
+		<td><a href="http://purl.obolibrary.org/obo/IAO_0000115">IAO:0000115</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-warning">
+		<td>WARN</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_definition">missing_definition</a></td>
+		<td><a href="http://airdata.org/ontology#controllerName">http://airdata.org/ontology#controllerName</a></td>
+		<td><a href="http://purl.obolibrary.org/obo/IAO_0000115">IAO:0000115</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-warning">
+		<td>WARN</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_definition">missing_definition</a></td>
+		<td><a href="http://airdata.org/ontology#cpos">http://airdata.org/ontology#cpos</a></td>
+		<td><a href="http://purl.obolibrary.org/obo/IAO_0000115">IAO:0000115</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-warning">
+		<td>WARN</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_definition">missing_definition</a></td>
+		<td><a href="http://airdata.org/ontology#cpush">http://airdata.org/ontology#cpush</a></td>
+		<td><a href="http://purl.obolibrary.org/obo/IAO_0000115">IAO:0000115</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-warning">
+		<td>WARN</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_definition">missing_definition</a></td>
+		<td><a href="http://airdata.org/ontology#crossingType">http://airdata.org/ontology#crossingType</a></td>
+		<td><a href="http://purl.obolibrary.org/obo/IAO_0000115">IAO:0000115</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-warning">
+		<td>WARN</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_definition">missing_definition</a></td>
+		<td><a href="http://airdata.org/ontology#crwy">http://airdata.org/ontology#crwy</a></td>
+		<td><a href="http://purl.obolibrary.org/obo/IAO_0000115">IAO:0000115</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-warning">
+		<td>WARN</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_definition">missing_definition</a></td>
+		<td><a href="http://airdata.org/ontology#dataRadar">http://airdata.org/ontology#dataRadar</a></td>
+		<td><a href="http://purl.obolibrary.org/obo/IAO_0000115">IAO:0000115</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-warning">
+		<td>WARN</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_definition">missing_definition</a></td>
+		<td><a href="http://airdata.org/ontology#dataSource">http://airdata.org/ontology#dataSource</a></td>
+		<td><a href="http://purl.obolibrary.org/obo/IAO_0000115">IAO:0000115</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-warning">
+		<td>WARN</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_definition">missing_definition</a></td>
+		<td><a href="http://airdata.org/ontology#dep">http://airdata.org/ontology#dep</a></td>
+		<td><a href="http://purl.obolibrary.org/obo/IAO_0000115">IAO:0000115</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-warning">
+		<td>WARN</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_definition">missing_definition</a></td>
+		<td><a href="http://airdata.org/ontology#departureProcedure">http://airdata.org/ontology#departureProcedure</a></td>
+		<td><a href="http://purl.obolibrary.org/obo/IAO_0000115">IAO:0000115</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-warning">
+		<td>WARN</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_definition">missing_definition</a></td>
+		<td><a href="http://airdata.org/ontology#descriptive">http://airdata.org/ontology#descriptive</a></td>
+		<td><a href="http://purl.obolibrary.org/obo/IAO_0000115">IAO:0000115</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-warning">
+		<td>WARN</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_definition">missing_definition</a></td>
+		<td><a href="http://airdata.org/ontology#detectorSource">http://airdata.org/ontology#detectorSource</a></td>
+		<td><a href="http://purl.obolibrary.org/obo/IAO_0000115">IAO:0000115</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-warning">
+		<td>WARN</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_definition">missing_definition</a></td>
+		<td><a href="http://airdata.org/ontology#dewPoint">http://airdata.org/ontology#dewPoint</a></td>
+		<td><a href="http://purl.obolibrary.org/obo/IAO_0000115">IAO:0000115</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-warning">
+		<td>WARN</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_definition">missing_definition</a></td>
+		<td><a href="http://airdata.org/ontology#endPrevision">http://airdata.org/ontology#endPrevision</a></td>
+		<td><a href="http://purl.obolibrary.org/obo/IAO_0000115">IAO:0000115</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-warning">
+		<td>WARN</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_definition">missing_definition</a></td>
+		<td><a href="http://airdata.org/ontology#eobt">http://airdata.org/ontology#eobt</a></td>
+		<td><a href="http://purl.obolibrary.org/obo/IAO_0000115">IAO:0000115</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-warning">
+		<td>WARN</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_definition">missing_definition</a></td>
+		<td><a href="http://airdata.org/ontology#equipmentCode">http://airdata.org/ontology#equipmentCode</a></td>
+		<td><a href="http://purl.obolibrary.org/obo/IAO_0000115">IAO:0000115</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-warning">
+		<td>WARN</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_definition">missing_definition</a></td>
+		<td><a href="http://airdata.org/ontology#estimated">http://airdata.org/ontology#estimated</a></td>
+		<td><a href="http://purl.obolibrary.org/obo/IAO_0000115">IAO:0000115</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-warning">
+		<td>WARN</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_definition">missing_definition</a></td>
+		<td><a href="http://airdata.org/ontology#eta">http://airdata.org/ontology#eta</a></td>
+		<td><a href="http://purl.obolibrary.org/obo/IAO_0000115">IAO:0000115</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-warning">
+		<td>WARN</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_definition">missing_definition</a></td>
+		<td><a href="http://airdata.org/ontology#eventDescription">http://airdata.org/ontology#eventDescription</a></td>
+		<td><a href="http://purl.obolibrary.org/obo/IAO_0000115">IAO:0000115</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-warning">
+		<td>WARN</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_definition">missing_definition</a></td>
+		<td><a href="http://airdata.org/ontology#eventName">http://airdata.org/ontology#eventName</a></td>
+		<td><a href="http://purl.obolibrary.org/obo/IAO_0000115">IAO:0000115</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-warning">
+		<td>WARN</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_definition">missing_definition</a></td>
+		<td><a href="http://airdata.org/ontology#excessBaggage">http://airdata.org/ontology#excessBaggage</a></td>
+		<td><a href="http://purl.obolibrary.org/obo/IAO_0000115">IAO:0000115</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-warning">
+		<td>WARN</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_definition">missing_definition</a></td>
+		<td><a href="http://airdata.org/ontology#fixEntryName">http://airdata.org/ontology#fixEntryName</a></td>
+		<td><a href="http://purl.obolibrary.org/obo/IAO_0000115">IAO:0000115</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-warning">
+		<td>WARN</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_definition">missing_definition</a></td>
+		<td><a href="http://airdata.org/ontology#fixEntryTime">http://airdata.org/ontology#fixEntryTime</a></td>
+		<td><a href="http://purl.obolibrary.org/obo/IAO_0000115">IAO:0000115</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-warning">
+		<td>WARN</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_definition">missing_definition</a></td>
+		<td><a href="http://airdata.org/ontology#fixExitName">http://airdata.org/ontology#fixExitName</a></td>
+		<td><a href="http://purl.obolibrary.org/obo/IAO_0000115">IAO:0000115</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-warning">
+		<td>WARN</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_definition">missing_definition</a></td>
+		<td><a href="http://airdata.org/ontology#fixExitTime">http://airdata.org/ontology#fixExitTime</a></td>
+		<td><a href="http://purl.obolibrary.org/obo/IAO_0000115">IAO:0000115</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-warning">
+		<td>WARN</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_definition">missing_definition</a></td>
+		<td><a href="http://airdata.org/ontology#flightLevel">http://airdata.org/ontology#flightLevel</a></td>
+		<td><a href="http://purl.obolibrary.org/obo/IAO_0000115">IAO:0000115</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-warning">
+		<td>WARN</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_definition">missing_definition</a></td>
+		<td><a href="http://airdata.org/ontology#flightRule">http://airdata.org/ontology#flightRule</a></td>
+		<td><a href="http://purl.obolibrary.org/obo/IAO_0000115">IAO:0000115</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-warning">
+		<td>WARN</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_definition">missing_definition</a></td>
+		<td><a href="http://airdata.org/ontology#freeBaggage">http://airdata.org/ontology#freeBaggage</a></td>
+		<td><a href="http://purl.obolibrary.org/obo/IAO_0000115">IAO:0000115</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-warning">
+		<td>WARN</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_definition">missing_definition</a></td>
+		<td><a href="http://airdata.org/ontology#freeCargoWeight">http://airdata.org/ontology#freeCargoWeight</a></td>
+		<td><a href="http://purl.obolibrary.org/obo/IAO_0000115">IAO:0000115</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-warning">
+		<td>WARN</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_definition">missing_definition</a></td>
+		<td><a href="http://airdata.org/ontology#freePassengers">http://airdata.org/ontology#freePassengers</a></td>
+		<td><a href="http://purl.obolibrary.org/obo/IAO_0000115">IAO:0000115</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-warning">
+		<td>WARN</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_definition">missing_definition</a></td>
+		<td><a href="http://airdata.org/ontology#geoaltitude">http://airdata.org/ontology#geoaltitude</a></td>
+		<td><a href="http://purl.obolibrary.org/obo/IAO_0000115">IAO:0000115</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-warning">
+		<td>WARN</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_definition">missing_definition</a></td>
+		<td><a href="http://airdata.org/ontology#hasDataSource">http://airdata.org/ontology#hasDataSource</a></td>
+		<td><a href="http://purl.obolibrary.org/obo/IAO_0000115">IAO:0000115</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-warning">
+		<td>WARN</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_definition">missing_definition</a></td>
+		<td><a href="http://airdata.org/ontology#heading">http://airdata.org/ontology#heading</a></td>
+		<td><a href="http://purl.obolibrary.org/obo/IAO_0000115">IAO:0000115</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-warning">
+		<td>WARN</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_definition">missing_definition</a></td>
+		<td><a href="http://airdata.org/ontology#hold">http://airdata.org/ontology#hold</a></td>
+		<td><a href="http://purl.obolibrary.org/obo/IAO_0000115">IAO:0000115</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-warning">
+		<td>WARN</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_definition">missing_definition</a></td>
+		<td><a href="http://airdata.org/ontology#iataCode">http://airdata.org/ontology#iataCode</a></td>
+		<td><a href="http://purl.obolibrary.org/obo/IAO_0000115">IAO:0000115</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-warning">
+		<td>WARN</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_definition">missing_definition</a></td>
+		<td><a href="http://airdata.org/ontology#icaoCode">http://airdata.org/ontology#icaoCode</a></td>
+		<td><a href="http://purl.obolibrary.org/obo/IAO_0000115">IAO:0000115</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-warning">
+		<td>WARN</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_definition">missing_definition</a></td>
+		<td><a href="http://airdata.org/ontology#id">http://airdata.org/ontology#id</a></td>
+		<td><a href="http://purl.obolibrary.org/obo/IAO_0000115">IAO:0000115</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-warning">
+		<td>WARN</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_definition">missing_definition</a></td>
+		<td><a href="http://airdata.org/ontology#identification">http://airdata.org/ontology#identification</a></td>
+		<td><a href="http://purl.obolibrary.org/obo/IAO_0000115">IAO:0000115</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-warning">
+		<td>WARN</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_definition">missing_definition</a></td>
+		<td><a href="http://airdata.org/ontology#insertedInDB">http://airdata.org/ontology#insertedInDB</a></td>
+		<td><a href="http://purl.obolibrary.org/obo/IAO_0000115">IAO:0000115</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-warning">
+		<td>WARN</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_definition">missing_definition</a></td>
+		<td><a href="http://airdata.org/ontology#issueTime">http://airdata.org/ontology#issueTime</a></td>
+		<td><a href="http://purl.obolibrary.org/obo/IAO_0000115">IAO:0000115</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-warning">
+		<td>WARN</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_definition">missing_definition</a></td>
+		<td><a href="http://airdata.org/ontology#latitude">http://airdata.org/ontology#latitude</a></td>
+		<td><a href="http://purl.obolibrary.org/obo/IAO_0000115">IAO:0000115</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-warning">
+		<td>WARN</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_definition">missing_definition</a></td>
+		<td><a href="http://airdata.org/ontology#location">http://airdata.org/ontology#location</a></td>
+		<td><a href="http://purl.obolibrary.org/obo/IAO_0000115">IAO:0000115</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-warning">
+		<td>WARN</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_definition">missing_definition</a></td>
+		<td><a href="http://airdata.org/ontology#longitude">http://airdata.org/ontology#longitude</a></td>
+		<td><a href="http://purl.obolibrary.org/obo/IAO_0000115">IAO:0000115</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-warning">
+		<td>WARN</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_definition">missing_definition</a></td>
+		<td><a href="http://airdata.org/ontology#mailWeight">http://airdata.org/ontology#mailWeight</a></td>
+		<td><a href="http://purl.obolibrary.org/obo/IAO_0000115">IAO:0000115</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-warning">
+		<td>WARN</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_definition">missing_definition</a></td>
+		<td><a href="http://airdata.org/ontology#maxTemperature">http://airdata.org/ontology#maxTemperature</a></td>
+		<td><a href="http://purl.obolibrary.org/obo/IAO_0000115">IAO:0000115</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-warning">
+		<td>WARN</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_definition">missing_definition</a></td>
+		<td><a href="http://airdata.org/ontology#minTemperature">http://airdata.org/ontology#minTemperature</a></td>
+		<td><a href="http://purl.obolibrary.org/obo/IAO_0000115">IAO:0000115</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-warning">
+		<td>WARN</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_definition">missing_definition</a></td>
+		<td><a href="http://airdata.org/ontology#movEstimative">http://airdata.org/ontology#movEstimative</a></td>
+		<td><a href="http://purl.obolibrary.org/obo/IAO_0000115">IAO:0000115</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-warning">
+		<td>WARN</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_definition">missing_definition</a></td>
+		<td><a href="http://airdata.org/ontology#name">http://airdata.org/ontology#name</a></td>
+		<td><a href="http://purl.obolibrary.org/obo/IAO_0000115">IAO:0000115</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-warning">
+		<td>WARN</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_definition">missing_definition</a></td>
+		<td><a href="http://airdata.org/ontology#observationTime">http://airdata.org/ontology#observationTime</a></td>
+		<td><a href="http://purl.obolibrary.org/obo/IAO_0000115">IAO:0000115</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-warning">
+		<td>WARN</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_definition">missing_definition</a></td>
+		<td><a href="http://airdata.org/ontology#onboardEquipment">http://airdata.org/ontology#onboardEquipment</a></td>
+		<td><a href="http://purl.obolibrary.org/obo/IAO_0000115">IAO:0000115</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-warning">
+		<td>WARN</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_definition">missing_definition</a></td>
+		<td><a href="http://airdata.org/ontology#onboardEquipment2">http://airdata.org/ontology#onboardEquipment2</a></td>
+		<td><a href="http://purl.obolibrary.org/obo/IAO_0000115">IAO:0000115</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-warning">
+		<td>WARN</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_definition">missing_definition</a></td>
+		<td><a href="http://airdata.org/ontology#onground">http://airdata.org/ontology#onground</a></td>
+		<td><a href="http://purl.obolibrary.org/obo/IAO_0000115">IAO:0000115</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-warning">
+		<td>WARN</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_definition">missing_definition</a></td>
+		<td><a href="http://airdata.org/ontology#operational">http://airdata.org/ontology#operational</a></td>
+		<td><a href="http://purl.obolibrary.org/obo/IAO_0000115">IAO:0000115</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-warning">
+		<td>WARN</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_definition">missing_definition</a></td>
+		<td><a href="http://airdata.org/ontology#paidCargoWeight">http://airdata.org/ontology#paidCargoWeight</a></td>
+		<td><a href="http://purl.obolibrary.org/obo/IAO_0000115">IAO:0000115</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-warning">
+		<td>WARN</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_definition">missing_definition</a></td>
+		<td><a href="http://airdata.org/ontology#paidPassengers">http://airdata.org/ontology#paidPassengers</a></td>
+		<td><a href="http://purl.obolibrary.org/obo/IAO_0000115">IAO:0000115</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-warning">
+		<td>WARN</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_definition">missing_definition</a></td>
+		<td><a href="http://airdata.org/ontology#pressureQNH">http://airdata.org/ontology#pressureQNH</a></td>
+		<td><a href="http://purl.obolibrary.org/obo/IAO_0000115">IAO:0000115</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-warning">
+		<td>WARN</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_definition">missing_definition</a></td>
+		<td><a href="http://airdata.org/ontology#quantityAircraft">http://airdata.org/ontology#quantityAircraft</a></td>
+		<td><a href="http://purl.obolibrary.org/obo/IAO_0000115">IAO:0000115</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-warning">
+		<td>WARN</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_definition">missing_definition</a></td>
+		<td><a href="http://airdata.org/ontology#rawMetar">http://airdata.org/ontology#rawMetar</a></td>
+		<td><a href="http://purl.obolibrary.org/obo/IAO_0000115">IAO:0000115</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-warning">
+		<td>WARN</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_definition">missing_definition</a></td>
+		<td><a href="http://airdata.org/ontology#rawTaf">http://airdata.org/ontology#rawTaf</a></td>
+		<td><a href="http://purl.obolibrary.org/obo/IAO_0000115">IAO:0000115</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-warning">
+		<td>WARN</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_definition">missing_definition</a></td>
+		<td><a href="http://airdata.org/ontology#receivedAt">http://airdata.org/ontology#receivedAt</a></td>
+		<td><a href="http://purl.obolibrary.org/obo/IAO_0000115">IAO:0000115</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-warning">
+		<td>WARN</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_definition">missing_definition</a></td>
+		<td><a href="http://airdata.org/ontology#remarks">http://airdata.org/ontology#remarks</a></td>
+		<td><a href="http://purl.obolibrary.org/obo/IAO_0000115">IAO:0000115</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-warning">
+		<td>WARN</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_definition">missing_definition</a></td>
+		<td><a href="http://airdata.org/ontology#remarksApp">http://airdata.org/ontology#remarksApp</a></td>
+		<td><a href="http://purl.obolibrary.org/obo/IAO_0000115">IAO:0000115</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-warning">
+		<td>WARN</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_definition">missing_definition</a></td>
+		<td><a href="http://airdata.org/ontology#route">http://airdata.org/ontology#route</a></td>
+		<td><a href="http://purl.obolibrary.org/obo/IAO_0000115">IAO:0000115</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-warning">
+		<td>WARN</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_definition">missing_definition</a></td>
+		<td><a href="http://airdata.org/ontology#runway">http://airdata.org/ontology#runway</a></td>
+		<td><a href="http://purl.obolibrary.org/obo/IAO_0000115">IAO:0000115</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-warning">
+		<td>WARN</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_definition">missing_definition</a></td>
+		<td><a href="http://airdata.org/ontology#source">http://airdata.org/ontology#source</a></td>
+		<td><a href="http://purl.obolibrary.org/obo/IAO_0000115">IAO:0000115</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-warning">
+		<td>WARN</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_definition">missing_definition</a></td>
+		<td><a href="http://airdata.org/ontology#spatial">http://airdata.org/ontology#spatial</a></td>
+		<td><a href="http://purl.obolibrary.org/obo/IAO_0000115">IAO:0000115</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-warning">
+		<td>WARN</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_definition">missing_definition</a></td>
+		<td><a href="http://airdata.org/ontology#squawk">http://airdata.org/ontology#squawk</a></td>
+		<td><a href="http://purl.obolibrary.org/obo/IAO_0000115">IAO:0000115</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-warning">
+		<td>WARN</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_definition">missing_definition</a></td>
+		<td><a href="http://airdata.org/ontology#ssr">http://airdata.org/ontology#ssr</a></td>
+		<td><a href="http://purl.obolibrary.org/obo/IAO_0000115">IAO:0000115</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-warning">
+		<td>WARN</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_definition">missing_definition</a></td>
+		<td><a href="http://airdata.org/ontology#stageName">http://airdata.org/ontology#stageName</a></td>
+		<td><a href="http://purl.obolibrary.org/obo/IAO_0000115">IAO:0000115</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-warning">
+		<td>WARN</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_definition">missing_definition</a></td>
+		<td><a href="http://airdata.org/ontology#stageNumber">http://airdata.org/ontology#stageNumber</a></td>
+		<td><a href="http://purl.obolibrary.org/obo/IAO_0000115">IAO:0000115</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-warning">
+		<td>WARN</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_definition">missing_definition</a></td>
+		<td><a href="http://airdata.org/ontology#status">http://airdata.org/ontology#status</a></td>
+		<td><a href="http://purl.obolibrary.org/obo/IAO_0000115">IAO:0000115</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-warning">
+		<td>WARN</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_definition">missing_definition</a></td>
+		<td><a href="http://airdata.org/ontology#taxi">http://airdata.org/ontology#taxi</a></td>
+		<td><a href="http://purl.obolibrary.org/obo/IAO_0000115">IAO:0000115</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-warning">
+		<td>WARN</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_definition">missing_definition</a></td>
+		<td><a href="http://airdata.org/ontology#taxiwayAlignment">http://airdata.org/ontology#taxiwayAlignment</a></td>
+		<td><a href="http://purl.obolibrary.org/obo/IAO_0000115">IAO:0000115</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-warning">
+		<td>WARN</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_definition">missing_definition</a></td>
+		<td><a href="http://airdata.org/ontology#taxiwayUsed">http://airdata.org/ontology#taxiwayUsed</a></td>
+		<td><a href="http://purl.obolibrary.org/obo/IAO_0000115">IAO:0000115</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-warning">
+		<td>WARN</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_definition">missing_definition</a></td>
+		<td><a href="http://airdata.org/ontology#tempEnd">http://airdata.org/ontology#tempEnd</a></td>
+		<td><a href="http://purl.obolibrary.org/obo/IAO_0000115">IAO:0000115</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-warning">
+		<td>WARN</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_definition">missing_definition</a></td>
+		<td><a href="http://airdata.org/ontology#tempGroup">http://airdata.org/ontology#tempGroup</a></td>
+		<td><a href="http://purl.obolibrary.org/obo/IAO_0000115">IAO:0000115</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-warning">
+		<td>WARN</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_definition">missing_definition</a></td>
+		<td><a href="http://airdata.org/ontology#tempStart">http://airdata.org/ontology#tempStart</a></td>
+		<td><a href="http://purl.obolibrary.org/obo/IAO_0000115">IAO:0000115</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-warning">
+		<td>WARN</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_definition">missing_definition</a></td>
+		<td><a href="http://airdata.org/ontology#tempWeather">http://airdata.org/ontology#tempWeather</a></td>
+		<td><a href="http://purl.obolibrary.org/obo/IAO_0000115">IAO:0000115</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-warning">
+		<td>WARN</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_definition">missing_definition</a></td>
+		<td><a href="http://airdata.org/ontology#temperature">http://airdata.org/ontology#temperature</a></td>
+		<td><a href="http://purl.obolibrary.org/obo/IAO_0000115">IAO:0000115</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-warning">
+		<td>WARN</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_definition">missing_definition</a></td>
+		<td><a href="http://airdata.org/ontology#temporal">http://airdata.org/ontology#temporal</a></td>
+		<td><a href="http://purl.obolibrary.org/obo/IAO_0000115">IAO:0000115</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-warning">
+		<td>WARN</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_definition">missing_definition</a></td>
+		<td><a href="http://airdata.org/ontology#time">http://airdata.org/ontology#time</a></td>
+		<td><a href="http://purl.obolibrary.org/obo/IAO_0000115">IAO:0000115</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-warning">
+		<td>WARN</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_definition">missing_definition</a></td>
+		<td><a href="http://airdata.org/ontology#timestamp">http://airdata.org/ontology#timestamp</a></td>
+		<td><a href="http://purl.obolibrary.org/obo/IAO_0000115">IAO:0000115</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-warning">
+		<td>WARN</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_definition">missing_definition</a></td>
+		<td><a href="http://airdata.org/ontology#turbulenceWake">http://airdata.org/ontology#turbulenceWake</a></td>
+		<td><a href="http://purl.obolibrary.org/obo/IAO_0000115">IAO:0000115</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-warning">
+		<td>WARN</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_definition">missing_definition</a></td>
+		<td><a href="http://airdata.org/ontology#type">http://airdata.org/ontology#type</a></td>
+		<td><a href="http://purl.obolibrary.org/obo/IAO_0000115">IAO:0000115</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-warning">
+		<td>WARN</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_definition">missing_definition</a></td>
+		<td><a href="http://airdata.org/ontology#typeAircraftOperator">http://airdata.org/ontology#typeAircraftOperator</a></td>
+		<td><a href="http://purl.obolibrary.org/obo/IAO_0000115">IAO:0000115</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-warning">
+		<td>WARN</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_definition">missing_definition</a></td>
+		<td><a href="http://airdata.org/ontology#typeLine">http://airdata.org/ontology#typeLine</a></td>
+		<td><a href="http://purl.obolibrary.org/obo/IAO_0000115">IAO:0000115</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-warning">
+		<td>WARN</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_definition">missing_definition</a></td>
+		<td><a href="http://airdata.org/ontology#velocity">http://airdata.org/ontology#velocity</a></td>
+		<td><a href="http://purl.obolibrary.org/obo/IAO_0000115">IAO:0000115</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-warning">
+		<td>WARN</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_definition">missing_definition</a></td>
+		<td><a href="http://airdata.org/ontology#vertrate">http://airdata.org/ontology#vertrate</a></td>
+		<td><a href="http://purl.obolibrary.org/obo/IAO_0000115">IAO:0000115</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-warning">
+		<td>WARN</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_definition">missing_definition</a></td>
+		<td><a href="http://airdata.org/ontology#visibility">http://airdata.org/ontology#visibility</a></td>
+		<td><a href="http://purl.obolibrary.org/obo/IAO_0000115">IAO:0000115</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-warning">
+		<td>WARN</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_definition">missing_definition</a></td>
+		<td><a href="http://airdata.org/ontology#weather">http://airdata.org/ontology#weather</a></td>
+		<td><a href="http://purl.obolibrary.org/obo/IAO_0000115">IAO:0000115</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-warning">
+		<td>WARN</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_definition">missing_definition</a></td>
+		<td><a href="http://airdata.org/ontology#weatherPhenomena">http://airdata.org/ontology#weatherPhenomena</a></td>
+		<td><a href="http://purl.obolibrary.org/obo/IAO_0000115">IAO:0000115</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-warning">
+		<td>WARN</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_definition">missing_definition</a></td>
+		<td><a href="http://airdata.org/ontology#windDirection">http://airdata.org/ontology#windDirection</a></td>
+		<td><a href="http://purl.obolibrary.org/obo/IAO_0000115">IAO:0000115</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-warning">
+		<td>WARN</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_definition">missing_definition</a></td>
+		<td><a href="http://airdata.org/ontology#windGust">http://airdata.org/ontology#windGust</a></td>
+		<td><a href="http://purl.obolibrary.org/obo/IAO_0000115">IAO:0000115</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-warning">
+		<td>WARN</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_definition">missing_definition</a></td>
+		<td><a href="http://airdata.org/ontology#windSpeed">http://airdata.org/ontology#windSpeed</a></td>
+		<td><a href="http://purl.obolibrary.org/obo/IAO_0000115">IAO:0000115</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-warning">
+		<td>WARN</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_definition">missing_definition</a></td>
+		<td><a href="http://airdata.org/ontology#wpush">http://airdata.org/ontology#wpush</a></td>
+		<td><a href="http://purl.obolibrary.org/obo/IAO_0000115">IAO:0000115</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-warning">
+		<td>WARN</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_definition">missing_definition</a></td>
+		<td><a href="http://airdata.org/ontology#wtaxi">http://airdata.org/ontology#wtaxi</a></td>
+		<td><a href="http://purl.obolibrary.org/obo/IAO_0000115">IAO:0000115</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-info">
+		<td>INFO</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_superclass">missing_superclass</a></td>
+		<td><a href="http://airdata.org/ontology#DataSource">http://airdata.org/ontology#DataSource</a></td>
+		<td><a href="http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-info">
+		<td>INFO</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_superclass">missing_superclass</a></td>
+		<td><a href="http://airdata.org/ontology#Operation">http://airdata.org/ontology#Operation</a></td>
+		<td><a href="http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-info">
+		<td>INFO</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_superclass">missing_superclass</a></td>
+		<td><a href="http://airdata.org/ontology#TemporalEvent">http://airdata.org/ontology#TemporalEvent</a></td>
+		<td><a href="http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></td>
+		<td></td>
+	</tr>
+	<tr class="table-info">
+		<td>INFO</td>
+		<td><a href="http://robot.obolibrary.org/report_queries/missing_superclass">missing_superclass</a></td>
+		<td><a href="http://airdata.org/ontology#WeatherCondition">http://airdata.org/ontology#WeatherCondition</a></td>
+		<td><a href="http://www.w3.org/2000/01/rdf-schema#subClassOf">rdfs:subClassOf</a></td>
+		<td></td>
+	</tr>
+</table>
+
+<!-- AirData Footer Start -->
+<footer class="footer">
+    <div class="footer-content">
+        <p class="footer-org"><strong>Instituto Tecnológico de Aeronáutica - ITA</strong></p>
+        <div class="footer-links">
+            <a href="https://www.airdata.ita.br" target="_blank">Portal AirData</a>
+            <a href="https://github.com/ita-airdata/OntoSite" target="_blank">GitHub</a>
+        </div>
+        <p class="footer-copyright">
+            © 2026 Projeto AirData - Todos os direitos reservados
+        </p>
+    </div>
+    <div class="footer-bottom-bar"></div>
+</footer>
+<!-- AirData Footer End -->
+
+</body>
+
+</html>

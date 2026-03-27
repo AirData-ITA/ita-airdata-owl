@@ -1,0 +1,93 @@
+{
+  "metadata": {
+    "timestamp": "2026-01-27T19:21:48.269275",
+    "owl_file": "/home/guterres/Dropbox/Agents/airdata-owl/OntoOwl/airdata_owl_v0.0.2.owl",
+    "validation_type": "OWL Logic Axioms"
+  },
+  "cardinality": {
+    "total_restrictions": 0,
+    "exact_cardinality_count": 0,
+    "min_cardinality_count": 0,
+    "max_cardinality_count": 0,
+    "total_cardinality_constraints": 0,
+    "coverage_percentage": 0.0,
+    "examples": []
+  },
+  "disjoint_classes": {
+    "disjoint_pairs_count": 0,
+    "disjoint_sets_count": 0,
+    "classes_with_disjoint": 0,
+    "coverage_percentage": 0.0,
+    "warning": "Baixa cobertura de disjunção"
+  },
+  "property_characteristics": {
+    "functional_properties": 1,
+    "inverse_functional_properties": 1,
+    "symmetric_properties": 0,
+    "transitive_properties": 0,
+    "reflexive_properties": 0,
+    "irreflexive_properties": 0,
+    "total_with_characteristics": 2,
+    "coverage_percentage": 5.263157894736842,
+    "examples": {
+      "functional": [
+        "equipmentCode"
+      ],
+      "symmetric": []
+    }
+  },
+  "complex_restrictions": {
+    "all_values_from_count": 0,
+    "some_values_from_count": 0,
+    "has_value_count": 0,
+    "total_complex_restrictions": 0,
+    "examples": {
+      "all_values_from": [],
+      "some_values_from": []
+    }
+  },
+  "inverse_properties": {
+    "inverse_pairs_count": 0,
+    "properties_with_inverse": 0,
+    "coverage_percentage": 0.0,
+    "examples": [],
+    "warning": "Baixa cobertura de inversas - dificulta queries bidirecionais"
+  },
+  "logic_richness_score": {
+    "total_score": 0.33,
+    "level": "Precisa Melhorar - Poucos axiomas lógicos",
+    "breakdown": {
+      "cardinality": 0.0,
+      "disjoint": 0.0,
+      "characteristics": 1.32,
+      "restrictions": 0.0,
+      "inverses": 0.0
+    },
+    "recommendations": [
+      {
+        "priority": "ALTA",
+        "category": "Cardinalidade",
+        "issue": "Apenas 0 restrições de cardinalidade",
+        "suggestion": "Adicionar owl:minCardinality, owl:maxCardinality ou owl:cardinality em propriedades críticas"
+      },
+      {
+        "priority": "ALTA",
+        "category": "Disjunção",
+        "issue": "Apenas 0 classes têm owl:disjointWith",
+        "suggestion": "Declarar classes mutuamente exclusivas como disjuntas (ex: Aircraft e Airport)"
+      },
+      {
+        "priority": "MÉDIA",
+        "category": "Características",
+        "issue": "2 propriedades com características",
+        "suggestion": "Marcar propriedades como Functional, Symmetric, Transitive conforme semântica"
+      },
+      {
+        "priority": "MÉDIA",
+        "category": "Inversas",
+        "issue": "0 propriedades têm owl:inverseOf",
+        "suggestion": "Criar propriedades inversas (ex: hasParent ↔ isParentOf) para facilitar queries SPARQL bidirecionais"
+      }
+    ]
+  }
+}

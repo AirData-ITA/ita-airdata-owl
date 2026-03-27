@@ -1,0 +1,1460 @@
+@prefix : <http://airdata.org/ontology#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://airdata.org/ontology#> .
+
+<http://airdata.org/ontology#> rdf:type owl:Ontology ;
+                                owl:versionIRI <http://airdata.org/ontology/0.0.2> ;
+                                rdfs:label "AirData Ontology - Air Operations"@en ,
+                                           "Ontologia AirData - Operacoes Aereas"@pt ;
+                                owl:versionInfo "0.0.2" .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://airdata.org/ontology#hasDataSource
+:hasDataSource rdf:type owl:AnnotationProperty ;
+               rdfs:range xsd:string .
+
+
+###  http://www.w3.org/2002/07/owl#cardinality
+owl:cardinality rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Datatypes
+#################################################################
+
+###  http://www.w3.org/2001/XMLSchema#date
+xsd:date rdf:type rdfs:Datatype .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://airdata.org/ontology#Aerodrome-Operation
+:Aerodrome-Operation rdf:type owl:ObjectProperty ;
+                     rdfs:subPropertyOf :FlightOperation ;
+                     rdfs:domain :Aerodrome ;
+                     rdfs:range :Operation .
+
+
+###  http://airdata.org/ontology#Airspace-DataSource
+:Airspace-DataSource rdf:type owl:ObjectProperty ;
+                     rdfs:subPropertyOf :SourceRelation ;
+                     rdfs:domain :Airspace ;
+                     rdfs:range :DataSource .
+
+
+###  http://airdata.org/ontology#Airspace-Operation
+:Airspace-Operation rdf:type owl:ObjectProperty ;
+                    rdfs:subPropertyOf :FlightOperation ;
+                    rdfs:domain :Airspace ;
+                    rdfs:range :Operation .
+
+
+###  http://airdata.org/ontology#ArrivalOperation-ActualGateArrivalTime
+:ArrivalOperation-ActualGateArrivalTime rdf:type owl:ObjectProperty ;
+                                        rdfs:subPropertyOf :ArrivalTemporalRelation ;
+                                        rdfs:domain :ArrivalOperation ;
+                                        rdfs:range :ActualGateArrivalTime .
+
+
+###  http://airdata.org/ontology#ArrivalOperation-ActualLandingTime
+:ArrivalOperation-ActualLandingTime rdf:type owl:ObjectProperty ;
+                                    rdfs:subPropertyOf :ArrivalTemporalRelation ;
+                                    rdfs:domain :ArrivalOperation ;
+                                    rdfs:range :ActualLandingTime .
+
+
+###  http://airdata.org/ontology#ArrivalOperation-Aerodrome
+:ArrivalOperation-Aerodrome rdf:type owl:ObjectProperty ;
+                            rdfs:subPropertyOf :SpatialRelation ;
+                            rdfs:domain :ArrivalOperation ;
+                            rdfs:range :Aerodrome .
+
+
+###  http://airdata.org/ontology#ArrivalOperation-AerodromeCondition
+:ArrivalOperation-AerodromeCondition rdf:type owl:ObjectProperty ;
+                                     rdfs:subPropertyOf :WeatherRelation ;
+                                     rdfs:domain :ArrivalOperation ;
+                                     rdfs:range :AerodromeCondition .
+
+
+###  http://airdata.org/ontology#ArrivalOperation-EstimatedArrivalTime
+:ArrivalOperation-EstimatedArrivalTime rdf:type owl:ObjectProperty ;
+                                       rdfs:subPropertyOf :ArrivalTemporalRelation ;
+                                       rdfs:domain :ArrivalOperation ;
+                                       rdfs:range :EstimatedArrivalTime .
+
+
+###  http://airdata.org/ontology#ArrivalTemporalRelation
+:ArrivalTemporalRelation rdf:type owl:ObjectProperty ;
+                         rdfs:subPropertyOf :TemporalRelation .
+
+
+###  http://airdata.org/ontology#DepartureOperation-ActualDepartureTime
+:DepartureOperation-ActualDepartureTime rdf:type owl:ObjectProperty ;
+                                        rdfs:subPropertyOf :DepartureTemporalRelation ;
+                                        rdfs:domain :DepartureOperation ;
+                                        rdfs:range :ActualDepartureTime .
+
+
+###  http://airdata.org/ontology#DepartureOperation-ActualPushbackTime
+:DepartureOperation-ActualPushbackTime rdf:type owl:ObjectProperty ;
+                                       rdfs:subPropertyOf :DepartureTemporalRelation ;
+                                       rdfs:domain :DepartureOperation ;
+                                       rdfs:range :ActualPushbackTime .
+
+
+###  http://airdata.org/ontology#DepartureOperation-ActualTakeoffTime
+:DepartureOperation-ActualTakeoffTime rdf:type owl:ObjectProperty ;
+                                      rdfs:subPropertyOf :DepartureTemporalRelation ;
+                                      rdfs:domain :DepartureOperation ;
+                                      rdfs:range :ActualTakeoffTime .
+
+
+###  http://airdata.org/ontology#DepartureOperation-ActualTaxiStartTime
+:DepartureOperation-ActualTaxiStartTime rdf:type owl:ObjectProperty ;
+                                        rdfs:subPropertyOf :DepartureTemporalRelation ;
+                                        rdfs:domain :DepartureOperation ;
+                                        rdfs:range :ActualTaxiStartTime .
+
+
+###  http://airdata.org/ontology#DepartureOperation-Aerodrome
+:DepartureOperation-Aerodrome rdf:type owl:ObjectProperty ;
+                              rdfs:subPropertyOf :SpatialRelation ;
+                              rdfs:domain :DepartureOperation ;
+                              rdfs:range :Aerodrome .
+
+
+###  http://airdata.org/ontology#DepartureOperation-AerodromeCondition
+:DepartureOperation-AerodromeCondition rdf:type owl:ObjectProperty ;
+                                       rdfs:subPropertyOf :WeatherRelation ;
+                                       rdfs:domain :DepartureOperation ;
+                                       rdfs:range :AerodromeCondition .
+
+
+###  http://airdata.org/ontology#DepartureOperation-EstimatedOffBlockTime
+:DepartureOperation-EstimatedOffBlockTime rdf:type owl:ObjectProperty ;
+                                          rdfs:subPropertyOf :DepartureTemporalRelation ;
+                                          rdfs:domain :DepartureOperation ;
+                                          rdfs:range :EstimatedOffBlockTime .
+
+
+###  http://airdata.org/ontology#DepartureOperation-EstimatedRunwayTime
+:DepartureOperation-EstimatedRunwayTime rdf:type owl:ObjectProperty ;
+                                        rdfs:subPropertyOf :DepartureTemporalRelation ;
+                                        rdfs:domain :DepartureOperation ;
+                                        rdfs:range :EstimatedRunwayTime .
+
+
+###  http://airdata.org/ontology#DepartureOperation-EstimatedTaxiStartTime
+:DepartureOperation-EstimatedTaxiStartTime rdf:type owl:ObjectProperty ;
+                                           rdfs:subPropertyOf :DepartureTemporalRelation ;
+                                           rdfs:domain :DepartureOperation ;
+                                           rdfs:range :EstimatedTaxiStartTime .
+
+
+###  http://airdata.org/ontology#DepartureOperation-ExpectedPushbackTime
+:DepartureOperation-ExpectedPushbackTime rdf:type owl:ObjectProperty ;
+                                         rdfs:subPropertyOf :DepartureTemporalRelation ;
+                                         rdfs:domain :DepartureOperation ;
+                                         rdfs:range :ExpectedPushbackTime .
+
+
+###  http://airdata.org/ontology#DepartureOperation-HoldTime
+:DepartureOperation-HoldTime rdf:type owl:ObjectProperty ;
+                             rdfs:subPropertyOf :DepartureTemporalRelation ;
+                             rdfs:domain :DepartureOperation ;
+                             rdfs:range :HoldTime .
+
+
+###  http://airdata.org/ontology#DepartureTemporalRelation
+:DepartureTemporalRelation rdf:type owl:ObjectProperty ;
+                           rdfs:subPropertyOf :TemporalRelation .
+
+
+###  http://airdata.org/ontology#Flight-Aircraft
+:Flight-Aircraft rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf :IdentificationRelation ;
+                 rdfs:domain :Flight ;
+                 rdfs:range :Aircraft .
+
+
+###  http://airdata.org/ontology#Flight-AircraftOperator
+:Flight-AircraftOperator rdf:type owl:ObjectProperty ;
+                         rdfs:subPropertyOf :IdentificationRelation ;
+                         rdfs:domain :Flight ;
+                         rdfs:range :AircraftOperator .
+
+
+###  http://airdata.org/ontology#Flight-Airspace
+:Flight-Airspace rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf :SpatialRelation ;
+                 rdf:type owl:InverseFunctionalProperty ;
+                 rdfs:domain :Flight ;
+                 rdfs:range :Airspace .
+
+
+###  http://airdata.org/ontology#Flight-ArrivalOperation
+:Flight-ArrivalOperation rdf:type owl:ObjectProperty ;
+                         rdfs:subPropertyOf :FlightOperation ;
+                         rdfs:domain :Flight ;
+                         rdfs:range :ArrivalOperation .
+
+
+###  http://airdata.org/ontology#Flight-DepartureOperation
+:Flight-DepartureOperation rdf:type owl:ObjectProperty ;
+                           rdfs:subPropertyOf :FlightOperation ;
+                           rdfs:domain :Flight ;
+                           rdfs:range :DepartureOperation .
+
+
+###  http://airdata.org/ontology#Flight-Trajectory
+:Flight-Trajectory rdf:type owl:ObjectProperty ;
+                   rdfs:subPropertyOf :SpatialRelation ;
+                   rdfs:domain :Flight ;
+                   rdfs:range :Trajectory .
+
+
+###  http://airdata.org/ontology#FlightOperation
+:FlightOperation rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf owl:topObjectProperty .
+
+
+###  http://airdata.org/ontology#IdentificationRelation
+:IdentificationRelation rdf:type owl:ObjectProperty ;
+                        rdfs:subPropertyOf owl:topObjectProperty .
+
+
+###  http://airdata.org/ontology#Operation-WeatherCondition
+:Operation-WeatherCondition rdf:type owl:ObjectProperty ;
+                            rdfs:subPropertyOf :WeatherRelation ;
+                            rdfs:domain :Operation ;
+                            rdfs:range :WeatherCondition .
+
+
+###  http://airdata.org/ontology#SourceRelation
+:SourceRelation rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf owl:topObjectProperty .
+
+
+###  http://airdata.org/ontology#SpatialRelation
+:SpatialRelation rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf owl:topObjectProperty .
+
+
+###  http://airdata.org/ontology#TemporalEvent-DataSource
+:TemporalEvent-DataSource rdf:type owl:ObjectProperty ;
+                          rdfs:subPropertyOf :SourceRelation ;
+                          rdfs:domain :TemporalEvent ;
+                          rdfs:range :DataSource .
+
+
+###  http://airdata.org/ontology#TemporalRelation
+:TemporalRelation rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf owl:topObjectProperty .
+
+
+###  http://airdata.org/ontology#Trajectory-DataSource
+:Trajectory-DataSource rdf:type owl:ObjectProperty ;
+                       rdfs:subPropertyOf :SourceRelation ;
+                       rdfs:domain :Trajectory ;
+                       rdfs:range :DataSource .
+
+
+###  http://airdata.org/ontology#Trajectory-Operation
+:Trajectory-Operation rdf:type owl:ObjectProperty ;
+                      rdfs:subPropertyOf :FlightOperation ;
+                      rdfs:domain :Trajectory ;
+                      rdfs:range :Operation .
+
+
+###  http://airdata.org/ontology#WeatherCondition-DataSource
+:WeatherCondition-DataSource rdf:type owl:ObjectProperty ;
+                             rdfs:subPropertyOf :SourceRelation ;
+                             rdfs:domain :WeatherCondition ;
+                             rdfs:range :DataSource .
+
+
+###  http://airdata.org/ontology#WeatherRelation
+:WeatherRelation rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf owl:topObjectProperty .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://airdata.org/ontology#accType
+:accType rdf:type owl:DatatypeProperty ;
+         rdfs:subPropertyOf :spatial ;
+         rdfs:domain :TrajectoryPoint ;
+         rdfs:range xsd:string .
+
+
+###  http://airdata.org/ontology#acronymType
+:acronymType rdf:type owl:DatatypeProperty ;
+             rdfs:subPropertyOf :operational ;
+             rdfs:domain :Flight ;
+             rdfs:range xsd:string .
+
+
+###  http://airdata.org/ontology#actual
+:actual rdf:type owl:DatatypeProperty ;
+        rdfs:subPropertyOf :timestamp .
+
+
+###  http://airdata.org/ontology#additionalData
+:additionalData rdf:type owl:DatatypeProperty ;
+                rdfs:subPropertyOf :operational ;
+                rdfs:domain :Airspace ;
+                rdfs:range xsd:string .
+
+
+###  http://airdata.org/ontology#aircraft
+:aircraft rdf:type owl:DatatypeProperty ;
+          rdfs:subPropertyOf owl:topDataProperty .
+
+
+###  http://airdata.org/ontology#aircraftSpeed
+:aircraftSpeed rdf:type owl:DatatypeProperty ;
+               rdfs:subPropertyOf :operational ;
+               rdfs:domain :Airspace ;
+               rdfs:range xsd:integer .
+
+
+###  http://airdata.org/ontology#airportRule
+:airportRule rdf:type owl:DatatypeProperty ;
+             rdfs:subPropertyOf :operational ;
+             rdfs:domain :Procedure ;
+             rdfs:range xsd:string .
+
+
+###  http://airdata.org/ontology#arr
+:arr rdf:type owl:DatatypeProperty ;
+     rdfs:subPropertyOf :actual ;
+     rdfs:domain :ActualLandingTime ;
+     rdfs:range xsd:dateTime .
+
+
+###  http://airdata.org/ontology#arrivalProcedure
+:arrivalProcedure rdf:type owl:DatatypeProperty ;
+                  rdfs:subPropertyOf :operational ;
+                  rdfs:domain :Procedure ;
+                  rdfs:range xsd:string .
+
+
+###  http://airdata.org/ontology#atsUnit
+:atsUnit rdf:type owl:DatatypeProperty ;
+         rdfs:subPropertyOf :operational ;
+         rdfs:domain :Airspace ;
+         rdfs:range xsd:string .
+
+
+###  http://airdata.org/ontology#autonomy
+:autonomy rdf:type owl:DatatypeProperty ;
+          rdfs:subPropertyOf :aircraft ;
+          rdfs:domain :Aircraft ;
+          rdfs:range xsd:string .
+
+
+###  http://airdata.org/ontology#baroaltitude
+:baroaltitude rdf:type owl:DatatypeProperty ;
+              rdfs:subPropertyOf :spatial ;
+              rdfs:domain :TrajectoryPoint ;
+              rdfs:range xsd:dateTime .
+
+
+###  http://airdata.org/ontology#beginPrevision
+:beginPrevision rdf:type owl:DatatypeProperty ;
+                rdfs:subPropertyOf :weather ;
+                rdfs:domain :WeatherCondition ;
+                rdfs:range xsd:dateTime .
+
+
+###  http://airdata.org/ontology#box
+:box rdf:type owl:DatatypeProperty ;
+     rdfs:subPropertyOf :operational ;
+     rdfs:domain :Gate ;
+     rdfs:range xsd:string .
+
+
+###  http://airdata.org/ontology#callsign
+:callsign rdf:type owl:DatatypeProperty ;
+          rdfs:subPropertyOf :identification ;
+          rdfs:domain :Flight ;
+          rdfs:range xsd:string .
+
+
+###  http://airdata.org/ontology#cdep
+:cdep rdf:type owl:DatatypeProperty ;
+      rdfs:subPropertyOf :actual ;
+      rdfs:domain :ActualTakeoffTime ;
+      rdfs:range xsd:dateTime .
+
+
+###  http://airdata.org/ontology#changeCloud
+:changeCloud rdf:type owl:DatatypeProperty ;
+             rdfs:subPropertyOf :weather ;
+             rdfs:domain :WeatherCondition ;
+             rdfs:range xsd:string .
+
+
+###  http://airdata.org/ontology#changeEnd
+:changeEnd rdf:type owl:DatatypeProperty ;
+           rdfs:subPropertyOf :weather ;
+           rdfs:domain :WeatherCondition ;
+           rdfs:range xsd:dateTime .
+
+
+###  http://airdata.org/ontology#changeGroup
+:changeGroup rdf:type owl:DatatypeProperty ;
+             rdfs:subPropertyOf :weather ;
+             rdfs:domain :WeatherCondition ;
+             rdfs:range xsd:string .
+
+
+###  http://airdata.org/ontology#changeStart
+:changeStart rdf:type owl:DatatypeProperty ;
+             rdfs:subPropertyOf :weather ;
+             rdfs:domain :WeatherCondition ;
+             rdfs:range xsd:dateTime .
+
+
+###  http://airdata.org/ontology#changeVisibility
+:changeVisibility rdf:type owl:DatatypeProperty ;
+                  rdfs:subPropertyOf :weather ;
+                  rdfs:domain :WeatherCondition ;
+                  rdfs:range xsd:string .
+
+
+###  http://airdata.org/ontology#cloudAmount
+:cloudAmount rdf:type owl:DatatypeProperty ;
+             rdfs:subPropertyOf :weather ;
+             rdfs:domain :WeatherCondition ;
+             rdfs:range xsd:string .
+
+
+###  http://airdata.org/ontology#cloudBase
+:cloudBase rdf:type owl:DatatypeProperty ;
+           rdfs:subPropertyOf :weather ;
+           rdfs:range xsd:int .
+
+
+###  http://airdata.org/ontology#cloudType
+:cloudType rdf:type owl:DatatypeProperty ;
+           rdfs:subPropertyOf :weather ;
+           rdfs:range xsd:string .
+
+
+###  http://airdata.org/ontology#code
+:code rdf:type owl:DatatypeProperty ;
+      rdfs:subPropertyOf :operational ;
+      rdfs:domain :Procedure ;
+      rdfs:range xsd:string .
+
+
+###  http://airdata.org/ontology#codeDI
+:codeDI rdf:type owl:DatatypeProperty ;
+        rdfs:subPropertyOf :identification ;
+        rdfs:domain :Flight ;
+        rdfs:range xsd:string .
+
+
+###  http://airdata.org/ontology#codeshare
+:codeshare rdf:type owl:DatatypeProperty ;
+           rdfs:subPropertyOf :identification ;
+           rdfs:domain :Flight ;
+           rdfs:range xsd:string .
+
+
+###  http://airdata.org/ontology#controllerName
+:controllerName rdf:type owl:DatatypeProperty ;
+                rdfs:subPropertyOf :operational ;
+                rdfs:domain :Airspace ;
+                rdfs:range xsd:string .
+
+
+###  http://airdata.org/ontology#cpos
+:cpos rdf:type owl:DatatypeProperty ;
+      rdfs:subPropertyOf :actual ;
+      rdfs:domain :ActualGateArrivalTime ;
+      rdfs:range xsd:dateTime .
+
+
+###  http://airdata.org/ontology#cpush
+:cpush rdf:type owl:DatatypeProperty ;
+       rdfs:subPropertyOf :actual ;
+       rdfs:domain :ActualPushbackTime ;
+       rdfs:range xsd:dateTime .
+
+
+###  http://airdata.org/ontology#crossingType
+:crossingType rdf:type owl:DatatypeProperty ;
+              rdfs:subPropertyOf :operational ;
+              rdfs:domain :Airspace ;
+              rdfs:range xsd:string .
+
+
+###  http://airdata.org/ontology#crwy
+:crwy rdf:type owl:DatatypeProperty ;
+      rdfs:subPropertyOf :estimated ;
+      rdfs:domain :EstimatedRunwayTime ;
+      rdfs:range xsd:dateTime .
+
+
+###  http://airdata.org/ontology#dataRadar
+:dataRadar rdf:type owl:DatatypeProperty ;
+           rdfs:subPropertyOf :spatial ;
+           rdfs:domain :TrajectoryPoint ;
+           rdfs:range xsd:dateTime .
+
+
+###  http://airdata.org/ontology#dataSource
+:dataSource rdf:type owl:DatatypeProperty ;
+            rdfs:subPropertyOf :weather ;
+            rdfs:domain :WeatherCondition ;
+            rdfs:range xsd:string .
+
+
+###  http://airdata.org/ontology#dep
+:dep rdf:type owl:DatatypeProperty ;
+     rdfs:subPropertyOf :actual ;
+     rdfs:domain :ActualDepartureTime ;
+     rdfs:range xsd:dateTime .
+
+
+###  http://airdata.org/ontology#departureProcedure
+:departureProcedure rdf:type owl:DatatypeProperty ;
+                    rdfs:subPropertyOf :operational ;
+                    rdfs:domain :Procedure ;
+                    rdfs:range xsd:string .
+
+
+###  http://airdata.org/ontology#descriptive
+:descriptive rdf:type owl:DatatypeProperty ;
+             rdfs:subPropertyOf owl:topDataProperty .
+
+
+###  http://airdata.org/ontology#detectorSource
+:detectorSource rdf:type owl:DatatypeProperty ;
+                rdfs:subPropertyOf :spatial ;
+                rdfs:domain :TrajectoryPoint ;
+                rdfs:range xsd:string .
+
+
+###  http://airdata.org/ontology#dewPoint
+:dewPoint rdf:type owl:DatatypeProperty ;
+          rdfs:subPropertyOf :weather ;
+          rdfs:domain :WeatherCondition ;
+          rdfs:range xsd:decimal .
+
+
+###  http://airdata.org/ontology#endPrevision
+:endPrevision rdf:type owl:DatatypeProperty ;
+              rdfs:subPropertyOf :weather ;
+              rdfs:domain :WeatherCondition ;
+              rdfs:range xsd:dateTime .
+
+
+###  http://airdata.org/ontology#eobt
+:eobt rdf:type owl:DatatypeProperty ;
+      rdfs:subPropertyOf :estimated ;
+      rdfs:domain :EstimatedOffBlockTime ;
+      rdfs:range xsd:dateTime .
+
+
+###  http://airdata.org/ontology#equipmentCode
+:equipmentCode rdf:type owl:DatatypeProperty ;
+               rdfs:subPropertyOf :aircraft ;
+               rdf:type owl:FunctionalProperty ;
+               rdfs:domain :Aircraft ;
+               rdfs:range xsd:string .
+
+
+###  http://airdata.org/ontology#estimated
+:estimated rdf:type owl:DatatypeProperty ;
+           rdfs:subPropertyOf :timestamp .
+
+
+###  http://airdata.org/ontology#eta
+:eta rdf:type owl:DatatypeProperty ;
+     rdfs:subPropertyOf :estimated ;
+     rdfs:domain :EstimatedArrivalTime ;
+     rdfs:range xsd:dateTime .
+
+
+###  http://airdata.org/ontology#eventDescription
+:eventDescription rdf:type owl:DatatypeProperty ;
+                  rdfs:subPropertyOf :descriptive ;
+                  rdfs:domain :TemporalEvent ;
+                  rdfs:range xsd:string .
+
+
+###  http://airdata.org/ontology#eventName
+:eventName rdf:type owl:DatatypeProperty ;
+           rdfs:subPropertyOf :descriptive ;
+           rdfs:domain :TemporalEvent ;
+           rdfs:range xsd:string .
+
+
+###  http://airdata.org/ontology#excessBaggage
+:excessBaggage rdf:type owl:DatatypeProperty ;
+               rdfs:subPropertyOf :aircraft ;
+               rdfs:domain :Flight ;
+               rdfs:range xsd:decimal .
+
+
+###  http://airdata.org/ontology#fixEntryName
+:fixEntryName rdf:type owl:DatatypeProperty ;
+              rdfs:subPropertyOf :operational ;
+              rdfs:domain :FixPoint ;
+              rdfs:range xsd:string .
+
+
+###  http://airdata.org/ontology#fixEntryTime
+:fixEntryTime rdf:type owl:DatatypeProperty ;
+              rdfs:subPropertyOf :operational ;
+              rdfs:domain :FixPoint ;
+              rdfs:range xsd:dateTime .
+
+
+###  http://airdata.org/ontology#fixExitName
+:fixExitName rdf:type owl:DatatypeProperty ;
+             rdfs:subPropertyOf :operational ;
+             rdfs:domain :FixPoint ;
+             rdfs:range xsd:string .
+
+
+###  http://airdata.org/ontology#fixExitTime
+:fixExitTime rdf:type owl:DatatypeProperty ;
+             rdfs:subPropertyOf :operational ;
+             rdfs:domain :FixPoint ;
+             rdfs:range xsd:dateTime .
+
+
+###  http://airdata.org/ontology#flightLevel
+:flightLevel rdf:type owl:DatatypeProperty ;
+             rdfs:subPropertyOf :spatial ;
+             rdfs:domain :TrajectoryPoint ;
+             rdfs:range xsd:int .
+
+
+###  http://airdata.org/ontology#flightRule
+:flightRule rdf:type owl:DatatypeProperty ;
+            rdfs:subPropertyOf :operational ;
+            rdfs:domain :Procedure ;
+            rdfs:range xsd:string .
+
+
+###  http://airdata.org/ontology#freeBaggage
+:freeBaggage rdf:type owl:DatatypeProperty ;
+             rdfs:subPropertyOf :aircraft ;
+             rdfs:domain :Flight ;
+             rdfs:range xsd:decimal .
+
+
+###  http://airdata.org/ontology#freeCargoWeight
+:freeCargoWeight rdf:type owl:DatatypeProperty ;
+                 rdfs:subPropertyOf :aircraft ;
+                 rdfs:domain :Flight ;
+                 rdfs:range xsd:decimal .
+
+
+###  http://airdata.org/ontology#freePassengers
+:freePassengers rdf:type owl:DatatypeProperty ;
+                rdfs:subPropertyOf :aircraft ;
+                rdfs:domain :Flight ;
+                rdfs:range xsd:int .
+
+
+###  http://airdata.org/ontology#geoaltitude
+:geoaltitude rdf:type owl:DatatypeProperty ;
+             rdfs:subPropertyOf :spatial ;
+             rdfs:domain :TrajectoryPoint ;
+             rdfs:range xsd:decimal .
+
+
+###  http://airdata.org/ontology#heading
+:heading rdf:type owl:DatatypeProperty ;
+         rdfs:subPropertyOf :spatial ;
+         rdfs:domain :TrajectoryPoint ;
+         rdfs:range xsd:decimal .
+
+
+###  http://airdata.org/ontology#hold
+:hold rdf:type owl:DatatypeProperty ;
+      rdfs:subPropertyOf :actual ;
+      rdfs:domain :HoldTime ;
+      rdfs:range xsd:dateTime .
+
+
+###  http://airdata.org/ontology#iataCode
+:iataCode rdf:type owl:DatatypeProperty ;
+          rdfs:subPropertyOf :identification ;
+          rdfs:domain :Aerodrome ,
+                      :AircraftOperator ;
+          rdfs:range xsd:string .
+
+
+###  http://airdata.org/ontology#icaoCode
+:icaoCode rdf:type owl:DatatypeProperty ;
+          rdfs:subPropertyOf :aircraft ,
+                             :identification ;
+          rdfs:domain :Aerodrome ,
+                      :Aircraft ,
+                      :AircraftOperator ;
+          rdfs:range xsd:string .
+
+
+###  http://airdata.org/ontology#id
+:id rdf:type owl:DatatypeProperty ;
+    rdfs:subPropertyOf :identification ;
+    rdfs:domain :Aerodrome ;
+    rdfs:range xsd:int .
+
+
+###  http://airdata.org/ontology#identification
+:identification rdf:type owl:DatatypeProperty ;
+                rdfs:subPropertyOf owl:topDataProperty .
+
+
+###  http://airdata.org/ontology#insertedInDB
+:insertedInDB rdf:type owl:DatatypeProperty ;
+              rdfs:subPropertyOf :operational ;
+              rdfs:domain :Airspace ;
+              rdfs:range xsd:dateTime .
+
+
+###  http://airdata.org/ontology#issueTime
+:issueTime rdf:type owl:DatatypeProperty ;
+           rdfs:subPropertyOf :weather ;
+           rdfs:domain :WeatherCondition ;
+           rdfs:range xsd:dateTime .
+
+
+###  http://airdata.org/ontology#latitude
+:latitude rdf:type owl:DatatypeProperty ;
+          rdfs:subPropertyOf :spatial ;
+          rdfs:domain :TrajectoryPoint ;
+          rdfs:range xsd:decimal .
+
+
+###  http://airdata.org/ontology#location
+:location rdf:type owl:DatatypeProperty ;
+          rdfs:subPropertyOf :spatial ;
+          rdfs:domain :Aerodrome ,
+                      :AircraftOperator ;
+          rdfs:range xsd:string .
+
+
+###  http://airdata.org/ontology#longitude
+:longitude rdf:type owl:DatatypeProperty ;
+           rdfs:subPropertyOf :spatial ;
+           rdfs:domain :TrajectoryPoint ;
+           rdfs:range xsd:decimal .
+
+
+###  http://airdata.org/ontology#mailWeight
+:mailWeight rdf:type owl:DatatypeProperty ;
+            rdfs:subPropertyOf :aircraft ;
+            rdfs:domain :Flight ;
+            rdfs:range xsd:decimal .
+
+
+###  http://airdata.org/ontology#maxTemperature
+:maxTemperature rdf:type owl:DatatypeProperty ;
+                rdfs:subPropertyOf :weather ;
+                rdfs:domain :WeatherCondition ;
+                rdfs:range xsd:decimal .
+
+
+###  http://airdata.org/ontology#minTemperature
+:minTemperature rdf:type owl:DatatypeProperty ;
+                rdfs:subPropertyOf :weather ;
+                rdfs:domain :WeatherCondition ;
+                rdfs:range xsd:decimal .
+
+
+###  http://airdata.org/ontology#movEstimative
+:movEstimative rdf:type owl:DatatypeProperty ;
+               rdfs:subPropertyOf :operational ;
+               rdfs:domain :Airspace ;
+               rdfs:range xsd:dateTime .
+
+
+###  http://airdata.org/ontology#name
+:name rdf:type owl:DatatypeProperty ;
+      rdfs:subPropertyOf :identification ;
+      rdfs:domain :Aerodrome ,
+                  :AircraftOperator ;
+      rdfs:range xsd:string .
+
+
+###  http://airdata.org/ontology#observationTime
+:observationTime rdf:type owl:DatatypeProperty ;
+                 rdfs:subPropertyOf :weather ;
+                 rdfs:domain :WeatherCondition ;
+                 rdfs:range xsd:dateTime .
+
+
+###  http://airdata.org/ontology#onboardEquipment
+:onboardEquipment rdf:type owl:DatatypeProperty ;
+                  rdfs:subPropertyOf :aircraft ;
+                  rdfs:domain :Aircraft ;
+                  rdfs:range xsd:string .
+
+
+###  http://airdata.org/ontology#onboardEquipment2
+:onboardEquipment2 rdf:type owl:DatatypeProperty ;
+                   rdfs:subPropertyOf :aircraft ;
+                   rdfs:domain :Aircraft ;
+                   rdfs:range xsd:string .
+
+
+###  http://airdata.org/ontology#onground
+:onground rdf:type owl:DatatypeProperty ;
+          rdfs:subPropertyOf :spatial ;
+          rdfs:domain :TrajectoryPoint ;
+          rdfs:range xsd:boolean .
+
+
+###  http://airdata.org/ontology#operational
+:operational rdf:type owl:DatatypeProperty ;
+             rdfs:subPropertyOf owl:topDataProperty .
+
+
+###  http://airdata.org/ontology#paidCargoWeight
+:paidCargoWeight rdf:type owl:DatatypeProperty ;
+                 rdfs:subPropertyOf :aircraft ;
+                 rdfs:domain :Flight ;
+                 rdfs:range xsd:decimal .
+
+
+###  http://airdata.org/ontology#paidPassengers
+:paidPassengers rdf:type owl:DatatypeProperty ;
+                rdfs:subPropertyOf :aircraft ;
+                rdfs:domain :Flight ;
+                rdfs:range xsd:int .
+
+
+###  http://airdata.org/ontology#pressureQNH
+:pressureQNH rdf:type owl:DatatypeProperty ;
+             rdfs:subPropertyOf :weather ;
+             rdfs:domain :WeatherCondition ;
+             rdfs:range xsd:decimal .
+
+
+###  http://airdata.org/ontology#quantityAircraft
+:quantityAircraft rdf:type owl:DatatypeProperty ;
+                  rdfs:subPropertyOf :operational ;
+                  rdfs:domain :Airspace ;
+                  rdfs:range xsd:integer .
+
+
+###  http://airdata.org/ontology#rawMetar
+:rawMetar rdf:type owl:DatatypeProperty ;
+          rdfs:subPropertyOf :weather ;
+          rdfs:domain :WeatherCondition ;
+          rdfs:range xsd:string .
+
+
+###  http://airdata.org/ontology#rawTaf
+:rawTaf rdf:type owl:DatatypeProperty ;
+        rdfs:subPropertyOf :weather ;
+        rdfs:domain :WeatherCondition ;
+        rdfs:range xsd:string .
+
+
+###  http://airdata.org/ontology#receivedAt
+:receivedAt rdf:type owl:DatatypeProperty ;
+            rdfs:subPropertyOf :weather ;
+            rdfs:domain :WeatherCondition ;
+            rdfs:range xsd:dateTime .
+
+
+###  http://airdata.org/ontology#remarks
+:remarks rdf:type owl:DatatypeProperty ;
+         rdfs:subPropertyOf :operational ,
+                            :weather ;
+         rdfs:domain :Airspace ,
+                     :WeatherCondition ;
+         rdfs:range xsd:string .
+
+
+###  http://airdata.org/ontology#remarksApp
+:remarksApp rdf:type owl:DatatypeProperty ;
+            rdfs:subPropertyOf :operational ;
+            rdfs:domain :Airspace ;
+            rdfs:range xsd:string .
+
+
+###  http://airdata.org/ontology#route
+:route rdf:type owl:DatatypeProperty ;
+       rdfs:subPropertyOf :operational ;
+       rdfs:domain :Flight ,
+                   :PlannedTrajectory ;
+       rdfs:range xsd:string .
+
+
+###  http://airdata.org/ontology#runway
+:runway rdf:type owl:DatatypeProperty ;
+        rdfs:subPropertyOf :operational ;
+        rdfs:domain :Runway ;
+        rdfs:range xsd:string .
+
+
+###  http://airdata.org/ontology#source
+:source rdf:type owl:DatatypeProperty ;
+        rdfs:subPropertyOf :descriptive ;
+        rdfs:domain :TemporalEvent ;
+        rdfs:range xsd:string .
+
+
+###  http://airdata.org/ontology#spatial
+:spatial rdf:type owl:DatatypeProperty ;
+         rdfs:subPropertyOf owl:topDataProperty .
+
+
+###  http://airdata.org/ontology#squawk
+:squawk rdf:type owl:DatatypeProperty ;
+        rdfs:subPropertyOf :aircraft ;
+        rdfs:domain :Aircraft ;
+        rdfs:range xsd:string .
+
+
+###  http://airdata.org/ontology#ssr
+:ssr rdf:type owl:DatatypeProperty ;
+     rdfs:subPropertyOf :aircraft ;
+     rdfs:domain :Aircraft ;
+     rdfs:range xsd:string .
+
+
+###  http://airdata.org/ontology#stageName
+:stageName rdf:type owl:DatatypeProperty ;
+           rdfs:subPropertyOf :operational ;
+           rdfs:domain :Flight ;
+           rdfs:range xsd:string .
+
+
+###  http://airdata.org/ontology#stageNumber
+:stageNumber rdf:type owl:DatatypeProperty ;
+             rdfs:subPropertyOf :operational ;
+             rdfs:domain :Flight ;
+             rdfs:range xsd:integer .
+
+
+###  http://airdata.org/ontology#status
+:status rdf:type owl:DatatypeProperty ;
+        rdfs:subPropertyOf :operational ;
+        rdfs:domain :Flight ;
+        rdfs:range xsd:string .
+
+
+###  http://airdata.org/ontology#taxi
+:taxi rdf:type owl:DatatypeProperty ;
+      rdfs:subPropertyOf :actual ;
+      rdfs:domain :ActualTaxiStartTime ;
+      rdfs:range xsd:dateTime .
+
+
+###  http://airdata.org/ontology#taxiwayAlignment
+:taxiwayAlignment rdf:type owl:DatatypeProperty ;
+                  rdfs:subPropertyOf :operational ;
+                  rdfs:domain :Taxiway ;
+                  rdfs:range xsd:string .
+
+
+###  http://airdata.org/ontology#taxiwayUsed
+:taxiwayUsed rdf:type owl:DatatypeProperty ;
+             rdfs:subPropertyOf :operational ;
+             rdfs:domain :Taxiway ;
+             rdfs:range xsd:string .
+
+
+###  http://airdata.org/ontology#tempEnd
+:tempEnd rdf:type owl:DatatypeProperty ;
+         rdfs:subPropertyOf :weather ;
+         rdfs:domain :WeatherCondition ;
+         rdfs:range xsd:dateTime .
+
+
+###  http://airdata.org/ontology#tempGroup
+:tempGroup rdf:type owl:DatatypeProperty ;
+           rdfs:subPropertyOf :weather ;
+           rdfs:domain :WeatherCondition ;
+           rdfs:range xsd:string .
+
+
+###  http://airdata.org/ontology#tempStart
+:tempStart rdf:type owl:DatatypeProperty ;
+           rdfs:subPropertyOf :weather ;
+           rdfs:domain :WeatherCondition ;
+           rdfs:range xsd:dateTime .
+
+
+###  http://airdata.org/ontology#tempWeather
+:tempWeather rdf:type owl:DatatypeProperty ;
+             rdfs:subPropertyOf :weather ;
+             rdfs:domain :WeatherCondition ;
+             rdfs:range xsd:string .
+
+
+###  http://airdata.org/ontology#temperature
+:temperature rdf:type owl:DatatypeProperty ;
+             rdfs:subPropertyOf :weather ;
+             rdfs:domain :WeatherCondition ;
+             rdfs:range xsd:decimal .
+
+
+###  http://airdata.org/ontology#temporal
+:temporal rdf:type owl:DatatypeProperty ;
+          rdfs:subPropertyOf owl:topDataProperty .
+
+
+###  http://airdata.org/ontology#time
+:time rdf:type owl:DatatypeProperty ;
+      rdfs:subPropertyOf :spatial ;
+      rdfs:domain :ActualTrajectory ,
+                  :TrajectoryPoint ;
+      rdfs:range xsd:dateTime .
+
+
+###  http://airdata.org/ontology#timestamp
+:timestamp rdf:type owl:DatatypeProperty ;
+           rdfs:subPropertyOf :temporal ;
+           rdfs:domain :TemporalEvent ;
+           rdfs:range xsd:dateTime .
+
+
+###  http://airdata.org/ontology#turbulenceWake
+:turbulenceWake rdf:type owl:DatatypeProperty ;
+                rdfs:subPropertyOf :operational ;
+                rdfs:domain :Flight ;
+                rdfs:range xsd:string .
+
+
+###  http://airdata.org/ontology#type
+:type rdf:type owl:DatatypeProperty ;
+      rdfs:subPropertyOf :operational ;
+      rdfs:domain :Flight ,
+                  :Operation ;
+      rdfs:range xsd:string .
+
+
+###  http://airdata.org/ontology#typeAircraftOperator
+:typeAircraftOperator rdf:type owl:DatatypeProperty ;
+                      rdfs:subPropertyOf :identification ;
+                      rdfs:domain :AircraftOperator ;
+                      rdfs:range xsd:string .
+
+
+###  http://airdata.org/ontology#typeLine
+:typeLine rdf:type owl:DatatypeProperty ;
+          rdfs:subPropertyOf :identification ;
+          rdfs:domain :Flight ;
+          rdfs:range xsd:string .
+
+
+###  http://airdata.org/ontology#velocity
+:velocity rdf:type owl:DatatypeProperty ;
+          rdfs:subPropertyOf :spatial ;
+          rdfs:domain :TrajectoryPoint ;
+          rdfs:range xsd:decimal .
+
+
+###  http://airdata.org/ontology#vertrate
+:vertrate rdf:type owl:DatatypeProperty ;
+          rdfs:subPropertyOf :spatial ;
+          rdfs:domain :TrajectoryPoint ;
+          rdfs:range xsd:decimal .
+
+
+###  http://airdata.org/ontology#visibility
+:visibility rdf:type owl:DatatypeProperty ;
+            rdfs:subPropertyOf :weather ;
+            rdfs:domain :WeatherCondition ;
+            rdfs:range xsd:string .
+
+
+###  http://airdata.org/ontology#weather
+:weather rdf:type owl:DatatypeProperty ;
+         rdfs:subPropertyOf owl:topDataProperty ;
+         rdfs:range xsd:string .
+
+
+###  http://airdata.org/ontology#weatherPhenomena
+:weatherPhenomena rdf:type owl:DatatypeProperty ;
+                  rdfs:subPropertyOf :weather .
+
+
+###  http://airdata.org/ontology#windDirection
+:windDirection rdf:type owl:DatatypeProperty ;
+               rdfs:subPropertyOf :weather ;
+               rdfs:domain :WeatherCondition ;
+               rdfs:range xsd:string .
+
+
+###  http://airdata.org/ontology#windGust
+:windGust rdf:type owl:DatatypeProperty ;
+          rdfs:subPropertyOf :weather ;
+          rdfs:domain :WeatherCondition ;
+          rdfs:range xsd:string .
+
+
+###  http://airdata.org/ontology#windSpeed
+:windSpeed rdf:type owl:DatatypeProperty ;
+           rdfs:subPropertyOf :weather ;
+           rdfs:domain :WeatherCondition ;
+           rdfs:range xsd:string .
+
+
+###  http://airdata.org/ontology#wpush
+:wpush rdf:type owl:DatatypeProperty ;
+       rdfs:subPropertyOf :estimated ;
+       rdfs:domain :ExpectedPushbackTime ;
+       rdfs:range xsd:dateTime .
+
+
+###  http://airdata.org/ontology#wtaxi
+:wtaxi rdf:type owl:DatatypeProperty ;
+       rdfs:subPropertyOf :estimated ;
+       rdfs:domain :EstimatedTaxiStartTime ;
+       rdfs:range xsd:dateTime .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://airdata.org/ontology#ATMFuelBurnKPI
+:ATMFuelBurnKPI rdf:type owl:Class ;
+                rdfs:subClassOf :FuelEfficiencyKPI ;
+                rdfs:label "ATMFuelBurnKPI" .
+
+
+###  http://airdata.org/ontology#ActualDepartureTime
+:ActualDepartureTime rdf:type owl:Class ;
+                     rdfs:subClassOf :DepartureEvent .
+
+
+###  http://airdata.org/ontology#ActualGateArrivalTime
+:ActualGateArrivalTime rdf:type owl:Class ;
+                       rdfs:subClassOf :ArrivalEvent .
+
+
+###  http://airdata.org/ontology#ActualLandingTime
+:ActualLandingTime rdf:type owl:Class ;
+                   rdfs:subClassOf :ArrivalEvent .
+
+
+###  http://airdata.org/ontology#ActualPushbackTime
+:ActualPushbackTime rdf:type owl:Class ;
+                    rdfs:subClassOf :DepartureEvent .
+
+
+###  http://airdata.org/ontology#ActualTakeoffTime
+:ActualTakeoffTime rdf:type owl:Class ;
+                   rdfs:subClassOf :DepartureEvent .
+
+
+###  http://airdata.org/ontology#ActualTaxiStartTime
+:ActualTaxiStartTime rdf:type owl:Class ;
+                     rdfs:subClassOf :DepartureEvent .
+
+
+###  http://airdata.org/ontology#ActualTrajectory
+:ActualTrajectory rdf:type owl:Class ;
+                  rdfs:subClassOf :Trajectory .
+
+
+###  http://airdata.org/ontology#Aerodrome
+:Aerodrome rdf:type owl:Class ;
+           rdfs:subClassOf owl:Thing .
+
+
+###  http://airdata.org/ontology#AerodromeCondition
+:AerodromeCondition rdf:type owl:Class ;
+                    rdfs:subClassOf :WeatherCondition .
+
+
+###  http://airdata.org/ontology#Aircraft
+:Aircraft rdf:type owl:Class ;
+          rdfs:subClassOf owl:Thing .
+
+
+###  http://airdata.org/ontology#AircraftOperator
+:AircraftOperator rdf:type owl:Class ;
+                  rdfs:subClassOf owl:Thing .
+
+
+###  http://airdata.org/ontology#Airspace
+:Airspace rdf:type owl:Class ;
+          rdfs:subClassOf owl:Thing .
+
+
+###  http://airdata.org/ontology#AirspaceCondition
+:AirspaceCondition rdf:type owl:Class ;
+                   rdfs:subClassOf :WeatherCondition .
+
+
+###  http://airdata.org/ontology#ArrivalEvent
+:ArrivalEvent rdf:type owl:Class ;
+              rdfs:subClassOf :TemporalEvent .
+
+
+###  http://airdata.org/ontology#ArrivalOperation
+:ArrivalOperation rdf:type owl:Class ;
+                  rdfs:subClassOf :Operation .
+
+
+###  http://airdata.org/ontology#ArrivalPerformanceKPI
+:ArrivalPerformanceKPI rdf:type owl:Class ;
+                       rdfs:subClassOf :Performance ;
+                       rdfs:label "ArrivalPerformanceKPI" .
+
+
+###  http://airdata.org/ontology#DataSource
+:DataSource rdf:type owl:Class ;
+            rdfs:label "DataSource" .
+
+
+###  http://airdata.org/ontology#DepartureEvent
+:DepartureEvent rdf:type owl:Class ;
+                rdfs:subClassOf :TemporalEvent .
+
+
+###  http://airdata.org/ontology#DepartureOperation
+:DepartureOperation rdf:type owl:Class ;
+                    rdfs:subClassOf :Operation .
+
+
+###  http://airdata.org/ontology#DeparturePerformanceKPI
+:DeparturePerformanceKPI rdf:type owl:Class ;
+                         rdfs:subClassOf :Performance ;
+                         rdfs:comment "Agrupa os indicadores relacionados às operações de partida do voo." ;
+                         rdfs:label "DeparturePerformanceKPI" .
+
+
+###  http://airdata.org/ontology#EnRoutePerformanceKPI
+:EnRoutePerformanceKPI rdf:type owl:Class ;
+                       rdfs:subClassOf :Performance ;
+                       rdfs:label "EnRoutePerformanceKPI" .
+
+
+###  http://airdata.org/ontology#EstimatedArrivalTime
+:EstimatedArrivalTime rdf:type owl:Class ;
+                      rdfs:subClassOf :ArrivalEvent .
+
+
+###  http://airdata.org/ontology#EstimatedOffBlockTime
+:EstimatedOffBlockTime rdf:type owl:Class ;
+                       rdfs:subClassOf :DepartureEvent .
+
+
+###  http://airdata.org/ontology#EstimatedRunwayTime
+:EstimatedRunwayTime rdf:type owl:Class ;
+                     rdfs:subClassOf :DepartureEvent .
+
+
+###  http://airdata.org/ontology#EstimatedTaxiStartTime
+:EstimatedTaxiStartTime rdf:type owl:Class ;
+                        rdfs:subClassOf :DepartureEvent .
+
+
+###  http://airdata.org/ontology#ExpectedPushbackTime
+:ExpectedPushbackTime rdf:type owl:Class ;
+                      rdfs:subClassOf :DepartureEvent .
+
+
+###  http://airdata.org/ontology#FixPoint
+:FixPoint rdf:type owl:Class ;
+          rdfs:subClassOf :Airspace .
+
+
+###  http://airdata.org/ontology#Flight
+:Flight rdf:type owl:Class ;
+        rdfs:subClassOf owl:Thing .
+
+
+###  http://airdata.org/ontology#FuelEfficiencyKPI
+:FuelEfficiencyKPI rdf:type owl:Class ;
+                   rdfs:subClassOf :Performance ;
+                   rdfs:label "FuelEfficiencyKPI" .
+
+
+###  http://airdata.org/ontology#Gate
+:Gate rdf:type owl:Class ;
+      rdfs:subClassOf :Aerodrome .
+
+
+###  http://airdata.org/ontology#GateArrivalOnTimeKPI
+:GateArrivalOnTimeKPI rdf:type owl:Class ;
+                      rdfs:subClassOf :ArrivalPerformanceKPI ;
+                      rdfs:label "GateArrivalOnTimeKPI" .
+
+
+###  http://airdata.org/ontology#GateDepartureOnTimeKPI
+:GateDepartureOnTimeKPI rdf:type owl:Class ;
+                        rdfs:subClassOf :DeparturePerformanceKPI ;
+                        rdfs:label "GateDepartureOnTimeKPI" .
+
+
+###  http://airdata.org/ontology#HoldTime
+:HoldTime rdf:type owl:Class ;
+          rdfs:subClassOf :DepartureEvent .
+
+
+###  http://airdata.org/ontology#Operation
+:Operation rdf:type owl:Class ;
+           rdfs:label "Operation" .
+
+
+###  http://airdata.org/ontology#Performance
+:Performance rdf:type owl:Class ;
+             rdfs:subClassOf owl:Thing ;
+             rdfs:comment "Representa os indicadores-chave de desempenho (KPIs) definidos pela ICAO..." ;
+             rdfs:label "Performance" .
+
+
+###  http://airdata.org/ontology#PlannedTrajectory
+:PlannedTrajectory rdf:type owl:Class ;
+                   rdfs:subClassOf :Trajectory .
+
+
+###  http://airdata.org/ontology#Procedure
+:Procedure rdf:type owl:Class ;
+           rdfs:subClassOf :Airspace .
+
+
+###  http://airdata.org/ontology#RouteDistanceEfficiencyKPI
+:RouteDistanceEfficiencyKPI rdf:type owl:Class ;
+                            rdfs:subClassOf :EnRoutePerformanceKPI ;
+                            rdfs:label "RouteDistanceEfficiencyKPI" .
+
+
+###  http://airdata.org/ontology#Runway
+:Runway rdf:type owl:Class ;
+        rdfs:subClassOf :Aerodrome .
+
+
+###  http://airdata.org/ontology#RunwayCondition
+:RunwayCondition rdf:type owl:Class ;
+                 rdfs:subClassOf :WeatherCondition .
+
+
+###  http://airdata.org/ontology#TaxilnEfficiencyKPI
+:TaxilnEfficiencyKPI rdf:type owl:Class ;
+                     rdfs:subClassOf :ArrivalPerformanceKPI ;
+                     rdfs:label "TaxilnEfficiencyKPI" .
+
+
+###  http://airdata.org/ontology#Taxiway
+:Taxiway rdf:type owl:Class ;
+         rdfs:subClassOf :Aerodrome .
+
+
+###  http://airdata.org/ontology#TemporalEvent
+:TemporalEvent rdf:type owl:Class ;
+               rdfs:label "TemporalEvent" .
+
+
+###  http://airdata.org/ontology#TerminalAirspaceEfficiencyKPI
+:TerminalAirspaceEfficiencyKPI rdf:type owl:Class ;
+                               rdfs:subClassOf :EnRoutePerformanceKPI ;
+                               rdfs:label "TerminalAirspaceEfficiencyKPI" .
+
+
+###  http://airdata.org/ontology#TopOfClimbEfficiencyKPI
+:TopOfClimbEfficiencyKPI rdf:type owl:Class ;
+                         rdfs:subClassOf :VerticalEfficiencyKPI ;
+                         rdfs:label "TopOfClimbEfficiencyKPI" .
+
+
+###  http://airdata.org/ontology#TopOfDescentEfficiencyKPI
+:TopOfDescentEfficiencyKPI rdf:type owl:Class ;
+                           rdfs:subClassOf :VerticalEfficiencyKPI ;
+                           rdfs:label "TopOfDescentEfficiencyKPI" .
+
+
+###  http://airdata.org/ontology#Trajectory
+:Trajectory rdf:type owl:Class ;
+            rdfs:subClassOf owl:Thing .
+
+
+###  http://airdata.org/ontology#TrajectoryPoint
+:TrajectoryPoint rdf:type owl:Class ;
+                 rdfs:subClassOf :Trajectory .
+
+
+###  http://airdata.org/ontology#VerticalEfficiencyKPI
+:VerticalEfficiencyKPI rdf:type owl:Class ;
+                       rdfs:subClassOf :Performance ;
+                       rdfs:label "VerticalEfficiencyKPI" .
+
+
+###  http://airdata.org/ontology#WeatherCondition
+:WeatherCondition rdf:type owl:Class ;
+                  rdfs:label "WeatherCondition" .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://airdata.org/ontology#CodeRVRReadingType-END
+:CodeRVRReadingType-END rdf:type owl:NamedIndividual ;
+                        rdfs:label "END" .
+
+
+###  http://airdata.org/ontology#CodeRVRReadingType-MID
+:CodeRVRReadingType-MID rdf:type owl:NamedIndividual ;
+                        rdfs:label "MID" .
+
+
+###  http://airdata.org/ontology#CodeRVRReadingType-TDZ
+:CodeRVRReadingType-TDZ rdf:type owl:NamedIndividual ;
+                        rdfs:label "TDZ" .
+
+
+###  http://airdata.org/ontology#CodeRVRTendencyType-DOWN
+:CodeRVRTendencyType-DOWN rdf:type owl:NamedIndividual ;
+                          rdfs:label "DOWN" .
+
+
+###  http://airdata.org/ontology#CodeRVRTendencyType-NC
+:CodeRVRTendencyType-NC rdf:type owl:NamedIndividual ;
+                        rdfs:label "NC" .
+
+
+###  http://airdata.org/ontology#CodeRVRTendencyType-UP
+:CodeRVRTendencyType-UP rdf:type owl:NamedIndividual ;
+                        rdfs:label "UP" .
+
+
+###  http://airdata.org/ontology#CodeTimeReferenceType-UTC
+:CodeTimeReferenceType-UTC rdf:type owl:NamedIndividual ;
+                           rdfs:label "UTC" .
+
+
+###  http://airdata.org/ontology#CodeTimeReferenceType-UTC-3
+:CodeTimeReferenceType-UTC-3 rdf:type owl:NamedIndividual ;
+                             rdfs:label "UTC-3" .
+
+
+###  http://airdata.org/ontology#R9HmZkzr9HZSOYHFK9nsHlc
+:R9HmZkzr9HZSOYHFK9nsHlc rdf:type owl:NamedIndividual ;
+                         rdfs:label "METAR" .
+
+
+[ owl:cardinality 1
+] .
+
+###  Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/

@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relatório de Axiomas Lógicos OWL - AirData</title>
+<!-- AirData Header Style Start -->
+<!-- AirData Header Style End -->
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Times New Roman", Times, Georgia, serif; background: #ffffff; padding: 2rem; line-height: 1.6; }
+        .container { max-width: 1000px; margin: 0 auto; background: white; padding: 3rem; border: 1px solid #cccccc; }
+        h1 { color: #003C7D; padding-bottom: 1rem; margin-bottom: 2rem; font-size: 1.8em; font-weight: 600; text-align: left; }
+        h2 { color: #000000; margin-top: 2rem; margin-bottom: 0.8rem; font-size: 1.3em; font-weight: 600; padding-bottom: 0.3rem; }
+        h3 { color: #000000; margin-top: 1.5rem; margin-bottom: 0.5rem; font-size: 1.1em; font-weight: 600; }
+
+
+        .recommendation { border: 1px solid #cccccc; padding: 1rem; margin: 1rem 0; background: #fafafa; }
+        .recommendation.priority-high { border-left: 4px solid #cc0000; }
+        .recommendation.priority-medium { border-left: 4px solid #ff8800; }
+        .recommendation.priority-info { border-left: 4px solid #006600; }
+
+        .rec-header { margin-bottom: 0.5rem; }
+        .priority-badge { display: inline-block; background: #333333; color: white; padding: 0.2rem 0.5rem; font-size: 0.85em; font-weight: 600; margin-right: 0.5rem; }
+        .category { color: #000000; font-weight: 600; }
+        .rec-issue { margin: 0.5rem 0; color: #000000; }
+        .rec-suggestion { margin-top: 0.5rem; padding: 0.5rem; background: white; border: 1px solid #cccccc; }
+
+        table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+        th, td { padding: 0.6rem; text-align: left; border: 1px solid #cccccc; }
+        th { background: #e8e8e8; font-weight: 600; }
+
+        .timestamp { text-align: center; color: #666666; font-size: 0.85em; margin-top: 2rem; padding-top: 1rem; border-top: 2px solid #cccccc; font-style: italic; }
+    </style>
+</head>
+<body>
+<!-- AirData Header Start -->
+<!-- AirData Header End -->
+    <div class="container">
+        <h1>Relatório de Axiomas Lógicos OWL</h1>
+
+        <h2>Resumo Geral</h2>
+        <table>
+            <tr>
+                <th style="width: 70%;">Métrica</th>
+                <th style="width: 30%; text-align: center;">Valor</th>
+            </tr>
+            <tr>
+                <td>Score Total de Riqueza Lógica</td>
+                <td style="text-align: center;"><strong>0.33/10</strong></td>
+            </tr>
+            <tr>
+                <td>Classificação</td>
+                <td style="text-align: center;">Precisa Melhorar - Poucos axiomas lógicos</td>
+            </tr>
+        </table>
+
+        <h2>Detalhamento por Categoria</h2>
+        <table>
+            <tr>
+                <th>Categoria</th>
+                <th style="text-align: center;">Score</th>
+            </tr>
+            <tr>
+                <td>Cardinalidade</td>
+                <td style="text-align: center;">0.0/10</td>
+            </tr>
+            <tr>
+                <td>Disjunção</td>
+                <td style="text-align: center;">0.0/10</td>
+            </tr>
+            <tr>
+                <td>Características de Propriedades</td>
+                <td style="text-align: center;">1.32/10</td>
+            </tr>
+            <tr>
+                <td>Restrições Complexas</td>
+                <td style="text-align: center;">0.0/10</td>
+            </tr>
+            <tr>
+                <td>Propriedades Inversas</td>
+                <td style="text-align: center;">0.0/10</td>
+            </tr>
+        </table>
+
+        <h2>Análise Detalhada</h2>
+
+        <h3>Restrições de Cardinalidade</h3>
+        <table>
+            <tr><th>Métrica</th><th>Valor</th></tr>
+            <tr><td>Total de restrições OWL</td><td>0</td></tr>
+            <tr><td>owl:cardinality (exata)</td><td>0</td></tr>
+            <tr><td>owl:minCardinality</td><td>0</td></tr>
+            <tr><td>owl:maxCardinality</td><td>0</td></tr>
+            <tr><td>Cobertura (% propriedades)</td><td>0.0%</td></tr>
+        </table>
+
+        <h3>Classes Disjuntas</h3>
+        <table>
+            <tr><th>Métrica</th><th>Valor</th></tr>
+            <tr><td>Pares disjuntos (owl:disjointWith)</td><td>0</td></tr>
+            <tr><td>Conjuntos disjuntos (owl:AllDisjointClasses)</td><td>0</td></tr>
+            <tr><td>Classes com disjunção</td><td>0</td></tr>
+            <tr><td>Cobertura (% classes)</td><td>0.0%</td></tr>
+        </table>
+
+        <h3>Características de Propriedades</h3>
+        <table>
+            <tr><th>Tipo</th><th>Quantidade</th></tr>
+            <tr><td>Functional</td><td>1</td></tr>
+            <tr><td>Inverse Functional</td><td>1</td></tr>
+            <tr><td>Symmetric</td><td>0</td></tr>
+            <tr><td>Transitive</td><td>0</td></tr>
+            <tr><td>Reflexive</td><td>0</td></tr>
+            <tr><td>Irreflexive</td><td>0</td></tr>
+            <tr><td><strong>Total com características</strong></td><td><strong>2</strong></td></tr>
+        </table>
+
+        <h3>Restrições Complexas</h3>
+        <table>
+            <tr><th>Tipo</th><th>Quantidade</th></tr>
+            <tr><td>owl:allValuesFrom (∀)</td><td>0</td></tr>
+            <tr><td>owl:someValuesFrom (∃)</td><td>0</td></tr>
+            <tr><td>owl:hasValue</td><td>0</td></tr>
+            <tr><td><strong>Total</strong></td><td><strong>0</strong></td></tr>
+        </table>
+
+        <h3>Propriedades Inversas</h3>
+        <table>
+            <tr><th>Métrica</th><th>Valor</th></tr>
+            <tr><td>Pares de inversas (owl:inverseOf)</td><td>0</td></tr>
+            <tr><td>Propriedades com inversa</td><td>0</td></tr>
+            <tr><td>Cobertura (% propriedades)</td><td>0.0%</td></tr>
+        </table>
+
+        <h2>💡 Recomendações para Próxima Versão</h2>
+        
+            <div class="recommendation priority-high">
+                <div class="rec-header">
+                    <span class="priority-badge">ALTA</span>
+                    <span class="category">Cardinalidade</span>
+                </div>
+                <div class="rec-issue">Apenas 0 restrições de cardinalidade</div>
+                <div class="rec-suggestion">💡 Adicionar owl:minCardinality, owl:maxCardinality ou owl:cardinality em propriedades críticas</div>
+            </div>
+            
+            <div class="recommendation priority-high">
+                <div class="rec-header">
+                    <span class="priority-badge">ALTA</span>
+                    <span class="category">Disjunção</span>
+                </div>
+                <div class="rec-issue">Apenas 0 classes têm owl:disjointWith</div>
+                <div class="rec-suggestion">💡 Declarar classes mutuamente exclusivas como disjuntas (ex: Aircraft e Airport)</div>
+            </div>
+            
+            <div class="recommendation priority-medium">
+                <div class="rec-header">
+                    <span class="priority-badge">MÉDIA</span>
+                    <span class="category">Características</span>
+                </div>
+                <div class="rec-issue">2 propriedades com características</div>
+                <div class="rec-suggestion">💡 Marcar propriedades como Functional, Symmetric, Transitive conforme semântica</div>
+            </div>
+            
+            <div class="recommendation priority-medium">
+                <div class="rec-header">
+                    <span class="priority-badge">MÉDIA</span>
+                    <span class="category">Inversas</span>
+                </div>
+                <div class="rec-issue">0 propriedades têm owl:inverseOf</div>
+                <div class="rec-suggestion">💡 Criar propriedades inversas (ex: hasParent ↔ isParentOf) para facilitar queries SPARQL bidirecionais</div>
+            </div>
+            
+
+        <div class="timestamp">
+            Relatório gerado automaticamente em 2026-01-25T00:03:03.229442<br>
+            Arquivo analisado: OntoOwl/airdata_owl_v0.0.2.owl<br>
+            <strong>IMPORTANTE:</strong> Este relatório apenas diagnostica. Edições devem ser feitas manualmente no Protégé.
+        </div>
+    </div>
+
+<!-- AirData Footer Start -->
+<!-- AirData Footer End -->
+
+</body>
+</html>

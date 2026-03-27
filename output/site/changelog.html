@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Changelog - AirData Ontology</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #f8f9fa; color: #333; min-height: 100vh; display: flex; flex-direction: column; }
+        
+        /* Navbar (Reusing existing style) */
+        .navbar { background: white; padding: 1rem 2rem; border-bottom: 1px solid #eee; position: sticky; top: 0; z-index: 1000; }
+        .navbar-content { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+        .logo { color: #003C7D; text-decoration: none; display: flex; align-items: center; gap: 0.5rem; }
+        .nav-links { display: flex; gap: 2rem; list-style: none; }
+        .nav-links a { color: #003C7D; text-decoration: none; font-weight: 500; }
+
+        /* Content */
+        .container { max-width: 900px; margin: 3rem auto; padding: 0 1rem; flex: 1; width: 100%; }
+        h1 { color: #003C7D; margin-bottom: 2rem; border-bottom: 2px solid #e9ecef; padding-bottom: 1rem; }
+        
+        .version-card { background: white; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); margin-bottom: 2rem; overflow: hidden; }
+        .version-header { background: #003C7D; color: white; padding: 1rem 1.5rem; display: flex; justify-content: space-between; align-items: center; }
+        .version-title { font-size: 1.2rem; font-weight: bold; }
+        .version-date { font-size: 0.9rem; opacity: 0.9; }
+        
+        .change-group { padding: 1.5rem; border-bottom: 1px solid #f0f0f0; }
+        .change-group:last-child { border-bottom: none; }
+        .change-title { font-weight: bold; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem; }
+        
+        .badge { padding: 0.2rem 0.6rem; border-radius: 12px; font-size: 0.8rem; font-weight: bold; }
+        .badge-added { background: #e6f4ea; color: #1e7e34; }
+        .badge-removed { background: #fbe9e7; color: #c62828; }
+        .badge-changed { background: #fff3e0; color: #ef6c00; }
+        
+        .item-list { list-style: none; padding-left: 0.5rem; }
+        .item-list li { margin-bottom: 0.5rem; font-family: monospace; font-size: 0.95rem; }
+        .item-iri { color: #666; font-size: 0.8rem; margin-left: 0.5rem; }
+
+        .empty-state { padding: 2rem; text-align: center; color: #666; font-style: italic; }
+        
+        
+    </style>
+
+<!-- AirData Header Style Start -->
+<style>
+  /* Base Styles */
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+    margin: 0;
+    color: #24292e;
+  }
+
+  /* Header */
+  .airdata-header {
+    background-color: #ffffff;
+    border-bottom: 1px solid #d1d5da;
+    padding: 16px 32px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 40px;
+  }
+
+  /* Logo */
+  .airdata-header .logo-container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    color: #003C7D;
+  }
+
+  .airdata-header .logo-img {
+    height: 40px;
+  }
+
+  .airdata-header .logo-text {
+    font-size: 1.25rem;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+
+  /* Navigation */
+  .airdata-header .nav-container {
+    display: flex;
+    gap: 16px;
+  }
+
+  .airdata-header .nav-item {
+    position: relative;
+  }
+
+  .airdata-header .nav-link {
+    display: block;
+    padding: 8px 12px;
+    color: #586069;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1rem;
+    border-radius: 6px;
+    transition: background-color 0.2s ease, color 0.2s ease;
+  }
+
+  .airdata-header .nav-link:hover,
+  .airdata-header .dropdown:hover .nav-link {
+    background-color: #f6f8fa;
+    color: #0366d6;
+  }
+
+  /* Dropdown */
+  .airdata-header .dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #ffffff;
+    min-width: 220px;
+    border: 1px solid #d1d5da;
+    border-radius: 6px;
+    box-shadow: 0 8px 24px rgba(149, 157, 165, 0.2);
+    z-index: 1000;
+    padding: 8px 0;
+  }
+
+  .airdata-header .dropdown:hover .dropdown-content {
+    display: block;
+  }
+
+  .airdata-header .dropdown-item {
+    display: block;
+    padding: 8px 16px;
+    color: #24292e;
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 0.9rem;
+    text-align: left;
+  }
+
+  .airdata-header .dropdown-item:hover {
+    background-color: #f6f8fa;
+  }
+</style>
+<!-- AirData Header Style End -->
+
+<!-- AirData Footer Style Start -->
+<style>
+/* Footer Styles */
+.footer {
+  background-color: #f6f8fa;
+  border-top: 1px solid #d1d5da;
+  padding-top: 32px;
+  margin-top: 60px;
+  text-align: center;
+  color: #586069;
+  padding-bottom: 0;
+}
+
+.footer-content {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  padding-bottom: 32px;
+}
+
+.footer-org {
+  font-size: 1rem;
+  margin: 0;
+}
+
+.footer-links {
+  display: flex;
+  gap: 24px;
+  margin: 1rem 0;
+}
+
+.footer-links a {
+  color: #003C7D;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+.footer-copyright {
+  margin: 0;
+  opacity: 0.8;
+  font-size: 0.9rem;
+}
+
+.footer-bottom-bar {
+  height: 8px;
+  background-color: #003C7D;
+  width: 100%;
+}
+</style>
+<!-- AirData Footer Style End -->
+
+</head>
+<body>
+<!-- AirData Header Start -->
+<header class="airdata-header">
+  <a href="index.html" class="logo-container">
+    <img src="airdata-logo.png" alt="AirData Logo" class="logo-img">
+    <span class="logo-text">AirData Ontology</span>
+  </a>
+
+  <nav class="nav-container">
+    <div class="nav-item">
+      <a href="index.html" class="nav-link">In&iacute;cio</a>
+    </div>
+
+    <div class="nav-item dropdown">
+      <a href="#" class="nav-link">Ontologia &#9662;</a>
+      <div class="dropdown-content">
+        <a href="docs/index-pt.html" class="dropdown-item">Documenta&ccedil;&atilde;o</a>
+        <a href="docs/webvowl/index.html" class="dropdown-item">Grafo</a>
+        <a href="statistics.html" class="dropdown-item">Estat&iacute;sticas</a>
+      </div>
+    </div>
+
+    <div class="nav-item dropdown">
+      <a href="#" class="nav-link">Evolu&ccedil;&atilde;o &#9662;</a>
+      <div class="dropdown-content">
+        <a href="changelog.html" class="dropdown-item">Hist&oacute;rico de Mudan&ccedil;as</a>
+        <a href="versions.html" class="dropdown-item">Vers&otilde;es OWL</a>
+      </div>
+    </div>
+
+    <div class="nav-item dropdown">
+      <a href="#" class="nav-link">Relat&oacute;rios &#9662;</a>
+      <div class="dropdown-content">
+        <a href="quality_report.html" class="dropdown-item">Valida&ccedil;&atilde;o Sint&aacute;tica</a>
+        <a href="quality_report_extended.html" class="dropdown-item">An&aacute;lise Sem&acirc;ntica</a>
+        <a href="logic_report.html" class="dropdown-item">Axiomas L&oacute;gicos OWL</a>
+        <a href="llm_readability.html" class="dropdown-item">Usabilidade para LLMs</a>
+        <a href="sparql_validation.html" class="dropdown-item">Valida&ccedil;&atilde;o SPARQL</a>
+        <a href="competency_report.html" class="dropdown-item">Perguntas de Compet&ecirc;ncia</a>
+        <a href="quality-guide.html" class="dropdown-item">Guia de Interpreta&ccedil;&atilde;o</a>
+      </div>
+    </div>
+
+    <div class="nav-item dropdown">
+      <a href="#" class="nav-link">Evolu&ccedil;&atilde;o &#9662;</a>
+      <div class="dropdown-content">
+        <a href="changelog.html" class="dropdown-item">Hist&oacute;rico de Mudan&ccedil;as</a>
+        <a href="versions.html" class="dropdown-item">Vers&otilde;es OWL</a>
+        <a href="delta_report.html" class="dropdown-item">Relat&oacute;rio Delta de Qualidade</a>
+      </div>
+    </div>
+  </nav>
+</header>
+<!-- AirData Header End -->
+
+    <main class="container">
+        <h1>Histórico de Mudanças</h1>
+
+        <div class="version-card">
+            <div class="version-header">
+                <div class="version-title">airdata_owl_v0.0.2.owl</div>
+                <div class="version-date">Comparado com airdata_owl_v0.0.1.owl • 27/01/2026</div>
+            </div>
+    
+            <div class="change-group">
+                <div class="change-title"><span class="badge badge-added">ADICIONADO</span> Novas Entidades</div>
+                <ul class="item-list">
+        <li>ATMFuelBurnKPI <span class="item-iri">(http://airdata.org/ontology#ATMFuelBurnKPI)</span></li><li>ActualDepartureTime <span class="item-iri">(http://airdata.org/ontology#ActualDepartureTime)</span></li><li>ActualGateArrivalTime <span class="item-iri">(http://airdata.org/ontology#ActualGateArrivalTime)</span></li><li>ActualLandingTime <span class="item-iri">(http://airdata.org/ontology#ActualLandingTime)</span></li><li>ActualPushbackTime <span class="item-iri">(http://airdata.org/ontology#ActualPushbackTime)</span></li><li>ActualTakeoffTime <span class="item-iri">(http://airdata.org/ontology#ActualTakeoffTime)</span></li><li>ActualTaxiStartTime <span class="item-iri">(http://airdata.org/ontology#ActualTaxiStartTime)</span></li><li>ActualTrajectory <span class="item-iri">(http://airdata.org/ontology#ActualTrajectory)</span></li><li>Aerodrome <span class="item-iri">(http://airdata.org/ontology#Aerodrome)</span></li><li>Aerodrome-Operation <span class="item-iri">(http://airdata.org/ontology#Aerodrome-Operation)</span></li><li>AerodromeCondition <span class="item-iri">(http://airdata.org/ontology#AerodromeCondition)</span></li><li>Aircraft <span class="item-iri">(http://airdata.org/ontology#Aircraft)</span></li><li>AircraftOperator <span class="item-iri">(http://airdata.org/ontology#AircraftOperator)</span></li><li>Airspace <span class="item-iri">(http://airdata.org/ontology#Airspace)</span></li><li>Airspace-DataSource <span class="item-iri">(http://airdata.org/ontology#Airspace-DataSource)</span></li><li>Airspace-Operation <span class="item-iri">(http://airdata.org/ontology#Airspace-Operation)</span></li><li>AirspaceCondition <span class="item-iri">(http://airdata.org/ontology#AirspaceCondition)</span></li><li>ArrivalEvent <span class="item-iri">(http://airdata.org/ontology#ArrivalEvent)</span></li><li>ArrivalOperation <span class="item-iri">(http://airdata.org/ontology#ArrivalOperation)</span></li><li>ArrivalOperation-ActualGateArrivalTime <span class="item-iri">(http://airdata.org/ontology#ArrivalOperation-ActualGateArrivalTime)</span></li><li>ArrivalOperation-ActualLandingTime <span class="item-iri">(http://airdata.org/ontology#ArrivalOperation-ActualLandingTime)</span></li><li>ArrivalOperation-Aerodrome <span class="item-iri">(http://airdata.org/ontology#ArrivalOperation-Aerodrome)</span></li><li>ArrivalOperation-AerodromeCondition <span class="item-iri">(http://airdata.org/ontology#ArrivalOperation-AerodromeCondition)</span></li><li>ArrivalOperation-EstimatedArrivalTime <span class="item-iri">(http://airdata.org/ontology#ArrivalOperation-EstimatedArrivalTime)</span></li><li>ArrivalPerformanceKPI <span class="item-iri">(http://airdata.org/ontology#ArrivalPerformanceKPI)</span></li><li>ArrivalTemporalRelation <span class="item-iri">(http://airdata.org/ontology#ArrivalTemporalRelation)</span></li><li>DataSource <span class="item-iri">(http://airdata.org/ontology#DataSource)</span></li><li>DepartureEvent <span class="item-iri">(http://airdata.org/ontology#DepartureEvent)</span></li><li>DepartureOperation <span class="item-iri">(http://airdata.org/ontology#DepartureOperation)</span></li><li>DepartureOperation-ActualDepartureTime <span class="item-iri">(http://airdata.org/ontology#DepartureOperation-ActualDepartureTime)</span></li><li>DepartureOperation-ActualPushbackTime <span class="item-iri">(http://airdata.org/ontology#DepartureOperation-ActualPushbackTime)</span></li><li>DepartureOperation-ActualTakeoffTime <span class="item-iri">(http://airdata.org/ontology#DepartureOperation-ActualTakeoffTime)</span></li><li>DepartureOperation-ActualTaxiStartTime <span class="item-iri">(http://airdata.org/ontology#DepartureOperation-ActualTaxiStartTime)</span></li><li>DepartureOperation-Aerodrome <span class="item-iri">(http://airdata.org/ontology#DepartureOperation-Aerodrome)</span></li><li>DepartureOperation-AerodromeCondition <span class="item-iri">(http://airdata.org/ontology#DepartureOperation-AerodromeCondition)</span></li><li>DepartureOperation-EstimatedOffBlockTime <span class="item-iri">(http://airdata.org/ontology#DepartureOperation-EstimatedOffBlockTime)</span></li><li>DepartureOperation-EstimatedRunwayTime <span class="item-iri">(http://airdata.org/ontology#DepartureOperation-EstimatedRunwayTime)</span></li><li>DepartureOperation-EstimatedTaxiStartTime <span class="item-iri">(http://airdata.org/ontology#DepartureOperation-EstimatedTaxiStartTime)</span></li><li>DepartureOperation-ExpectedPushbackTime <span class="item-iri">(http://airdata.org/ontology#DepartureOperation-ExpectedPushbackTime)</span></li><li>DepartureOperation-HoldTime <span class="item-iri">(http://airdata.org/ontology#DepartureOperation-HoldTime)</span></li><li>DeparturePerformanceKPI <span class="item-iri">(http://airdata.org/ontology#DeparturePerformanceKPI)</span></li><li>DepartureTemporalRelation <span class="item-iri">(http://airdata.org/ontology#DepartureTemporalRelation)</span></li><li>EnRoutePerformanceKPI <span class="item-iri">(http://airdata.org/ontology#EnRoutePerformanceKPI)</span></li><li>EstimatedArrivalTime <span class="item-iri">(http://airdata.org/ontology#EstimatedArrivalTime)</span></li><li>EstimatedOffBlockTime <span class="item-iri">(http://airdata.org/ontology#EstimatedOffBlockTime)</span></li><li>EstimatedRunwayTime <span class="item-iri">(http://airdata.org/ontology#EstimatedRunwayTime)</span></li><li>EstimatedTaxiStartTime <span class="item-iri">(http://airdata.org/ontology#EstimatedTaxiStartTime)</span></li><li>ExpectedPushbackTime <span class="item-iri">(http://airdata.org/ontology#ExpectedPushbackTime)</span></li><li>FixPoint <span class="item-iri">(http://airdata.org/ontology#FixPoint)</span></li><li>Flight <span class="item-iri">(http://airdata.org/ontology#Flight)</span></li><li>Flight-Aircraft <span class="item-iri">(http://airdata.org/ontology#Flight-Aircraft)</span></li><li>Flight-AircraftOperator <span class="item-iri">(http://airdata.org/ontology#Flight-AircraftOperator)</span></li><li>Flight-Airspace <span class="item-iri">(http://airdata.org/ontology#Flight-Airspace)</span></li><li>Flight-ArrivalOperation <span class="item-iri">(http://airdata.org/ontology#Flight-ArrivalOperation)</span></li><li>Flight-DepartureOperation <span class="item-iri">(http://airdata.org/ontology#Flight-DepartureOperation)</span></li><li>Flight-Trajectory <span class="item-iri">(http://airdata.org/ontology#Flight-Trajectory)</span></li><li>FlightOperation <span class="item-iri">(http://airdata.org/ontology#FlightOperation)</span></li><li>FuelEfficiencyKPI <span class="item-iri">(http://airdata.org/ontology#FuelEfficiencyKPI)</span></li><li>Gate <span class="item-iri">(http://airdata.org/ontology#Gate)</span></li><li>GateArrivalOnTimeKPI <span class="item-iri">(http://airdata.org/ontology#GateArrivalOnTimeKPI)</span></li><li>GateDepartureOnTimeKPI <span class="item-iri">(http://airdata.org/ontology#GateDepartureOnTimeKPI)</span></li><li>HoldTime <span class="item-iri">(http://airdata.org/ontology#HoldTime)</span></li><li>IdentificationRelation <span class="item-iri">(http://airdata.org/ontology#IdentificationRelation)</span></li><li>Operation <span class="item-iri">(http://airdata.org/ontology#Operation)</span></li><li>Operation-WeatherCondition <span class="item-iri">(http://airdata.org/ontology#Operation-WeatherCondition)</span></li><li>Performance <span class="item-iri">(http://airdata.org/ontology#Performance)</span></li><li>PlannedTrajectory <span class="item-iri">(http://airdata.org/ontology#PlannedTrajectory)</span></li><li>Procedure <span class="item-iri">(http://airdata.org/ontology#Procedure)</span></li><li>RouteDistanceEfficiencyKPI <span class="item-iri">(http://airdata.org/ontology#RouteDistanceEfficiencyKPI)</span></li><li>Runway <span class="item-iri">(http://airdata.org/ontology#Runway)</span></li><li>RunwayCondition <span class="item-iri">(http://airdata.org/ontology#RunwayCondition)</span></li><li>SourceRelation <span class="item-iri">(http://airdata.org/ontology#SourceRelation)</span></li><li>SpatialRelation <span class="item-iri">(http://airdata.org/ontology#SpatialRelation)</span></li><li>TaxilnEfficiencyKPI <span class="item-iri">(http://airdata.org/ontology#TaxilnEfficiencyKPI)</span></li><li>Taxiway <span class="item-iri">(http://airdata.org/ontology#Taxiway)</span></li><li>TemporalEvent <span class="item-iri">(http://airdata.org/ontology#TemporalEvent)</span></li><li>TemporalEvent-DataSource <span class="item-iri">(http://airdata.org/ontology#TemporalEvent-DataSource)</span></li><li>TemporalRelation <span class="item-iri">(http://airdata.org/ontology#TemporalRelation)</span></li><li>TerminalAirspaceEfficiencyKPI <span class="item-iri">(http://airdata.org/ontology#TerminalAirspaceEfficiencyKPI)</span></li><li>TopOfClimbEfficiencyKPI <span class="item-iri">(http://airdata.org/ontology#TopOfClimbEfficiencyKPI)</span></li><li>TopOfDescentEfficiencyKPI <span class="item-iri">(http://airdata.org/ontology#TopOfDescentEfficiencyKPI)</span></li><li>Trajectory <span class="item-iri">(http://airdata.org/ontology#Trajectory)</span></li><li>Trajectory-DataSource <span class="item-iri">(http://airdata.org/ontology#Trajectory-DataSource)</span></li><li>Trajectory-Operation <span class="item-iri">(http://airdata.org/ontology#Trajectory-Operation)</span></li><li>TrajectoryPoint <span class="item-iri">(http://airdata.org/ontology#TrajectoryPoint)</span></li><li>VerticalEfficiencyKPI <span class="item-iri">(http://airdata.org/ontology#VerticalEfficiencyKPI)</span></li><li>WeatherCondition <span class="item-iri">(http://airdata.org/ontology#WeatherCondition)</span></li><li>WeatherCondition-DataSource <span class="item-iri">(http://airdata.org/ontology#WeatherCondition-DataSource)</span></li><li>WeatherRelation <span class="item-iri">(http://airdata.org/ontology#WeatherRelation)</span></li><li>accType <span class="item-iri">(http://airdata.org/ontology#accType)</span></li><li>acronymType <span class="item-iri">(http://airdata.org/ontology#acronymType)</span></li><li>actual <span class="item-iri">(http://airdata.org/ontology#actual)</span></li><li>additionalData <span class="item-iri">(http://airdata.org/ontology#additionalData)</span></li><li>aircraft <span class="item-iri">(http://airdata.org/ontology#aircraft)</span></li><li>aircraftSpeed <span class="item-iri">(http://airdata.org/ontology#aircraftSpeed)</span></li><li>airportRule <span class="item-iri">(http://airdata.org/ontology#airportRule)</span></li><li>arr <span class="item-iri">(http://airdata.org/ontology#arr)</span></li><li>arrivalProcedure <span class="item-iri">(http://airdata.org/ontology#arrivalProcedure)</span></li><li>atsUnit <span class="item-iri">(http://airdata.org/ontology#atsUnit)</span></li><li>autonomy <span class="item-iri">(http://airdata.org/ontology#autonomy)</span></li><li>baroaltitude <span class="item-iri">(http://airdata.org/ontology#baroaltitude)</span></li><li>beginPrevision <span class="item-iri">(http://airdata.org/ontology#beginPrevision)</span></li><li>box <span class="item-iri">(http://airdata.org/ontology#box)</span></li><li>callsign <span class="item-iri">(http://airdata.org/ontology#callsign)</span></li><li>cdep <span class="item-iri">(http://airdata.org/ontology#cdep)</span></li><li>changeCloud <span class="item-iri">(http://airdata.org/ontology#changeCloud)</span></li><li>changeEnd <span class="item-iri">(http://airdata.org/ontology#changeEnd)</span></li><li>changeGroup <span class="item-iri">(http://airdata.org/ontology#changeGroup)</span></li><li>changeStart <span class="item-iri">(http://airdata.org/ontology#changeStart)</span></li><li>changeVisibility <span class="item-iri">(http://airdata.org/ontology#changeVisibility)</span></li><li>cloudAmount <span class="item-iri">(http://airdata.org/ontology#cloudAmount)</span></li><li>cloudBase <span class="item-iri">(http://airdata.org/ontology#cloudBase)</span></li><li>cloudType <span class="item-iri">(http://airdata.org/ontology#cloudType)</span></li><li>code <span class="item-iri">(http://airdata.org/ontology#code)</span></li><li>codeDI <span class="item-iri">(http://airdata.org/ontology#codeDI)</span></li><li>codeshare <span class="item-iri">(http://airdata.org/ontology#codeshare)</span></li><li>controllerName <span class="item-iri">(http://airdata.org/ontology#controllerName)</span></li><li>cpos <span class="item-iri">(http://airdata.org/ontology#cpos)</span></li><li>cpush <span class="item-iri">(http://airdata.org/ontology#cpush)</span></li><li>crossingType <span class="item-iri">(http://airdata.org/ontology#crossingType)</span></li><li>crwy <span class="item-iri">(http://airdata.org/ontology#crwy)</span></li><li>dataRadar <span class="item-iri">(http://airdata.org/ontology#dataRadar)</span></li><li>dataSource <span class="item-iri">(http://airdata.org/ontology#dataSource)</span></li><li>dep <span class="item-iri">(http://airdata.org/ontology#dep)</span></li><li>departureProcedure <span class="item-iri">(http://airdata.org/ontology#departureProcedure)</span></li><li>descriptive <span class="item-iri">(http://airdata.org/ontology#descriptive)</span></li><li>detectorSource <span class="item-iri">(http://airdata.org/ontology#detectorSource)</span></li><li>dewPoint <span class="item-iri">(http://airdata.org/ontology#dewPoint)</span></li><li>endPrevision <span class="item-iri">(http://airdata.org/ontology#endPrevision)</span></li><li>eobt <span class="item-iri">(http://airdata.org/ontology#eobt)</span></li><li>equipmentCode <span class="item-iri">(http://airdata.org/ontology#equipmentCode)</span></li><li>estimated <span class="item-iri">(http://airdata.org/ontology#estimated)</span></li><li>eta <span class="item-iri">(http://airdata.org/ontology#eta)</span></li><li>eventDescription <span class="item-iri">(http://airdata.org/ontology#eventDescription)</span></li><li>eventName <span class="item-iri">(http://airdata.org/ontology#eventName)</span></li><li>excessBaggage <span class="item-iri">(http://airdata.org/ontology#excessBaggage)</span></li><li>fixEntryName <span class="item-iri">(http://airdata.org/ontology#fixEntryName)</span></li><li>fixEntryTime <span class="item-iri">(http://airdata.org/ontology#fixEntryTime)</span></li><li>fixExitName <span class="item-iri">(http://airdata.org/ontology#fixExitName)</span></li><li>fixExitTime <span class="item-iri">(http://airdata.org/ontology#fixExitTime)</span></li><li>flightLevel <span class="item-iri">(http://airdata.org/ontology#flightLevel)</span></li><li>flightRule <span class="item-iri">(http://airdata.org/ontology#flightRule)</span></li><li>freeBaggage <span class="item-iri">(http://airdata.org/ontology#freeBaggage)</span></li><li>freeCargoWeight <span class="item-iri">(http://airdata.org/ontology#freeCargoWeight)</span></li><li>freePassengers <span class="item-iri">(http://airdata.org/ontology#freePassengers)</span></li><li>geoaltitude <span class="item-iri">(http://airdata.org/ontology#geoaltitude)</span></li><li>hasDataSource <span class="item-iri">(http://airdata.org/ontology#hasDataSource)</span></li><li>heading <span class="item-iri">(http://airdata.org/ontology#heading)</span></li><li>hold <span class="item-iri">(http://airdata.org/ontology#hold)</span></li><li>iataCode <span class="item-iri">(http://airdata.org/ontology#iataCode)</span></li><li>icaoCode <span class="item-iri">(http://airdata.org/ontology#icaoCode)</span></li><li>id <span class="item-iri">(http://airdata.org/ontology#id)</span></li><li>identification <span class="item-iri">(http://airdata.org/ontology#identification)</span></li><li>insertedInDB <span class="item-iri">(http://airdata.org/ontology#insertedInDB)</span></li><li>issueTime <span class="item-iri">(http://airdata.org/ontology#issueTime)</span></li><li>latitude <span class="item-iri">(http://airdata.org/ontology#latitude)</span></li><li>location <span class="item-iri">(http://airdata.org/ontology#location)</span></li><li>longitude <span class="item-iri">(http://airdata.org/ontology#longitude)</span></li><li>mailWeight <span class="item-iri">(http://airdata.org/ontology#mailWeight)</span></li><li>maxTemperature <span class="item-iri">(http://airdata.org/ontology#maxTemperature)</span></li><li>minTemperature <span class="item-iri">(http://airdata.org/ontology#minTemperature)</span></li><li>movEstimative <span class="item-iri">(http://airdata.org/ontology#movEstimative)</span></li><li>name <span class="item-iri">(http://airdata.org/ontology#name)</span></li><li>observationTime <span class="item-iri">(http://airdata.org/ontology#observationTime)</span></li><li>onboardEquipment <span class="item-iri">(http://airdata.org/ontology#onboardEquipment)</span></li><li>onboardEquipment2 <span class="item-iri">(http://airdata.org/ontology#onboardEquipment2)</span></li><li>onground <span class="item-iri">(http://airdata.org/ontology#onground)</span></li><li>operational <span class="item-iri">(http://airdata.org/ontology#operational)</span></li><li>paidCargoWeight <span class="item-iri">(http://airdata.org/ontology#paidCargoWeight)</span></li><li>paidPassengers <span class="item-iri">(http://airdata.org/ontology#paidPassengers)</span></li><li>pressureQNH <span class="item-iri">(http://airdata.org/ontology#pressureQNH)</span></li><li>quantityAircraft <span class="item-iri">(http://airdata.org/ontology#quantityAircraft)</span></li><li>rawMetar <span class="item-iri">(http://airdata.org/ontology#rawMetar)</span></li><li>rawTaf <span class="item-iri">(http://airdata.org/ontology#rawTaf)</span></li><li>receivedAt <span class="item-iri">(http://airdata.org/ontology#receivedAt)</span></li><li>remarks <span class="item-iri">(http://airdata.org/ontology#remarks)</span></li><li>remarksApp <span class="item-iri">(http://airdata.org/ontology#remarksApp)</span></li><li>route <span class="item-iri">(http://airdata.org/ontology#route)</span></li><li>runway <span class="item-iri">(http://airdata.org/ontology#runway)</span></li><li>source <span class="item-iri">(http://airdata.org/ontology#source)</span></li><li>spatial <span class="item-iri">(http://airdata.org/ontology#spatial)</span></li><li>squawk <span class="item-iri">(http://airdata.org/ontology#squawk)</span></li><li>ssr <span class="item-iri">(http://airdata.org/ontology#ssr)</span></li><li>stageName <span class="item-iri">(http://airdata.org/ontology#stageName)</span></li><li>stageNumber <span class="item-iri">(http://airdata.org/ontology#stageNumber)</span></li><li>status <span class="item-iri">(http://airdata.org/ontology#status)</span></li><li>taxi <span class="item-iri">(http://airdata.org/ontology#taxi)</span></li><li>taxiwayAlignment <span class="item-iri">(http://airdata.org/ontology#taxiwayAlignment)</span></li><li>taxiwayUsed <span class="item-iri">(http://airdata.org/ontology#taxiwayUsed)</span></li><li>tempEnd <span class="item-iri">(http://airdata.org/ontology#tempEnd)</span></li><li>tempGroup <span class="item-iri">(http://airdata.org/ontology#tempGroup)</span></li><li>tempStart <span class="item-iri">(http://airdata.org/ontology#tempStart)</span></li><li>tempWeather <span class="item-iri">(http://airdata.org/ontology#tempWeather)</span></li><li>temperature <span class="item-iri">(http://airdata.org/ontology#temperature)</span></li><li>temporal <span class="item-iri">(http://airdata.org/ontology#temporal)</span></li><li>time <span class="item-iri">(http://airdata.org/ontology#time)</span></li><li>timestamp <span class="item-iri">(http://airdata.org/ontology#timestamp)</span></li><li>turbulenceWake <span class="item-iri">(http://airdata.org/ontology#turbulenceWake)</span></li><li>type <span class="item-iri">(http://airdata.org/ontology#type)</span></li><li>typeAircraftOperator <span class="item-iri">(http://airdata.org/ontology#typeAircraftOperator)</span></li><li>typeLine <span class="item-iri">(http://airdata.org/ontology#typeLine)</span></li><li>velocity <span class="item-iri">(http://airdata.org/ontology#velocity)</span></li><li>vertrate <span class="item-iri">(http://airdata.org/ontology#vertrate)</span></li><li>visibility <span class="item-iri">(http://airdata.org/ontology#visibility)</span></li><li>weather <span class="item-iri">(http://airdata.org/ontology#weather)</span></li><li>weatherPhenomena <span class="item-iri">(http://airdata.org/ontology#weatherPhenomena)</span></li><li>windDirection <span class="item-iri">(http://airdata.org/ontology#windDirection)</span></li><li>windGust <span class="item-iri">(http://airdata.org/ontology#windGust)</span></li><li>windSpeed <span class="item-iri">(http://airdata.org/ontology#windSpeed)</span></li><li>wpush <span class="item-iri">(http://airdata.org/ontology#wpush)</span></li><li>wtaxi <span class="item-iri">(http://airdata.org/ontology#wtaxi)</span></li><li>cardinality <span class="item-iri">(http://www.w3.org/2002/07/owl#cardinality)</span></li></ul></div></div>
+    </main>
+    
+
+<!-- AirData Footer Start -->
+<footer class="footer">
+    <div class="footer-content">
+        <p class="footer-org"><strong>Instituto Tecnológico de Aeronáutica - ITA</strong></p>
+        <div class="footer-links">
+            <a href="https://www.airdata.ita.br" target="_blank">Portal AirData</a>
+            <a href="https://github.com/ita-airdata/OntoSite" target="_blank">GitHub</a>
+        </div>
+        <p class="footer-copyright">
+            © 2026 Projeto AirData - Todos os direitos reservados
+        </p>
+    </div>
+    <div class="footer-bottom-bar"></div>
+</footer>
+<!-- AirData Footer End -->
+
+</body>
+</html>
