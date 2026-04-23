@@ -1,6 +1,61 @@
 # Automacao de publicacao da ontologia AirData
 
-Este repositorio e a fonte da verdade da ontologia. O fluxo automatizado fica em:
+Este repositorio e a fonte da verdade da ontologia. Existem dois fluxos:
+
+- GitHub Actions, recomendado para publicacao automatica apos `git push`.
+- Script local, util para testar e publicar pela sua maquina.
+
+## GitHub Actions
+
+O workflow fica em:
+
+```text
+.github/workflows/deploy.yml
+```
+
+Quando uma nova ontologia `ontology/airdata_owl_vX.Y.Z.owl` for enviada para a branch `main`, o GitHub Actions:
+
+- instala Java 11 e Python 3.10;
+- instala as dependencias de `config/requirements.txt`;
+- roda `python make.py all`;
+- publica apenas no GitHub Pages por padrao;
+- envia `output/site` para a Lessonia somente se esse deploy for ativado explicitamente.
+
+Importante: o job da Lessonia roda em runner do GitHub (`ubuntu-latest`). Se o SSH da Lessonia so for acessivel pela VPN/rede interna, esse job tambem dara timeout. Nesse caso, use um GitHub self-hosted runner em uma maquina que esteja dentro da VPN/rede do ITA, ou exponha um bastion/tunel SSH acessivel ao GitHub Actions.
+
+### Deploy futuro para a Lessonia
+
+Por enquanto, a Lessonia fica desligada. Para ativar no futuro, crie uma variable em `Settings > Secrets and variables > Actions > Variables`:
+
+```text
+LESSONIA_DEPLOY_ENABLED=true
+```
+
+Depois cadastre em `Settings > Secrets and variables > Actions > Repository secrets`:
+
+```text
+LESSONIA_HOST=161.24.29.22
+LESSONIA_PORT=2222
+LESSONIA_USER=guilhermetolentino
+LESSONIA_PASSWORD=<senha>
+LESSONIA_PATH=/caminho/do/site/na/lessonia
+```
+
+Nao coloque senha em arquivo do repositorio.
+
+### Uso normal
+
+```bash
+git add ontology/airdata_owl_v0.0.3.owl
+git commit -m "Add AirData ontology v0.0.3"
+git push origin main
+```
+
+Tambem e possivel rodar manualmente em `Actions > Deploy AirData OWL Documentation > Run workflow`.
+
+## Script local
+
+O fluxo automatizado local fica em:
 
 ```powershell
 scripts\publish-airdata-ontology.ps1
