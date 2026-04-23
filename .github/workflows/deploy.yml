@@ -67,6 +67,10 @@ jobs:
       - name: Build OWL Reports and Documentation
         run: python make.py all
 
+      - name: Configure GitHub Pages
+        if: github.event_name != 'pull_request'
+        uses: actions/configure-pages@v5
+
       - name: Upload generated site artifact
         uses: actions/upload-artifact@v4
         with:
