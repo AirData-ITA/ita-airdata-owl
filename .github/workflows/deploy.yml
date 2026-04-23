@@ -3,22 +3,8 @@ name: Deploy AirData OWL Documentation
 on:
   push:
     branches: ["main"]
-    paths:
-      - "ontology/**"
-      - "src/**"
-      - "config/**"
-      - "tools/**"
-      - "make.py"
-      - ".github/workflows/deploy.yml"
   pull_request:
     branches: ["main"]
-    paths:
-      - "ontology/**"
-      - "src/**"
-      - "config/**"
-      - "tools/**"
-      - "make.py"
-      - ".github/workflows/deploy.yml"
   workflow_dispatch:
     inputs:
       deploy_lessonia:
