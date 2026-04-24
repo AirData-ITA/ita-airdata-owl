@@ -8,10 +8,12 @@ import argparse
 from owlready2 import World
 
 
-CATEGORY_ORDER = ["class", "property", "individual"]
+CATEGORY_ORDER = ["class", "object_property", "data_property", "annotation_property", "individual"]
 CATEGORY_META = {
     "class": {"label": "Classes", "short": "CLS", "item": "Class"},
-    "property": {"label": "Propriedades", "short": "PROP", "item": "Property"},
+    "object_property": {"label": "Object Properties", "short": "OBJ", "item": "Object"},
+    "data_property": {"label": "Data Properties", "short": "DATA", "item": "Data"},
+    "annotation_property": {"label": "Annotation Properties", "short": "ANN", "item": "Annotation"},
     "individual": {"label": "Individuos", "short": "IND", "item": "Individual"},
 }
 
@@ -285,6 +287,14 @@ HTML_TEMPLATE_START = """<!DOCTYPE html>
             box-shadow: 0 18px 45px rgba(15, 23, 42, 0.08);
             margin-bottom: 1.6rem;
             overflow: hidden;
+            animation: fadeUp 0.45s ease both;
+            transition: transform 0.24s ease, box-shadow 0.24s ease, border-color 0.24s ease;
+        }
+
+        .version-card:hover {
+            transform: translateY(-3px);
+            border-color: rgba(96, 165, 250, 0.55);
+            box-shadow: 0 24px 60px rgba(15, 23, 42, 0.12);
         }
 
         .version-card.latest {
@@ -376,6 +386,12 @@ HTML_TEMPLATE_START = """<!DOCTYPE html>
             color: #334155;
             font-size: 0.8rem;
             font-weight: 700;
+            transition: transform 0.24s ease, box-shadow 0.24s ease;
+        }
+
+        .metric-chip:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08);
         }
 
         .metric-chip strong {
@@ -393,6 +409,7 @@ HTML_TEMPLATE_START = """<!DOCTYPE html>
             border: 1px solid #e7edf4;
             border-radius: 14px;
             overflow: hidden;
+            animation: fadeUp 0.45s ease both;
         }
 
         .change-toggle {
@@ -457,6 +474,14 @@ HTML_TEMPLATE_START = """<!DOCTYPE html>
             background: #ffffff;
             border-radius: 12px;
             padding: 0.85rem;
+            animation: sectionFade 0.35s ease both;
+            transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .category-section:hover {
+            transform: translateY(-2px);
+            border-color: #d6e4f3;
+            box-shadow: 0 12px 28px rgba(148, 163, 184, 0.14);
         }
 
         .category-header {
@@ -552,6 +577,13 @@ HTML_TEMPLATE_START = """<!DOCTYPE html>
             border-radius: 12px;
             background: white;
             border: 1px solid #edf2f7;
+            transition: transform 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease;
+        }
+
+        .tree-item:hover {
+            transform: translateX(3px);
+            border-color: #d6e4f3;
+            box-shadow: 0 10px 24px rgba(148, 163, 184, 0.12);
         }
 
         .tree-item-head {
@@ -574,9 +606,19 @@ HTML_TEMPLATE_START = """<!DOCTYPE html>
             box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.12);
         }
 
-        .marker-property {
+        .marker-object_property {
             background: #7c3aed;
             box-shadow: 0 0 0 4px rgba(124, 58, 237, 0.12);
+        }
+
+        .marker-data_property {
+            background: #0f766e;
+            box-shadow: 0 0 0 4px rgba(15, 118, 110, 0.12);
+        }
+
+        .marker-annotation_property {
+            background: #ca8a04;
+            box-shadow: 0 0 0 4px rgba(202, 138, 4, 0.12);
         }
 
         .marker-individual {
@@ -597,6 +639,36 @@ HTML_TEMPLATE_START = """<!DOCTYPE html>
             font-weight: 800;
             letter-spacing: 0.02em;
             text-transform: uppercase;
+        }
+
+        .marker-class + .entity-type-pill {
+            background: rgba(37, 99, 235, 0.08);
+            border-color: rgba(37, 99, 235, 0.18);
+            color: #1d4ed8;
+        }
+
+        .marker-object_property + .entity-type-pill {
+            background: rgba(124, 58, 237, 0.08);
+            border-color: rgba(124, 58, 237, 0.18);
+            color: #6d28d9;
+        }
+
+        .marker-data_property + .entity-type-pill {
+            background: rgba(15, 118, 110, 0.08);
+            border-color: rgba(15, 118, 110, 0.18);
+            color: #0f766e;
+        }
+
+        .marker-annotation_property + .entity-type-pill {
+            background: rgba(202, 138, 4, 0.1);
+            border-color: rgba(202, 138, 4, 0.2);
+            color: #a16207;
+        }
+
+        .marker-individual + .entity-type-pill {
+            background: rgba(234, 88, 12, 0.08);
+            border-color: rgba(234, 88, 12, 0.18);
+            color: #c2410c;
         }
 
         .entity-name {
@@ -657,6 +729,7 @@ HTML_TEMPLATE_START = """<!DOCTYPE html>
 
         .entity-children {
             padding-left: 0.5rem;
+            animation: detailFade 0.22s ease both;
         }
 
         .entity-node.collapsed .entity-children {
@@ -692,6 +765,49 @@ HTML_TEMPLATE_START = """<!DOCTYPE html>
 
         .empty-results.visible {
             display: block;
+        }
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(12px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes sectionFade {
+            from {
+                opacity: 0;
+                transform: translateY(8px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes detailFade {
+            from {
+                opacity: 0;
+                transform: translateY(-4px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                animation: none !important;
+                transition: none !important;
+                scroll-behavior: auto !important;
+            }
         }
 
         @media (max-width: 900px) {
@@ -774,8 +890,24 @@ HTML_TEMPLATE_START = """<!DOCTYPE html>
                         <div class="summary-label">classes afetadas</div>
                     </div>
                     <div class="summary-card">
-                        <div class="summary-value">{{property_delta}}</div>
-                        <div class="summary-label">propriedades afetadas</div>
+                        <div class="summary-value">{{object_property_delta}}</div>
+                        <div class="summary-label">object properties</div>
+                    </div>
+                    <div class="summary-card">
+                        <div class="summary-value">{{data_property_delta}}</div>
+                        <div class="summary-label">data properties</div>
+                    </div>
+                    <div class="summary-card">
+                        <div class="summary-value">{{individual_delta}}</div>
+                        <div class="summary-label">individuos afetados</div>
+                    </div>
+                    <div class="summary-card">
+                        <div class="summary-value">{{annotation_property_delta}}</div>
+                        <div class="summary-label">annotation properties</div>
+                    </div>
+                    <div class="summary-card">
+                        <div class="summary-value">{{latest_version}}</div>
+                        <div class="summary-label">versao mais recente</div>
                     </div>
                 </div>
                 <p class="summary-note">
@@ -812,7 +944,9 @@ HTML_TEMPLATE_START = """<!DOCTYPE html>
                     <div class="filters" role="group" aria-label="Filtros por categoria semantica">
                         <button type="button" class="filter-chip active" data-category="all">Tudo</button>
                         <button type="button" class="filter-chip" data-category="class">Classes</button>
-                        <button type="button" class="filter-chip" data-category="property">Propriedades</button>
+                        <button type="button" class="filter-chip" data-category="object_property">Object</button>
+                        <button type="button" class="filter-chip" data-category="data_property">Data</button>
+                        <button type="button" class="filter-chip" data-category="annotation_property">Annotation</button>
                         <button type="button" class="filter-chip" data-category="individual">Individuos</button>
                     </div>
                 </div>
@@ -993,8 +1127,14 @@ def infer_category(entity):
     entity_type = type(entity).__name__
     if entity_type == "ThingClass":
         return "class"
+    if entity_type == "ObjectPropertyClass":
+        return "object_property"
+    if entity_type == "DataPropertyClass":
+        return "data_property"
+    if entity_type == "AnnotationPropertyClass":
+        return "annotation_property"
     if entity_type.endswith("PropertyClass"):
-        return "property"
+        return "object_property"
     return "individual"
 
 
@@ -1102,7 +1242,7 @@ def render_entity_shell(entity_data, include_toggle=False):
     marker_class = f"marker-{category}"
     name = esc(entity_data["iri"].split("#")[-1])
     iri = esc(entity_data["iri"])
-    toggle = '<span class="entity-toggle-icon">▾</span>' if include_toggle else ""
+    toggle = '<span class="entity-toggle-icon">&#9662;</span>' if include_toggle else ""
 
     return (
         '<div class="tree-item">'
@@ -1159,7 +1299,7 @@ def render_change_group(badge_class, badge_text, title, categorized_sections, co
                         <span class="badge {badge_class}">{badge_text}</span>
                         {title}
                         <span class="change-count">{count} itens</span>
-                        <span class="toggle-icon">▾</span>
+                        <span class="toggle-icon">&#9662;</span>
                     </div>
                 </button>
                 <div class="change-group-body">
@@ -1198,7 +1338,7 @@ def group_changed_by_category(changed_entities):
             new_label = esc(change_data["changes"]["label"]["new"] if change_data["changes"]["label"]["new"] is not None else "N/A")
             detail_items.append(
                 '<li><div class="tree-item change-detail">'
-                f'Label: <span class="old-value">{old_label}</span> → <span class="new-value">{new_label}</span>'
+                f'Label: <span class="old-value">{old_label}</span> &rarr; <span class="new-value">{new_label}</span>'
                 '</div></li>'
             )
         if "comment" in change_data["changes"]:
@@ -1206,7 +1346,7 @@ def group_changed_by_category(changed_entities):
             new_comment = esc(change_data["changes"]["comment"]["new"] if change_data["changes"]["comment"]["new"] is not None else "N/A")
             detail_items.append(
                 '<li><div class="tree-item change-detail">'
-                f'Comment: <span class="old-value">{old_comment}</span> → <span class="new-value">{new_comment}</span>'
+                f'Comment: <span class="old-value">{old_comment}</span> &rarr; <span class="new-value">{new_comment}</span>'
                 '</div></li>'
                 )
 
@@ -1312,7 +1452,11 @@ def main(owl_dir, output_file):
             .replace("{{version_count}}", "0")
             .replace("{{entity_delta}}", "0")
             .replace("{{class_delta}}", "0")
-            .replace("{{property_delta}}", "0")
+            .replace("{{object_property_delta}}", "0")
+            .replace("{{data_property_delta}}", "0")
+            .replace("{{annotation_property_delta}}", "0")
+            .replace("{{individual_delta}}", "0")
+            .replace("{{latest_version}}", "-")
             + '<div class="empty-state">Aguardando mais versoes para gerar historico.</div>'
             + HTML_END
         )
@@ -1325,7 +1469,11 @@ def main(owl_dir, output_file):
         "version_count": len(files) - 1,
         "entity_delta": 0,
         "class_delta": 0,
-        "property_delta": 0,
+        "object_property_delta": 0,
+        "data_property_delta": 0,
+        "annotation_property_delta": 0,
+        "individual_delta": 0,
+        "latest_version": os.path.basename(files[0]).replace("airdata_owl_", "").replace(".owl", ""),
     }
 
     for i in range(len(files) - 1):
@@ -1337,13 +1485,25 @@ def main(owl_dir, output_file):
             for entity in diff["added"] + diff["removed"]:
                 if entity["category"] == "class":
                     summary["class_delta"] += 1
-                elif entity["category"] == "property":
-                    summary["property_delta"] += 1
+                elif entity["category"] == "object_property":
+                    summary["object_property_delta"] += 1
+                elif entity["category"] == "data_property":
+                    summary["data_property_delta"] += 1
+                elif entity["category"] == "annotation_property":
+                    summary["annotation_property_delta"] += 1
+                elif entity["category"] == "individual":
+                    summary["individual_delta"] += 1
             for change in diff["changed"]:
                 if change["entity"]["category"] == "class":
                     summary["class_delta"] += 1
-                elif change["entity"]["category"] == "property":
-                    summary["property_delta"] += 1
+                elif change["entity"]["category"] == "object_property":
+                    summary["object_property_delta"] += 1
+                elif change["entity"]["category"] == "data_property":
+                    summary["data_property_delta"] += 1
+                elif change["entity"]["category"] == "annotation_property":
+                    summary["annotation_property_delta"] += 1
+                elif change["entity"]["category"] == "individual":
+                    summary["individual_delta"] += 1
 
             content_html += generate_html_card(diff)
         except Exception as e:
@@ -1354,7 +1514,11 @@ def main(owl_dir, output_file):
         .replace("{{version_count}}", str(summary["version_count"]))
         .replace("{{entity_delta}}", str(summary["entity_delta"]))
         .replace("{{class_delta}}", str(summary["class_delta"]))
-        .replace("{{property_delta}}", str(summary["property_delta"]))
+        .replace("{{object_property_delta}}", str(summary["object_property_delta"]))
+        .replace("{{data_property_delta}}", str(summary["data_property_delta"]))
+        .replace("{{annotation_property_delta}}", str(summary["annotation_property_delta"]))
+        .replace("{{individual_delta}}", str(summary["individual_delta"]))
+        .replace("{{latest_version}}", str(summary["latest_version"]))
         + content_html
         + HTML_END
     )
