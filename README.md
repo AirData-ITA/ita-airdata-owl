@@ -135,5 +135,5 @@ pip install -r config/requirements.txt
 ## Links
 
 - Portal: https://www.airdata.ita.br
-- Docs: https://ita-airdata.github.io/OntoSite/docs/index-pt.html
+- Docs: https://airdata-ita.github.io/ita-airdata-owl/index.html
 - GitHub: https://github.com/ita-airdata
